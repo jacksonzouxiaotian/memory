@@ -1,0 +1,19 @@
+TrajectoryType,Strategy,Seed,Mission,Success,Replans,WaitSteps,TimeSteps,PathLength,PredictionMAE,TotalCost
+turn,Space-Time CV,0,0,True,18,0,71,80.113,1.4479,116.113
+turn,Space-Time CV,1,0,True,19,0,75,86.598,1.3217,124.598
+turn,Space-Time CV,2,0,True,23,0,91,96.799,1.315,142.799
+turn,Space-Time Kalman uncertainty,0,0,True,19,0,73,89.569,1.3825,127.569
+turn,Space-Time Kalman uncertainty,1,0,True,18,0,69,84.74,1.4108,120.74
+turn,Space-Time Kalman uncertainty,2,0,True,27,0,105,114.941,1.1768,168.941
+sudden-acceleration,Space-Time CV,0,0,True,23,0,91,93.485,1.2786,139.485
+sudden-acceleration,Space-Time CV,1,0,True,18,0,70,79.527,1.1276,115.527
+sudden-acceleration,Space-Time CV,2,0,True,17,0,67,81.083,1.3455,115.083
+sudden-acceleration,Space-Time Kalman uncertainty,0,0,True,17,0,67,81.083,1.3389,115.083
+sudden-acceleration,Space-Time Kalman uncertainty,1,0,False,9,0,32,34.071,1.2726,232.071
+sudden-acceleration,Space-Time Kalman uncertainty,2,0,True,19,0,73,85.426,1.3218,123.426
+stop-and-go,Space-Time CV,0,0,True,17,0,66,76.355,1.221,110.355
+stop-and-go,Space-Time CV,1,0,True,18,0,70,77.87,1.2845,113.87
+stop-and-go,Space-Time CV,2,0,True,17,0,67,81.083,1.428,115.083
+stop-and-go,Space-Time Kalman uncertainty,0,0,True,19,0,75,87.426,1.3524,125.426
+stop-and-go,Space-Time Kalman uncertainty,1,0,True,18,0,72,84.841,1.131,120.841
+stop-and-go,Space-Time Kalman uncertainty,2,0,True,18,0,69,81.426,1.2741,117.426

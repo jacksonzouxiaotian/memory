@@ -1,0 +1,7 @@
+TrajectoryType,Strategy,Trials,Successes,SuccessRate,SuccessCI95Low,SuccessCI95High,MeanReplans,MeanWaitSteps,MeanTimeSteps,MeanPathLength,MeanPredictionMAE,MeanTotalCost
+turn,Space-Time CV,3,3,1.0,0.4385,1.0,20.0,0.0,79.0,87.8367,1.3615,127.8367
+turn,Space-Time Kalman uncertainty,3,3,1.0,0.4385,1.0,21.3333,0.0,82.3333,96.4167,1.3234,139.0833
+sudden-acceleration,Space-Time CV,3,3,1.0,0.4385,1.0,19.3333,0.0,76.0,84.6983,1.2506,123.365
+sudden-acceleration,Space-Time Kalman uncertainty,3,2,0.6667,0.2077,0.9385,15.0,0.0,57.3333,66.86,1.3111,156.86
+stop-and-go,Space-Time CV,3,3,1.0,0.4385,1.0,17.3333,0.0,67.6667,78.436,1.3112,113.1027
+stop-and-go,Space-Time Kalman uncertainty,3,3,1.0,0.4385,1.0,18.3333,0.0,72.0,84.5643,1.2525,121.231
