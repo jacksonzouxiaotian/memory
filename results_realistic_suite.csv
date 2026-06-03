@@ -1,0 +1,3 @@
+Variant,Planned,RectangleStaticExecutable,DynamicExecutable,PathLength,ObservedCells,NoisyObservedCells
+A* optimistic local map,True,False,False,51.828,229,3
+Memory-aware rectangular footprint,True,True,False,60.113,229,3

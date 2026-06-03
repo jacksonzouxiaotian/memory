@@ -1,0 +1,5 @@
+Strategy,Trials,Successes,SuccessRate,SuccessCI95Low,SuccessCI95High,MeanReplans,MeanWaitSteps,MeanPathLength,MeanPredictionMAE,MeanRiskRadius,MeanTotalCost
+Reactive current occupancy,300,119,0.3967,0.3429,0.453,2.3333,2.3333,47.2349,1.3245,1.6,210.7016
+Prediction-aware memory,300,250,0.8333,0.787,0.8712,2.15,6.1267,86.9883,1.3126,1.6,156.1183
+Kalman prediction-aware memory,300,184,0.6133,0.5571,0.6667,2.35,6.3767,76.2795,1.2873,1.6,199.9595
+Kalman uncertainty-aware memory,300,200,0.6667,0.6115,0.7176,2.75,6.99,79.729,1.2858,1.5253,194.449

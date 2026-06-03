@@ -1,0 +1,3 @@
+Variant,Batches,Tasks,Attempts,ExecutableTasks,ExecutableRate,ExecutableCI95Low,ExecutableCI95High,FailedShortPassageAttempts,MeanAttemptsPerTask,MeanExecutableLength
+A* repeated baseline,30,150,300,0,0.0,0.0,0.025,300,2.0,0.0
+Memory-aware replanning,30,150,180,150,1.0,0.975,1.0,30,1.2,46.6077

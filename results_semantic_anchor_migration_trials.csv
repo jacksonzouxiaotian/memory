@@ -1,0 +1,301 @@
+Variant,Seed,BarrierX,DeceptiveY,NoiseCells,MatchedAnchor,MatchSimilarity,TransferredCells,Executable,UsedTargetFailedPassage,Length
+No transferred memory,0,33,12,0,"(33, 12)",1.0,0,False,True,44.0
+Absolute-cell transfer,0,33,12,0,"(33, 12)",1.0,45,False,True,44.0
+Semantic-anchor transfer,0,33,12,0,"(33, 12)",1.0,45,True,False,48.971
+No transferred memory,1,16,12,1,"(16, 12)",0.9877,0,False,True,44.0
+Absolute-cell transfer,1,16,12,1,"(16, 12)",0.9877,45,False,True,44.0
+Semantic-anchor transfer,1,16,12,1,"(16, 12)",0.9877,45,True,False,48.971
+No transferred memory,2,15,15,1,"(15, 15)",0.9877,0,False,True,44.0
+Absolute-cell transfer,2,15,15,1,"(15, 15)",0.9877,45,False,True,44.0
+Semantic-anchor transfer,2,15,15,1,"(15, 15)",0.9877,45,True,False,49.799
+No transferred memory,3,15,12,2,"(15, 12)",0.9753,0,False,True,44.0
+Absolute-cell transfer,3,15,12,2,"(15, 12)",0.9753,45,False,True,44.0
+Semantic-anchor transfer,3,15,12,2,"(15, 12)",0.9753,45,True,False,50.627
+No transferred memory,4,34,12,1,"(34, 12)",0.9877,0,False,True,44.0
+Absolute-cell transfer,4,34,12,1,"(34, 12)",0.9877,45,False,True,44.0
+Semantic-anchor transfer,4,34,12,1,"(34, 12)",0.9877,45,True,False,50.627
+No transferred memory,5,16,12,1,"(16, 12)",0.9877,0,False,True,44.0
+Absolute-cell transfer,5,16,12,1,"(16, 12)",0.9877,45,False,True,44.0
+Semantic-anchor transfer,5,16,12,1,"(16, 12)",0.9877,45,True,False,49.799
+No transferred memory,6,34,15,1,"(34, 15)",0.9877,0,False,True,44.0
+Absolute-cell transfer,6,34,15,1,"(34, 15)",0.9877,45,False,True,44.0
+Semantic-anchor transfer,6,34,15,1,"(34, 15)",0.9877,45,True,False,51.456
+No transferred memory,7,16,9,1,"(16, 9)",0.9877,0,False,True,44.0
+Absolute-cell transfer,7,16,9,1,"(16, 9)",0.9877,45,False,True,44.828
+Semantic-anchor transfer,7,16,9,1,"(16, 9)",0.9877,45,True,False,52.284
+No transferred memory,8,16,15,0,"(16, 15)",1.0,0,False,True,44.0
+Absolute-cell transfer,8,16,15,0,"(16, 15)",1.0,45,False,True,44.0
+Semantic-anchor transfer,8,16,15,0,"(16, 15)",1.0,45,True,False,50.627
+No transferred memory,9,33,12,0,"(33, 12)",1.0,0,False,True,44.0
+Absolute-cell transfer,9,33,12,0,"(33, 12)",1.0,45,False,True,44.0
+Semantic-anchor transfer,9,33,12,0,"(33, 12)",1.0,45,True,False,50.627
+No transferred memory,10,15,12,0,"(15, 12)",1.0,0,False,True,44.0
+Absolute-cell transfer,10,15,12,0,"(15, 12)",1.0,45,False,True,44.0
+Semantic-anchor transfer,10,15,12,0,"(15, 12)",1.0,45,True,False,50.627
+No transferred memory,11,16,12,2,"(16, 12)",0.9753,0,False,True,44.0
+Absolute-cell transfer,11,16,12,2,"(16, 12)",0.9753,45,False,True,44.0
+Semantic-anchor transfer,11,16,12,2,"(16, 12)",0.9753,45,True,False,50.627
+No transferred memory,12,33,15,1,"(33, 15)",0.9877,0,False,True,44.0
+Absolute-cell transfer,12,33,15,1,"(33, 15)",0.9877,45,False,True,44.0
+Semantic-anchor transfer,12,33,15,1,"(33, 15)",0.9877,45,True,False,51.456
+No transferred memory,13,34,18,2,"(34, 18)",0.9753,0,False,True,44.0
+Absolute-cell transfer,13,34,18,2,"(34, 18)",0.9753,45,False,True,44.0
+Semantic-anchor transfer,13,34,18,2,"(34, 18)",0.9753,45,True,False,53.941
+No transferred memory,14,15,6,1,"(15, 6)",0.9877,0,False,True,44.0
+Absolute-cell transfer,14,15,6,1,"(15, 6)",0.9877,45,False,True,45.657
+Semantic-anchor transfer,14,15,6,1,"(15, 6)",0.9877,45,True,False,55.698
+No transferred memory,15,15,15,0,"(15, 15)",1.0,0,False,True,44.0
+Absolute-cell transfer,15,15,15,0,"(15, 15)",1.0,45,False,True,44.0
+Semantic-anchor transfer,15,15,15,0,"(15, 15)",1.0,45,True,False,49.799
+No transferred memory,16,33,15,0,"(33, 15)",1.0,0,False,True,44.0
+Absolute-cell transfer,16,33,15,0,"(33, 15)",1.0,45,False,True,44.0
+Semantic-anchor transfer,16,33,15,0,"(33, 15)",1.0,45,True,False,51.456
+No transferred memory,17,16,15,1,"(16, 15)",0.9877,0,False,True,44.0
+Absolute-cell transfer,17,16,15,1,"(16, 15)",0.9877,45,False,True,44.0
+Semantic-anchor transfer,17,16,15,1,"(16, 15)",0.9877,45,True,False,49.799
+No transferred memory,18,33,6,0,"(33, 6)",1.0,0,False,True,44.0
+Absolute-cell transfer,18,33,6,0,"(33, 6)",1.0,45,False,True,45.657
+Semantic-anchor transfer,18,33,6,0,"(33, 6)",1.0,45,True,False,55.598
+No transferred memory,19,14,6,0,"(14, 6)",1.0,0,False,True,44.0
+Absolute-cell transfer,19,14,6,0,"(14, 6)",1.0,45,False,True,45.657
+Semantic-anchor transfer,19,14,6,0,"(14, 6)",1.0,45,True,False,57.698
+No transferred memory,20,16,15,1,"(16, 15)",0.9877,0,False,True,44.0
+Absolute-cell transfer,20,16,15,1,"(16, 15)",0.9877,45,False,True,44.0
+Semantic-anchor transfer,20,16,15,1,"(16, 15)",0.9877,45,True,False,49.799
+No transferred memory,21,33,12,2,"(33, 12)",0.9753,0,False,True,44.0
+Absolute-cell transfer,21,33,12,2,"(33, 12)",0.9753,45,False,True,44.0
+Semantic-anchor transfer,21,33,12,2,"(33, 12)",0.9753,45,True,False,48.971
+No transferred memory,22,15,12,0,"(15, 12)",1.0,0,False,True,44.0
+Absolute-cell transfer,22,15,12,0,"(15, 12)",1.0,45,False,True,44.0
+Semantic-anchor transfer,22,15,12,0,"(15, 12)",1.0,45,True,False,48.971
+No transferred memory,23,34,9,1,"(34, 9)",0.9877,0,False,True,44.0
+Absolute-cell transfer,23,34,9,1,"(34, 9)",0.9877,45,False,True,44.828
+Semantic-anchor transfer,23,34,9,1,"(34, 9)",0.9877,45,True,False,51.456
+No transferred memory,24,16,12,1,"(16, 12)",0.9877,0,False,True,44.0
+Absolute-cell transfer,24,16,12,1,"(16, 12)",0.9877,45,False,True,44.0
+Semantic-anchor transfer,24,16,12,1,"(16, 12)",0.9877,45,True,False,50.627
+No transferred memory,25,34,18,1,"(34, 18)",0.9877,0,False,True,44.0
+Absolute-cell transfer,25,34,18,1,"(34, 18)",0.9877,45,False,True,44.0
+Semantic-anchor transfer,25,34,18,1,"(34, 18)",0.9877,45,True,False,52.284
+No transferred memory,26,14,15,2,"(14, 15)",0.9753,0,False,True,44.0
+Absolute-cell transfer,26,14,15,2,"(14, 15)",0.9753,45,False,True,44.0
+Semantic-anchor transfer,26,14,15,2,"(14, 15)",0.9753,45,True,False,52.042
+No transferred memory,27,14,18,1,"(14, 18)",0.9877,0,False,True,44.0
+Absolute-cell transfer,27,14,18,1,"(14, 18)",0.9877,45,False,True,44.0
+Semantic-anchor transfer,27,14,18,1,"(14, 18)",0.9877,45,True,False,54.87
+No transferred memory,28,14,15,2,"(14, 15)",0.9753,0,False,True,44.0
+Absolute-cell transfer,28,14,15,2,"(14, 15)",0.9753,45,False,True,44.0
+Semantic-anchor transfer,28,14,15,2,"(14, 15)",0.9753,45,True,False,52.042
+No transferred memory,29,34,12,0,"(34, 12)",1.0,0,False,True,44.0
+Absolute-cell transfer,29,34,12,0,"(34, 12)",1.0,45,False,True,44.0
+Semantic-anchor transfer,29,34,12,0,"(34, 12)",1.0,45,True,False,49.799
+No transferred memory,30,14,15,1,"(14, 15)",0.9877,0,False,True,44.0
+Absolute-cell transfer,30,14,15,1,"(14, 15)",0.9877,45,False,True,44.0
+Semantic-anchor transfer,30,14,15,1,"(14, 15)",0.9877,45,True,False,49.799
+No transferred memory,31,33,12,1,"(33, 12)",0.9877,0,False,True,44.0
+Absolute-cell transfer,31,33,12,1,"(33, 12)",0.9877,45,False,True,44.0
+Semantic-anchor transfer,31,33,12,1,"(33, 12)",0.9877,45,True,False,49.799
+No transferred memory,32,16,12,0,"(16, 12)",1.0,0,False,True,44.0
+Absolute-cell transfer,32,16,12,0,"(16, 12)",1.0,45,False,True,44.0
+Semantic-anchor transfer,32,16,12,0,"(16, 12)",1.0,45,True,False,49.799
+No transferred memory,33,33,15,0,"(33, 15)",1.0,0,False,True,44.0
+Absolute-cell transfer,33,33,15,0,"(33, 15)",1.0,45,False,True,44.0
+Semantic-anchor transfer,33,33,15,0,"(33, 15)",1.0,45,True,False,50.627
+No transferred memory,34,33,9,1,"(33, 9)",0.9877,0,False,True,44.0
+Absolute-cell transfer,34,33,9,1,"(33, 9)",0.9877,45,False,True,44.828
+Semantic-anchor transfer,34,33,9,1,"(33, 9)",0.9877,45,True,False,52.284
+No transferred memory,35,34,15,1,"(34, 15)",0.9877,0,False,True,44.0
+Absolute-cell transfer,35,34,15,1,"(34, 15)",0.9877,45,False,True,44.0
+Semantic-anchor transfer,35,34,15,1,"(34, 15)",0.9877,45,True,False,50.627
+No transferred memory,36,14,15,1,"(14, 15)",0.9877,0,False,True,44.0
+Absolute-cell transfer,36,14,15,1,"(14, 15)",0.9877,45,False,True,44.0
+Semantic-anchor transfer,36,14,15,1,"(14, 15)",0.9877,45,True,False,52.042
+No transferred memory,37,34,18,0,"(34, 18)",1.0,0,False,True,44.0
+Absolute-cell transfer,37,34,18,0,"(34, 18)",1.0,45,False,True,44.0
+Semantic-anchor transfer,37,34,18,0,"(34, 18)",1.0,45,True,False,53.941
+No transferred memory,38,16,18,1,"(16, 18)",0.9877,0,False,True,44.0
+Absolute-cell transfer,38,16,18,1,"(16, 18)",0.9877,45,False,True,44.0
+Semantic-anchor transfer,38,16,18,1,"(16, 18)",0.9877,45,True,False,55.113
+No transferred memory,39,16,15,0,"(16, 15)",1.0,0,False,True,44.0
+Absolute-cell transfer,39,16,15,0,"(16, 15)",1.0,45,False,True,44.0
+Semantic-anchor transfer,39,16,15,0,"(16, 15)",1.0,45,True,False,51.456
+No transferred memory,40,16,18,0,"(16, 18)",1.0,0,False,True,44.0
+Absolute-cell transfer,40,16,18,0,"(16, 18)",1.0,45,False,True,44.0
+Semantic-anchor transfer,40,16,18,0,"(16, 18)",1.0,45,True,False,55.113
+No transferred memory,41,34,9,2,"(34, 9)",0.9753,0,False,True,44.0
+Absolute-cell transfer,41,34,9,2,"(34, 9)",0.9753,45,False,True,44.828
+Semantic-anchor transfer,41,34,9,2,"(34, 9)",0.9753,45,True,False,53.113
+No transferred memory,42,34,15,1,"(34, 15)",0.9877,0,False,True,44.0
+Absolute-cell transfer,42,34,15,1,"(34, 15)",0.9877,45,False,True,44.0
+Semantic-anchor transfer,42,34,15,1,"(34, 15)",0.9877,45,True,False,49.799
+No transferred memory,43,33,15,0,"(33, 15)",1.0,0,False,True,44.0
+Absolute-cell transfer,43,33,15,0,"(33, 15)",1.0,45,False,True,44.0
+Semantic-anchor transfer,43,33,15,0,"(33, 15)",1.0,45,True,False,50.627
+No transferred memory,44,34,9,1,"(34, 9)",0.9877,0,False,True,44.0
+Absolute-cell transfer,44,34,9,1,"(34, 9)",0.9877,45,False,True,44.828
+Semantic-anchor transfer,44,34,9,1,"(34, 9)",0.9877,45,True,False,52.284
+No transferred memory,45,14,6,0,"(14, 6)",1.0,0,False,True,44.0
+Absolute-cell transfer,45,14,6,0,"(14, 6)",1.0,45,False,True,45.657
+Semantic-anchor transfer,45,14,6,0,"(14, 6)",1.0,45,True,False,57.698
+No transferred memory,46,34,12,1,"(34, 12)",0.9877,0,False,True,44.0
+Absolute-cell transfer,46,34,12,1,"(34, 12)",0.9877,45,False,True,44.0
+Semantic-anchor transfer,46,34,12,1,"(34, 12)",0.9877,45,True,False,50.627
+No transferred memory,47,14,18,1,"(14, 18)",0.9877,0,False,True,44.0
+Absolute-cell transfer,47,14,18,1,"(14, 18)",0.9877,45,False,True,44.0
+Semantic-anchor transfer,47,14,18,1,"(14, 18)",0.9877,45,True,False,54.87
+No transferred memory,48,34,6,0,"(34, 6)",1.0,0,False,True,44.0
+Absolute-cell transfer,48,34,6,0,"(34, 6)",1.0,45,False,True,45.657
+Semantic-anchor transfer,48,34,6,0,"(34, 6)",1.0,45,True,False,54.77
+No transferred memory,49,33,15,0,"(33, 15)",1.0,0,False,True,44.0
+Absolute-cell transfer,49,33,15,0,"(33, 15)",1.0,45,False,True,44.0
+Semantic-anchor transfer,49,33,15,0,"(33, 15)",1.0,45,True,False,51.456
+No transferred memory,50,33,9,2,"(33, 9)",0.9753,0,False,True,44.0
+Absolute-cell transfer,50,33,9,2,"(33, 9)",0.9753,45,False,True,44.828
+Semantic-anchor transfer,50,33,9,2,"(33, 9)",0.9753,45,True,False,52.284
+No transferred memory,51,35,15,0,"(35, 15)",1.0,0,False,True,44.0
+Absolute-cell transfer,51,35,15,0,"(35, 15)",1.0,45,False,True,44.0
+Semantic-anchor transfer,51,35,15,0,"(35, 15)",1.0,45,True,False,51.456
+No transferred memory,52,15,6,1,"(15, 6)",0.9877,0,False,True,44.0
+Absolute-cell transfer,52,15,6,1,"(15, 6)",0.9877,45,False,True,45.657
+Semantic-anchor transfer,52,15,6,1,"(15, 6)",0.9877,45,True,False,58.527
+No transferred memory,53,14,12,1,"(14, 12)",0.9877,0,False,True,44.0
+Absolute-cell transfer,53,14,12,1,"(14, 12)",0.9877,45,False,True,44.0
+Semantic-anchor transfer,53,14,12,1,"(14, 12)",0.9877,45,True,False,50.627
+No transferred memory,54,34,6,2,"(34, 6)",0.9753,0,False,True,44.0
+Absolute-cell transfer,54,34,6,2,"(34, 6)",0.9753,45,False,True,45.657
+Semantic-anchor transfer,54,34,6,2,"(34, 6)",0.9753,45,True,False,54.77
+No transferred memory,55,16,9,1,"(16, 9)",0.9877,0,False,True,44.0
+Absolute-cell transfer,55,16,9,1,"(16, 9)",0.9877,45,False,True,44.828
+Semantic-anchor transfer,55,16,9,1,"(16, 9)",0.9877,45,True,False,51.456
+No transferred memory,56,34,9,0,"(34, 9)",1.0,0,False,True,44.0
+Absolute-cell transfer,56,34,9,0,"(34, 9)",1.0,45,False,True,44.828
+Semantic-anchor transfer,56,34,9,0,"(34, 9)",1.0,45,True,False,53.113
+No transferred memory,57,33,6,0,"(33, 6)",1.0,0,False,True,44.0
+Absolute-cell transfer,57,33,6,0,"(33, 6)",1.0,45,False,True,45.657
+Semantic-anchor transfer,57,33,6,0,"(33, 6)",1.0,45,True,False,53.941
+No transferred memory,58,14,18,0,"(14, 18)",1.0,0,False,True,44.0
+Absolute-cell transfer,58,14,18,0,"(14, 18)",1.0,45,False,True,44.0
+Semantic-anchor transfer,58,14,18,0,"(14, 18)",1.0,45,True,False,54.87
+No transferred memory,59,15,18,0,"(15, 18)",1.0,0,False,True,44.0
+Absolute-cell transfer,59,15,18,0,"(15, 18)",1.0,45,False,True,44.0
+Semantic-anchor transfer,59,15,18,0,"(15, 18)",1.0,45,True,False,54.284
+No transferred memory,60,34,6,1,"(34, 6)",0.9877,0,False,True,44.0
+Absolute-cell transfer,60,34,6,1,"(34, 6)",0.9877,45,False,True,45.657
+Semantic-anchor transfer,60,34,6,1,"(34, 6)",0.9877,45,True,False,55.598
+No transferred memory,61,14,15,1,"(14, 15)",0.9877,0,False,True,44.0
+Absolute-cell transfer,61,14,15,1,"(14, 15)",0.9877,45,False,True,44.0
+Semantic-anchor transfer,61,14,15,1,"(14, 15)",0.9877,45,True,False,50.627
+No transferred memory,62,14,12,1,"(14, 12)",0.9877,0,False,True,44.0
+Absolute-cell transfer,62,14,12,1,"(14, 12)",0.9877,45,False,True,44.0
+Semantic-anchor transfer,62,14,12,1,"(14, 12)",0.9877,45,True,False,48.971
+No transferred memory,63,35,15,0,"(35, 15)",1.0,0,False,True,44.0
+Absolute-cell transfer,63,35,15,0,"(35, 15)",1.0,45,False,True,44.0
+Semantic-anchor transfer,63,35,15,0,"(35, 15)",1.0,45,True,False,50.627
+No transferred memory,64,34,9,2,"(34, 9)",0.9753,0,False,True,44.0
+Absolute-cell transfer,64,34,9,2,"(34, 9)",0.9753,45,False,True,44.828
+Semantic-anchor transfer,64,34,9,2,"(34, 9)",0.9753,45,True,False,52.284
+No transferred memory,65,14,15,1,"(14, 15)",0.9877,0,False,True,44.0
+Absolute-cell transfer,65,14,15,1,"(14, 15)",0.9877,45,False,True,44.0
+Semantic-anchor transfer,65,14,15,1,"(14, 15)",0.9877,45,True,False,49.799
+No transferred memory,66,16,9,2,"(16, 9)",0.9753,0,False,True,44.0
+Absolute-cell transfer,66,16,9,2,"(16, 9)",0.9753,45,False,True,44.828
+Semantic-anchor transfer,66,16,9,2,"(16, 9)",0.9753,45,True,False,52.284
+No transferred memory,67,34,15,2,"(34, 15)",0.9753,0,False,True,44.0
+Absolute-cell transfer,67,34,15,2,"(34, 15)",0.9753,45,False,True,44.0
+Semantic-anchor transfer,67,34,15,2,"(34, 15)",0.9753,45,True,False,49.799
+No transferred memory,68,15,9,2,"(15, 9)",0.9753,0,False,True,44.0
+Absolute-cell transfer,68,15,9,2,"(15, 9)",0.9753,45,False,True,44.828
+Semantic-anchor transfer,68,15,9,2,"(15, 9)",0.9753,45,True,False,51.456
+No transferred memory,69,35,9,0,"(35, 9)",1.0,0,False,True,44.0
+Absolute-cell transfer,69,35,9,0,"(35, 9)",1.0,45,False,True,44.828
+Semantic-anchor transfer,69,35,9,0,"(35, 9)",1.0,45,True,False,53.113
+No transferred memory,70,16,6,1,"(16, 6)",0.9877,0,False,True,44.0
+Absolute-cell transfer,70,16,6,1,"(16, 6)",0.9877,45,False,True,45.657
+Semantic-anchor transfer,70,16,6,1,"(16, 6)",0.9877,45,True,False,55.113
+No transferred memory,71,34,6,1,"(34, 6)",0.9877,0,False,True,44.0
+Absolute-cell transfer,71,34,6,1,"(34, 6)",0.9877,45,False,True,45.657
+Semantic-anchor transfer,71,34,6,1,"(34, 6)",0.9877,45,True,False,54.77
+No transferred memory,72,33,15,2,"(33, 15)",0.9753,0,False,True,44.0
+Absolute-cell transfer,72,33,15,2,"(33, 15)",0.9753,45,False,True,44.0
+Semantic-anchor transfer,72,33,15,2,"(33, 15)",0.9753,45,True,False,49.799
+No transferred memory,73,34,9,2,"(34, 9)",0.9753,0,False,True,44.0
+Absolute-cell transfer,73,34,9,2,"(34, 9)",0.9753,45,False,True,44.828
+Semantic-anchor transfer,73,34,9,2,"(34, 9)",0.9753,45,True,False,53.113
+No transferred memory,74,15,18,1,"(15, 18)",0.9877,0,False,True,44.0
+Absolute-cell transfer,74,15,18,1,"(15, 18)",0.9877,45,False,True,44.0
+Semantic-anchor transfer,74,15,18,1,"(15, 18)",0.9877,45,True,False,55.698
+No transferred memory,75,33,15,0,"(33, 15)",1.0,0,False,True,44.0
+Absolute-cell transfer,75,33,15,0,"(33, 15)",1.0,45,False,True,44.0
+Semantic-anchor transfer,75,33,15,0,"(33, 15)",1.0,45,True,False,49.799
+No transferred memory,76,16,18,2,"(16, 18)",0.9753,0,False,True,44.0
+Absolute-cell transfer,76,16,18,2,"(16, 18)",0.9753,45,False,True,44.0
+Semantic-anchor transfer,76,16,18,2,"(16, 18)",0.9753,45,True,False,55.113
+No transferred memory,77,33,18,1,"(33, 18)",0.9877,0,False,True,44.0
+Absolute-cell transfer,77,33,18,1,"(33, 18)",0.9877,45,False,True,44.0
+Semantic-anchor transfer,77,33,18,1,"(33, 18)",0.9877,45,True,False,52.284
+No transferred memory,78,16,15,0,"(16, 15)",1.0,0,False,True,44.0
+Absolute-cell transfer,78,16,15,0,"(16, 15)",1.0,45,False,True,44.0
+Semantic-anchor transfer,78,16,15,0,"(16, 15)",1.0,45,True,False,51.456
+No transferred memory,79,15,18,2,"(15, 18)",0.9753,0,False,True,44.0
+Absolute-cell transfer,79,15,18,2,"(15, 18)",0.9753,45,False,True,44.0
+Semantic-anchor transfer,79,15,18,2,"(15, 18)",0.9753,45,True,False,54.284
+No transferred memory,80,35,15,2,"(35, 15)",0.9753,0,False,True,44.0
+Absolute-cell transfer,80,35,15,2,"(35, 15)",0.9753,45,False,True,44.0
+Semantic-anchor transfer,80,35,15,2,"(35, 15)",0.9753,45,True,False,49.799
+No transferred memory,81,35,15,0,"(35, 15)",1.0,0,False,True,44.0
+Absolute-cell transfer,81,35,15,0,"(35, 15)",1.0,45,False,True,44.0
+Semantic-anchor transfer,81,35,15,0,"(35, 15)",1.0,45,True,False,49.799
+No transferred memory,82,15,6,2,"(15, 6)",0.9753,0,False,True,44.0
+Absolute-cell transfer,82,15,6,2,"(15, 6)",0.9753,45,False,True,45.657
+Semantic-anchor transfer,82,15,6,2,"(15, 6)",0.9753,45,True,False,55.698
+No transferred memory,83,35,12,2,"(35, 12)",0.9753,0,False,True,44.0
+Absolute-cell transfer,83,35,12,2,"(35, 12)",0.9753,45,False,True,44.0
+Semantic-anchor transfer,83,35,12,2,"(35, 12)",0.9753,45,True,False,48.971
+No transferred memory,84,33,6,2,"(33, 6)",0.9753,0,False,True,44.0
+Absolute-cell transfer,84,33,6,2,"(33, 6)",0.9753,45,False,True,45.657
+Semantic-anchor transfer,84,33,6,2,"(33, 6)",0.9753,45,True,False,54.77
+No transferred memory,85,35,12,2,"(35, 12)",0.9753,0,False,True,44.0
+Absolute-cell transfer,85,35,12,2,"(35, 12)",0.9753,45,False,True,44.0
+Semantic-anchor transfer,85,35,12,2,"(35, 12)",0.9753,45,True,False,50.627
+No transferred memory,86,35,18,0,"(35, 18)",1.0,0,False,True,44.0
+Absolute-cell transfer,86,35,18,0,"(35, 18)",1.0,45,False,True,44.0
+Semantic-anchor transfer,86,35,18,0,"(35, 18)",1.0,45,True,False,53.113
+No transferred memory,87,14,9,1,"(14, 9)",0.9877,0,False,True,44.0
+Absolute-cell transfer,87,14,9,1,"(14, 9)",0.9877,45,False,True,44.828
+Semantic-anchor transfer,87,14,9,1,"(14, 9)",0.9877,45,True,False,54.87
+No transferred memory,88,35,18,0,"(35, 18)",1.0,0,False,True,44.0
+Absolute-cell transfer,88,35,18,0,"(35, 18)",1.0,45,False,True,44.0
+Semantic-anchor transfer,88,35,18,0,"(35, 18)",1.0,45,True,False,52.284
+No transferred memory,89,16,12,0,"(16, 12)",1.0,0,False,True,44.0
+Absolute-cell transfer,89,16,12,0,"(16, 12)",1.0,45,False,True,44.0
+Semantic-anchor transfer,89,16,12,0,"(16, 12)",1.0,45,True,False,50.627
+No transferred memory,90,14,9,2,"(14, 9)",0.9753,0,False,True,44.0
+Absolute-cell transfer,90,14,9,2,"(14, 9)",0.9753,45,False,True,44.828
+Semantic-anchor transfer,90,14,9,2,"(14, 9)",0.9753,45,True,False,53.456
+No transferred memory,91,14,6,2,"(14, 6)",0.9753,0,False,True,44.0
+Absolute-cell transfer,91,14,6,2,"(14, 6)",0.9753,45,False,True,45.657
+Semantic-anchor transfer,91,14,6,2,"(14, 6)",0.9753,45,True,False,57.698
+No transferred memory,92,35,15,0,"(35, 15)",1.0,0,False,True,44.0
+Absolute-cell transfer,92,35,15,0,"(35, 15)",1.0,45,False,True,44.0
+Semantic-anchor transfer,92,35,15,0,"(35, 15)",1.0,45,True,False,49.799
+No transferred memory,93,16,18,0,"(16, 18)",1.0,0,False,True,44.0
+Absolute-cell transfer,93,16,18,0,"(16, 18)",1.0,45,False,True,44.0
+Semantic-anchor transfer,93,16,18,0,"(16, 18)",1.0,45,True,False,53.698
+No transferred memory,94,15,18,2,"(15, 18)",0.9753,0,False,True,44.0
+Absolute-cell transfer,94,15,18,2,"(15, 18)",0.9753,45,False,True,44.0
+Semantic-anchor transfer,94,15,18,2,"(15, 18)",0.9753,45,True,False,55.698
+No transferred memory,95,35,9,0,"(35, 9)",1.0,0,False,True,44.0
+Absolute-cell transfer,95,35,9,0,"(35, 9)",1.0,45,False,True,44.828
+Semantic-anchor transfer,95,35,9,0,"(35, 9)",1.0,45,True,False,53.113
+No transferred memory,96,16,6,2,"(16, 6)",0.9753,0,False,True,44.0
+Absolute-cell transfer,96,16,6,2,"(16, 6)",0.9753,45,False,True,45.657
+Semantic-anchor transfer,96,16,6,2,"(16, 6)",0.9753,45,True,False,55.113
+No transferred memory,97,33,12,1,"(33, 12)",0.9877,0,False,True,44.0
+Absolute-cell transfer,97,33,12,1,"(33, 12)",0.9877,45,False,True,44.0
+Semantic-anchor transfer,97,33,12,1,"(33, 12)",0.9877,45,True,False,49.799
+No transferred memory,98,14,12,2,"(14, 12)",0.9753,0,False,True,44.0
+Absolute-cell transfer,98,14,12,2,"(14, 12)",0.9753,45,False,True,44.0
+Semantic-anchor transfer,98,14,12,2,"(14, 12)",0.9753,45,True,False,48.971
+No transferred memory,99,15,12,1,"(15, 12)",0.9877,0,False,True,44.0
+Absolute-cell transfer,99,15,12,1,"(15, 12)",0.9877,45,False,True,44.0
+Semantic-anchor transfer,99,15,12,1,"(15, 12)",0.9877,45,True,False,49.799

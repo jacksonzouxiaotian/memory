@@ -1,0 +1,13 @@
+TrajectoryType,Strategy,Trials,Successes,SuccessRate,SuccessCI95Low,SuccessCI95High,MeanPredictionMAE,MeanRiskRadius,MeanReplans,MeanWaitSteps,MeanDecisionWaits,MeanDecisionReroutes,MeanTotalCost
+turn,Constant velocity legacy,60,49,0.8167,0.7008,0.8944,1.3272,1.6,2.35,6.6667,0.0,0.0,169.9243
+turn,Constant velocity cost-aware,60,60,1.0,0.9398,1.0,1.3685,1.6,5.55,3.7833,3.7833,5.55,137.9366
+turn,Calibrated uncertainty legacy,60,33,0.55,0.4249,0.6691,1.3234,1.7127,2.4333,5.9,0.0,0.0,211.4938
+turn,Calibrated uncertainty cost-aware,60,60,1.0,0.9398,1.0,1.2984,1.7124,5.95,5.65,5.65,5.95,151.8542
+sudden-acceleration,Constant velocity legacy,60,53,0.8833,0.7782,0.9423,1.3208,1.6,1.75,5.1167,0.0,0.0,140.7751
+sudden-acceleration,Constant velocity cost-aware,60,60,1.0,0.9398,1.0,1.3488,1.6,4.1333,3.3667,3.3667,4.1333,119.3254
+sudden-acceleration,Calibrated uncertainty legacy,60,54,0.9,0.7985,0.9534,1.1377,1.3215,2.1667,5.3333,0.0,0.0,139.2688
+sudden-acceleration,Calibrated uncertainty cost-aware,60,60,1.0,0.9398,1.0,1.1289,1.3214,3.9,3.3167,3.3167,3.9,118.8267
+stop-and-go,Constant velocity legacy,60,52,0.8667,0.7583,0.9309,1.3267,1.6,2.8667,7.05,0.0,0.0,158.7969
+stop-and-go,Constant velocity cost-aware,60,60,1.0,0.9398,1.0,1.3751,1.6,6.55,4.0,4.0,6.55,145.7338
+stop-and-go,Calibrated uncertainty legacy,60,48,0.8,0.6822,0.8817,1.1594,1.7215,3.2667,8.2,0.0,0.0,182.9368
+stop-and-go,Calibrated uncertainty cost-aware,60,60,1.0,0.9398,1.0,1.1538,1.7213,6.4667,4.45,4.45,6.4667,149.3923

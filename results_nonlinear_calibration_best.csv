@@ -1,0 +1,4 @@
+TrajectoryType,ProcessNoise,BaseRiskRadius,UncertaintyScale,Trials,Successes,SuccessRate,MeanPredictionMAE,MeanRiskRadius,MeanReplans,MeanWaitSteps,MeanTotalCost
+turn,0.03,1.7,0.01,15,13,0.8667,1.3201,1.7126,2.2,5.8,150.3439
+sudden-acceleration,0.01,1.3,0.02,15,13,0.8667,1.1303,1.3216,1.7333,4.8667,145.0039
+stop-and-go,0.01,1.7,0.02,15,10,0.6667,1.1635,1.7226,1.5333,4.2,159.8535

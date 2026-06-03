@@ -1,0 +1,13 @@
+TrajectoryType,Strategy,Trials,Successes,SuccessRate,SuccessCI95Low,SuccessCI95High,MeanReplans,MeanWaitSteps,MeanPathLength,MeanPredictionMAE,MeanRiskRadius,MeanTotalCost
+turn,Reactive current occupancy,60,17,0.2833,0.1851,0.4077,2.0833,2.0833,43.3246,1.3351,1.6,231.9912
+turn,Constant velocity memory,60,43,0.7167,0.5923,0.8149,2.4167,7.0167,84.2066,1.3114,1.6,185.34
+turn,Kalman fixed-radius memory,60,34,0.5667,0.441,0.6843,2.4333,6.5,75.0136,1.3041,1.6,210.6803
+turn,Kalman uncertainty-aware memory,60,32,0.5333,0.4089,0.6537,2.6,6.8333,72.6096,1.2914,1.5255,218.1096
+sudden-acceleration,Reactive current occupancy,60,18,0.3,0.199,0.4251,1.8167,1.8167,39.1111,1.3356,1.6,221.6444
+sudden-acceleration,Constant velocity memory,60,51,0.85,0.7389,0.919,1.75,5.2833,87.9223,1.3196,1.6,148.5223
+sudden-acceleration,Kalman fixed-radius memory,60,38,0.6333,0.5068,0.7438,1.65,5.0667,75.4336,1.3166,1.6,186.8836
+sudden-acceleration,Kalman uncertainty-aware memory,60,41,0.6833,0.5577,0.7869,2.0,5.7,78.3948,1.3131,1.5253,181.4948
+stop-and-go,Reactive current occupancy,60,31,0.5167,0.3931,0.6383,3.2833,3.2833,49.8504,1.3247,1.6,192.1171
+stop-and-go,Constant velocity memory,60,48,0.8,0.6822,0.8817,2.6667,6.7667,79.6702,1.3077,1.6,161.3036
+stop-and-go,Kalman fixed-radius memory,60,34,0.5667,0.441,0.6843,2.7667,6.5833,77.2768,1.3035,1.6,214.8601
+stop-and-go,Kalman uncertainty-aware memory,60,36,0.6,0.4737,0.7143,3.5833,7.8167,81.7982,1.2947,1.5253,219.1649

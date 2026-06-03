@@ -1,0 +1,5 @@
+Strategy,Trials,Successes,SuccessRate,SuccessCI95Low,SuccessCI95High,MeanReplans,MeanWaitSteps,MeanPathLength,MeanTotalCost
+Static plan,300,0,0.0,0.0,0.0126,0.0,0.0,21.15,261.15
+Wait-only,300,300,1.0,0.9874,1.0,0.0,23.15,53.0,122.45
+Reactive reroute,300,300,1.0,0.9874,1.0,1.0,0.0,97.342,102.342
+Memory-aware wait-or-reroute,300,300,1.0,0.9874,1.0,0.6,0.27,85.9326,89.7426

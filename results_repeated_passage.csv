@@ -1,0 +1,11 @@
+Variant,Task,Attempt,Planned,Executable,UsedShortPassage,Length,RememberedCells
+A* repeated baseline,1,1,True,False,True,39.0,0
+A* repeated baseline,1,2,True,False,True,39.0,0
+A* repeated baseline,2,1,True,False,True,39.0,0
+A* repeated baseline,2,2,True,False,True,39.0,0
+A* repeated baseline,3,1,True,False,True,39.0,0
+A* repeated baseline,3,2,True,False,True,39.0,0
+Memory-aware replanning,1,1,True,False,True,39.0,0
+Memory-aware replanning,1,2,True,True,False,46.456,45
+Memory-aware replanning,2,1,True,True,False,46.456,45
+Memory-aware replanning,3,1,True,True,False,46.456,45

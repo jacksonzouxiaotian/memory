@@ -1,0 +1,4 @@
+Variant,Trials,ExecutableTasks,ExecutableRate,ExecutableCI95Low,ExecutableCI95High,FailedPassageSelections,MeanTransferredCells,MeanMatchSimilarity
+No transferred memory,100,0,0.0,0.0,0.037,100,0.0,0.9887
+Absolute-cell transfer,100,0,0.0,0.0,0.037,100,45.0,0.9887
+Semantic-anchor transfer,100,100,1.0,0.963,1.0,0,45.0,0.9887

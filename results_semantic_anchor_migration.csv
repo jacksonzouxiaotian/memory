@@ -1,0 +1,10 @@
+Map,Variant,SourceAnchor,MatchedAnchor,MatchSimilarity,TransferredCells,Planned,Executable,UsedTargetFailedPassage,Length
+translated-x,No transferred memory,"(24, 7)","(33, 7)",1.0,0,True,False,True,39.0
+translated-x,Absolute-cell transfer,"(24, 7)","(33, 7)",1.0,45,True,False,True,41.485
+translated-x,Semantic-anchor transfer,"(24, 7)","(33, 7)",1.0,45,True,True,False,46.456
+translated-xy,No transferred memory,"(24, 7)","(20, 11)",1.0,0,True,False,True,39.0
+translated-xy,Absolute-cell transfer,"(24, 7)","(20, 11)",1.0,45,True,False,True,39.0
+translated-xy,Semantic-anchor transfer,"(24, 7)","(20, 11)",1.0,45,True,True,False,43.971
+translated-xy-noisy,No transferred memory,"(24, 7)","(31, 13)",0.9753,0,True,False,True,39.0
+translated-xy-noisy,Absolute-cell transfer,"(24, 7)","(31, 13)",0.9753,45,True,False,True,39.0
+translated-xy-noisy,Semantic-anchor transfer,"(24, 7)","(31, 13)",0.9753,45,True,True,False,43.142

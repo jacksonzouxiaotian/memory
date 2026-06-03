@@ -1,0 +1,8 @@
+Stage,RecoveryTask,Executable,UsedShortPassage,Length,MemoryStrength
+learn-failure,0,False,True,39.0,0.0
+avoid-known-failure,0,True,False,47.284,1
+reopened,1,True,False,47.284,0.75
+reopened,2,True,False,47.284,0.5
+reopened,3,True,False,47.284,0.25
+reopened,4,True,True,39.0,0.0
+reopened,5,True,True,39.0,0.0

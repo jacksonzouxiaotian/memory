@@ -1,0 +1,4 @@
+Variant,Tasks,Attempts,ExecutableTasks,ExecutableRate,ExecutableCI95Low,ExecutableCI95High,FailedShortPassageAttempts,MeanAttemptsPerTask
+A* baseline,150,300,0,0.0,0.0,0.025,300,2.0
+Clearance-aware A*,150,300,0,0.0,0.0,0.025,300,2.0
+Memory-aware,150,180,150,1.0,0.975,1.0,30,1.2

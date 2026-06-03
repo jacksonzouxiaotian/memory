@@ -1,0 +1,9 @@
+Predictor,PositionNoise,Trials,Successes,SuccessRate,SuccessCI95Low,SuccessCI95High,MeanPredictionMAE,MeanReplans,MeanWaitSteps,MeanTotalCost
+Constant velocity,0.25,60,53,0.8833,0.7782,0.9423,0.461,1.8833,5.6167,143.0546
+Constant velocity,0.75,60,48,0.8,0.6822,0.8817,1.3261,1.9833,5.7,159.7028
+Constant velocity,1.5,60,31,0.5167,0.3931,0.6383,2.6283,2.15,5.55,207.4482
+Constant velocity,2.5,60,23,0.3833,0.2709,0.5098,4.348,2.8833,6.6667,243.577
+Kalman acceleration,0.25,60,48,0.8,0.6822,0.8817,0.5603,1.8167,5.7,160.0145
+Kalman acceleration,0.75,60,35,0.5833,0.4573,0.6994,1.2708,2.2667,6.3,202.6188
+Kalman acceleration,1.5,60,27,0.45,0.3309,0.5751,2.1842,2.5667,6.85,237.2812
+Kalman acceleration,2.5,60,24,0.4,0.2857,0.5263,3.3763,2.6333,6.55,245.2927

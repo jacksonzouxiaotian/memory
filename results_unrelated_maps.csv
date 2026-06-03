@@ -1,0 +1,7 @@
+Map,Attempt,Executable,UsedCurrentShortPassage,Length,RememberedCellsBeforeUpdate
+map-a,1,False,True,39.0,0
+map-a,2,True,False,55.326,45
+map-b,1,False,True,39.0,45
+map-b,2,True,False,49.77,90
+map-c,1,False,True,39.0,90
+map-c,2,True,False,48.941,135

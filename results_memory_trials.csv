@@ -1,0 +1,481 @@
+Variant,Batch,Task,Attempt,Start,Goal,SafeOpeningStart,Planned,Executable,UsedShortPassage,Length,RememberedCells
+A* repeated baseline,0,1,1,"(5, 8)","(44, 8)",15,True,False,True,39.828,0
+A* repeated baseline,0,1,2,"(5, 8)","(44, 8)",15,True,False,True,39.828,0
+A* repeated baseline,0,2,1,"(5, 7)","(44, 9)",16,True,False,True,39.828,0
+A* repeated baseline,0,2,2,"(5, 7)","(44, 9)",16,True,False,True,39.828,0
+A* repeated baseline,0,3,1,"(5, 8)","(44, 7)",16,True,False,True,39.414,0
+A* repeated baseline,0,3,2,"(5, 8)","(44, 7)",16,True,False,True,39.414,0
+A* repeated baseline,0,4,1,"(5, 7)","(44, 9)",15,True,False,True,39.828,0
+A* repeated baseline,0,4,2,"(5, 7)","(44, 9)",15,True,False,True,39.828,0
+A* repeated baseline,0,5,1,"(5, 9)","(44, 6)",16,True,False,True,40.243,0
+A* repeated baseline,0,5,2,"(5, 9)","(44, 6)",16,True,False,True,40.243,0
+A* repeated baseline,1,1,1,"(5, 6)","(44, 5)",17,True,False,True,40.243,0
+A* repeated baseline,1,1,2,"(5, 6)","(44, 5)",17,True,False,True,40.243,0
+A* repeated baseline,1,2,1,"(5, 7)","(44, 9)",17,True,False,True,39.828,0
+A* repeated baseline,1,2,2,"(5, 7)","(44, 9)",17,True,False,True,39.828,0
+A* repeated baseline,1,3,1,"(5, 9)","(44, 6)",16,True,False,True,40.243,0
+A* repeated baseline,1,3,2,"(5, 9)","(44, 6)",16,True,False,True,40.243,0
+A* repeated baseline,1,4,1,"(5, 5)","(44, 5)",17,True,False,True,40.657,0
+A* repeated baseline,1,4,2,"(5, 5)","(44, 5)",17,True,False,True,40.657,0
+A* repeated baseline,1,5,1,"(5, 7)","(44, 8)",17,True,False,True,39.414,0
+A* repeated baseline,1,5,2,"(5, 7)","(44, 8)",17,True,False,True,39.414,0
+A* repeated baseline,2,1,1,"(5, 5)","(44, 7)",16,True,False,True,39.828,0
+A* repeated baseline,2,1,2,"(5, 5)","(44, 7)",16,True,False,True,39.828,0
+A* repeated baseline,2,2,1,"(5, 7)","(44, 9)",17,True,False,True,39.828,0
+A* repeated baseline,2,2,2,"(5, 7)","(44, 9)",17,True,False,True,39.828,0
+A* repeated baseline,2,3,1,"(5, 6)","(44, 9)",16,True,False,True,40.243,0
+A* repeated baseline,2,3,2,"(5, 6)","(44, 9)",16,True,False,True,40.243,0
+A* repeated baseline,2,4,1,"(5, 8)","(44, 9)",16,True,False,True,40.243,0
+A* repeated baseline,2,4,2,"(5, 8)","(44, 9)",16,True,False,True,40.243,0
+A* repeated baseline,2,5,1,"(5, 5)","(44, 9)",15,True,False,True,40.657,0
+A* repeated baseline,2,5,2,"(5, 5)","(44, 9)",15,True,False,True,40.657,0
+A* repeated baseline,3,1,1,"(5, 5)","(44, 8)",17,True,False,True,40.243,0
+A* repeated baseline,3,1,2,"(5, 5)","(44, 8)",17,True,False,True,40.243,0
+A* repeated baseline,3,2,1,"(5, 5)","(44, 9)",16,True,False,True,40.657,0
+A* repeated baseline,3,2,2,"(5, 5)","(44, 9)",16,True,False,True,40.657,0
+A* repeated baseline,3,3,1,"(5, 7)","(44, 6)",17,True,False,True,39.414,0
+A* repeated baseline,3,3,2,"(5, 7)","(44, 6)",17,True,False,True,39.414,0
+A* repeated baseline,3,4,1,"(5, 7)","(44, 5)",15,True,False,True,39.828,0
+A* repeated baseline,3,4,2,"(5, 7)","(44, 5)",15,True,False,True,39.828,0
+A* repeated baseline,3,5,1,"(5, 9)","(44, 6)",15,True,False,True,40.243,0
+A* repeated baseline,3,5,2,"(5, 9)","(44, 6)",15,True,False,True,40.243,0
+A* repeated baseline,4,1,1,"(5, 6)","(44, 9)",16,True,False,True,40.243,0
+A* repeated baseline,4,1,2,"(5, 6)","(44, 9)",16,True,False,True,40.243,0
+A* repeated baseline,4,2,1,"(5, 5)","(44, 5)",16,True,False,True,40.657,0
+A* repeated baseline,4,2,2,"(5, 5)","(44, 5)",16,True,False,True,40.657,0
+A* repeated baseline,4,3,1,"(5, 9)","(44, 8)",15,True,False,True,40.243,0
+A* repeated baseline,4,3,2,"(5, 9)","(44, 8)",15,True,False,True,40.243,0
+A* repeated baseline,4,4,1,"(5, 7)","(44, 9)",16,True,False,True,39.828,0
+A* repeated baseline,4,4,2,"(5, 7)","(44, 9)",16,True,False,True,39.828,0
+A* repeated baseline,4,5,1,"(5, 5)","(44, 9)",16,True,False,True,40.657,0
+A* repeated baseline,4,5,2,"(5, 5)","(44, 9)",16,True,False,True,40.657,0
+A* repeated baseline,5,1,1,"(5, 9)","(44, 6)",17,True,False,True,40.243,0
+A* repeated baseline,5,1,2,"(5, 9)","(44, 6)",17,True,False,True,40.243,0
+A* repeated baseline,5,2,1,"(5, 9)","(44, 9)",16,True,False,True,40.657,0
+A* repeated baseline,5,2,2,"(5, 9)","(44, 9)",16,True,False,True,40.657,0
+A* repeated baseline,5,3,1,"(5, 8)","(44, 5)",17,True,False,True,40.243,0
+A* repeated baseline,5,3,2,"(5, 8)","(44, 5)",17,True,False,True,40.243,0
+A* repeated baseline,5,4,1,"(5, 8)","(44, 7)",17,True,False,True,39.414,0
+A* repeated baseline,5,4,2,"(5, 8)","(44, 7)",17,True,False,True,39.414,0
+A* repeated baseline,5,5,1,"(5, 6)","(44, 7)",15,True,False,True,39.414,0
+A* repeated baseline,5,5,2,"(5, 6)","(44, 7)",15,True,False,True,39.414,0
+A* repeated baseline,6,1,1,"(5, 6)","(44, 6)",15,True,False,True,39.828,0
+A* repeated baseline,6,1,2,"(5, 6)","(44, 6)",15,True,False,True,39.828,0
+A* repeated baseline,6,2,1,"(5, 9)","(44, 7)",16,True,False,True,39.828,0
+A* repeated baseline,6,2,2,"(5, 9)","(44, 7)",16,True,False,True,39.828,0
+A* repeated baseline,6,3,1,"(5, 5)","(44, 5)",17,True,False,True,40.657,0
+A* repeated baseline,6,3,2,"(5, 5)","(44, 5)",17,True,False,True,40.657,0
+A* repeated baseline,6,4,1,"(5, 6)","(44, 6)",15,True,False,True,39.828,0
+A* repeated baseline,6,4,2,"(5, 6)","(44, 6)",15,True,False,True,39.828,0
+A* repeated baseline,6,5,1,"(5, 5)","(44, 9)",17,True,False,True,40.657,0
+A* repeated baseline,6,5,2,"(5, 5)","(44, 9)",17,True,False,True,40.657,0
+A* repeated baseline,7,1,1,"(5, 8)","(44, 9)",16,True,False,True,40.243,0
+A* repeated baseline,7,1,2,"(5, 8)","(44, 9)",16,True,False,True,40.243,0
+A* repeated baseline,7,2,1,"(5, 9)","(44, 6)",15,True,False,True,40.243,0
+A* repeated baseline,7,2,2,"(5, 9)","(44, 6)",15,True,False,True,40.243,0
+A* repeated baseline,7,3,1,"(5, 9)","(44, 8)",17,True,False,True,40.243,0
+A* repeated baseline,7,3,2,"(5, 9)","(44, 8)",17,True,False,True,40.243,0
+A* repeated baseline,7,4,1,"(5, 7)","(44, 8)",16,True,False,True,39.414,0
+A* repeated baseline,7,4,2,"(5, 7)","(44, 8)",16,True,False,True,39.414,0
+A* repeated baseline,7,5,1,"(5, 7)","(44, 5)",16,True,False,True,39.828,0
+A* repeated baseline,7,5,2,"(5, 7)","(44, 5)",16,True,False,True,39.828,0
+A* repeated baseline,8,1,1,"(5, 9)","(44, 5)",16,True,False,True,40.657,0
+A* repeated baseline,8,1,2,"(5, 9)","(44, 5)",16,True,False,True,40.657,0
+A* repeated baseline,8,2,1,"(5, 9)","(44, 7)",15,True,False,True,39.828,0
+A* repeated baseline,8,2,2,"(5, 9)","(44, 7)",15,True,False,True,39.828,0
+A* repeated baseline,8,3,1,"(5, 6)","(44, 5)",17,True,False,True,40.243,0
+A* repeated baseline,8,3,2,"(5, 6)","(44, 5)",17,True,False,True,40.243,0
+A* repeated baseline,8,4,1,"(5, 7)","(44, 5)",17,True,False,True,39.828,0
+A* repeated baseline,8,4,2,"(5, 7)","(44, 5)",17,True,False,True,39.828,0
+A* repeated baseline,8,5,1,"(5, 6)","(44, 7)",15,True,False,True,39.414,0
+A* repeated baseline,8,5,2,"(5, 6)","(44, 7)",15,True,False,True,39.414,0
+A* repeated baseline,9,1,1,"(5, 7)","(44, 8)",15,True,False,True,39.414,0
+A* repeated baseline,9,1,2,"(5, 7)","(44, 8)",15,True,False,True,39.414,0
+A* repeated baseline,9,2,1,"(5, 5)","(44, 6)",17,True,False,True,40.243,0
+A* repeated baseline,9,2,2,"(5, 5)","(44, 6)",17,True,False,True,40.243,0
+A* repeated baseline,9,3,1,"(5, 6)","(44, 5)",17,True,False,True,40.243,0
+A* repeated baseline,9,3,2,"(5, 6)","(44, 5)",17,True,False,True,40.243,0
+A* repeated baseline,9,4,1,"(5, 9)","(44, 9)",17,True,False,True,40.657,0
+A* repeated baseline,9,4,2,"(5, 9)","(44, 9)",17,True,False,True,40.657,0
+A* repeated baseline,9,5,1,"(5, 5)","(44, 5)",15,True,False,True,40.657,0
+A* repeated baseline,9,5,2,"(5, 5)","(44, 5)",15,True,False,True,40.657,0
+A* repeated baseline,10,1,1,"(5, 6)","(44, 9)",17,True,False,True,40.243,0
+A* repeated baseline,10,1,2,"(5, 6)","(44, 9)",17,True,False,True,40.243,0
+A* repeated baseline,10,2,1,"(5, 5)","(44, 8)",15,True,False,True,40.243,0
+A* repeated baseline,10,2,2,"(5, 5)","(44, 8)",15,True,False,True,40.243,0
+A* repeated baseline,10,3,1,"(5, 7)","(44, 5)",15,True,False,True,39.828,0
+A* repeated baseline,10,3,2,"(5, 7)","(44, 5)",15,True,False,True,39.828,0
+A* repeated baseline,10,4,1,"(5, 9)","(44, 5)",15,True,False,True,40.657,0
+A* repeated baseline,10,4,2,"(5, 9)","(44, 5)",15,True,False,True,40.657,0
+A* repeated baseline,10,5,1,"(5, 6)","(44, 5)",16,True,False,True,40.243,0
+A* repeated baseline,10,5,2,"(5, 6)","(44, 5)",16,True,False,True,40.243,0
+A* repeated baseline,11,1,1,"(5, 6)","(44, 5)",17,True,False,True,40.243,0
+A* repeated baseline,11,1,2,"(5, 6)","(44, 5)",17,True,False,True,40.243,0
+A* repeated baseline,11,2,1,"(5, 5)","(44, 9)",16,True,False,True,40.657,0
+A* repeated baseline,11,2,2,"(5, 5)","(44, 9)",16,True,False,True,40.657,0
+A* repeated baseline,11,3,1,"(5, 9)","(44, 5)",16,True,False,True,40.657,0
+A* repeated baseline,11,3,2,"(5, 9)","(44, 5)",16,True,False,True,40.657,0
+A* repeated baseline,11,4,1,"(5, 5)","(44, 6)",15,True,False,True,40.243,0
+A* repeated baseline,11,4,2,"(5, 5)","(44, 6)",15,True,False,True,40.243,0
+A* repeated baseline,11,5,1,"(5, 7)","(44, 7)",16,True,False,True,39.0,0
+A* repeated baseline,11,5,2,"(5, 7)","(44, 7)",16,True,False,True,39.0,0
+A* repeated baseline,12,1,1,"(5, 6)","(44, 5)",17,True,False,True,40.243,0
+A* repeated baseline,12,1,2,"(5, 6)","(44, 5)",17,True,False,True,40.243,0
+A* repeated baseline,12,2,1,"(5, 8)","(44, 5)",17,True,False,True,40.243,0
+A* repeated baseline,12,2,2,"(5, 8)","(44, 5)",17,True,False,True,40.243,0
+A* repeated baseline,12,3,1,"(5, 5)","(44, 8)",15,True,False,True,40.243,0
+A* repeated baseline,12,3,2,"(5, 5)","(44, 8)",15,True,False,True,40.243,0
+A* repeated baseline,12,4,1,"(5, 7)","(44, 7)",17,True,False,True,39.0,0
+A* repeated baseline,12,4,2,"(5, 7)","(44, 7)",17,True,False,True,39.0,0
+A* repeated baseline,12,5,1,"(5, 8)","(44, 9)",15,True,False,True,40.243,0
+A* repeated baseline,12,5,2,"(5, 8)","(44, 9)",15,True,False,True,40.243,0
+A* repeated baseline,13,1,1,"(5, 6)","(44, 5)",17,True,False,True,40.243,0
+A* repeated baseline,13,1,2,"(5, 6)","(44, 5)",17,True,False,True,40.243,0
+A* repeated baseline,13,2,1,"(5, 6)","(44, 6)",16,True,False,True,39.828,0
+A* repeated baseline,13,2,2,"(5, 6)","(44, 6)",16,True,False,True,39.828,0
+A* repeated baseline,13,3,1,"(5, 9)","(44, 7)",15,True,False,True,39.828,0
+A* repeated baseline,13,3,2,"(5, 9)","(44, 7)",15,True,False,True,39.828,0
+A* repeated baseline,13,4,1,"(5, 9)","(44, 8)",17,True,False,True,40.243,0
+A* repeated baseline,13,4,2,"(5, 9)","(44, 8)",17,True,False,True,40.243,0
+A* repeated baseline,13,5,1,"(5, 6)","(44, 5)",16,True,False,True,40.243,0
+A* repeated baseline,13,5,2,"(5, 6)","(44, 5)",16,True,False,True,40.243,0
+A* repeated baseline,14,1,1,"(5, 8)","(44, 9)",17,True,False,True,40.243,0
+A* repeated baseline,14,1,2,"(5, 8)","(44, 9)",17,True,False,True,40.243,0
+A* repeated baseline,14,2,1,"(5, 7)","(44, 7)",16,True,False,True,39.0,0
+A* repeated baseline,14,2,2,"(5, 7)","(44, 7)",16,True,False,True,39.0,0
+A* repeated baseline,14,3,1,"(5, 7)","(44, 6)",17,True,False,True,39.414,0
+A* repeated baseline,14,3,2,"(5, 7)","(44, 6)",17,True,False,True,39.414,0
+A* repeated baseline,14,4,1,"(5, 5)","(44, 8)",17,True,False,True,40.243,0
+A* repeated baseline,14,4,2,"(5, 5)","(44, 8)",17,True,False,True,40.243,0
+A* repeated baseline,14,5,1,"(5, 5)","(44, 7)",17,True,False,True,39.828,0
+A* repeated baseline,14,5,2,"(5, 5)","(44, 7)",17,True,False,True,39.828,0
+A* repeated baseline,15,1,1,"(5, 5)","(44, 9)",16,True,False,True,40.657,0
+A* repeated baseline,15,1,2,"(5, 5)","(44, 9)",16,True,False,True,40.657,0
+A* repeated baseline,15,2,1,"(5, 6)","(44, 6)",16,True,False,True,39.828,0
+A* repeated baseline,15,2,2,"(5, 6)","(44, 6)",16,True,False,True,39.828,0
+A* repeated baseline,15,3,1,"(5, 7)","(44, 9)",16,True,False,True,39.828,0
+A* repeated baseline,15,3,2,"(5, 7)","(44, 9)",16,True,False,True,39.828,0
+A* repeated baseline,15,4,1,"(5, 7)","(44, 9)",17,True,False,True,39.828,0
+A* repeated baseline,15,4,2,"(5, 7)","(44, 9)",17,True,False,True,39.828,0
+A* repeated baseline,15,5,1,"(5, 9)","(44, 6)",17,True,False,True,40.243,0
+A* repeated baseline,15,5,2,"(5, 9)","(44, 6)",17,True,False,True,40.243,0
+A* repeated baseline,16,1,1,"(5, 7)","(44, 8)",17,True,False,True,39.414,0
+A* repeated baseline,16,1,2,"(5, 7)","(44, 8)",17,True,False,True,39.414,0
+A* repeated baseline,16,2,1,"(5, 8)","(44, 5)",15,True,False,True,40.243,0
+A* repeated baseline,16,2,2,"(5, 8)","(44, 5)",15,True,False,True,40.243,0
+A* repeated baseline,16,3,1,"(5, 9)","(44, 6)",17,True,False,True,40.243,0
+A* repeated baseline,16,3,2,"(5, 9)","(44, 6)",17,True,False,True,40.243,0
+A* repeated baseline,16,4,1,"(5, 7)","(44, 6)",15,True,False,True,39.414,0
+A* repeated baseline,16,4,2,"(5, 7)","(44, 6)",15,True,False,True,39.414,0
+A* repeated baseline,16,5,1,"(5, 6)","(44, 8)",16,True,False,True,39.828,0
+A* repeated baseline,16,5,2,"(5, 6)","(44, 8)",16,True,False,True,39.828,0
+A* repeated baseline,17,1,1,"(5, 9)","(44, 8)",15,True,False,True,40.243,0
+A* repeated baseline,17,1,2,"(5, 9)","(44, 8)",15,True,False,True,40.243,0
+A* repeated baseline,17,2,1,"(5, 8)","(44, 9)",16,True,False,True,40.243,0
+A* repeated baseline,17,2,2,"(5, 8)","(44, 9)",16,True,False,True,40.243,0
+A* repeated baseline,17,3,1,"(5, 5)","(44, 6)",16,True,False,True,40.243,0
+A* repeated baseline,17,3,2,"(5, 5)","(44, 6)",16,True,False,True,40.243,0
+A* repeated baseline,17,4,1,"(5, 5)","(44, 7)",17,True,False,True,39.828,0
+A* repeated baseline,17,4,2,"(5, 5)","(44, 7)",17,True,False,True,39.828,0
+A* repeated baseline,17,5,1,"(5, 6)","(44, 8)",17,True,False,True,39.828,0
+A* repeated baseline,17,5,2,"(5, 6)","(44, 8)",17,True,False,True,39.828,0
+A* repeated baseline,18,1,1,"(5, 8)","(44, 9)",17,True,False,True,40.243,0
+A* repeated baseline,18,1,2,"(5, 8)","(44, 9)",17,True,False,True,40.243,0
+A* repeated baseline,18,2,1,"(5, 5)","(44, 5)",16,True,False,True,40.657,0
+A* repeated baseline,18,2,2,"(5, 5)","(44, 5)",16,True,False,True,40.657,0
+A* repeated baseline,18,3,1,"(5, 7)","(44, 7)",16,True,False,True,39.0,0
+A* repeated baseline,18,3,2,"(5, 7)","(44, 7)",16,True,False,True,39.0,0
+A* repeated baseline,18,4,1,"(5, 5)","(44, 8)",15,True,False,True,40.243,0
+A* repeated baseline,18,4,2,"(5, 5)","(44, 8)",15,True,False,True,40.243,0
+A* repeated baseline,18,5,1,"(5, 9)","(44, 5)",17,True,False,True,40.657,0
+A* repeated baseline,18,5,2,"(5, 9)","(44, 5)",17,True,False,True,40.657,0
+A* repeated baseline,19,1,1,"(5, 6)","(44, 5)",16,True,False,True,40.243,0
+A* repeated baseline,19,1,2,"(5, 6)","(44, 5)",16,True,False,True,40.243,0
+A* repeated baseline,19,2,1,"(5, 8)","(44, 7)",15,True,False,True,39.414,0
+A* repeated baseline,19,2,2,"(5, 8)","(44, 7)",15,True,False,True,39.414,0
+A* repeated baseline,19,3,1,"(5, 6)","(44, 5)",17,True,False,True,40.243,0
+A* repeated baseline,19,3,2,"(5, 6)","(44, 5)",17,True,False,True,40.243,0
+A* repeated baseline,19,4,1,"(5, 5)","(44, 9)",17,True,False,True,40.657,0
+A* repeated baseline,19,4,2,"(5, 5)","(44, 9)",17,True,False,True,40.657,0
+A* repeated baseline,19,5,1,"(5, 5)","(44, 6)",15,True,False,True,40.243,0
+A* repeated baseline,19,5,2,"(5, 5)","(44, 6)",15,True,False,True,40.243,0
+A* repeated baseline,20,1,1,"(5, 9)","(44, 6)",16,True,False,True,40.243,0
+A* repeated baseline,20,1,2,"(5, 9)","(44, 6)",16,True,False,True,40.243,0
+A* repeated baseline,20,2,1,"(5, 7)","(44, 6)",15,True,False,True,39.414,0
+A* repeated baseline,20,2,2,"(5, 7)","(44, 6)",15,True,False,True,39.414,0
+A* repeated baseline,20,3,1,"(5, 8)","(44, 8)",17,True,False,True,39.828,0
+A* repeated baseline,20,3,2,"(5, 8)","(44, 8)",17,True,False,True,39.828,0
+A* repeated baseline,20,4,1,"(5, 5)","(44, 5)",16,True,False,True,40.657,0
+A* repeated baseline,20,4,2,"(5, 5)","(44, 5)",16,True,False,True,40.657,0
+A* repeated baseline,20,5,1,"(5, 8)","(44, 5)",16,True,False,True,40.243,0
+A* repeated baseline,20,5,2,"(5, 8)","(44, 5)",16,True,False,True,40.243,0
+A* repeated baseline,21,1,1,"(5, 6)","(44, 9)",17,True,False,True,40.243,0
+A* repeated baseline,21,1,2,"(5, 6)","(44, 9)",17,True,False,True,40.243,0
+A* repeated baseline,21,2,1,"(5, 7)","(44, 5)",15,True,False,True,39.828,0
+A* repeated baseline,21,2,2,"(5, 7)","(44, 5)",15,True,False,True,39.828,0
+A* repeated baseline,21,3,1,"(5, 7)","(44, 5)",15,True,False,True,39.828,0
+A* repeated baseline,21,3,2,"(5, 7)","(44, 5)",15,True,False,True,39.828,0
+A* repeated baseline,21,4,1,"(5, 5)","(44, 6)",17,True,False,True,40.243,0
+A* repeated baseline,21,4,2,"(5, 5)","(44, 6)",17,True,False,True,40.243,0
+A* repeated baseline,21,5,1,"(5, 7)","(44, 9)",16,True,False,True,39.828,0
+A* repeated baseline,21,5,2,"(5, 7)","(44, 9)",16,True,False,True,39.828,0
+A* repeated baseline,22,1,1,"(5, 7)","(44, 9)",15,True,False,True,39.828,0
+A* repeated baseline,22,1,2,"(5, 7)","(44, 9)",15,True,False,True,39.828,0
+A* repeated baseline,22,2,1,"(5, 9)","(44, 8)",17,True,False,True,40.243,0
+A* repeated baseline,22,2,2,"(5, 9)","(44, 8)",17,True,False,True,40.243,0
+A* repeated baseline,22,3,1,"(5, 8)","(44, 8)",16,True,False,True,39.828,0
+A* repeated baseline,22,3,2,"(5, 8)","(44, 8)",16,True,False,True,39.828,0
+A* repeated baseline,22,4,1,"(5, 9)","(44, 6)",15,True,False,True,40.243,0
+A* repeated baseline,22,4,2,"(5, 9)","(44, 6)",15,True,False,True,40.243,0
+A* repeated baseline,22,5,1,"(5, 8)","(44, 9)",16,True,False,True,40.243,0
+A* repeated baseline,22,5,2,"(5, 8)","(44, 9)",16,True,False,True,40.243,0
+A* repeated baseline,23,1,1,"(5, 5)","(44, 6)",15,True,False,True,40.243,0
+A* repeated baseline,23,1,2,"(5, 5)","(44, 6)",15,True,False,True,40.243,0
+A* repeated baseline,23,2,1,"(5, 7)","(44, 7)",16,True,False,True,39.0,0
+A* repeated baseline,23,2,2,"(5, 7)","(44, 7)",16,True,False,True,39.0,0
+A* repeated baseline,23,3,1,"(5, 7)","(44, 5)",16,True,False,True,39.828,0
+A* repeated baseline,23,3,2,"(5, 7)","(44, 5)",16,True,False,True,39.828,0
+A* repeated baseline,23,4,1,"(5, 9)","(44, 5)",15,True,False,True,40.657,0
+A* repeated baseline,23,4,2,"(5, 9)","(44, 5)",15,True,False,True,40.657,0
+A* repeated baseline,23,5,1,"(5, 7)","(44, 6)",15,True,False,True,39.414,0
+A* repeated baseline,23,5,2,"(5, 7)","(44, 6)",15,True,False,True,39.414,0
+A* repeated baseline,24,1,1,"(5, 9)","(44, 7)",16,True,False,True,39.828,0
+A* repeated baseline,24,1,2,"(5, 9)","(44, 7)",16,True,False,True,39.828,0
+A* repeated baseline,24,2,1,"(5, 8)","(44, 9)",15,True,False,True,40.243,0
+A* repeated baseline,24,2,2,"(5, 8)","(44, 9)",15,True,False,True,40.243,0
+A* repeated baseline,24,3,1,"(5, 7)","(44, 5)",16,True,False,True,39.828,0
+A* repeated baseline,24,3,2,"(5, 7)","(44, 5)",16,True,False,True,39.828,0
+A* repeated baseline,24,4,1,"(5, 6)","(44, 5)",16,True,False,True,40.243,0
+A* repeated baseline,24,4,2,"(5, 6)","(44, 5)",16,True,False,True,40.243,0
+A* repeated baseline,24,5,1,"(5, 6)","(44, 9)",17,True,False,True,40.243,0
+A* repeated baseline,24,5,2,"(5, 6)","(44, 9)",17,True,False,True,40.243,0
+A* repeated baseline,25,1,1,"(5, 5)","(44, 7)",16,True,False,True,39.828,0
+A* repeated baseline,25,1,2,"(5, 5)","(44, 7)",16,True,False,True,39.828,0
+A* repeated baseline,25,2,1,"(5, 7)","(44, 7)",16,True,False,True,39.0,0
+A* repeated baseline,25,2,2,"(5, 7)","(44, 7)",16,True,False,True,39.0,0
+A* repeated baseline,25,3,1,"(5, 5)","(44, 5)",17,True,False,True,40.657,0
+A* repeated baseline,25,3,2,"(5, 5)","(44, 5)",17,True,False,True,40.657,0
+A* repeated baseline,25,4,1,"(5, 8)","(44, 8)",16,True,False,True,39.828,0
+A* repeated baseline,25,4,2,"(5, 8)","(44, 8)",16,True,False,True,39.828,0
+A* repeated baseline,25,5,1,"(5, 7)","(44, 5)",16,True,False,True,39.828,0
+A* repeated baseline,25,5,2,"(5, 7)","(44, 5)",16,True,False,True,39.828,0
+A* repeated baseline,26,1,1,"(5, 5)","(44, 8)",16,True,False,True,40.243,0
+A* repeated baseline,26,1,2,"(5, 5)","(44, 8)",16,True,False,True,40.243,0
+A* repeated baseline,26,2,1,"(5, 5)","(44, 7)",16,True,False,True,39.828,0
+A* repeated baseline,26,2,2,"(5, 5)","(44, 7)",16,True,False,True,39.828,0
+A* repeated baseline,26,3,1,"(5, 6)","(44, 6)",17,True,False,True,39.828,0
+A* repeated baseline,26,3,2,"(5, 6)","(44, 6)",17,True,False,True,39.828,0
+A* repeated baseline,26,4,1,"(5, 9)","(44, 8)",17,True,False,True,40.243,0
+A* repeated baseline,26,4,2,"(5, 9)","(44, 8)",17,True,False,True,40.243,0
+A* repeated baseline,26,5,1,"(5, 5)","(44, 5)",15,True,False,True,40.657,0
+A* repeated baseline,26,5,2,"(5, 5)","(44, 5)",15,True,False,True,40.657,0
+A* repeated baseline,27,1,1,"(5, 6)","(44, 6)",15,True,False,True,39.828,0
+A* repeated baseline,27,1,2,"(5, 6)","(44, 6)",15,True,False,True,39.828,0
+A* repeated baseline,27,2,1,"(5, 8)","(44, 5)",15,True,False,True,40.243,0
+A* repeated baseline,27,2,2,"(5, 8)","(44, 5)",15,True,False,True,40.243,0
+A* repeated baseline,27,3,1,"(5, 8)","(44, 9)",17,True,False,True,40.243,0
+A* repeated baseline,27,3,2,"(5, 8)","(44, 9)",17,True,False,True,40.243,0
+A* repeated baseline,27,4,1,"(5, 7)","(44, 8)",16,True,False,True,39.414,0
+A* repeated baseline,27,4,2,"(5, 7)","(44, 8)",16,True,False,True,39.414,0
+A* repeated baseline,27,5,1,"(5, 9)","(44, 6)",16,True,False,True,40.243,0
+A* repeated baseline,27,5,2,"(5, 9)","(44, 6)",16,True,False,True,40.243,0
+A* repeated baseline,28,1,1,"(5, 5)","(44, 7)",15,True,False,True,39.828,0
+A* repeated baseline,28,1,2,"(5, 5)","(44, 7)",15,True,False,True,39.828,0
+A* repeated baseline,28,2,1,"(5, 7)","(44, 9)",15,True,False,True,39.828,0
+A* repeated baseline,28,2,2,"(5, 7)","(44, 9)",15,True,False,True,39.828,0
+A* repeated baseline,28,3,1,"(5, 8)","(44, 6)",16,True,False,True,39.828,0
+A* repeated baseline,28,3,2,"(5, 8)","(44, 6)",16,True,False,True,39.828,0
+A* repeated baseline,28,4,1,"(5, 5)","(44, 5)",17,True,False,True,40.657,0
+A* repeated baseline,28,4,2,"(5, 5)","(44, 5)",17,True,False,True,40.657,0
+A* repeated baseline,28,5,1,"(5, 5)","(44, 9)",16,True,False,True,40.657,0
+A* repeated baseline,28,5,2,"(5, 5)","(44, 9)",16,True,False,True,40.657,0
+A* repeated baseline,29,1,1,"(5, 6)","(44, 5)",16,True,False,True,40.243,0
+A* repeated baseline,29,1,2,"(5, 6)","(44, 5)",16,True,False,True,40.243,0
+A* repeated baseline,29,2,1,"(5, 8)","(44, 7)",15,True,False,True,39.414,0
+A* repeated baseline,29,2,2,"(5, 8)","(44, 7)",15,True,False,True,39.414,0
+A* repeated baseline,29,3,1,"(5, 5)","(44, 6)",17,True,False,True,40.243,0
+A* repeated baseline,29,3,2,"(5, 5)","(44, 6)",17,True,False,True,40.243,0
+A* repeated baseline,29,4,1,"(5, 6)","(44, 5)",15,True,False,True,40.243,0
+A* repeated baseline,29,4,2,"(5, 6)","(44, 5)",15,True,False,True,40.243,0
+A* repeated baseline,29,5,1,"(5, 8)","(44, 8)",16,True,False,True,39.828,0
+A* repeated baseline,29,5,2,"(5, 8)","(44, 8)",16,True,False,True,39.828,0
+Memory-aware replanning,0,1,1,"(5, 8)","(44, 8)",15,True,False,True,39.828,0
+Memory-aware replanning,0,1,2,"(5, 8)","(44, 8)",15,True,True,False,44.799,45
+Memory-aware replanning,0,2,1,"(5, 7)","(44, 9)",16,True,True,False,45.627,45
+Memory-aware replanning,0,3,1,"(5, 8)","(44, 7)",16,True,True,False,46.042,45
+Memory-aware replanning,0,4,1,"(5, 7)","(44, 9)",15,True,True,False,44.799,45
+Memory-aware replanning,0,5,1,"(5, 9)","(44, 6)",16,True,True,False,46.042,45
+Memory-aware replanning,1,1,1,"(5, 6)","(44, 5)",17,True,False,True,40.243,0
+Memory-aware replanning,1,1,2,"(5, 6)","(44, 5)",17,True,True,False,48.527,45
+Memory-aware replanning,1,2,1,"(5, 7)","(44, 9)",17,True,True,False,46.456,45
+Memory-aware replanning,1,3,1,"(5, 9)","(44, 6)",16,True,True,False,46.042,45
+Memory-aware replanning,1,4,1,"(5, 5)","(44, 5)",17,True,True,False,48.941,45
+Memory-aware replanning,1,5,1,"(5, 7)","(44, 8)",17,True,True,False,46.87,45
+Memory-aware replanning,2,1,1,"(5, 5)","(44, 7)",16,True,False,True,39.828,0
+Memory-aware replanning,2,1,2,"(5, 5)","(44, 7)",16,True,True,False,47.284,45
+Memory-aware replanning,2,2,1,"(5, 7)","(44, 9)",17,True,True,False,46.456,45
+Memory-aware replanning,2,3,1,"(5, 6)","(44, 9)",16,True,True,False,46.042,45
+Memory-aware replanning,2,4,1,"(5, 8)","(44, 9)",16,True,True,False,45.213,45
+Memory-aware replanning,2,5,1,"(5, 5)","(44, 9)",15,True,True,False,45.627,45
+Memory-aware replanning,3,1,1,"(5, 5)","(44, 8)",17,True,False,True,40.243,0
+Memory-aware replanning,3,1,2,"(5, 5)","(44, 8)",17,True,True,False,47.698,45
+Memory-aware replanning,3,2,1,"(5, 5)","(44, 9)",16,True,True,False,46.456,45
+Memory-aware replanning,3,3,1,"(5, 7)","(44, 6)",17,True,True,False,47.698,45
+Memory-aware replanning,3,4,1,"(5, 7)","(44, 5)",15,True,True,False,46.456,45
+Memory-aware replanning,3,5,1,"(5, 9)","(44, 6)",15,True,True,False,45.213,45
+Memory-aware replanning,4,1,1,"(5, 6)","(44, 9)",16,True,False,True,40.243,0
+Memory-aware replanning,4,1,2,"(5, 6)","(44, 9)",16,True,True,False,46.042,45
+Memory-aware replanning,4,2,1,"(5, 5)","(44, 5)",16,True,True,False,48.113,45
+Memory-aware replanning,4,3,1,"(5, 9)","(44, 8)",15,True,True,False,44.385,45
+Memory-aware replanning,4,4,1,"(5, 7)","(44, 9)",16,True,True,False,45.627,45
+Memory-aware replanning,4,5,1,"(5, 5)","(44, 9)",16,True,True,False,46.456,45
+Memory-aware replanning,5,1,1,"(5, 9)","(44, 6)",17,True,False,True,40.243,0
+Memory-aware replanning,5,1,2,"(5, 9)","(44, 6)",17,True,True,False,46.87,45
+Memory-aware replanning,5,2,1,"(5, 9)","(44, 9)",16,True,True,False,44.799,45
+Memory-aware replanning,5,3,1,"(5, 8)","(44, 5)",17,True,True,False,47.698,45
+Memory-aware replanning,5,4,1,"(5, 8)","(44, 7)",17,True,True,False,46.87,45
+Memory-aware replanning,5,5,1,"(5, 6)","(44, 7)",15,True,True,False,46.042,45
+Memory-aware replanning,6,1,1,"(5, 6)","(44, 6)",15,True,False,True,39.828,0
+Memory-aware replanning,6,1,2,"(5, 6)","(44, 6)",15,True,True,False,46.456,45
+Memory-aware replanning,6,2,1,"(5, 9)","(44, 7)",16,True,True,False,45.627,45
+Memory-aware replanning,6,3,1,"(5, 5)","(44, 5)",17,True,True,False,48.941,45
+Memory-aware replanning,6,4,1,"(5, 6)","(44, 6)",15,True,True,False,46.456,45
+Memory-aware replanning,6,5,1,"(5, 5)","(44, 9)",17,True,True,False,47.284,45
+Memory-aware replanning,7,1,1,"(5, 8)","(44, 9)",16,True,False,True,40.243,0
+Memory-aware replanning,7,1,2,"(5, 8)","(44, 9)",16,True,True,False,45.213,45
+Memory-aware replanning,7,2,1,"(5, 9)","(44, 6)",15,True,True,False,45.213,45
+Memory-aware replanning,7,3,1,"(5, 9)","(44, 8)",17,True,True,False,46.042,45
+Memory-aware replanning,7,4,1,"(5, 7)","(44, 8)",16,True,True,False,46.042,45
+Memory-aware replanning,7,5,1,"(5, 7)","(44, 5)",16,True,True,False,47.284,45
+Memory-aware replanning,8,1,1,"(5, 9)","(44, 5)",16,True,False,True,40.657,0
+Memory-aware replanning,8,1,2,"(5, 9)","(44, 5)",16,True,True,False,46.456,45
+Memory-aware replanning,8,2,1,"(5, 9)","(44, 7)",15,True,True,False,44.799,45
+Memory-aware replanning,8,3,1,"(5, 6)","(44, 5)",17,True,True,False,48.527,45
+Memory-aware replanning,8,4,1,"(5, 7)","(44, 5)",17,True,True,False,48.113,45
+Memory-aware replanning,8,5,1,"(5, 6)","(44, 7)",15,True,True,False,46.042,45
+Memory-aware replanning,9,1,1,"(5, 7)","(44, 8)",15,True,False,True,39.414,0
+Memory-aware replanning,9,1,2,"(5, 7)","(44, 8)",15,True,True,False,45.213,45
+Memory-aware replanning,9,2,1,"(5, 5)","(44, 6)",17,True,True,False,48.527,45
+Memory-aware replanning,9,3,1,"(5, 6)","(44, 5)",17,True,True,False,48.527,45
+Memory-aware replanning,9,4,1,"(5, 9)","(44, 9)",17,True,True,False,45.627,45
+Memory-aware replanning,9,5,1,"(5, 5)","(44, 5)",15,True,True,False,47.284,45
+Memory-aware replanning,10,1,1,"(5, 6)","(44, 9)",17,True,False,True,40.243,0
+Memory-aware replanning,10,1,2,"(5, 6)","(44, 9)",17,True,True,False,46.87,45
+Memory-aware replanning,10,2,1,"(5, 5)","(44, 8)",15,True,True,False,46.042,45
+Memory-aware replanning,10,3,1,"(5, 7)","(44, 5)",15,True,True,False,46.456,45
+Memory-aware replanning,10,4,1,"(5, 9)","(44, 5)",15,True,True,False,45.627,45
+Memory-aware replanning,10,5,1,"(5, 6)","(44, 5)",16,True,True,False,47.698,45
+Memory-aware replanning,11,1,1,"(5, 6)","(44, 5)",17,True,False,True,40.243,0
+Memory-aware replanning,11,1,2,"(5, 6)","(44, 5)",17,True,True,False,48.527,45
+Memory-aware replanning,11,2,1,"(5, 5)","(44, 9)",16,True,True,False,46.456,45
+Memory-aware replanning,11,3,1,"(5, 9)","(44, 5)",16,True,True,False,46.456,45
+Memory-aware replanning,11,4,1,"(5, 5)","(44, 6)",15,True,True,False,46.87,45
+Memory-aware replanning,11,5,1,"(5, 7)","(44, 7)",16,True,True,False,46.456,45
+Memory-aware replanning,12,1,1,"(5, 6)","(44, 5)",17,True,False,True,40.243,0
+Memory-aware replanning,12,1,2,"(5, 6)","(44, 5)",17,True,True,False,48.527,45
+Memory-aware replanning,12,2,1,"(5, 8)","(44, 5)",17,True,True,False,47.698,45
+Memory-aware replanning,12,3,1,"(5, 5)","(44, 8)",15,True,True,False,46.042,45
+Memory-aware replanning,12,4,1,"(5, 7)","(44, 7)",17,True,True,False,47.284,45
+Memory-aware replanning,12,5,1,"(5, 8)","(44, 9)",15,True,True,False,44.385,45
+Memory-aware replanning,13,1,1,"(5, 6)","(44, 5)",17,True,False,True,40.243,0
+Memory-aware replanning,13,1,2,"(5, 6)","(44, 5)",17,True,True,False,48.527,45
+Memory-aware replanning,13,2,1,"(5, 6)","(44, 6)",16,True,True,False,47.284,45
+Memory-aware replanning,13,3,1,"(5, 9)","(44, 7)",15,True,True,False,44.799,45
+Memory-aware replanning,13,4,1,"(5, 9)","(44, 8)",17,True,True,False,46.042,45
+Memory-aware replanning,13,5,1,"(5, 6)","(44, 5)",16,True,True,False,47.698,45
+Memory-aware replanning,14,1,1,"(5, 8)","(44, 9)",17,True,False,True,40.243,0
+Memory-aware replanning,14,1,2,"(5, 8)","(44, 9)",17,True,True,False,46.042,45
+Memory-aware replanning,14,2,1,"(5, 7)","(44, 7)",16,True,True,False,46.456,45
+Memory-aware replanning,14,3,1,"(5, 7)","(44, 6)",17,True,True,False,47.698,45
+Memory-aware replanning,14,4,1,"(5, 5)","(44, 8)",17,True,True,False,47.698,45
+Memory-aware replanning,14,5,1,"(5, 5)","(44, 7)",17,True,True,False,48.113,45
+Memory-aware replanning,15,1,1,"(5, 5)","(44, 9)",16,True,False,True,40.657,0
+Memory-aware replanning,15,1,2,"(5, 5)","(44, 9)",16,True,True,False,46.456,45
+Memory-aware replanning,15,2,1,"(5, 6)","(44, 6)",16,True,True,False,47.284,45
+Memory-aware replanning,15,3,1,"(5, 7)","(44, 9)",16,True,True,False,45.627,45
+Memory-aware replanning,15,4,1,"(5, 7)","(44, 9)",17,True,True,False,46.456,45
+Memory-aware replanning,15,5,1,"(5, 9)","(44, 6)",17,True,True,False,46.87,45
+Memory-aware replanning,16,1,1,"(5, 7)","(44, 8)",17,True,False,True,39.414,0
+Memory-aware replanning,16,1,2,"(5, 7)","(44, 8)",17,True,True,False,46.87,45
+Memory-aware replanning,16,2,1,"(5, 8)","(44, 5)",15,True,True,False,46.042,45
+Memory-aware replanning,16,3,1,"(5, 9)","(44, 6)",17,True,True,False,46.87,45
+Memory-aware replanning,16,4,1,"(5, 7)","(44, 6)",15,True,True,False,46.042,45
+Memory-aware replanning,16,5,1,"(5, 6)","(44, 8)",16,True,True,False,46.456,45
+Memory-aware replanning,17,1,1,"(5, 9)","(44, 8)",15,True,False,True,40.243,0
+Memory-aware replanning,17,1,2,"(5, 9)","(44, 8)",15,True,True,False,44.385,45
+Memory-aware replanning,17,2,1,"(5, 8)","(44, 9)",16,True,True,False,45.213,45
+Memory-aware replanning,17,3,1,"(5, 5)","(44, 6)",16,True,True,False,47.698,45
+Memory-aware replanning,17,4,1,"(5, 5)","(44, 7)",17,True,True,False,48.113,45
+Memory-aware replanning,17,5,1,"(5, 6)","(44, 8)",17,True,True,False,47.284,45
+Memory-aware replanning,18,1,1,"(5, 8)","(44, 9)",17,True,False,True,40.243,0
+Memory-aware replanning,18,1,2,"(5, 8)","(44, 9)",17,True,True,False,46.042,45
+Memory-aware replanning,18,2,1,"(5, 5)","(44, 5)",16,True,True,False,48.113,45
+Memory-aware replanning,18,3,1,"(5, 7)","(44, 7)",16,True,True,False,46.456,45
+Memory-aware replanning,18,4,1,"(5, 5)","(44, 8)",15,True,True,False,46.042,45
+Memory-aware replanning,18,5,1,"(5, 9)","(44, 5)",17,True,True,False,47.284,45
+Memory-aware replanning,19,1,1,"(5, 6)","(44, 5)",16,True,False,True,40.243,0
+Memory-aware replanning,19,1,2,"(5, 6)","(44, 5)",16,True,True,False,47.698,45
+Memory-aware replanning,19,2,1,"(5, 8)","(44, 7)",15,True,True,False,45.213,45
+Memory-aware replanning,19,3,1,"(5, 6)","(44, 5)",17,True,True,False,48.527,45
+Memory-aware replanning,19,4,1,"(5, 5)","(44, 9)",17,True,True,False,47.284,45
+Memory-aware replanning,19,5,1,"(5, 5)","(44, 6)",15,True,True,False,46.87,45
+Memory-aware replanning,20,1,1,"(5, 9)","(44, 6)",16,True,False,True,40.243,0
+Memory-aware replanning,20,1,2,"(5, 9)","(44, 6)",16,True,True,False,46.042,45
+Memory-aware replanning,20,2,1,"(5, 7)","(44, 6)",15,True,True,False,46.042,45
+Memory-aware replanning,20,3,1,"(5, 8)","(44, 8)",17,True,True,False,46.456,45
+Memory-aware replanning,20,4,1,"(5, 5)","(44, 5)",16,True,True,False,48.113,45
+Memory-aware replanning,20,5,1,"(5, 8)","(44, 5)",16,True,True,False,46.87,45
+Memory-aware replanning,21,1,1,"(5, 6)","(44, 9)",17,True,False,True,40.243,0
+Memory-aware replanning,21,1,2,"(5, 6)","(44, 9)",17,True,True,False,46.87,45
+Memory-aware replanning,21,2,1,"(5, 7)","(44, 5)",15,True,True,False,46.456,45
+Memory-aware replanning,21,3,1,"(5, 7)","(44, 5)",15,True,True,False,46.456,45
+Memory-aware replanning,21,4,1,"(5, 5)","(44, 6)",17,True,True,False,48.527,45
+Memory-aware replanning,21,5,1,"(5, 7)","(44, 9)",16,True,True,False,45.627,45
+Memory-aware replanning,22,1,1,"(5, 7)","(44, 9)",15,True,False,True,39.828,0
+Memory-aware replanning,22,1,2,"(5, 7)","(44, 9)",15,True,True,False,44.799,45
+Memory-aware replanning,22,2,1,"(5, 9)","(44, 8)",17,True,True,False,46.042,45
+Memory-aware replanning,22,3,1,"(5, 8)","(44, 8)",16,True,True,False,45.627,45
+Memory-aware replanning,22,4,1,"(5, 9)","(44, 6)",15,True,True,False,45.213,45
+Memory-aware replanning,22,5,1,"(5, 8)","(44, 9)",16,True,True,False,45.213,45
+Memory-aware replanning,23,1,1,"(5, 5)","(44, 6)",15,True,False,True,40.243,0
+Memory-aware replanning,23,1,2,"(5, 5)","(44, 6)",15,True,True,False,46.87,45
+Memory-aware replanning,23,2,1,"(5, 7)","(44, 7)",16,True,True,False,46.456,45
+Memory-aware replanning,23,3,1,"(5, 7)","(44, 5)",16,True,True,False,47.284,45
+Memory-aware replanning,23,4,1,"(5, 9)","(44, 5)",15,True,True,False,45.627,45
+Memory-aware replanning,23,5,1,"(5, 7)","(44, 6)",15,True,True,False,46.042,45
+Memory-aware replanning,24,1,1,"(5, 9)","(44, 7)",16,True,False,True,39.828,0
+Memory-aware replanning,24,1,2,"(5, 9)","(44, 7)",16,True,True,False,45.627,45
+Memory-aware replanning,24,2,1,"(5, 8)","(44, 9)",15,True,True,False,44.385,45
+Memory-aware replanning,24,3,1,"(5, 7)","(44, 5)",16,True,True,False,47.284,45
+Memory-aware replanning,24,4,1,"(5, 6)","(44, 5)",16,True,True,False,47.698,45
+Memory-aware replanning,24,5,1,"(5, 6)","(44, 9)",17,True,True,False,46.87,45
+Memory-aware replanning,25,1,1,"(5, 5)","(44, 7)",16,True,False,True,39.828,0
+Memory-aware replanning,25,1,2,"(5, 5)","(44, 7)",16,True,True,False,47.284,45
+Memory-aware replanning,25,2,1,"(5, 7)","(44, 7)",16,True,True,False,46.456,45
+Memory-aware replanning,25,3,1,"(5, 5)","(44, 5)",17,True,True,False,48.941,45
+Memory-aware replanning,25,4,1,"(5, 8)","(44, 8)",16,True,True,False,45.627,45
+Memory-aware replanning,25,5,1,"(5, 7)","(44, 5)",16,True,True,False,47.284,45
+Memory-aware replanning,26,1,1,"(5, 5)","(44, 8)",16,True,False,True,40.243,0
+Memory-aware replanning,26,1,2,"(5, 5)","(44, 8)",16,True,True,False,46.87,45
+Memory-aware replanning,26,2,1,"(5, 5)","(44, 7)",16,True,True,False,47.284,45
+Memory-aware replanning,26,3,1,"(5, 6)","(44, 6)",17,True,True,False,48.113,45
+Memory-aware replanning,26,4,1,"(5, 9)","(44, 8)",17,True,True,False,46.042,45
+Memory-aware replanning,26,5,1,"(5, 5)","(44, 5)",15,True,True,False,47.284,45
+Memory-aware replanning,27,1,1,"(5, 6)","(44, 6)",15,True,False,True,39.828,0
+Memory-aware replanning,27,1,2,"(5, 6)","(44, 6)",15,True,True,False,46.456,45
+Memory-aware replanning,27,2,1,"(5, 8)","(44, 5)",15,True,True,False,46.042,45
+Memory-aware replanning,27,3,1,"(5, 8)","(44, 9)",17,True,True,False,46.042,45
+Memory-aware replanning,27,4,1,"(5, 7)","(44, 8)",16,True,True,False,46.042,45
+Memory-aware replanning,27,5,1,"(5, 9)","(44, 6)",16,True,True,False,46.042,45
+Memory-aware replanning,28,1,1,"(5, 5)","(44, 7)",15,True,False,True,39.828,0
+Memory-aware replanning,28,1,2,"(5, 5)","(44, 7)",15,True,True,False,46.456,45
+Memory-aware replanning,28,2,1,"(5, 7)","(44, 9)",15,True,True,False,44.799,45
+Memory-aware replanning,28,3,1,"(5, 8)","(44, 6)",16,True,True,False,46.456,45
+Memory-aware replanning,28,4,1,"(5, 5)","(44, 5)",17,True,True,False,48.941,45
+Memory-aware replanning,28,5,1,"(5, 5)","(44, 9)",16,True,True,False,46.456,45
+Memory-aware replanning,29,1,1,"(5, 6)","(44, 5)",16,True,False,True,40.243,0
+Memory-aware replanning,29,1,2,"(5, 6)","(44, 5)",16,True,True,False,47.698,45
+Memory-aware replanning,29,2,1,"(5, 8)","(44, 7)",15,True,True,False,45.213,45
+Memory-aware replanning,29,3,1,"(5, 5)","(44, 6)",17,True,True,False,48.527,45
+Memory-aware replanning,29,4,1,"(5, 6)","(44, 5)",15,True,True,False,46.87,45
+Memory-aware replanning,29,5,1,"(5, 8)","(44, 8)",16,True,True,False,45.627,45

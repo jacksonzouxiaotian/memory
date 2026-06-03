@@ -1,0 +1,1201 @@
+Strategy,Seed,Mission,ObstacleX,ObstacleStart,ObstacleDuration,Success,Replans,WaitSteps,PathLength,TotalCost
+Static plan,0,0,38,25,4,False,0,0,26.0,266.0
+Static plan,0,1,30,17,25,False,0,0,18.0,258.0
+Static plan,0,2,26,15,24,False,0,0,15.0,255.0
+Static plan,1,0,30,20,33,False,0,0,20.0,260.0
+Static plan,1,1,38,25,23,False,0,0,26.0,266.0
+Static plan,1,2,30,18,13,False,0,0,18.0,258.0
+Static plan,2,0,30,20,27,False,0,0,20.0,260.0
+Static plan,2,1,34,22,32,False,0,0,22.0,262.0
+Static plan,2,2,30,19,29,False,0,0,19.0,259.0
+Static plan,3,0,30,17,4,False,0,0,18.0,258.0
+Static plan,3,1,30,19,19,False,0,0,19.0,259.0
+Static plan,3,2,38,28,19,False,0,0,28.0,268.0
+Static plan,4,0,26,16,9,False,0,0,16.0,256.0
+Static plan,4,1,34,21,8,False,0,0,22.0,262.0
+Static plan,4,2,38,27,34,False,0,0,27.0,267.0
+Static plan,5,0,30,20,10,False,0,0,20.0,260.0
+Static plan,5,1,30,20,19,False,0,0,20.0,260.0
+Static plan,5,2,38,26,11,False,0,0,26.0,266.0
+Static plan,6,0,34,24,5,False,0,0,24.0,264.0
+Static plan,6,1,26,16,36,False,0,0,16.0,256.0
+Static plan,6,2,34,22,6,False,0,0,22.0,262.0
+Static plan,7,0,26,15,4,False,0,0,15.0,255.0
+Static plan,7,1,26,16,36,False,0,0,16.0,256.0
+Static plan,7,2,38,28,5,False,0,0,28.0,268.0
+Static plan,8,0,30,18,17,False,0,0,18.0,258.0
+Static plan,8,1,30,20,42,False,0,0,20.0,260.0
+Static plan,8,2,26,13,35,False,0,0,14.0,254.0
+Static plan,9,0,38,26,9,False,0,0,26.0,266.0
+Static plan,9,1,26,15,28,False,0,0,15.0,255.0
+Static plan,9,2,30,19,23,False,0,0,19.0,259.0
+Static plan,10,0,26,15,43,False,0,0,15.0,255.0
+Static plan,10,1,38,27,27,False,0,0,27.0,267.0
+Static plan,10,2,34,24,23,False,0,0,24.0,264.0
+Static plan,11,0,38,25,21,False,0,0,26.0,266.0
+Static plan,11,1,30,20,9,False,0,0,20.0,260.0
+Static plan,11,2,34,23,5,False,0,0,23.0,263.0
+Static plan,12,0,34,22,30,False,0,0,22.0,262.0
+Static plan,12,1,26,14,10,False,0,0,14.0,254.0
+Static plan,12,2,30,20,8,False,0,0,20.0,260.0
+Static plan,13,0,26,15,12,False,0,0,15.0,255.0
+Static plan,13,1,38,26,19,False,0,0,26.0,266.0
+Static plan,13,2,30,20,23,False,0,0,20.0,260.0
+Static plan,14,0,30,19,13,False,0,0,19.0,259.0
+Static plan,14,1,26,16,41,False,0,0,16.0,256.0
+Static plan,14,2,34,21,12,False,0,0,22.0,262.0
+Static plan,15,0,26,15,6,False,0,0,15.0,255.0
+Static plan,15,1,38,25,43,False,0,0,26.0,266.0
+Static plan,15,2,34,21,33,False,0,0,22.0,262.0
+Static plan,16,0,26,15,21,False,0,0,15.0,255.0
+Static plan,16,1,38,25,3,False,0,0,26.0,266.0
+Static plan,16,2,30,20,33,False,0,0,20.0,260.0
+Static plan,17,0,30,20,10,False,0,0,20.0,260.0
+Static plan,17,1,30,20,31,False,0,0,20.0,260.0
+Static plan,17,2,30,20,38,False,0,0,20.0,260.0
+Static plan,18,0,30,18,26,False,0,0,18.0,258.0
+Static plan,18,1,38,27,21,False,0,0,27.0,267.0
+Static plan,18,2,26,16,35,False,0,0,16.0,256.0
+Static plan,19,0,38,25,30,False,0,0,26.0,266.0
+Static plan,19,1,30,18,20,False,0,0,18.0,258.0
+Static plan,19,2,30,20,8,False,0,0,20.0,260.0
+Static plan,20,0,38,27,37,False,0,0,27.0,267.0
+Static plan,20,1,30,18,31,False,0,0,18.0,258.0
+Static plan,20,2,30,17,19,False,0,0,18.0,258.0
+Static plan,21,0,26,16,30,False,0,0,16.0,256.0
+Static plan,21,1,30,19,34,False,0,0,19.0,259.0
+Static plan,21,2,34,21,19,False,0,0,22.0,262.0
+Static plan,22,0,30,17,35,False,0,0,18.0,258.0
+Static plan,22,1,30,19,44,False,0,0,19.0,259.0
+Static plan,22,2,26,13,34,False,0,0,14.0,254.0
+Static plan,23,0,30,19,29,False,0,0,19.0,259.0
+Static plan,23,1,34,22,26,False,0,0,22.0,262.0
+Static plan,23,2,30,18,19,False,0,0,18.0,258.0
+Static plan,24,0,34,22,34,False,0,0,22.0,262.0
+Static plan,24,1,26,13,5,False,0,0,14.0,254.0
+Static plan,24,2,38,27,37,False,0,0,27.0,267.0
+Static plan,25,0,26,15,14,False,0,0,15.0,255.0
+Static plan,25,1,38,26,28,False,0,0,26.0,266.0
+Static plan,25,2,38,28,24,False,0,0,28.0,268.0
+Static plan,26,0,34,24,21,False,0,0,24.0,264.0
+Static plan,26,1,34,21,39,False,0,0,22.0,262.0
+Static plan,26,2,30,20,38,False,0,0,20.0,260.0
+Static plan,27,0,30,20,22,False,0,0,20.0,260.0
+Static plan,27,1,26,15,12,False,0,0,15.0,255.0
+Static plan,27,2,34,21,13,False,0,0,22.0,262.0
+Static plan,28,0,30,20,2,False,0,0,20.0,260.0
+Static plan,28,1,38,27,35,False,0,0,27.0,267.0
+Static plan,28,2,38,28,25,False,0,0,28.0,268.0
+Static plan,29,0,26,16,43,False,0,0,16.0,256.0
+Static plan,29,1,38,25,31,False,0,0,26.0,266.0
+Static plan,29,2,26,14,34,False,0,0,14.0,254.0
+Static plan,30,0,30,17,27,False,0,0,18.0,258.0
+Static plan,30,1,30,18,23,False,0,0,18.0,258.0
+Static plan,30,2,38,26,36,False,0,0,26.0,266.0
+Static plan,31,0,26,15,33,False,0,0,15.0,255.0
+Static plan,31,1,34,24,16,False,0,0,24.0,264.0
+Static plan,31,2,38,26,18,False,0,0,26.0,266.0
+Static plan,32,0,38,27,26,False,0,0,27.0,267.0
+Static plan,32,1,30,18,20,False,0,0,18.0,258.0
+Static plan,32,2,34,22,9,False,0,0,22.0,262.0
+Static plan,33,0,30,18,16,False,0,0,18.0,258.0
+Static plan,33,1,38,27,39,False,0,0,27.0,267.0
+Static plan,33,2,30,20,8,False,0,0,20.0,260.0
+Static plan,34,0,38,25,17,False,0,0,26.0,266.0
+Static plan,34,1,30,20,45,False,0,0,20.0,260.0
+Static plan,34,2,30,19,13,False,0,0,19.0,259.0
+Static plan,35,0,26,15,41,False,0,0,15.0,255.0
+Static plan,35,1,38,25,8,False,0,0,26.0,266.0
+Static plan,35,2,38,25,45,False,0,0,26.0,266.0
+Static plan,36,0,38,25,22,False,0,0,26.0,266.0
+Static plan,36,1,30,18,13,False,0,0,18.0,258.0
+Static plan,36,2,38,28,8,False,0,0,28.0,268.0
+Static plan,37,0,38,26,37,False,0,0,26.0,266.0
+Static plan,37,1,38,28,2,False,0,0,28.0,268.0
+Static plan,37,2,30,17,34,False,0,0,18.0,258.0
+Static plan,38,0,34,21,32,False,0,0,22.0,262.0
+Static plan,38,1,26,16,7,False,0,0,16.0,256.0
+Static plan,38,2,34,22,38,False,0,0,22.0,262.0
+Static plan,39,0,30,18,12,False,0,0,18.0,258.0
+Static plan,39,1,30,20,23,False,0,0,20.0,260.0
+Static plan,39,2,38,27,23,False,0,0,27.0,267.0
+Static plan,40,0,38,25,33,False,0,0,26.0,266.0
+Static plan,40,1,34,24,43,False,0,0,24.0,264.0
+Static plan,40,2,30,17,19,False,0,0,18.0,258.0
+Static plan,41,0,26,13,29,False,0,0,14.0,254.0
+Static plan,41,1,34,23,37,False,0,0,23.0,263.0
+Static plan,41,2,38,27,35,False,0,0,27.0,267.0
+Static plan,42,0,26,13,37,False,0,0,14.0,254.0
+Static plan,42,1,34,23,24,False,0,0,23.0,263.0
+Static plan,42,2,38,27,33,False,0,0,27.0,267.0
+Static plan,43,0,26,14,7,False,0,0,14.0,254.0
+Static plan,43,1,26,13,12,False,0,0,14.0,254.0
+Static plan,43,2,38,26,24,False,0,0,26.0,266.0
+Static plan,44,0,30,17,11,False,0,0,18.0,258.0
+Static plan,44,1,38,27,21,False,0,0,27.0,267.0
+Static plan,44,2,34,21,16,False,0,0,22.0,262.0
+Static plan,45,0,34,21,10,False,0,0,22.0,262.0
+Static plan,45,1,30,18,43,False,0,0,18.0,258.0
+Static plan,45,2,26,14,18,False,0,0,14.0,254.0
+Static plan,46,0,26,13,30,False,0,0,14.0,254.0
+Static plan,46,1,38,25,3,False,0,0,26.0,266.0
+Static plan,46,2,38,25,43,False,0,0,26.0,266.0
+Static plan,47,0,34,23,20,False,0,0,23.0,263.0
+Static plan,47,1,34,23,40,False,0,0,23.0,263.0
+Static plan,47,2,38,25,36,False,0,0,26.0,266.0
+Static plan,48,0,38,26,15,False,0,0,26.0,266.0
+Static plan,48,1,26,13,40,False,0,0,14.0,254.0
+Static plan,48,2,34,23,5,False,0,0,23.0,263.0
+Static plan,49,0,38,27,6,False,0,0,27.0,267.0
+Static plan,49,1,26,13,18,False,0,0,14.0,254.0
+Static plan,49,2,26,16,30,False,0,0,16.0,256.0
+Static plan,50,0,26,14,36,False,0,0,14.0,254.0
+Static plan,50,1,26,13,15,False,0,0,14.0,254.0
+Static plan,50,2,26,13,6,False,0,0,14.0,254.0
+Static plan,51,0,26,13,41,False,0,0,14.0,254.0
+Static plan,51,1,26,15,17,False,0,0,15.0,255.0
+Static plan,51,2,26,13,20,False,0,0,14.0,254.0
+Static plan,52,0,26,15,6,False,0,0,15.0,255.0
+Static plan,52,1,34,21,28,False,0,0,22.0,262.0
+Static plan,52,2,38,25,28,False,0,0,26.0,266.0
+Static plan,53,0,30,19,5,False,0,0,19.0,259.0
+Static plan,53,1,34,23,32,False,0,0,23.0,263.0
+Static plan,53,2,34,23,16,False,0,0,23.0,263.0
+Static plan,54,0,30,19,34,False,0,0,19.0,259.0
+Static plan,54,1,26,13,16,False,0,0,14.0,254.0
+Static plan,54,2,26,14,37,False,0,0,14.0,254.0
+Static plan,55,0,38,27,14,False,0,0,27.0,267.0
+Static plan,55,1,26,16,15,False,0,0,16.0,256.0
+Static plan,55,2,34,22,25,False,0,0,22.0,262.0
+Static plan,56,0,38,27,6,False,0,0,27.0,267.0
+Static plan,56,1,34,23,23,False,0,0,23.0,263.0
+Static plan,56,2,26,15,24,False,0,0,15.0,255.0
+Static plan,57,0,26,16,42,False,0,0,16.0,256.0
+Static plan,57,1,34,21,35,False,0,0,22.0,262.0
+Static plan,57,2,34,23,15,False,0,0,23.0,263.0
+Static plan,58,0,38,25,24,False,0,0,26.0,266.0
+Static plan,58,1,34,23,37,False,0,0,23.0,263.0
+Static plan,58,2,34,21,42,False,0,0,22.0,262.0
+Static plan,59,0,38,25,20,False,0,0,26.0,266.0
+Static plan,59,1,26,15,43,False,0,0,15.0,255.0
+Static plan,59,2,38,28,20,False,0,0,28.0,268.0
+Static plan,60,0,30,19,7,False,0,0,19.0,259.0
+Static plan,60,1,38,27,29,False,0,0,27.0,267.0
+Static plan,60,2,30,18,15,False,0,0,18.0,258.0
+Static plan,61,0,30,17,35,False,0,0,18.0,258.0
+Static plan,61,1,34,24,13,False,0,0,24.0,264.0
+Static plan,61,2,26,13,19,False,0,0,14.0,254.0
+Static plan,62,0,38,26,32,False,0,0,26.0,266.0
+Static plan,62,1,34,23,8,False,0,0,23.0,263.0
+Static plan,62,2,38,26,30,False,0,0,26.0,266.0
+Static plan,63,0,34,21,36,False,0,0,22.0,262.0
+Static plan,63,1,30,18,6,False,0,0,18.0,258.0
+Static plan,63,2,30,18,13,False,0,0,18.0,258.0
+Static plan,64,0,34,21,2,False,0,0,22.0,262.0
+Static plan,64,1,30,20,29,False,0,0,20.0,260.0
+Static plan,64,2,34,24,9,False,0,0,24.0,264.0
+Static plan,65,0,38,26,33,False,0,0,26.0,266.0
+Static plan,65,1,38,25,34,False,0,0,26.0,266.0
+Static plan,65,2,38,27,33,False,0,0,27.0,267.0
+Static plan,66,0,34,23,35,False,0,0,23.0,263.0
+Static plan,66,1,30,18,7,False,0,0,18.0,258.0
+Static plan,66,2,30,17,19,False,0,0,18.0,258.0
+Static plan,67,0,34,22,45,False,0,0,22.0,262.0
+Static plan,67,1,38,26,12,False,0,0,26.0,266.0
+Static plan,67,2,34,22,36,False,0,0,22.0,262.0
+Static plan,68,0,34,22,19,False,0,0,22.0,262.0
+Static plan,68,1,38,25,3,False,0,0,26.0,266.0
+Static plan,68,2,38,27,2,False,0,0,27.0,267.0
+Static plan,69,0,30,20,31,False,0,0,20.0,260.0
+Static plan,69,1,38,25,41,False,0,0,26.0,266.0
+Static plan,69,2,38,25,3,False,0,0,26.0,266.0
+Static plan,70,0,38,25,35,False,0,0,26.0,266.0
+Static plan,70,1,38,27,33,False,0,0,27.0,267.0
+Static plan,70,2,38,25,11,False,0,0,26.0,266.0
+Static plan,71,0,38,27,5,False,0,0,27.0,267.0
+Static plan,71,1,30,17,37,False,0,0,18.0,258.0
+Static plan,71,2,30,20,12,False,0,0,20.0,260.0
+Static plan,72,0,34,24,44,False,0,0,24.0,264.0
+Static plan,72,1,38,28,43,False,0,0,28.0,268.0
+Static plan,72,2,26,16,23,False,0,0,16.0,256.0
+Static plan,73,0,38,26,45,False,0,0,26.0,266.0
+Static plan,73,1,38,25,32,False,0,0,26.0,266.0
+Static plan,73,2,38,28,34,False,0,0,28.0,268.0
+Static plan,74,0,26,15,37,False,0,0,15.0,255.0
+Static plan,74,1,38,28,14,False,0,0,28.0,268.0
+Static plan,74,2,26,13,22,False,0,0,14.0,254.0
+Static plan,75,0,38,25,20,False,0,0,26.0,266.0
+Static plan,75,1,38,27,38,False,0,0,27.0,267.0
+Static plan,75,2,34,22,8,False,0,0,22.0,262.0
+Static plan,76,0,26,13,43,False,0,0,14.0,254.0
+Static plan,76,1,38,28,30,False,0,0,28.0,268.0
+Static plan,76,2,38,27,12,False,0,0,27.0,267.0
+Static plan,77,0,34,24,5,False,0,0,24.0,264.0
+Static plan,77,1,26,16,3,False,0,0,16.0,256.0
+Static plan,77,2,26,13,10,False,0,0,14.0,254.0
+Static plan,78,0,34,21,14,False,0,0,22.0,262.0
+Static plan,78,1,34,23,37,False,0,0,23.0,263.0
+Static plan,78,2,30,17,8,False,0,0,18.0,258.0
+Static plan,79,0,26,16,15,False,0,0,16.0,256.0
+Static plan,79,1,34,24,15,False,0,0,24.0,264.0
+Static plan,79,2,34,23,44,False,0,0,23.0,263.0
+Static plan,80,0,34,22,4,False,0,0,22.0,262.0
+Static plan,80,1,30,19,20,False,0,0,19.0,259.0
+Static plan,80,2,30,20,42,False,0,0,20.0,260.0
+Static plan,81,0,38,25,18,False,0,0,26.0,266.0
+Static plan,81,1,26,13,25,False,0,0,14.0,254.0
+Static plan,81,2,30,18,45,False,0,0,18.0,258.0
+Static plan,82,0,38,27,40,False,0,0,27.0,267.0
+Static plan,82,1,26,13,26,False,0,0,14.0,254.0
+Static plan,82,2,34,24,33,False,0,0,24.0,264.0
+Static plan,83,0,26,13,20,False,0,0,14.0,254.0
+Static plan,83,1,30,20,40,False,0,0,20.0,260.0
+Static plan,83,2,26,15,43,False,0,0,15.0,255.0
+Static plan,84,0,34,24,34,False,0,0,24.0,264.0
+Static plan,84,1,38,26,42,False,0,0,26.0,266.0
+Static plan,84,2,34,23,33,False,0,0,23.0,263.0
+Static plan,85,0,26,13,18,False,0,0,14.0,254.0
+Static plan,85,1,38,25,32,False,0,0,26.0,266.0
+Static plan,85,2,34,22,22,False,0,0,22.0,262.0
+Static plan,86,0,34,21,41,False,0,0,22.0,262.0
+Static plan,86,1,26,14,4,False,0,0,14.0,254.0
+Static plan,86,2,26,14,11,False,0,0,14.0,254.0
+Static plan,87,0,30,19,43,False,0,0,19.0,259.0
+Static plan,87,1,38,28,43,False,0,0,28.0,268.0
+Static plan,87,2,34,23,14,False,0,0,23.0,263.0
+Static plan,88,0,38,26,42,False,0,0,26.0,266.0
+Static plan,88,1,34,21,18,False,0,0,22.0,262.0
+Static plan,88,2,34,24,32,False,0,0,24.0,264.0
+Static plan,89,0,26,15,12,False,0,0,15.0,255.0
+Static plan,89,1,26,14,23,False,0,0,14.0,254.0
+Static plan,89,2,38,27,37,False,0,0,27.0,267.0
+Static plan,90,0,26,15,29,False,0,0,15.0,255.0
+Static plan,90,1,34,24,7,False,0,0,24.0,264.0
+Static plan,90,2,30,20,9,False,0,0,20.0,260.0
+Static plan,91,0,26,16,11,False,0,0,16.0,256.0
+Static plan,91,1,34,21,41,False,0,0,22.0,262.0
+Static plan,91,2,30,20,5,False,0,0,20.0,260.0
+Static plan,92,0,34,23,17,False,0,0,23.0,263.0
+Static plan,92,1,34,24,36,False,0,0,24.0,264.0
+Static plan,92,2,38,25,25,False,0,0,26.0,266.0
+Static plan,93,0,30,17,4,False,0,0,18.0,258.0
+Static plan,93,1,38,27,13,False,0,0,27.0,267.0
+Static plan,93,2,26,15,13,False,0,0,15.0,255.0
+Static plan,94,0,30,18,31,False,0,0,18.0,258.0
+Static plan,94,1,30,20,30,False,0,0,20.0,260.0
+Static plan,94,2,38,28,5,False,0,0,28.0,268.0
+Static plan,95,0,38,27,43,False,0,0,27.0,267.0
+Static plan,95,1,34,23,29,False,0,0,23.0,263.0
+Static plan,95,2,38,25,43,False,0,0,26.0,266.0
+Static plan,96,0,38,27,11,False,0,0,27.0,267.0
+Static plan,96,1,26,16,4,False,0,0,16.0,256.0
+Static plan,96,2,30,20,27,False,0,0,20.0,260.0
+Static plan,97,0,26,13,6,False,0,0,14.0,254.0
+Static plan,97,1,26,13,38,False,0,0,14.0,254.0
+Static plan,97,2,34,21,8,False,0,0,22.0,262.0
+Static plan,98,0,38,26,4,False,0,0,26.0,266.0
+Static plan,98,1,34,21,28,False,0,0,22.0,262.0
+Static plan,98,2,38,25,4,False,0,0,26.0,266.0
+Static plan,99,0,38,28,25,False,0,0,28.0,268.0
+Static plan,99,1,34,22,34,False,0,0,22.0,262.0
+Static plan,99,2,38,26,23,False,0,0,26.0,266.0
+Wait-only,0,0,38,25,4,True,0,3,53.0,62.0
+Wait-only,0,1,30,17,25,True,0,24,53.0,125.0
+Wait-only,0,2,26,15,24,True,0,24,53.0,125.0
+Wait-only,1,0,30,20,33,True,0,33,53.0,152.0
+Wait-only,1,1,38,25,23,True,0,22,53.0,119.0
+Wait-only,1,2,30,18,13,True,0,13,53.0,92.0
+Wait-only,2,0,30,20,27,True,0,27,53.0,134.0
+Wait-only,2,1,34,22,32,True,0,32,53.0,149.0
+Wait-only,2,2,30,19,29,True,0,29,53.0,140.0
+Wait-only,3,0,30,17,4,True,0,3,53.0,62.0
+Wait-only,3,1,30,19,19,True,0,19,53.0,110.0
+Wait-only,3,2,38,28,19,True,0,19,53.0,110.0
+Wait-only,4,0,26,16,9,True,0,9,53.0,80.0
+Wait-only,4,1,34,21,8,True,0,7,53.0,74.0
+Wait-only,4,2,38,27,34,True,0,34,53.0,155.0
+Wait-only,5,0,30,20,10,True,0,10,53.0,83.0
+Wait-only,5,1,30,20,19,True,0,19,53.0,110.0
+Wait-only,5,2,38,26,11,True,0,11,53.0,86.0
+Wait-only,6,0,34,24,5,True,0,5,53.0,68.0
+Wait-only,6,1,26,16,36,True,0,36,53.0,161.0
+Wait-only,6,2,34,22,6,True,0,6,53.0,71.0
+Wait-only,7,0,26,15,4,True,0,4,53.0,65.0
+Wait-only,7,1,26,16,36,True,0,36,53.0,161.0
+Wait-only,7,2,38,28,5,True,0,5,53.0,68.0
+Wait-only,8,0,30,18,17,True,0,17,53.0,104.0
+Wait-only,8,1,30,20,42,True,0,42,53.0,179.0
+Wait-only,8,2,26,13,35,True,0,34,53.0,155.0
+Wait-only,9,0,38,26,9,True,0,9,53.0,80.0
+Wait-only,9,1,26,15,28,True,0,28,53.0,137.0
+Wait-only,9,2,30,19,23,True,0,23,53.0,122.0
+Wait-only,10,0,26,15,43,True,0,43,53.0,182.0
+Wait-only,10,1,38,27,27,True,0,27,53.0,134.0
+Wait-only,10,2,34,24,23,True,0,23,53.0,122.0
+Wait-only,11,0,38,25,21,True,0,20,53.0,113.0
+Wait-only,11,1,30,20,9,True,0,9,53.0,80.0
+Wait-only,11,2,34,23,5,True,0,5,53.0,68.0
+Wait-only,12,0,34,22,30,True,0,30,53.0,143.0
+Wait-only,12,1,26,14,10,True,0,10,53.0,83.0
+Wait-only,12,2,30,20,8,True,0,8,53.0,77.0
+Wait-only,13,0,26,15,12,True,0,12,53.0,89.0
+Wait-only,13,1,38,26,19,True,0,19,53.0,110.0
+Wait-only,13,2,30,20,23,True,0,23,53.0,122.0
+Wait-only,14,0,30,19,13,True,0,13,53.0,92.0
+Wait-only,14,1,26,16,41,True,0,41,53.0,176.0
+Wait-only,14,2,34,21,12,True,0,11,53.0,86.0
+Wait-only,15,0,26,15,6,True,0,6,53.0,71.0
+Wait-only,15,1,38,25,43,True,0,42,53.0,179.0
+Wait-only,15,2,34,21,33,True,0,32,53.0,149.0
+Wait-only,16,0,26,15,21,True,0,21,53.0,116.0
+Wait-only,16,1,38,25,3,True,0,2,53.0,59.0
+Wait-only,16,2,30,20,33,True,0,33,53.0,152.0
+Wait-only,17,0,30,20,10,True,0,10,53.0,83.0
+Wait-only,17,1,30,20,31,True,0,31,53.0,146.0
+Wait-only,17,2,30,20,38,True,0,38,53.0,167.0
+Wait-only,18,0,30,18,26,True,0,26,53.0,131.0
+Wait-only,18,1,38,27,21,True,0,21,53.0,116.0
+Wait-only,18,2,26,16,35,True,0,35,53.0,158.0
+Wait-only,19,0,38,25,30,True,0,29,53.0,140.0
+Wait-only,19,1,30,18,20,True,0,20,53.0,113.0
+Wait-only,19,2,30,20,8,True,0,8,53.0,77.0
+Wait-only,20,0,38,27,37,True,0,37,53.0,164.0
+Wait-only,20,1,30,18,31,True,0,31,53.0,146.0
+Wait-only,20,2,30,17,19,True,0,18,53.0,107.0
+Wait-only,21,0,26,16,30,True,0,30,53.0,143.0
+Wait-only,21,1,30,19,34,True,0,34,53.0,155.0
+Wait-only,21,2,34,21,19,True,0,18,53.0,107.0
+Wait-only,22,0,30,17,35,True,0,34,53.0,155.0
+Wait-only,22,1,30,19,44,True,0,44,53.0,185.0
+Wait-only,22,2,26,13,34,True,0,33,53.0,152.0
+Wait-only,23,0,30,19,29,True,0,29,53.0,140.0
+Wait-only,23,1,34,22,26,True,0,26,53.0,131.0
+Wait-only,23,2,30,18,19,True,0,19,53.0,110.0
+Wait-only,24,0,34,22,34,True,0,34,53.0,155.0
+Wait-only,24,1,26,13,5,True,0,4,53.0,65.0
+Wait-only,24,2,38,27,37,True,0,37,53.0,164.0
+Wait-only,25,0,26,15,14,True,0,14,53.0,95.0
+Wait-only,25,1,38,26,28,True,0,28,53.0,137.0
+Wait-only,25,2,38,28,24,True,0,24,53.0,125.0
+Wait-only,26,0,34,24,21,True,0,21,53.0,116.0
+Wait-only,26,1,34,21,39,True,0,38,53.0,167.0
+Wait-only,26,2,30,20,38,True,0,38,53.0,167.0
+Wait-only,27,0,30,20,22,True,0,22,53.0,119.0
+Wait-only,27,1,26,15,12,True,0,12,53.0,89.0
+Wait-only,27,2,34,21,13,True,0,12,53.0,89.0
+Wait-only,28,0,30,20,2,True,0,2,53.0,59.0
+Wait-only,28,1,38,27,35,True,0,35,53.0,158.0
+Wait-only,28,2,38,28,25,True,0,25,53.0,128.0
+Wait-only,29,0,26,16,43,True,0,43,53.0,182.0
+Wait-only,29,1,38,25,31,True,0,30,53.0,143.0
+Wait-only,29,2,26,14,34,True,0,34,53.0,155.0
+Wait-only,30,0,30,17,27,True,0,26,53.0,131.0
+Wait-only,30,1,30,18,23,True,0,23,53.0,122.0
+Wait-only,30,2,38,26,36,True,0,36,53.0,161.0
+Wait-only,31,0,26,15,33,True,0,33,53.0,152.0
+Wait-only,31,1,34,24,16,True,0,16,53.0,101.0
+Wait-only,31,2,38,26,18,True,0,18,53.0,107.0
+Wait-only,32,0,38,27,26,True,0,26,53.0,131.0
+Wait-only,32,1,30,18,20,True,0,20,53.0,113.0
+Wait-only,32,2,34,22,9,True,0,9,53.0,80.0
+Wait-only,33,0,30,18,16,True,0,16,53.0,101.0
+Wait-only,33,1,38,27,39,True,0,39,53.0,170.0
+Wait-only,33,2,30,20,8,True,0,8,53.0,77.0
+Wait-only,34,0,38,25,17,True,0,16,53.0,101.0
+Wait-only,34,1,30,20,45,True,0,45,53.0,188.0
+Wait-only,34,2,30,19,13,True,0,13,53.0,92.0
+Wait-only,35,0,26,15,41,True,0,41,53.0,176.0
+Wait-only,35,1,38,25,8,True,0,7,53.0,74.0
+Wait-only,35,2,38,25,45,True,0,44,53.0,185.0
+Wait-only,36,0,38,25,22,True,0,21,53.0,116.0
+Wait-only,36,1,30,18,13,True,0,13,53.0,92.0
+Wait-only,36,2,38,28,8,True,0,8,53.0,77.0
+Wait-only,37,0,38,26,37,True,0,37,53.0,164.0
+Wait-only,37,1,38,28,2,True,0,2,53.0,59.0
+Wait-only,37,2,30,17,34,True,0,33,53.0,152.0
+Wait-only,38,0,34,21,32,True,0,31,53.0,146.0
+Wait-only,38,1,26,16,7,True,0,7,53.0,74.0
+Wait-only,38,2,34,22,38,True,0,38,53.0,167.0
+Wait-only,39,0,30,18,12,True,0,12,53.0,89.0
+Wait-only,39,1,30,20,23,True,0,23,53.0,122.0
+Wait-only,39,2,38,27,23,True,0,23,53.0,122.0
+Wait-only,40,0,38,25,33,True,0,32,53.0,149.0
+Wait-only,40,1,34,24,43,True,0,43,53.0,182.0
+Wait-only,40,2,30,17,19,True,0,18,53.0,107.0
+Wait-only,41,0,26,13,29,True,0,28,53.0,137.0
+Wait-only,41,1,34,23,37,True,0,37,53.0,164.0
+Wait-only,41,2,38,27,35,True,0,35,53.0,158.0
+Wait-only,42,0,26,13,37,True,0,36,53.0,161.0
+Wait-only,42,1,34,23,24,True,0,24,53.0,125.0
+Wait-only,42,2,38,27,33,True,0,33,53.0,152.0
+Wait-only,43,0,26,14,7,True,0,7,53.0,74.0
+Wait-only,43,1,26,13,12,True,0,11,53.0,86.0
+Wait-only,43,2,38,26,24,True,0,24,53.0,125.0
+Wait-only,44,0,30,17,11,True,0,10,53.0,83.0
+Wait-only,44,1,38,27,21,True,0,21,53.0,116.0
+Wait-only,44,2,34,21,16,True,0,15,53.0,98.0
+Wait-only,45,0,34,21,10,True,0,9,53.0,80.0
+Wait-only,45,1,30,18,43,True,0,43,53.0,182.0
+Wait-only,45,2,26,14,18,True,0,18,53.0,107.0
+Wait-only,46,0,26,13,30,True,0,29,53.0,140.0
+Wait-only,46,1,38,25,3,True,0,2,53.0,59.0
+Wait-only,46,2,38,25,43,True,0,42,53.0,179.0
+Wait-only,47,0,34,23,20,True,0,20,53.0,113.0
+Wait-only,47,1,34,23,40,True,0,40,53.0,173.0
+Wait-only,47,2,38,25,36,True,0,35,53.0,158.0
+Wait-only,48,0,38,26,15,True,0,15,53.0,98.0
+Wait-only,48,1,26,13,40,True,0,39,53.0,170.0
+Wait-only,48,2,34,23,5,True,0,5,53.0,68.0
+Wait-only,49,0,38,27,6,True,0,6,53.0,71.0
+Wait-only,49,1,26,13,18,True,0,17,53.0,104.0
+Wait-only,49,2,26,16,30,True,0,30,53.0,143.0
+Wait-only,50,0,26,14,36,True,0,36,53.0,161.0
+Wait-only,50,1,26,13,15,True,0,14,53.0,95.0
+Wait-only,50,2,26,13,6,True,0,5,53.0,68.0
+Wait-only,51,0,26,13,41,True,0,40,53.0,173.0
+Wait-only,51,1,26,15,17,True,0,17,53.0,104.0
+Wait-only,51,2,26,13,20,True,0,19,53.0,110.0
+Wait-only,52,0,26,15,6,True,0,6,53.0,71.0
+Wait-only,52,1,34,21,28,True,0,27,53.0,134.0
+Wait-only,52,2,38,25,28,True,0,27,53.0,134.0
+Wait-only,53,0,30,19,5,True,0,5,53.0,68.0
+Wait-only,53,1,34,23,32,True,0,32,53.0,149.0
+Wait-only,53,2,34,23,16,True,0,16,53.0,101.0
+Wait-only,54,0,30,19,34,True,0,34,53.0,155.0
+Wait-only,54,1,26,13,16,True,0,15,53.0,98.0
+Wait-only,54,2,26,14,37,True,0,37,53.0,164.0
+Wait-only,55,0,38,27,14,True,0,14,53.0,95.0
+Wait-only,55,1,26,16,15,True,0,15,53.0,98.0
+Wait-only,55,2,34,22,25,True,0,25,53.0,128.0
+Wait-only,56,0,38,27,6,True,0,6,53.0,71.0
+Wait-only,56,1,34,23,23,True,0,23,53.0,122.0
+Wait-only,56,2,26,15,24,True,0,24,53.0,125.0
+Wait-only,57,0,26,16,42,True,0,42,53.0,179.0
+Wait-only,57,1,34,21,35,True,0,34,53.0,155.0
+Wait-only,57,2,34,23,15,True,0,15,53.0,98.0
+Wait-only,58,0,38,25,24,True,0,23,53.0,122.0
+Wait-only,58,1,34,23,37,True,0,37,53.0,164.0
+Wait-only,58,2,34,21,42,True,0,41,53.0,176.0
+Wait-only,59,0,38,25,20,True,0,19,53.0,110.0
+Wait-only,59,1,26,15,43,True,0,43,53.0,182.0
+Wait-only,59,2,38,28,20,True,0,20,53.0,113.0
+Wait-only,60,0,30,19,7,True,0,7,53.0,74.0
+Wait-only,60,1,38,27,29,True,0,29,53.0,140.0
+Wait-only,60,2,30,18,15,True,0,15,53.0,98.0
+Wait-only,61,0,30,17,35,True,0,34,53.0,155.0
+Wait-only,61,1,34,24,13,True,0,13,53.0,92.0
+Wait-only,61,2,26,13,19,True,0,18,53.0,107.0
+Wait-only,62,0,38,26,32,True,0,32,53.0,149.0
+Wait-only,62,1,34,23,8,True,0,8,53.0,77.0
+Wait-only,62,2,38,26,30,True,0,30,53.0,143.0
+Wait-only,63,0,34,21,36,True,0,35,53.0,158.0
+Wait-only,63,1,30,18,6,True,0,6,53.0,71.0
+Wait-only,63,2,30,18,13,True,0,13,53.0,92.0
+Wait-only,64,0,34,21,2,True,0,1,53.0,56.0
+Wait-only,64,1,30,20,29,True,0,29,53.0,140.0
+Wait-only,64,2,34,24,9,True,0,9,53.0,80.0
+Wait-only,65,0,38,26,33,True,0,33,53.0,152.0
+Wait-only,65,1,38,25,34,True,0,33,53.0,152.0
+Wait-only,65,2,38,27,33,True,0,33,53.0,152.0
+Wait-only,66,0,34,23,35,True,0,35,53.0,158.0
+Wait-only,66,1,30,18,7,True,0,7,53.0,74.0
+Wait-only,66,2,30,17,19,True,0,18,53.0,107.0
+Wait-only,67,0,34,22,45,True,0,45,53.0,188.0
+Wait-only,67,1,38,26,12,True,0,12,53.0,89.0
+Wait-only,67,2,34,22,36,True,0,36,53.0,161.0
+Wait-only,68,0,34,22,19,True,0,19,53.0,110.0
+Wait-only,68,1,38,25,3,True,0,2,53.0,59.0
+Wait-only,68,2,38,27,2,True,0,2,53.0,59.0
+Wait-only,69,0,30,20,31,True,0,31,53.0,146.0
+Wait-only,69,1,38,25,41,True,0,40,53.0,173.0
+Wait-only,69,2,38,25,3,True,0,2,53.0,59.0
+Wait-only,70,0,38,25,35,True,0,34,53.0,155.0
+Wait-only,70,1,38,27,33,True,0,33,53.0,152.0
+Wait-only,70,2,38,25,11,True,0,10,53.0,83.0
+Wait-only,71,0,38,27,5,True,0,5,53.0,68.0
+Wait-only,71,1,30,17,37,True,0,36,53.0,161.0
+Wait-only,71,2,30,20,12,True,0,12,53.0,89.0
+Wait-only,72,0,34,24,44,True,0,44,53.0,185.0
+Wait-only,72,1,38,28,43,True,0,43,53.0,182.0
+Wait-only,72,2,26,16,23,True,0,23,53.0,122.0
+Wait-only,73,0,38,26,45,True,0,45,53.0,188.0
+Wait-only,73,1,38,25,32,True,0,31,53.0,146.0
+Wait-only,73,2,38,28,34,True,0,34,53.0,155.0
+Wait-only,74,0,26,15,37,True,0,37,53.0,164.0
+Wait-only,74,1,38,28,14,True,0,14,53.0,95.0
+Wait-only,74,2,26,13,22,True,0,21,53.0,116.0
+Wait-only,75,0,38,25,20,True,0,19,53.0,110.0
+Wait-only,75,1,38,27,38,True,0,38,53.0,167.0
+Wait-only,75,2,34,22,8,True,0,8,53.0,77.0
+Wait-only,76,0,26,13,43,True,0,42,53.0,179.0
+Wait-only,76,1,38,28,30,True,0,30,53.0,143.0
+Wait-only,76,2,38,27,12,True,0,12,53.0,89.0
+Wait-only,77,0,34,24,5,True,0,5,53.0,68.0
+Wait-only,77,1,26,16,3,True,0,3,53.0,62.0
+Wait-only,77,2,26,13,10,True,0,9,53.0,80.0
+Wait-only,78,0,34,21,14,True,0,13,53.0,92.0
+Wait-only,78,1,34,23,37,True,0,37,53.0,164.0
+Wait-only,78,2,30,17,8,True,0,7,53.0,74.0
+Wait-only,79,0,26,16,15,True,0,15,53.0,98.0
+Wait-only,79,1,34,24,15,True,0,15,53.0,98.0
+Wait-only,79,2,34,23,44,True,0,44,53.0,185.0
+Wait-only,80,0,34,22,4,True,0,4,53.0,65.0
+Wait-only,80,1,30,19,20,True,0,20,53.0,113.0
+Wait-only,80,2,30,20,42,True,0,42,53.0,179.0
+Wait-only,81,0,38,25,18,True,0,17,53.0,104.0
+Wait-only,81,1,26,13,25,True,0,24,53.0,125.0
+Wait-only,81,2,30,18,45,True,0,45,53.0,188.0
+Wait-only,82,0,38,27,40,True,0,40,53.0,173.0
+Wait-only,82,1,26,13,26,True,0,25,53.0,128.0
+Wait-only,82,2,34,24,33,True,0,33,53.0,152.0
+Wait-only,83,0,26,13,20,True,0,19,53.0,110.0
+Wait-only,83,1,30,20,40,True,0,40,53.0,173.0
+Wait-only,83,2,26,15,43,True,0,43,53.0,182.0
+Wait-only,84,0,34,24,34,True,0,34,53.0,155.0
+Wait-only,84,1,38,26,42,True,0,42,53.0,179.0
+Wait-only,84,2,34,23,33,True,0,33,53.0,152.0
+Wait-only,85,0,26,13,18,True,0,17,53.0,104.0
+Wait-only,85,1,38,25,32,True,0,31,53.0,146.0
+Wait-only,85,2,34,22,22,True,0,22,53.0,119.0
+Wait-only,86,0,34,21,41,True,0,40,53.0,173.0
+Wait-only,86,1,26,14,4,True,0,4,53.0,65.0
+Wait-only,86,2,26,14,11,True,0,11,53.0,86.0
+Wait-only,87,0,30,19,43,True,0,43,53.0,182.0
+Wait-only,87,1,38,28,43,True,0,43,53.0,182.0
+Wait-only,87,2,34,23,14,True,0,14,53.0,95.0
+Wait-only,88,0,38,26,42,True,0,42,53.0,179.0
+Wait-only,88,1,34,21,18,True,0,17,53.0,104.0
+Wait-only,88,2,34,24,32,True,0,32,53.0,149.0
+Wait-only,89,0,26,15,12,True,0,12,53.0,89.0
+Wait-only,89,1,26,14,23,True,0,23,53.0,122.0
+Wait-only,89,2,38,27,37,True,0,37,53.0,164.0
+Wait-only,90,0,26,15,29,True,0,29,53.0,140.0
+Wait-only,90,1,34,24,7,True,0,7,53.0,74.0
+Wait-only,90,2,30,20,9,True,0,9,53.0,80.0
+Wait-only,91,0,26,16,11,True,0,11,53.0,86.0
+Wait-only,91,1,34,21,41,True,0,40,53.0,173.0
+Wait-only,91,2,30,20,5,True,0,5,53.0,68.0
+Wait-only,92,0,34,23,17,True,0,17,53.0,104.0
+Wait-only,92,1,34,24,36,True,0,36,53.0,161.0
+Wait-only,92,2,38,25,25,True,0,24,53.0,125.0
+Wait-only,93,0,30,17,4,True,0,3,53.0,62.0
+Wait-only,93,1,38,27,13,True,0,13,53.0,92.0
+Wait-only,93,2,26,15,13,True,0,13,53.0,92.0
+Wait-only,94,0,30,18,31,True,0,31,53.0,146.0
+Wait-only,94,1,30,20,30,True,0,30,53.0,143.0
+Wait-only,94,2,38,28,5,True,0,5,53.0,68.0
+Wait-only,95,0,38,27,43,True,0,43,53.0,182.0
+Wait-only,95,1,34,23,29,True,0,29,53.0,140.0
+Wait-only,95,2,38,25,43,True,0,42,53.0,179.0
+Wait-only,96,0,38,27,11,True,0,11,53.0,86.0
+Wait-only,96,1,26,16,4,True,0,4,53.0,65.0
+Wait-only,96,2,30,20,27,True,0,27,53.0,134.0
+Wait-only,97,0,26,13,6,True,0,5,53.0,68.0
+Wait-only,97,1,26,13,38,True,0,37,53.0,164.0
+Wait-only,97,2,34,21,8,True,0,7,53.0,74.0
+Wait-only,98,0,38,26,4,True,0,4,53.0,65.0
+Wait-only,98,1,34,21,28,True,0,27,53.0,134.0
+Wait-only,98,2,38,25,4,True,0,3,53.0,62.0
+Wait-only,99,0,38,28,25,True,0,25,53.0,128.0
+Wait-only,99,1,34,22,34,True,0,34,53.0,155.0
+Wait-only,99,2,38,26,23,True,0,23,53.0,122.0
+Reactive reroute,0,0,38,25,4,True,1,0,107.042,112.042
+Reactive reroute,0,1,30,17,25,True,1,0,91.042,96.042
+Reactive reroute,0,2,26,15,24,True,1,0,85.042,90.042
+Reactive reroute,1,0,30,20,33,True,1,0,95.042,100.042
+Reactive reroute,1,1,38,25,23,True,1,0,107.042,112.042
+Reactive reroute,1,2,30,18,13,True,1,0,91.042,96.042
+Reactive reroute,2,0,30,20,27,True,1,0,95.042,100.042
+Reactive reroute,2,1,34,22,32,True,1,0,99.042,104.042
+Reactive reroute,2,2,30,19,29,True,1,0,93.042,98.042
+Reactive reroute,3,0,30,17,4,True,1,0,91.042,96.042
+Reactive reroute,3,1,30,19,19,True,1,0,93.042,98.042
+Reactive reroute,3,2,38,28,19,True,1,0,111.042,116.042
+Reactive reroute,4,0,26,16,9,True,1,0,87.042,92.042
+Reactive reroute,4,1,34,21,8,True,1,0,99.042,104.042
+Reactive reroute,4,2,38,27,34,True,1,0,109.042,114.042
+Reactive reroute,5,0,30,20,10,True,1,0,95.042,100.042
+Reactive reroute,5,1,30,20,19,True,1,0,95.042,100.042
+Reactive reroute,5,2,38,26,11,True,1,0,107.042,112.042
+Reactive reroute,6,0,34,24,5,True,1,0,103.042,108.042
+Reactive reroute,6,1,26,16,36,True,1,0,87.042,92.042
+Reactive reroute,6,2,34,22,6,True,1,0,99.042,104.042
+Reactive reroute,7,0,26,15,4,True,1,0,85.042,90.042
+Reactive reroute,7,1,26,16,36,True,1,0,87.042,92.042
+Reactive reroute,7,2,38,28,5,True,1,0,111.042,116.042
+Reactive reroute,8,0,30,18,17,True,1,0,91.042,96.042
+Reactive reroute,8,1,30,20,42,True,1,0,95.042,100.042
+Reactive reroute,8,2,26,13,35,True,1,0,83.042,88.042
+Reactive reroute,9,0,38,26,9,True,1,0,107.042,112.042
+Reactive reroute,9,1,26,15,28,True,1,0,85.042,90.042
+Reactive reroute,9,2,30,19,23,True,1,0,93.042,98.042
+Reactive reroute,10,0,26,15,43,True,1,0,85.042,90.042
+Reactive reroute,10,1,38,27,27,True,1,0,109.042,114.042
+Reactive reroute,10,2,34,24,23,True,1,0,103.042,108.042
+Reactive reroute,11,0,38,25,21,True,1,0,107.042,112.042
+Reactive reroute,11,1,30,20,9,True,1,0,95.042,100.042
+Reactive reroute,11,2,34,23,5,True,1,0,101.042,106.042
+Reactive reroute,12,0,34,22,30,True,1,0,99.042,104.042
+Reactive reroute,12,1,26,14,10,True,1,0,83.042,88.042
+Reactive reroute,12,2,30,20,8,True,1,0,95.042,100.042
+Reactive reroute,13,0,26,15,12,True,1,0,85.042,90.042
+Reactive reroute,13,1,38,26,19,True,1,0,107.042,112.042
+Reactive reroute,13,2,30,20,23,True,1,0,95.042,100.042
+Reactive reroute,14,0,30,19,13,True,1,0,93.042,98.042
+Reactive reroute,14,1,26,16,41,True,1,0,87.042,92.042
+Reactive reroute,14,2,34,21,12,True,1,0,99.042,104.042
+Reactive reroute,15,0,26,15,6,True,1,0,85.042,90.042
+Reactive reroute,15,1,38,25,43,True,1,0,107.042,112.042
+Reactive reroute,15,2,34,21,33,True,1,0,99.042,104.042
+Reactive reroute,16,0,26,15,21,True,1,0,85.042,90.042
+Reactive reroute,16,1,38,25,3,True,1,0,107.042,112.042
+Reactive reroute,16,2,30,20,33,True,1,0,95.042,100.042
+Reactive reroute,17,0,30,20,10,True,1,0,95.042,100.042
+Reactive reroute,17,1,30,20,31,True,1,0,95.042,100.042
+Reactive reroute,17,2,30,20,38,True,1,0,95.042,100.042
+Reactive reroute,18,0,30,18,26,True,1,0,91.042,96.042
+Reactive reroute,18,1,38,27,21,True,1,0,109.042,114.042
+Reactive reroute,18,2,26,16,35,True,1,0,87.042,92.042
+Reactive reroute,19,0,38,25,30,True,1,0,107.042,112.042
+Reactive reroute,19,1,30,18,20,True,1,0,91.042,96.042
+Reactive reroute,19,2,30,20,8,True,1,0,95.042,100.042
+Reactive reroute,20,0,38,27,37,True,1,0,109.042,114.042
+Reactive reroute,20,1,30,18,31,True,1,0,91.042,96.042
+Reactive reroute,20,2,30,17,19,True,1,0,91.042,96.042
+Reactive reroute,21,0,26,16,30,True,1,0,87.042,92.042
+Reactive reroute,21,1,30,19,34,True,1,0,93.042,98.042
+Reactive reroute,21,2,34,21,19,True,1,0,99.042,104.042
+Reactive reroute,22,0,30,17,35,True,1,0,91.042,96.042
+Reactive reroute,22,1,30,19,44,True,1,0,93.042,98.042
+Reactive reroute,22,2,26,13,34,True,1,0,83.042,88.042
+Reactive reroute,23,0,30,19,29,True,1,0,93.042,98.042
+Reactive reroute,23,1,34,22,26,True,1,0,99.042,104.042
+Reactive reroute,23,2,30,18,19,True,1,0,91.042,96.042
+Reactive reroute,24,0,34,22,34,True,1,0,99.042,104.042
+Reactive reroute,24,1,26,13,5,True,1,0,83.042,88.042
+Reactive reroute,24,2,38,27,37,True,1,0,109.042,114.042
+Reactive reroute,25,0,26,15,14,True,1,0,85.042,90.042
+Reactive reroute,25,1,38,26,28,True,1,0,107.042,112.042
+Reactive reroute,25,2,38,28,24,True,1,0,111.042,116.042
+Reactive reroute,26,0,34,24,21,True,1,0,103.042,108.042
+Reactive reroute,26,1,34,21,39,True,1,0,99.042,104.042
+Reactive reroute,26,2,30,20,38,True,1,0,95.042,100.042
+Reactive reroute,27,0,30,20,22,True,1,0,95.042,100.042
+Reactive reroute,27,1,26,15,12,True,1,0,85.042,90.042
+Reactive reroute,27,2,34,21,13,True,1,0,99.042,104.042
+Reactive reroute,28,0,30,20,2,True,1,0,95.042,100.042
+Reactive reroute,28,1,38,27,35,True,1,0,109.042,114.042
+Reactive reroute,28,2,38,28,25,True,1,0,111.042,116.042
+Reactive reroute,29,0,26,16,43,True,1,0,87.042,92.042
+Reactive reroute,29,1,38,25,31,True,1,0,107.042,112.042
+Reactive reroute,29,2,26,14,34,True,1,0,83.042,88.042
+Reactive reroute,30,0,30,17,27,True,1,0,91.042,96.042
+Reactive reroute,30,1,30,18,23,True,1,0,91.042,96.042
+Reactive reroute,30,2,38,26,36,True,1,0,107.042,112.042
+Reactive reroute,31,0,26,15,33,True,1,0,85.042,90.042
+Reactive reroute,31,1,34,24,16,True,1,0,103.042,108.042
+Reactive reroute,31,2,38,26,18,True,1,0,107.042,112.042
+Reactive reroute,32,0,38,27,26,True,1,0,109.042,114.042
+Reactive reroute,32,1,30,18,20,True,1,0,91.042,96.042
+Reactive reroute,32,2,34,22,9,True,1,0,99.042,104.042
+Reactive reroute,33,0,30,18,16,True,1,0,91.042,96.042
+Reactive reroute,33,1,38,27,39,True,1,0,109.042,114.042
+Reactive reroute,33,2,30,20,8,True,1,0,95.042,100.042
+Reactive reroute,34,0,38,25,17,True,1,0,107.042,112.042
+Reactive reroute,34,1,30,20,45,True,1,0,95.042,100.042
+Reactive reroute,34,2,30,19,13,True,1,0,93.042,98.042
+Reactive reroute,35,0,26,15,41,True,1,0,85.042,90.042
+Reactive reroute,35,1,38,25,8,True,1,0,107.042,112.042
+Reactive reroute,35,2,38,25,45,True,1,0,107.042,112.042
+Reactive reroute,36,0,38,25,22,True,1,0,107.042,112.042
+Reactive reroute,36,1,30,18,13,True,1,0,91.042,96.042
+Reactive reroute,36,2,38,28,8,True,1,0,111.042,116.042
+Reactive reroute,37,0,38,26,37,True,1,0,107.042,112.042
+Reactive reroute,37,1,38,28,2,True,1,0,111.042,116.042
+Reactive reroute,37,2,30,17,34,True,1,0,91.042,96.042
+Reactive reroute,38,0,34,21,32,True,1,0,99.042,104.042
+Reactive reroute,38,1,26,16,7,True,1,0,87.042,92.042
+Reactive reroute,38,2,34,22,38,True,1,0,99.042,104.042
+Reactive reroute,39,0,30,18,12,True,1,0,91.042,96.042
+Reactive reroute,39,1,30,20,23,True,1,0,95.042,100.042
+Reactive reroute,39,2,38,27,23,True,1,0,109.042,114.042
+Reactive reroute,40,0,38,25,33,True,1,0,107.042,112.042
+Reactive reroute,40,1,34,24,43,True,1,0,103.042,108.042
+Reactive reroute,40,2,30,17,19,True,1,0,91.042,96.042
+Reactive reroute,41,0,26,13,29,True,1,0,83.042,88.042
+Reactive reroute,41,1,34,23,37,True,1,0,101.042,106.042
+Reactive reroute,41,2,38,27,35,True,1,0,109.042,114.042
+Reactive reroute,42,0,26,13,37,True,1,0,83.042,88.042
+Reactive reroute,42,1,34,23,24,True,1,0,101.042,106.042
+Reactive reroute,42,2,38,27,33,True,1,0,109.042,114.042
+Reactive reroute,43,0,26,14,7,True,1,0,83.042,88.042
+Reactive reroute,43,1,26,13,12,True,1,0,83.042,88.042
+Reactive reroute,43,2,38,26,24,True,1,0,107.042,112.042
+Reactive reroute,44,0,30,17,11,True,1,0,91.042,96.042
+Reactive reroute,44,1,38,27,21,True,1,0,109.042,114.042
+Reactive reroute,44,2,34,21,16,True,1,0,99.042,104.042
+Reactive reroute,45,0,34,21,10,True,1,0,99.042,104.042
+Reactive reroute,45,1,30,18,43,True,1,0,91.042,96.042
+Reactive reroute,45,2,26,14,18,True,1,0,83.042,88.042
+Reactive reroute,46,0,26,13,30,True,1,0,83.042,88.042
+Reactive reroute,46,1,38,25,3,True,1,0,107.042,112.042
+Reactive reroute,46,2,38,25,43,True,1,0,107.042,112.042
+Reactive reroute,47,0,34,23,20,True,1,0,101.042,106.042
+Reactive reroute,47,1,34,23,40,True,1,0,101.042,106.042
+Reactive reroute,47,2,38,25,36,True,1,0,107.042,112.042
+Reactive reroute,48,0,38,26,15,True,1,0,107.042,112.042
+Reactive reroute,48,1,26,13,40,True,1,0,83.042,88.042
+Reactive reroute,48,2,34,23,5,True,1,0,101.042,106.042
+Reactive reroute,49,0,38,27,6,True,1,0,109.042,114.042
+Reactive reroute,49,1,26,13,18,True,1,0,83.042,88.042
+Reactive reroute,49,2,26,16,30,True,1,0,87.042,92.042
+Reactive reroute,50,0,26,14,36,True,1,0,83.042,88.042
+Reactive reroute,50,1,26,13,15,True,1,0,83.042,88.042
+Reactive reroute,50,2,26,13,6,True,1,0,83.042,88.042
+Reactive reroute,51,0,26,13,41,True,1,0,83.042,88.042
+Reactive reroute,51,1,26,15,17,True,1,0,85.042,90.042
+Reactive reroute,51,2,26,13,20,True,1,0,83.042,88.042
+Reactive reroute,52,0,26,15,6,True,1,0,85.042,90.042
+Reactive reroute,52,1,34,21,28,True,1,0,99.042,104.042
+Reactive reroute,52,2,38,25,28,True,1,0,107.042,112.042
+Reactive reroute,53,0,30,19,5,True,1,0,93.042,98.042
+Reactive reroute,53,1,34,23,32,True,1,0,101.042,106.042
+Reactive reroute,53,2,34,23,16,True,1,0,101.042,106.042
+Reactive reroute,54,0,30,19,34,True,1,0,93.042,98.042
+Reactive reroute,54,1,26,13,16,True,1,0,83.042,88.042
+Reactive reroute,54,2,26,14,37,True,1,0,83.042,88.042
+Reactive reroute,55,0,38,27,14,True,1,0,109.042,114.042
+Reactive reroute,55,1,26,16,15,True,1,0,87.042,92.042
+Reactive reroute,55,2,34,22,25,True,1,0,99.042,104.042
+Reactive reroute,56,0,38,27,6,True,1,0,109.042,114.042
+Reactive reroute,56,1,34,23,23,True,1,0,101.042,106.042
+Reactive reroute,56,2,26,15,24,True,1,0,85.042,90.042
+Reactive reroute,57,0,26,16,42,True,1,0,87.042,92.042
+Reactive reroute,57,1,34,21,35,True,1,0,99.042,104.042
+Reactive reroute,57,2,34,23,15,True,1,0,101.042,106.042
+Reactive reroute,58,0,38,25,24,True,1,0,107.042,112.042
+Reactive reroute,58,1,34,23,37,True,1,0,101.042,106.042
+Reactive reroute,58,2,34,21,42,True,1,0,99.042,104.042
+Reactive reroute,59,0,38,25,20,True,1,0,107.042,112.042
+Reactive reroute,59,1,26,15,43,True,1,0,85.042,90.042
+Reactive reroute,59,2,38,28,20,True,1,0,111.042,116.042
+Reactive reroute,60,0,30,19,7,True,1,0,93.042,98.042
+Reactive reroute,60,1,38,27,29,True,1,0,109.042,114.042
+Reactive reroute,60,2,30,18,15,True,1,0,91.042,96.042
+Reactive reroute,61,0,30,17,35,True,1,0,91.042,96.042
+Reactive reroute,61,1,34,24,13,True,1,0,103.042,108.042
+Reactive reroute,61,2,26,13,19,True,1,0,83.042,88.042
+Reactive reroute,62,0,38,26,32,True,1,0,107.042,112.042
+Reactive reroute,62,1,34,23,8,True,1,0,101.042,106.042
+Reactive reroute,62,2,38,26,30,True,1,0,107.042,112.042
+Reactive reroute,63,0,34,21,36,True,1,0,99.042,104.042
+Reactive reroute,63,1,30,18,6,True,1,0,91.042,96.042
+Reactive reroute,63,2,30,18,13,True,1,0,91.042,96.042
+Reactive reroute,64,0,34,21,2,True,1,0,99.042,104.042
+Reactive reroute,64,1,30,20,29,True,1,0,95.042,100.042
+Reactive reroute,64,2,34,24,9,True,1,0,103.042,108.042
+Reactive reroute,65,0,38,26,33,True,1,0,107.042,112.042
+Reactive reroute,65,1,38,25,34,True,1,0,107.042,112.042
+Reactive reroute,65,2,38,27,33,True,1,0,109.042,114.042
+Reactive reroute,66,0,34,23,35,True,1,0,101.042,106.042
+Reactive reroute,66,1,30,18,7,True,1,0,91.042,96.042
+Reactive reroute,66,2,30,17,19,True,1,0,91.042,96.042
+Reactive reroute,67,0,34,22,45,True,1,0,99.042,104.042
+Reactive reroute,67,1,38,26,12,True,1,0,107.042,112.042
+Reactive reroute,67,2,34,22,36,True,1,0,99.042,104.042
+Reactive reroute,68,0,34,22,19,True,1,0,99.042,104.042
+Reactive reroute,68,1,38,25,3,True,1,0,107.042,112.042
+Reactive reroute,68,2,38,27,2,True,1,0,109.042,114.042
+Reactive reroute,69,0,30,20,31,True,1,0,95.042,100.042
+Reactive reroute,69,1,38,25,41,True,1,0,107.042,112.042
+Reactive reroute,69,2,38,25,3,True,1,0,107.042,112.042
+Reactive reroute,70,0,38,25,35,True,1,0,107.042,112.042
+Reactive reroute,70,1,38,27,33,True,1,0,109.042,114.042
+Reactive reroute,70,2,38,25,11,True,1,0,107.042,112.042
+Reactive reroute,71,0,38,27,5,True,1,0,109.042,114.042
+Reactive reroute,71,1,30,17,37,True,1,0,91.042,96.042
+Reactive reroute,71,2,30,20,12,True,1,0,95.042,100.042
+Reactive reroute,72,0,34,24,44,True,1,0,103.042,108.042
+Reactive reroute,72,1,38,28,43,True,1,0,111.042,116.042
+Reactive reroute,72,2,26,16,23,True,1,0,87.042,92.042
+Reactive reroute,73,0,38,26,45,True,1,0,107.042,112.042
+Reactive reroute,73,1,38,25,32,True,1,0,107.042,112.042
+Reactive reroute,73,2,38,28,34,True,1,0,111.042,116.042
+Reactive reroute,74,0,26,15,37,True,1,0,85.042,90.042
+Reactive reroute,74,1,38,28,14,True,1,0,111.042,116.042
+Reactive reroute,74,2,26,13,22,True,1,0,83.042,88.042
+Reactive reroute,75,0,38,25,20,True,1,0,107.042,112.042
+Reactive reroute,75,1,38,27,38,True,1,0,109.042,114.042
+Reactive reroute,75,2,34,22,8,True,1,0,99.042,104.042
+Reactive reroute,76,0,26,13,43,True,1,0,83.042,88.042
+Reactive reroute,76,1,38,28,30,True,1,0,111.042,116.042
+Reactive reroute,76,2,38,27,12,True,1,0,109.042,114.042
+Reactive reroute,77,0,34,24,5,True,1,0,103.042,108.042
+Reactive reroute,77,1,26,16,3,True,1,0,87.042,92.042
+Reactive reroute,77,2,26,13,10,True,1,0,83.042,88.042
+Reactive reroute,78,0,34,21,14,True,1,0,99.042,104.042
+Reactive reroute,78,1,34,23,37,True,1,0,101.042,106.042
+Reactive reroute,78,2,30,17,8,True,1,0,91.042,96.042
+Reactive reroute,79,0,26,16,15,True,1,0,87.042,92.042
+Reactive reroute,79,1,34,24,15,True,1,0,103.042,108.042
+Reactive reroute,79,2,34,23,44,True,1,0,101.042,106.042
+Reactive reroute,80,0,34,22,4,True,1,0,99.042,104.042
+Reactive reroute,80,1,30,19,20,True,1,0,93.042,98.042
+Reactive reroute,80,2,30,20,42,True,1,0,95.042,100.042
+Reactive reroute,81,0,38,25,18,True,1,0,107.042,112.042
+Reactive reroute,81,1,26,13,25,True,1,0,83.042,88.042
+Reactive reroute,81,2,30,18,45,True,1,0,91.042,96.042
+Reactive reroute,82,0,38,27,40,True,1,0,109.042,114.042
+Reactive reroute,82,1,26,13,26,True,1,0,83.042,88.042
+Reactive reroute,82,2,34,24,33,True,1,0,103.042,108.042
+Reactive reroute,83,0,26,13,20,True,1,0,83.042,88.042
+Reactive reroute,83,1,30,20,40,True,1,0,95.042,100.042
+Reactive reroute,83,2,26,15,43,True,1,0,85.042,90.042
+Reactive reroute,84,0,34,24,34,True,1,0,103.042,108.042
+Reactive reroute,84,1,38,26,42,True,1,0,107.042,112.042
+Reactive reroute,84,2,34,23,33,True,1,0,101.042,106.042
+Reactive reroute,85,0,26,13,18,True,1,0,83.042,88.042
+Reactive reroute,85,1,38,25,32,True,1,0,107.042,112.042
+Reactive reroute,85,2,34,22,22,True,1,0,99.042,104.042
+Reactive reroute,86,0,34,21,41,True,1,0,99.042,104.042
+Reactive reroute,86,1,26,14,4,True,1,0,83.042,88.042
+Reactive reroute,86,2,26,14,11,True,1,0,83.042,88.042
+Reactive reroute,87,0,30,19,43,True,1,0,93.042,98.042
+Reactive reroute,87,1,38,28,43,True,1,0,111.042,116.042
+Reactive reroute,87,2,34,23,14,True,1,0,101.042,106.042
+Reactive reroute,88,0,38,26,42,True,1,0,107.042,112.042
+Reactive reroute,88,1,34,21,18,True,1,0,99.042,104.042
+Reactive reroute,88,2,34,24,32,True,1,0,103.042,108.042
+Reactive reroute,89,0,26,15,12,True,1,0,85.042,90.042
+Reactive reroute,89,1,26,14,23,True,1,0,83.042,88.042
+Reactive reroute,89,2,38,27,37,True,1,0,109.042,114.042
+Reactive reroute,90,0,26,15,29,True,1,0,85.042,90.042
+Reactive reroute,90,1,34,24,7,True,1,0,103.042,108.042
+Reactive reroute,90,2,30,20,9,True,1,0,95.042,100.042
+Reactive reroute,91,0,26,16,11,True,1,0,87.042,92.042
+Reactive reroute,91,1,34,21,41,True,1,0,99.042,104.042
+Reactive reroute,91,2,30,20,5,True,1,0,95.042,100.042
+Reactive reroute,92,0,34,23,17,True,1,0,101.042,106.042
+Reactive reroute,92,1,34,24,36,True,1,0,103.042,108.042
+Reactive reroute,92,2,38,25,25,True,1,0,107.042,112.042
+Reactive reroute,93,0,30,17,4,True,1,0,91.042,96.042
+Reactive reroute,93,1,38,27,13,True,1,0,109.042,114.042
+Reactive reroute,93,2,26,15,13,True,1,0,85.042,90.042
+Reactive reroute,94,0,30,18,31,True,1,0,91.042,96.042
+Reactive reroute,94,1,30,20,30,True,1,0,95.042,100.042
+Reactive reroute,94,2,38,28,5,True,1,0,111.042,116.042
+Reactive reroute,95,0,38,27,43,True,1,0,109.042,114.042
+Reactive reroute,95,1,34,23,29,True,1,0,101.042,106.042
+Reactive reroute,95,2,38,25,43,True,1,0,107.042,112.042
+Reactive reroute,96,0,38,27,11,True,1,0,109.042,114.042
+Reactive reroute,96,1,26,16,4,True,1,0,87.042,92.042
+Reactive reroute,96,2,30,20,27,True,1,0,95.042,100.042
+Reactive reroute,97,0,26,13,6,True,1,0,83.042,88.042
+Reactive reroute,97,1,26,13,38,True,1,0,83.042,88.042
+Reactive reroute,97,2,34,21,8,True,1,0,99.042,104.042
+Reactive reroute,98,0,38,26,4,True,1,0,107.042,112.042
+Reactive reroute,98,1,34,21,28,True,1,0,99.042,104.042
+Reactive reroute,98,2,38,25,4,True,1,0,107.042,112.042
+Reactive reroute,99,0,38,28,25,True,1,0,111.042,116.042
+Reactive reroute,99,1,34,22,34,True,1,0,99.042,104.042
+Reactive reroute,99,2,38,26,23,True,1,0,107.042,112.042
+Memory-aware wait-or-reroute,0,0,38,25,4,True,0,3,53.0,62.0
+Memory-aware wait-or-reroute,0,1,30,17,25,True,1,0,91.042,96.042
+Memory-aware wait-or-reroute,0,2,26,15,24,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,1,0,30,20,33,True,1,0,95.042,100.042
+Memory-aware wait-or-reroute,1,1,38,25,23,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,1,2,30,18,13,True,1,0,91.042,96.042
+Memory-aware wait-or-reroute,2,0,30,20,27,True,1,0,95.042,100.042
+Memory-aware wait-or-reroute,2,1,34,22,32,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,2,2,30,19,29,True,1,0,93.042,98.042
+Memory-aware wait-or-reroute,3,0,30,17,4,True,0,3,53.0,62.0
+Memory-aware wait-or-reroute,3,1,30,19,19,True,1,0,93.042,98.042
+Memory-aware wait-or-reroute,3,2,38,28,19,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,4,0,26,16,9,True,1,0,87.042,92.042
+Memory-aware wait-or-reroute,4,1,34,21,8,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,4,2,38,27,34,True,1,0,109.042,114.042
+Memory-aware wait-or-reroute,5,0,30,20,10,True,1,0,95.042,100.042
+Memory-aware wait-or-reroute,5,1,30,20,19,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,5,2,38,26,11,True,1,0,107.042,112.042
+Memory-aware wait-or-reroute,6,0,34,24,5,True,0,5,53.0,68.0
+Memory-aware wait-or-reroute,6,1,26,16,36,True,1,0,87.042,92.042
+Memory-aware wait-or-reroute,6,2,34,22,6,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,7,0,26,15,4,True,0,4,53.0,65.0
+Memory-aware wait-or-reroute,7,1,26,16,36,True,1,0,87.042,92.042
+Memory-aware wait-or-reroute,7,2,38,28,5,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,8,0,30,18,17,True,1,0,91.042,96.042
+Memory-aware wait-or-reroute,8,1,30,20,42,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,8,2,26,13,35,True,1,0,83.042,88.042
+Memory-aware wait-or-reroute,9,0,38,26,9,True,1,0,107.042,112.042
+Memory-aware wait-or-reroute,9,1,26,15,28,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,9,2,30,19,23,True,1,0,93.042,98.042
+Memory-aware wait-or-reroute,10,0,26,15,43,True,1,0,85.042,90.042
+Memory-aware wait-or-reroute,10,1,38,27,27,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,10,2,34,24,23,True,1,0,103.042,108.042
+Memory-aware wait-or-reroute,11,0,38,25,21,True,1,0,107.042,112.042
+Memory-aware wait-or-reroute,11,1,30,20,9,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,11,2,34,23,5,True,0,5,53.0,68.0
+Memory-aware wait-or-reroute,12,0,34,22,30,True,1,0,99.042,104.042
+Memory-aware wait-or-reroute,12,1,26,14,10,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,12,2,30,20,8,True,1,0,95.042,100.042
+Memory-aware wait-or-reroute,13,0,26,15,12,True,1,0,85.042,90.042
+Memory-aware wait-or-reroute,13,1,38,26,19,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,13,2,30,20,23,True,1,0,95.042,100.042
+Memory-aware wait-or-reroute,14,0,30,19,13,True,1,0,93.042,98.042
+Memory-aware wait-or-reroute,14,1,26,16,41,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,14,2,34,21,12,True,1,0,99.042,104.042
+Memory-aware wait-or-reroute,15,0,26,15,6,True,1,0,85.042,90.042
+Memory-aware wait-or-reroute,15,1,38,25,43,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,15,2,34,21,33,True,1,0,99.042,104.042
+Memory-aware wait-or-reroute,16,0,26,15,21,True,1,0,85.042,90.042
+Memory-aware wait-or-reroute,16,1,38,25,3,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,16,2,30,20,33,True,1,0,95.042,100.042
+Memory-aware wait-or-reroute,17,0,30,20,10,True,1,0,95.042,100.042
+Memory-aware wait-or-reroute,17,1,30,20,31,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,17,2,30,20,38,True,1,0,95.042,100.042
+Memory-aware wait-or-reroute,18,0,30,18,26,True,1,0,91.042,96.042
+Memory-aware wait-or-reroute,18,1,38,27,21,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,18,2,26,16,35,True,1,0,87.042,92.042
+Memory-aware wait-or-reroute,19,0,38,25,30,True,1,0,107.042,112.042
+Memory-aware wait-or-reroute,19,1,30,18,20,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,19,2,30,20,8,True,1,0,95.042,100.042
+Memory-aware wait-or-reroute,20,0,38,27,37,True,1,0,109.042,114.042
+Memory-aware wait-or-reroute,20,1,30,18,31,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,20,2,30,17,19,True,1,0,91.042,96.042
+Memory-aware wait-or-reroute,21,0,26,16,30,True,1,0,87.042,92.042
+Memory-aware wait-or-reroute,21,1,30,19,34,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,21,2,34,21,19,True,1,0,99.042,104.042
+Memory-aware wait-or-reroute,22,0,30,17,35,True,1,0,91.042,96.042
+Memory-aware wait-or-reroute,22,1,30,19,44,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,22,2,26,13,34,True,1,0,83.042,88.042
+Memory-aware wait-or-reroute,23,0,30,19,29,True,1,0,93.042,98.042
+Memory-aware wait-or-reroute,23,1,34,22,26,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,23,2,30,18,19,True,1,0,91.042,96.042
+Memory-aware wait-or-reroute,24,0,34,22,34,True,1,0,99.042,104.042
+Memory-aware wait-or-reroute,24,1,26,13,5,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,24,2,38,27,37,True,1,0,109.042,114.042
+Memory-aware wait-or-reroute,25,0,26,15,14,True,1,0,85.042,90.042
+Memory-aware wait-or-reroute,25,1,38,26,28,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,25,2,38,28,24,True,1,0,111.042,116.042
+Memory-aware wait-or-reroute,26,0,34,24,21,True,1,0,103.042,108.042
+Memory-aware wait-or-reroute,26,1,34,21,39,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,26,2,30,20,38,True,1,0,95.042,100.042
+Memory-aware wait-or-reroute,27,0,30,20,22,True,1,0,95.042,100.042
+Memory-aware wait-or-reroute,27,1,26,15,12,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,27,2,34,21,13,True,1,0,99.042,104.042
+Memory-aware wait-or-reroute,28,0,30,20,2,True,0,2,53.0,59.0
+Memory-aware wait-or-reroute,28,1,38,27,35,True,1,0,109.042,114.042
+Memory-aware wait-or-reroute,28,2,38,28,25,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,29,0,26,16,43,True,1,0,87.042,92.042
+Memory-aware wait-or-reroute,29,1,38,25,31,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,29,2,26,14,34,True,1,0,83.042,88.042
+Memory-aware wait-or-reroute,30,0,30,17,27,True,1,0,91.042,96.042
+Memory-aware wait-or-reroute,30,1,30,18,23,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,30,2,38,26,36,True,1,0,107.042,112.042
+Memory-aware wait-or-reroute,31,0,26,15,33,True,1,0,85.042,90.042
+Memory-aware wait-or-reroute,31,1,34,24,16,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,31,2,38,26,18,True,1,0,107.042,112.042
+Memory-aware wait-or-reroute,32,0,38,27,26,True,1,0,109.042,114.042
+Memory-aware wait-or-reroute,32,1,30,18,20,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,32,2,34,22,9,True,1,0,99.042,104.042
+Memory-aware wait-or-reroute,33,0,30,18,16,True,1,0,91.042,96.042
+Memory-aware wait-or-reroute,33,1,38,27,39,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,33,2,30,20,8,True,1,0,95.042,100.042
+Memory-aware wait-or-reroute,34,0,38,25,17,True,1,0,107.042,112.042
+Memory-aware wait-or-reroute,34,1,30,20,45,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,34,2,30,19,13,True,1,0,93.042,98.042
+Memory-aware wait-or-reroute,35,0,26,15,41,True,1,0,85.042,90.042
+Memory-aware wait-or-reroute,35,1,38,25,8,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,35,2,38,25,45,True,1,0,107.042,112.042
+Memory-aware wait-or-reroute,36,0,38,25,22,True,1,0,107.042,112.042
+Memory-aware wait-or-reroute,36,1,30,18,13,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,36,2,38,28,8,True,1,0,111.042,116.042
+Memory-aware wait-or-reroute,37,0,38,26,37,True,1,0,107.042,112.042
+Memory-aware wait-or-reroute,37,1,38,28,2,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,37,2,30,17,34,True,1,0,91.042,96.042
+Memory-aware wait-or-reroute,38,0,34,21,32,True,1,0,99.042,104.042
+Memory-aware wait-or-reroute,38,1,26,16,7,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,38,2,34,22,38,True,1,0,99.042,104.042
+Memory-aware wait-or-reroute,39,0,30,18,12,True,1,0,91.042,96.042
+Memory-aware wait-or-reroute,39,1,30,20,23,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,39,2,38,27,23,True,1,0,109.042,114.042
+Memory-aware wait-or-reroute,40,0,38,25,33,True,1,0,107.042,112.042
+Memory-aware wait-or-reroute,40,1,34,24,43,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,40,2,30,17,19,True,1,0,91.042,96.042
+Memory-aware wait-or-reroute,41,0,26,13,29,True,1,0,83.042,88.042
+Memory-aware wait-or-reroute,41,1,34,23,37,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,41,2,38,27,35,True,1,0,109.042,114.042
+Memory-aware wait-or-reroute,42,0,26,13,37,True,1,0,83.042,88.042
+Memory-aware wait-or-reroute,42,1,34,23,24,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,42,2,38,27,33,True,1,0,109.042,114.042
+Memory-aware wait-or-reroute,43,0,26,14,7,True,1,0,83.042,88.042
+Memory-aware wait-or-reroute,43,1,26,13,12,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,43,2,38,26,24,True,1,0,107.042,112.042
+Memory-aware wait-or-reroute,44,0,30,17,11,True,1,0,91.042,96.042
+Memory-aware wait-or-reroute,44,1,38,27,21,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,44,2,34,21,16,True,1,0,99.042,104.042
+Memory-aware wait-or-reroute,45,0,34,21,10,True,1,0,99.042,104.042
+Memory-aware wait-or-reroute,45,1,30,18,43,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,45,2,26,14,18,True,1,0,83.042,88.042
+Memory-aware wait-or-reroute,46,0,26,13,30,True,1,0,83.042,88.042
+Memory-aware wait-or-reroute,46,1,38,25,3,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,46,2,38,25,43,True,1,0,107.042,112.042
+Memory-aware wait-or-reroute,47,0,34,23,20,True,1,0,101.042,106.042
+Memory-aware wait-or-reroute,47,1,34,23,40,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,47,2,38,25,36,True,1,0,107.042,112.042
+Memory-aware wait-or-reroute,48,0,38,26,15,True,1,0,107.042,112.042
+Memory-aware wait-or-reroute,48,1,26,13,40,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,48,2,34,23,5,True,0,5,53.0,68.0
+Memory-aware wait-or-reroute,49,0,38,27,6,True,1,0,109.042,114.042
+Memory-aware wait-or-reroute,49,1,26,13,18,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,49,2,26,16,30,True,1,0,87.042,92.042
+Memory-aware wait-or-reroute,50,0,26,14,36,True,1,0,83.042,88.042
+Memory-aware wait-or-reroute,50,1,26,13,15,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,50,2,26,13,6,True,0,5,53.0,68.0
+Memory-aware wait-or-reroute,51,0,26,13,41,True,1,0,83.042,88.042
+Memory-aware wait-or-reroute,51,1,26,15,17,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,51,2,26,13,20,True,1,0,83.042,88.042
+Memory-aware wait-or-reroute,52,0,26,15,6,True,1,0,85.042,90.042
+Memory-aware wait-or-reroute,52,1,34,21,28,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,52,2,38,25,28,True,1,0,107.042,112.042
+Memory-aware wait-or-reroute,53,0,30,19,5,True,0,5,53.0,68.0
+Memory-aware wait-or-reroute,53,1,34,23,32,True,1,0,101.042,106.042
+Memory-aware wait-or-reroute,53,2,34,23,16,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,54,0,30,19,34,True,1,0,93.042,98.042
+Memory-aware wait-or-reroute,54,1,26,13,16,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,54,2,26,14,37,True,1,0,83.042,88.042
+Memory-aware wait-or-reroute,55,0,38,27,14,True,1,0,109.042,114.042
+Memory-aware wait-or-reroute,55,1,26,16,15,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,55,2,34,22,25,True,1,0,99.042,104.042
+Memory-aware wait-or-reroute,56,0,38,27,6,True,1,0,109.042,114.042
+Memory-aware wait-or-reroute,56,1,34,23,23,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,56,2,26,15,24,True,1,0,85.042,90.042
+Memory-aware wait-or-reroute,57,0,26,16,42,True,1,0,87.042,92.042
+Memory-aware wait-or-reroute,57,1,34,21,35,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,57,2,34,23,15,True,1,0,101.042,106.042
+Memory-aware wait-or-reroute,58,0,38,25,24,True,1,0,107.042,112.042
+Memory-aware wait-or-reroute,58,1,34,23,37,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,58,2,34,21,42,True,1,0,99.042,104.042
+Memory-aware wait-or-reroute,59,0,38,25,20,True,1,0,107.042,112.042
+Memory-aware wait-or-reroute,59,1,26,15,43,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,59,2,38,28,20,True,1,0,111.042,116.042
+Memory-aware wait-or-reroute,60,0,30,19,7,True,1,0,93.042,98.042
+Memory-aware wait-or-reroute,60,1,38,27,29,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,60,2,30,18,15,True,1,0,91.042,96.042
+Memory-aware wait-or-reroute,61,0,30,17,35,True,1,0,91.042,96.042
+Memory-aware wait-or-reroute,61,1,34,24,13,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,61,2,26,13,19,True,1,0,83.042,88.042
+Memory-aware wait-or-reroute,62,0,38,26,32,True,1,0,107.042,112.042
+Memory-aware wait-or-reroute,62,1,34,23,8,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,62,2,38,26,30,True,1,0,107.042,112.042
+Memory-aware wait-or-reroute,63,0,34,21,36,True,1,0,99.042,104.042
+Memory-aware wait-or-reroute,63,1,30,18,6,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,63,2,30,18,13,True,1,0,91.042,96.042
+Memory-aware wait-or-reroute,64,0,34,21,2,True,0,1,53.0,56.0
+Memory-aware wait-or-reroute,64,1,30,20,29,True,1,0,95.042,100.042
+Memory-aware wait-or-reroute,64,2,34,24,9,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,65,0,38,26,33,True,1,0,107.042,112.042
+Memory-aware wait-or-reroute,65,1,38,25,34,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,65,2,38,27,33,True,1,0,109.042,114.042
+Memory-aware wait-or-reroute,66,0,34,23,35,True,1,0,101.042,106.042
+Memory-aware wait-or-reroute,66,1,30,18,7,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,66,2,30,17,19,True,1,0,91.042,96.042
+Memory-aware wait-or-reroute,67,0,34,22,45,True,1,0,99.042,104.042
+Memory-aware wait-or-reroute,67,1,38,26,12,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,67,2,34,22,36,True,1,0,99.042,104.042
+Memory-aware wait-or-reroute,68,0,34,22,19,True,1,0,99.042,104.042
+Memory-aware wait-or-reroute,68,1,38,25,3,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,68,2,38,27,2,True,0,2,53.0,59.0
+Memory-aware wait-or-reroute,69,0,30,20,31,True,1,0,95.042,100.042
+Memory-aware wait-or-reroute,69,1,38,25,41,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,69,2,38,25,3,True,0,2,53.0,59.0
+Memory-aware wait-or-reroute,70,0,38,25,35,True,1,0,107.042,112.042
+Memory-aware wait-or-reroute,70,1,38,27,33,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,70,2,38,25,11,True,1,0,107.042,112.042
+Memory-aware wait-or-reroute,71,0,38,27,5,True,0,5,53.0,68.0
+Memory-aware wait-or-reroute,71,1,30,17,37,True,1,0,91.042,96.042
+Memory-aware wait-or-reroute,71,2,30,20,12,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,72,0,34,24,44,True,1,0,103.042,108.042
+Memory-aware wait-or-reroute,72,1,38,28,43,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,72,2,26,16,23,True,1,0,87.042,92.042
+Memory-aware wait-or-reroute,73,0,38,26,45,True,1,0,107.042,112.042
+Memory-aware wait-or-reroute,73,1,38,25,32,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,73,2,38,28,34,True,1,0,111.042,116.042
+Memory-aware wait-or-reroute,74,0,26,15,37,True,1,0,85.042,90.042
+Memory-aware wait-or-reroute,74,1,38,28,14,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,74,2,26,13,22,True,1,0,83.042,88.042
+Memory-aware wait-or-reroute,75,0,38,25,20,True,1,0,107.042,112.042
+Memory-aware wait-or-reroute,75,1,38,27,38,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,75,2,34,22,8,True,1,0,99.042,104.042
+Memory-aware wait-or-reroute,76,0,26,13,43,True,1,0,83.042,88.042
+Memory-aware wait-or-reroute,76,1,38,28,30,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,76,2,38,27,12,True,1,0,109.042,114.042
+Memory-aware wait-or-reroute,77,0,34,24,5,True,0,5,53.0,68.0
+Memory-aware wait-or-reroute,77,1,26,16,3,True,0,3,53.0,62.0
+Memory-aware wait-or-reroute,77,2,26,13,10,True,1,0,83.042,88.042
+Memory-aware wait-or-reroute,78,0,34,21,14,True,1,0,99.042,104.042
+Memory-aware wait-or-reroute,78,1,34,23,37,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,78,2,30,17,8,True,1,0,91.042,96.042
+Memory-aware wait-or-reroute,79,0,26,16,15,True,1,0,87.042,92.042
+Memory-aware wait-or-reroute,79,1,34,24,15,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,79,2,34,23,44,True,1,0,101.042,106.042
+Memory-aware wait-or-reroute,80,0,34,22,4,True,0,4,53.0,65.0
+Memory-aware wait-or-reroute,80,1,30,19,20,True,1,0,93.042,98.042
+Memory-aware wait-or-reroute,80,2,30,20,42,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,81,0,38,25,18,True,1,0,107.042,112.042
+Memory-aware wait-or-reroute,81,1,26,13,25,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,81,2,30,18,45,True,1,0,91.042,96.042
+Memory-aware wait-or-reroute,82,0,38,27,40,True,1,0,109.042,114.042
+Memory-aware wait-or-reroute,82,1,26,13,26,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,82,2,34,24,33,True,1,0,103.042,108.042
+Memory-aware wait-or-reroute,83,0,26,13,20,True,1,0,83.042,88.042
+Memory-aware wait-or-reroute,83,1,30,20,40,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,83,2,26,15,43,True,1,0,85.042,90.042
+Memory-aware wait-or-reroute,84,0,34,24,34,True,1,0,103.042,108.042
+Memory-aware wait-or-reroute,84,1,38,26,42,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,84,2,34,23,33,True,1,0,101.042,106.042
+Memory-aware wait-or-reroute,85,0,26,13,18,True,1,0,83.042,88.042
+Memory-aware wait-or-reroute,85,1,38,25,32,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,85,2,34,22,22,True,1,0,99.042,104.042
+Memory-aware wait-or-reroute,86,0,34,21,41,True,1,0,99.042,104.042
+Memory-aware wait-or-reroute,86,1,26,14,4,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,86,2,26,14,11,True,1,0,83.042,88.042
+Memory-aware wait-or-reroute,87,0,30,19,43,True,1,0,93.042,98.042
+Memory-aware wait-or-reroute,87,1,38,28,43,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,87,2,34,23,14,True,1,0,101.042,106.042
+Memory-aware wait-or-reroute,88,0,38,26,42,True,1,0,107.042,112.042
+Memory-aware wait-or-reroute,88,1,34,21,18,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,88,2,34,24,32,True,1,0,103.042,108.042
+Memory-aware wait-or-reroute,89,0,26,15,12,True,1,0,85.042,90.042
+Memory-aware wait-or-reroute,89,1,26,14,23,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,89,2,38,27,37,True,1,0,109.042,114.042
+Memory-aware wait-or-reroute,90,0,26,15,29,True,1,0,85.042,90.042
+Memory-aware wait-or-reroute,90,1,34,24,7,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,90,2,30,20,9,True,1,0,95.042,100.042
+Memory-aware wait-or-reroute,91,0,26,16,11,True,1,0,87.042,92.042
+Memory-aware wait-or-reroute,91,1,34,21,41,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,91,2,30,20,5,True,0,5,53.0,68.0
+Memory-aware wait-or-reroute,92,0,34,23,17,True,1,0,101.042,106.042
+Memory-aware wait-or-reroute,92,1,34,24,36,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,92,2,38,25,25,True,1,0,107.042,112.042
+Memory-aware wait-or-reroute,93,0,30,17,4,True,0,3,53.0,62.0
+Memory-aware wait-or-reroute,93,1,38,27,13,True,1,0,109.042,114.042
+Memory-aware wait-or-reroute,93,2,26,15,13,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,94,0,30,18,31,True,1,0,91.042,96.042
+Memory-aware wait-or-reroute,94,1,30,20,30,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,94,2,38,28,5,True,0,5,53.0,68.0
+Memory-aware wait-or-reroute,95,0,38,27,43,True,1,0,109.042,114.042
+Memory-aware wait-or-reroute,95,1,34,23,29,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,95,2,38,25,43,True,1,0,107.042,112.042
+Memory-aware wait-or-reroute,96,0,38,27,11,True,1,0,109.042,114.042
+Memory-aware wait-or-reroute,96,1,26,16,4,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,96,2,30,20,27,True,1,0,95.042,100.042
+Memory-aware wait-or-reroute,97,0,26,13,6,True,0,5,53.0,68.0
+Memory-aware wait-or-reroute,97,1,26,13,38,True,1,0,83.042,88.042
+Memory-aware wait-or-reroute,97,2,34,21,8,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,98,0,38,26,4,True,0,4,53.0,65.0
+Memory-aware wait-or-reroute,98,1,34,21,28,True,1,0,99.042,104.042
+Memory-aware wait-or-reroute,98,2,38,25,4,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,99,0,38,28,25,True,1,0,111.042,116.042
+Memory-aware wait-or-reroute,99,1,34,22,34,True,0,0,73.184,73.184
+Memory-aware wait-or-reroute,99,2,38,26,23,True,1,0,107.042,112.042
