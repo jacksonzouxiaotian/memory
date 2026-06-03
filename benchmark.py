@@ -1574,12 +1574,21 @@ def plan_dynamic_route(grid, start, goal, robot, memory=None, transient_cells=No
 class SpaceTimeAStarPlanner:
     def __init__(
             self, max_time=120, dynamic_penalty=500.0,
-            memory_penalty=80.0, wait_penalty=0.35):
+            memory_penalty=80.0, wait_penalty=0.35,
+            dynamic_memory_penalty=4.0, max_expansions=50000):
         self.name = 'Space-Time A*'
         self.max_time = max_time
         self.dynamic_penalty = dynamic_penalty
         self.memory_penalty = memory_penalty
         self.wait_penalty = wait_penalty
+        self.dynamic_memory_penalty = dynamic_memory_penalty
+        self.max_expansions = max_expansions
+        self.last_stats = {
+            'ExpandedStates': 0,
+            'GeneratedStates': 0,
+            'PlanningTime': 0.0,
+            'ReachedGoal': False,
+        }
         self.moves = [
             (0, 0), (-1, 0), (1, 0), (0, -1), (0, 1),
             (-1, -1), (1, -1), (-1, 1), (1, 1),
@@ -1588,11 +1597,19 @@ class SpaceTimeAStarPlanner:
     def plan(
             self, grid, start, goal, robot, dynamic_cells_at_time,
             static_memory_cells=None, dynamic_memory_cells=None,
-            start_time=0):
-        benchmark = GridBenchmark(grid, start, goal, robot)
+            start_time=0, benchmark=None):
+        planning_start = time.perf_counter()
+        self.last_stats = {
+            'ExpandedStates': 0,
+            'GeneratedStates': 0,
+            'PlanningTime': 0.0,
+            'ReachedGoal': False,
+        }
+        benchmark = benchmark or GridBenchmark(grid, start, goal, robot)
         static_memory_cells = static_memory_cells or set()
         dynamic_memory_cells = dynamic_memory_cells or set()
         if not benchmark.is_free(*start) or not benchmark.is_free(*goal):
+            self.last_stats['PlanningTime'] = time.perf_counter() - planning_start
             return None
         start_state = (start[0], start[1], start_time)
         open_set = [(self.heuristic(start, goal), 0, start_state)]
@@ -1605,10 +1622,15 @@ class SpaceTimeAStarPlanner:
             _, _, current = heapq.heappop(open_set)
             x, y, t = current
             if (x, y) == goal:
+                self.last_stats['ReachedGoal'] = True
+                self.last_stats['PlanningTime'] = time.perf_counter() - planning_start
                 return self.reconstruct(came_from, current)
             if current in closed or t >= start_time + self.max_time:
                 continue
             closed.add(current)
+            self.last_stats['ExpandedStates'] += 1
+            if self.last_stats['ExpandedStates'] >= self.max_expansions:
+                break
             for dx, dy in self.moves:
                 nx, ny = x + dx, y + dy
                 nt = t + 1
@@ -1625,7 +1647,7 @@ class SpaceTimeAStarPlanner:
                 if (nx, ny) in static_memory_cells:
                     memory_cost += self.memory_penalty
                 if (nx, ny) in dynamic_memory_cells:
-                    memory_cost += self.memory_penalty * 0.35
+                    memory_cost += self.dynamic_memory_penalty
                 nxt = (nx, ny, nt)
                 tentative_g = g_score[current] + step_cost + memory_cost
                 if tentative_g < g_score[nxt]:
@@ -1634,6 +1656,8 @@ class SpaceTimeAStarPlanner:
                     f = tentative_g + self.heuristic((nx, ny), goal)
                     heapq.heappush(open_set, (f, push_count, nxt))
                     push_count += 1
+                    self.last_stats['GeneratedStates'] += 1
+        self.last_stats['PlanningTime'] = time.perf_counter() - planning_start
         return None
 
     def heuristic(self, point, goal):
@@ -1690,6 +1714,11 @@ def validate_space_time_path(path, grid, robot, dynamic_cells_at_time):
     return True
 
 
+def point_to_obstacle_distance(point, obstacle, time_step):
+    obstacle_x, obstacle_y = obstacle.position_at(time_step)
+    return math.hypot(point[0] - obstacle_x, point[1] - obstacle_y) - obstacle.radius
+
+
 def predicted_cells_from_trajectory(predictions, default_radius=1.6):
     cells_by_time = defaultdict(set)
     risk_cells = set()
@@ -1707,12 +1736,18 @@ def simulate_space_time_prediction_mission(
         static_memory_cells=None, dynamic_memory=None, max_steps=180,
         replan_interval=4):
     planner = SpaceTimeAStarPlanner(max_time=80)
+    planning_benchmark = GridBenchmark(grid, start, goal, robot)
     current = start
     time_step = 0
     distance = 0.0
     waits = 0
     replans = 0
     prediction_errors = []
+    expanded_states = 0
+    generated_states = 0
+    planning_times = []
+    collision_count = 0
+    min_dynamic_clearance = float('inf')
     route = None
     executed_path = [current]
     static_memory_cells = static_memory_cells or set()
@@ -1754,22 +1789,45 @@ def simulate_space_time_prediction_mission(
                 grid, current, goal, robot, dynamic_cells_at_time,
                 static_memory_cells=static_memory_cells,
                 dynamic_memory_cells=dynamic_memory.active_cells(),
-                start_time=time_step)
+                start_time=time_step, benchmark=planning_benchmark)
+            if route is None and dynamic_memory.active_cells():
+                expanded_states += planner.last_stats['ExpandedStates']
+                generated_states += planner.last_stats['GeneratedStates']
+                planning_times.append(planner.last_stats['PlanningTime'])
+                route = planner.plan(
+                    grid, current, goal, robot, dynamic_cells_at_time,
+                    static_memory_cells=static_memory_cells,
+                    dynamic_memory_cells=set(),
+                    start_time=time_step, benchmark=planning_benchmark)
             replans += 1
+            expanded_states += planner.last_stats['ExpandedStates']
+            generated_states += planner.last_stats['GeneratedStates']
+            planning_times.append(planner.last_stats['PlanningTime'])
         if not route or len(route) < 2:
             waits += 1
             time_step += 1
             continue
         nxt = route[1]
         actual_next_cells = obstacle.occupied_cells_at(nxt[2], padding=0.5)
+        min_dynamic_clearance = min(
+            min_dynamic_clearance,
+            point_to_obstacle_distance(nxt[:2], obstacle, nxt[2]))
         if nxt[:2] in actual_next_cells:
+            collision_count += 1
             return {
                 'Success': False,
+                'Collision': True,
+                'CollisionCount': collision_count,
                 'Replans': replans,
                 'WaitSteps': waits,
                 'TimeSteps': time_step,
                 'PathLength': round(distance, 3),
                 'PredictionMAE': round(statistics.fmean(prediction_errors), 4) if prediction_errors else 0.0,
+                'ExpandedStates': expanded_states,
+                'GeneratedStates': generated_states,
+                'MeanPlanningTime': round(statistics.fmean(planning_times), 6) if planning_times else 0.0,
+                'MaxPlanningTime': round(max(planning_times), 6) if planning_times else 0.0,
+                'MinDynamicClearance': round(min_dynamic_clearance, 4),
                 'TotalCost': round(distance + waits * 3 + replans * 2 + max_steps, 3),
                 'ExecutedPath': executed_path,
             }
@@ -1784,11 +1842,18 @@ def simulate_space_time_prediction_mission(
     total_cost = distance + waits * 3 + replans * 2 + (0 if success else max_steps)
     return {
         'Success': success,
+        'Collision': False,
+        'CollisionCount': collision_count,
         'Replans': replans,
         'WaitSteps': waits,
         'TimeSteps': time_step,
         'PathLength': round(distance, 3),
         'PredictionMAE': round(statistics.fmean(prediction_errors), 4) if prediction_errors else 0.0,
+        'ExpandedStates': expanded_states,
+        'GeneratedStates': generated_states,
+        'MeanPlanningTime': round(statistics.fmean(planning_times), 6) if planning_times else 0.0,
+        'MaxPlanningTime': round(max(planning_times), 6) if planning_times else 0.0,
+        'MinDynamicClearance': round(min_dynamic_clearance, 4) if min_dynamic_clearance < float('inf') else 0.0,
         'TotalCost': round(total_cost, 3),
         'ExecutedPath': executed_path,
     }
@@ -2832,7 +2897,7 @@ def run_prediction_decision_policy_evaluation(
     return summary_rows
 
 
-def run_space_time_dynamic_statistics(seeds=3, missions_per_seed=1):
+def run_space_time_dynamic_statistics(seeds=20, missions_per_seed=3):
     lines = make_dynamic_replanning_scene()
     grid, start, goal = build_scene(lines)
     robot = RobotFootprint(body_width=2, body_length=4, leg_margin=0, sensor_margin=0, safe_margin=0.25)
@@ -2895,6 +2960,13 @@ def run_space_time_dynamic_statistics(seeds=3, missions_per_seed=1):
                 'MeanTimeSteps': round(statistics.fmean(row['TimeSteps'] for row in selected), 4),
                 'MeanPathLength': round(statistics.fmean(row['PathLength'] for row in selected), 4),
                 'MeanPredictionMAE': round(statistics.fmean(row['PredictionMAE'] for row in selected), 4),
+                'CollisionRate': round(statistics.fmean(row['Collision'] for row in selected), 4),
+                'MeanCollisionCount': round(statistics.fmean(row['CollisionCount'] for row in selected), 4),
+                'MeanExpandedStates': round(statistics.fmean(row['ExpandedStates'] for row in selected), 4),
+                'MeanGeneratedStates': round(statistics.fmean(row['GeneratedStates'] for row in selected), 4),
+                'MeanPlanningTime': round(statistics.fmean(row['MeanPlanningTime'] for row in selected), 6),
+                'MaxPlanningTime': round(max(row['MaxPlanningTime'] for row in selected), 6),
+                'MeanMinDynamicClearance': round(statistics.fmean(row['MinDynamicClearance'] for row in selected), 4),
                 'MeanTotalCost': round(statistics.fmean(row['TotalCost'] for row in selected), 4),
             })
     write_dict_rows('results_space_time_dynamic_summary.csv', summary_rows)
@@ -3268,6 +3340,45 @@ def generate_visualizations(realistic_result):
         fig.savefig(output_dir / 'space_time_dynamic_avoidance.png', dpi=180)
         plt.close(fig)
 
+        fig, axes = plt.subplots(1, 3, figsize=(14, 4))
+        width = 0.32
+        for strategy_index, (strategy, color) in enumerate(zip(strategies, colors)):
+            selected = {
+                row['TrajectoryType']: row for row in space_time_rows
+                if row['Strategy'] == strategy
+            }
+            positions = [
+                index + (strategy_index - 0.5) * width
+                for index in range(len(trajectory_types))
+            ]
+            axes[0].bar(
+                positions,
+                [float(selected[trajectory_type]['CollisionRate']) for trajectory_type in trajectory_types],
+                width=width, label=strategy, color=color)
+            axes[1].bar(
+                positions,
+                [float(selected[trajectory_type]['MeanExpandedStates']) for trajectory_type in trajectory_types],
+                width=width, label=strategy, color=color)
+            axes[2].bar(
+                positions,
+                [float(selected[trajectory_type]['MeanPlanningTime']) for trajectory_type in trajectory_types],
+                width=width, label=strategy, color=color)
+        axes[0].set_ylim(0, 1.05)
+        axes[0].set_ylabel('Collision rate')
+        axes[0].set_title('Dynamic collision safety')
+        axes[1].set_ylabel('Mean expanded states')
+        axes[1].set_title('Search effort per mission')
+        axes[2].set_ylabel('Mean planning time per replan (s)')
+        axes[2].set_title('Runtime per replan')
+        for ax in axes:
+            ax.set_xticks(range(len(trajectory_types)), trajectory_types)
+            ax.tick_params(axis='x', rotation=12)
+        handles, labels = axes[0].get_legend_handles_labels()
+        fig.legend(handles, labels, loc='lower center', ncol=2, fontsize=8)
+        fig.tight_layout(rect=(0, 0.12, 1, 1))
+        fig.savefig(output_dir / 'space_time_runtime_safety.png', dpi=180)
+        plt.close(fig)
+
     semantic_dynamic_path = Path('results_space_time_semantic_dynamic.csv')
     if semantic_dynamic_path.exists():
         semantic_dynamic_rows = list(csv.DictReader(open(semantic_dynamic_path, newline='')))
@@ -3486,14 +3597,14 @@ def run_all():
             'SuccessRate', 'MeanReplans', 'MeanWaitSteps',
             'MeanDecisionWaits', 'MeanDecisionReroutes', 'MeanTotalCost']))
 
-    print('\nSpace-Time Dynamic Avoidance Statistics (3 seeds x 1 mission):')
-    print('TrajectoryType,Strategy,Trials,Successes,SuccessRate,MeanReplans,MeanWaitSteps,MeanTimeSteps,MeanPathLength,MeanPredictionMAE,MeanTotalCost')
+    print('\nSpace-Time Dynamic Avoidance Statistics (20 seeds x 3 missions):')
+    print('TrajectoryType,Strategy,Trials,Successes,SuccessRate,CollisionRate,MeanReplans,MeanWaitSteps,MeanTimeSteps,MeanExpandedStates,MeanPlanningTime,MaxPlanningTime,MeanMinDynamicClearance,MeanTotalCost')
     for row in run_space_time_dynamic_statistics():
         print(','.join(str(row[key]) for key in [
             'TrajectoryType', 'Strategy', 'Trials', 'Successes',
-            'SuccessRate', 'MeanReplans', 'MeanWaitSteps',
-            'MeanTimeSteps', 'MeanPathLength', 'MeanPredictionMAE',
-            'MeanTotalCost']))
+            'SuccessRate', 'CollisionRate', 'MeanReplans', 'MeanWaitSteps',
+            'MeanTimeSteps', 'MeanExpandedStates', 'MeanPlanningTime',
+            'MaxPlanningTime', 'MeanMinDynamicClearance', 'MeanTotalCost']))
 
     print('\nSpace-Time Semantic Dynamic Experiment:')
     print('Variant,MatchedAnchor,MatchSimilarity,TransferredCells,TruthExecutable,UsedTargetFailedPassage,Success,Replans,WaitSteps,TimeSteps,PathLength,PredictionMAE,TotalCost')

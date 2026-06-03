@@ -1,19 +1,361 @@
-TrajectoryType,Strategy,Seed,Mission,Success,Replans,WaitSteps,TimeSteps,PathLength,PredictionMAE,TotalCost
-turn,Space-Time CV,0,0,True,18,0,71,80.113,1.4479,116.113
-turn,Space-Time CV,1,0,True,19,0,75,86.598,1.3217,124.598
-turn,Space-Time CV,2,0,True,23,0,91,96.799,1.315,142.799
-turn,Space-Time Kalman uncertainty,0,0,True,19,0,73,89.569,1.3825,127.569
-turn,Space-Time Kalman uncertainty,1,0,True,18,0,69,84.74,1.4108,120.74
-turn,Space-Time Kalman uncertainty,2,0,True,27,0,105,114.941,1.1768,168.941
-sudden-acceleration,Space-Time CV,0,0,True,23,0,91,93.485,1.2786,139.485
-sudden-acceleration,Space-Time CV,1,0,True,18,0,70,79.527,1.1276,115.527
-sudden-acceleration,Space-Time CV,2,0,True,17,0,67,81.083,1.3455,115.083
-sudden-acceleration,Space-Time Kalman uncertainty,0,0,True,17,0,67,81.083,1.3389,115.083
-sudden-acceleration,Space-Time Kalman uncertainty,1,0,False,9,0,32,34.071,1.2726,232.071
-sudden-acceleration,Space-Time Kalman uncertainty,2,0,True,19,0,73,85.426,1.3218,123.426
-stop-and-go,Space-Time CV,0,0,True,17,0,66,76.355,1.221,110.355
-stop-and-go,Space-Time CV,1,0,True,18,0,70,77.87,1.2845,113.87
-stop-and-go,Space-Time CV,2,0,True,17,0,67,81.083,1.428,115.083
-stop-and-go,Space-Time Kalman uncertainty,0,0,True,19,0,75,87.426,1.3524,125.426
-stop-and-go,Space-Time Kalman uncertainty,1,0,True,18,0,72,84.841,1.131,120.841
-stop-and-go,Space-Time Kalman uncertainty,2,0,True,18,0,69,81.426,1.2741,117.426
+TrajectoryType,Strategy,Seed,Mission,Success,Collision,CollisionCount,Replans,WaitSteps,TimeSteps,PathLength,PredictionMAE,ExpandedStates,GeneratedStates,MeanPlanningTime,MaxPlanningTime,MinDynamicClearance,TotalCost
+turn,Space-Time CV,0,0,True,False,0,18,0,70,79.527,1.4536,82551,202204,0.068208,0.305466,13.3651,115.527
+turn,Space-Time CV,0,1,True,False,0,28,0,109,113.971,1.324,126448,281520,0.062668,0.234847,11.4404,169.971
+turn,Space-Time CV,0,2,True,False,0,19,0,75,84.941,1.3211,61837,154010,0.050624,0.198305,9.7759,122.941
+turn,Space-Time CV,1,0,True,False,0,20,0,78,88.355,1.3396,47739,123848,0.035312,0.169116,11.2254,128.355
+turn,Space-Time CV,1,1,True,False,0,18,0,71,81.77,1.3168,55721,148892,0.049049,0.315168,10.9036,117.77
+turn,Space-Time CV,1,2,True,False,0,19,0,76,87.184,1.3853,72599,182284,0.05517,0.233008,10.6108,125.184
+turn,Space-Time CV,2,0,True,False,0,22,0,86,90.556,1.317,82152,181281,0.056157,0.334721,13.1664,134.556
+turn,Space-Time CV,2,1,True,False,0,19,0,74,82.698,1.3013,71130,183681,0.055759,0.250744,10.1604,120.698
+turn,Space-Time CV,2,2,True,False,0,20,0,79,88.941,1.3907,113240,245494,0.085277,0.45181,10.315,128.941
+turn,Space-Time CV,3,0,True,False,0,17,0,68,78.355,1.3261,44013,120132,0.039598,0.232103,11.5879,112.355
+turn,Space-Time CV,3,1,True,False,0,18,0,69,78.113,1.3268,53058,130600,0.044372,0.247535,11.2307,114.113
+turn,Space-Time CV,3,2,True,False,0,19,0,75,85.77,1.3647,84803,197959,0.06405,0.248487,7.8234,123.77
+turn,Space-Time CV,4,0,True,False,0,25,0,97,102.799,1.3297,73700,179352,0.042834,0.27025,9.6528,152.799
+turn,Space-Time CV,4,1,True,False,0,21,0,81,93.426,1.4343,105180,233997,0.076001,0.275858,5.5581,135.426
+turn,Space-Time CV,4,2,True,False,0,26,0,101,104.314,1.4121,190638,426465,0.110442,0.562575,19.9765,156.314
+turn,Space-Time CV,5,0,True,False,0,24,1,94,96.314,1.348,181742,355423,0.111573,0.465953,10.7462,147.314
+turn,Space-Time CV,5,1,True,False,0,19,0,76,85.527,1.2091,55088,142932,0.041902,0.24028,9.0439,123.527
+turn,Space-Time CV,5,2,True,False,0,18,0,70,77.87,1.4312,73778,165523,0.062589,0.348573,11.6287,113.87
+turn,Space-Time CV,6,0,True,False,0,15,1,56,58.314,1.2621,36239,67868,0.031814,0.147127,1.8506,91.314
+turn,Space-Time CV,6,1,True,False,0,21,0,81,92.598,1.3135,88701,199965,0.063354,0.409009,9.7189,134.598
+turn,Space-Time CV,6,2,True,False,0,20,0,80,87.87,1.4062,98463,245564,0.075562,0.326881,5.8434,127.87
+turn,Space-Time CV,7,0,True,False,0,19,0,76,84.698,1.4081,68730,172703,0.052634,0.229455,11.7514,122.698
+turn,Space-Time CV,7,1,True,False,0,20,0,77,89.426,1.2402,71238,174393,0.050682,0.25751,9.722,129.426
+turn,Space-Time CV,7,2,True,False,0,21,0,83,91.284,1.2319,67041,175613,0.049566,0.254619,4.3693,133.284
+turn,Space-Time CV,8,0,True,False,0,18,0,71,80.941,1.3492,65220,171924,0.055651,0.31142,4.4609,116.941
+turn,Space-Time CV,8,1,True,False,0,19,0,75,84.941,1.3586,104237,226349,0.080787,0.582476,10.986,122.941
+turn,Space-Time CV,8,2,True,False,0,18,0,71,79.284,1.2179,62428,166455,0.051826,0.291743,6.8629,115.284
+turn,Space-Time CV,9,0,True,False,0,22,0,85,92.456,1.2599,72750,196899,0.049488,0.241881,8.0465,136.456
+turn,Space-Time CV,9,1,True,False,0,20,0,80,85.385,1.2683,51008,129088,0.039402,0.217943,4.8211,125.385
+turn,Space-Time CV,9,2,True,False,0,18,0,70,77.87,1.5086,52962,141609,0.043546,0.267631,10.9988,113.87
+turn,Space-Time CV,10,0,True,False,0,19,0,75,83.284,1.5131,69740,160993,0.051474,0.197767,9.4316,121.284
+turn,Space-Time CV,10,1,True,False,0,18,0,70,79.527,1.326,85233,176112,0.06784,0.334109,8.1325,115.527
+turn,Space-Time CV,10,2,True,False,0,19,0,74,84.355,1.2147,56580,133524,0.04382,0.191631,10.1541,122.355
+turn,Space-Time CV,11,0,True,False,0,24,0,93,98.799,1.2795,85395,228934,0.05412,0.216788,8.429,146.799
+turn,Space-Time CV,11,1,True,False,0,19,0,76,86.355,1.362,99227,241814,0.078121,0.37987,8.6849,124.355
+turn,Space-Time CV,11,2,True,False,0,19,0,74,84.355,1.3296,77290,173712,0.059269,0.359526,11.148,122.355
+turn,Space-Time CV,12,0,True,False,0,19,0,74,83.527,1.4201,72922,192092,0.056639,0.217906,8.382,121.527
+turn,Space-Time CV,12,1,True,False,0,23,0,89,95.627,1.3689,69094,186224,0.046135,0.309832,8.1966,141.627
+turn,Space-Time CV,12,2,True,False,0,19,0,73,82.941,1.2764,63521,166360,0.049254,0.2601,9.1467,120.941
+turn,Space-Time CV,13,0,True,False,0,24,0,96,100.556,1.2762,115937,243199,0.072115,0.350651,9.9006,148.556
+turn,Space-Time CV,13,1,True,False,0,18,0,72,80.698,1.2749,40675,110843,0.032366,0.145887,12.1841,116.698
+turn,Space-Time CV,13,2,False,True,1,20,5,69,68.556,1.2459,130781,297238,0.096992,0.278074,-0.3751,303.556
+turn,Space-Time CV,14,0,True,False,0,18,0,70,82.012,1.319,56116,149543,0.046253,0.281789,11.6682,118.012
+turn,Space-Time CV,14,1,True,False,0,23,0,92,98.213,1.2621,87715,193727,0.056014,0.238554,6.0128,144.213
+turn,Space-Time CV,14,2,True,False,0,20,0,77,89.426,1.2457,61692,156828,0.043774,0.236805,9.6511,129.426
+turn,Space-Time CV,15,0,True,False,0,18,0,70,77.87,1.2106,47562,123661,0.045622,0.230175,11.0319,113.87
+turn,Space-Time CV,15,1,True,False,0,19,0,73,87.083,1.304,65604,173459,0.066195,0.351718,11.148,125.083
+turn,Space-Time CV,15,2,True,False,0,18,0,70,84.497,1.3949,64223,164936,0.063884,0.344811,10.7566,120.497
+turn,Space-Time CV,16,0,True,False,0,19,0,74,84.355,1.2829,131042,291463,0.110866,0.529291,8.6965,122.355
+turn,Space-Time CV,16,1,True,False,0,18,0,70,82.841,1.4981,64067,161308,0.05221,0.244659,7.9845,118.841
+turn,Space-Time CV,16,2,True,False,0,18,0,72,84.012,1.4,44532,120659,0.04012,0.223717,9.519,120.012
+turn,Space-Time CV,17,0,True,False,0,20,0,77,83.627,1.3429,78712,211421,0.056335,0.244928,11.1917,123.627
+turn,Space-Time CV,17,1,True,False,0,21,0,81,90.941,1.2709,130308,276325,0.098949,0.479931,2.5352,132.941
+turn,Space-Time CV,17,2,True,False,0,18,0,71,81.77,1.2394,45825,120333,0.038216,0.297309,11.1041,117.77
+turn,Space-Time CV,18,0,True,False,0,19,0,74,83.527,1.3296,53680,139175,0.037258,0.217691,7.533,121.527
+turn,Space-Time CV,18,1,True,False,0,17,0,67,77.77,1.3741,49980,133543,0.042387,0.245078,9.9756,111.77
+turn,Space-Time CV,18,2,True,False,0,27,0,105,109.142,1.3932,72874,170114,0.03776,0.179348,12.9477,163.142
+turn,Space-Time CV,19,0,True,False,0,17,0,66,75.527,1.4443,52745,137134,0.044293,0.271497,12.9183,109.527
+turn,Space-Time CV,19,1,True,False,0,21,0,79,88.941,1.154,92500,222364,0.063981,0.201777,1.091,130.941
+turn,Space-Time CV,19,2,True,False,0,15,1,56,58.314,1.2194,66952,126852,0.05881,0.212075,0.8747,91.314
+turn,Space-Time Kalman uncertainty,0,0,False,True,1,9,0,29,29.828,1.4419,113234,200297,0.189156,0.585183,-0.1377,227.828
+turn,Space-Time Kalman uncertainty,0,1,False,True,1,7,0,25,28.728,1.2043,196911,345772,0.547859,0.925181,-0.0214,222.728
+turn,Space-Time Kalman uncertainty,0,2,True,False,0,16,0,62,68.213,1.2728,407803,795599,0.364272,1.168483,3.6787,100.213
+turn,Space-Time Kalman uncertainty,1,0,False,True,1,6,1,21,22.485,1.5501,55365,117169,0.160982,0.376684,-0.54,217.485
+turn,Space-Time Kalman uncertainty,1,1,False,True,1,8,0,31,33.071,1.4894,196167,350389,0.39276,0.742281,0.1853,229.071
+turn,Space-Time Kalman uncertainty,1,2,True,False,0,19,0,61,65.142,1.4246,267179,498462,0.220357,1.081632,0.6773,103.142
+turn,Space-Time Kalman uncertainty,2,0,True,False,0,14,0,53,56.314,1.206,38744,79616,0.035311,0.178301,3.3767,84.314
+turn,Space-Time Kalman uncertainty,2,1,False,True,1,10,0,29,32.728,1.4123,129264,263772,0.201015,0.445902,-0.3386,232.728
+turn,Space-Time Kalman uncertainty,2,2,True,False,0,19,0,75,83.284,1.3701,413350,767551,0.307572,0.87578,7.6157,121.284
+turn,Space-Time Kalman uncertainty,3,0,False,True,1,5,0,19,22.314,1.6277,59149,111292,0.182577,0.302641,0.3757,212.314
+turn,Space-Time Kalman uncertainty,3,1,False,True,1,7,0,22,25.314,1.7035,227864,399177,0.51089,0.654429,0.4133,219.314
+turn,Space-Time Kalman uncertainty,3,2,True,False,0,20,0,77,91.912,1.2979,314992,568280,0.231288,0.586887,10.3881,131.912
+turn,Space-Time Kalman uncertainty,4,0,True,False,0,19,0,74,83.527,1.2258,341214,630590,0.260075,0.884103,3.9399,121.527
+turn,Space-Time Kalman uncertainty,4,1,False,True,1,7,0,24,26.899,1.4636,155364,267934,0.37084,0.766057,0.3724,220.899
+turn,Space-Time Kalman uncertainty,4,2,True,False,0,14,1,55,64.355,1.2029,209423,343522,0.312222,0.948866,2.8206,95.355
+turn,Space-Time Kalman uncertainty,5,0,True,False,0,14,0,54,61.87,1.4199,92706,181000,0.139519,0.659436,2.4883,89.87
+turn,Space-Time Kalman uncertainty,5,1,True,False,0,14,0,53,59.627,1.2082,180322,335240,0.267888,0.757446,2.5699,87.627
+turn,Space-Time Kalman uncertainty,5,2,True,False,0,14,0,54,58.556,1.2449,171996,334218,0.233608,1.204737,0.781,86.556
+turn,Space-Time Kalman uncertainty,6,0,True,False,0,15,0,59,62.314,1.0869,188740,330079,0.220997,0.889905,2.982,92.314
+turn,Space-Time Kalman uncertainty,6,1,False,True,1,7,0,24,28.556,1.2361,147507,283953,0.344036,0.563337,0.154,222.556
+turn,Space-Time Kalman uncertainty,6,2,True,False,0,18,0,70,81.184,1.3593,391628,739745,0.333139,0.744883,5.8072,117.184
+turn,Space-Time Kalman uncertainty,7,0,True,False,0,14,0,53,53.0,1.2624,75135,141215,0.078956,0.315605,0.98,81.0
+turn,Space-Time Kalman uncertainty,7,1,True,False,0,14,0,54,59.385,1.115,155960,263672,0.153636,0.542572,1.7026,87.385
+turn,Space-Time Kalman uncertainty,7,2,True,False,0,14,2,56,61.042,1.383,113733,243908,0.165734,0.602409,1.8856,95.042
+turn,Space-Time Kalman uncertainty,8,0,True,False,0,18,0,70,79.527,1.409,335553,602619,0.31863,0.814201,4.8573,115.527
+turn,Space-Time Kalman uncertainty,8,1,True,False,0,15,1,54,58.799,1.2469,110623,219806,0.12165,0.450465,0.5081,91.799
+turn,Space-Time Kalman uncertainty,8,2,True,False,0,18,0,69,79.77,1.1799,416692,722750,0.348292,0.924908,9.2961,115.77
+turn,Space-Time Kalman uncertainty,9,0,True,False,0,14,0,53,56.314,1.1999,211901,373864,0.227187,0.737412,1.9251,84.314
+turn,Space-Time Kalman uncertainty,9,1,True,False,0,14,2,55,57.142,1.259,295947,547539,0.305542,0.928835,2.1628,91.142
+turn,Space-Time Kalman uncertainty,9,2,True,False,0,22,0,87,97.77,1.3046,419801,772609,0.301302,0.728474,10.4115,141.77
+turn,Space-Time Kalman uncertainty,10,0,False,True,1,7,0,24,24.828,1.398,116246,208762,0.26087,0.492477,-0.1165,218.828
+turn,Space-Time Kalman uncertainty,10,1,False,True,1,9,3,24,25.142,1.4623,190671,355217,0.346037,0.834484,0.2322,232.142
+turn,Space-Time Kalman uncertainty,10,2,True,False,0,21,0,81,90.941,1.1648,390781,686789,0.263657,0.848347,11.5522,132.941
+turn,Space-Time Kalman uncertainty,11,0,True,False,0,14,0,55,59.971,1.2363,91131,189457,0.101193,0.576299,1.273,87.971
+turn,Space-Time Kalman uncertainty,11,1,True,False,0,16,1,55,60.213,1.3819,250160,479112,0.218763,0.792136,0.6383,95.213
+turn,Space-Time Kalman uncertainty,11,2,False,True,1,9,1,29,31.314,1.3806,231351,412933,0.38148,0.657592,0.0385,232.314
+turn,Space-Time Kalman uncertainty,12,0,True,False,0,20,0,80,92.012,1.3301,233778,408097,0.175148,0.633883,6.3834,132.012
+turn,Space-Time Kalman uncertainty,12,1,True,False,0,14,0,53,56.314,1.3993,89416,202626,0.094258,0.347428,2.4624,84.314
+turn,Space-Time Kalman uncertainty,12,2,True,False,0,14,0,53,59.627,1.3581,176683,331262,0.19258,0.583409,2.4581,87.627
+turn,Space-Time Kalman uncertainty,13,0,True,False,0,14,0,55,59.971,1.3587,61367,115215,0.061648,0.320101,1.0179,87.971
+turn,Space-Time Kalman uncertainty,13,1,True,False,0,14,0,53,60.456,1.2448,132593,242890,0.141732,0.500748,0.921,88.456
+turn,Space-Time Kalman uncertainty,13,2,True,False,0,14,0,53,57.971,1.3816,114697,204807,0.121954,0.448689,2.0676,85.971
+turn,Space-Time Kalman uncertainty,14,0,False,True,1,7,0,27,29.899,1.3886,102207,193271,0.214257,0.605001,-0.0174,223.899
+turn,Space-Time Kalman uncertainty,14,1,True,False,0,16,0,54,59.385,1.2486,251214,446751,0.225242,0.795665,0.96,91.385
+turn,Space-Time Kalman uncertainty,14,2,True,False,0,15,0,53,58.799,1.4154,111737,231994,0.111192,0.348261,1.3407,88.799
+turn,Space-Time Kalman uncertainty,15,0,True,False,0,15,0,54,59.385,1.2737,96954,179358,0.092163,0.403454,1.2312,89.385
+turn,Space-Time Kalman uncertainty,15,1,False,True,1,7,0,26,30.971,1.6657,169551,309894,0.354493,0.908792,0.0644,224.971
+turn,Space-Time Kalman uncertainty,15,2,True,False,0,14,0,53,60.456,1.3223,129736,240227,0.132415,0.396743,1.0016,88.456
+turn,Space-Time Kalman uncertainty,16,0,False,True,1,6,0,20,21.657,1.5293,50913,97537,0.119833,0.369007,0.345,213.657
+turn,Space-Time Kalman uncertainty,16,1,True,False,0,18,0,70,83.669,1.2978,351434,677186,0.300701,0.829521,7.2928,119.669
+turn,Space-Time Kalman uncertainty,16,2,True,False,0,19,0,75,88.255,1.4205,270072,512947,0.215888,0.664216,5.0777,126.255
+turn,Space-Time Kalman uncertainty,17,0,False,True,1,9,0,32,34.071,1.1044,194820,329642,0.280527,0.72152,0.2414,232.071
+turn,Space-Time Kalman uncertainty,17,1,True,False,0,16,0,62,74.841,1.1853,363854,715354,0.366196,0.811142,10.5222,106.841
+turn,Space-Time Kalman uncertainty,17,2,False,True,1,8,0,25,25.0,1.2984,133088,227733,0.253469,0.558052,-0.7904,221.0
+turn,Space-Time Kalman uncertainty,18,0,True,False,0,19,0,76,87.184,1.3481,389620,756402,0.327396,0.772091,9.1334,125.184
+turn,Space-Time Kalman uncertainty,18,1,True,False,0,16,3,56,57.971,1.3653,60007,116050,0.055065,0.256575,0.952,98.971
+turn,Space-Time Kalman uncertainty,18,2,True,False,0,14,0,54,61.042,1.1111,109312,221472,0.120506,0.528582,0.5477,89.042
+turn,Space-Time Kalman uncertainty,19,0,True,False,0,17,3,57,56.899,1.3358,107189,168068,0.088541,0.356818,1.4009,99.899
+turn,Space-Time Kalman uncertainty,19,1,True,False,0,19,0,76,90.497,1.1602,446455,817568,0.349325,0.792565,5.8224,128.497
+turn,Space-Time Kalman uncertainty,19,2,True,False,0,18,0,57,66.113,1.2085,167829,301724,0.13835,0.515039,0.5605,102.113
+sudden-acceleration,Space-Time CV,0,0,True,False,0,15,1,56,58.314,1.3181,27445,56726,0.025764,0.164791,1.0,91.314
+sudden-acceleration,Space-Time CV,0,1,False,True,1,10,1,30,29.0,1.3386,74186,164026,0.104898,0.247418,-0.878,232.0
+sudden-acceleration,Space-Time CV,0,2,True,False,0,18,0,71,81.77,1.2914,124715,298103,0.112013,0.575023,9.3155,117.77
+sudden-acceleration,Space-Time CV,1,0,True,False,0,15,0,55,59.142,1.1823,62826,124556,0.059867,0.224791,1.0026,89.142
+sudden-acceleration,Space-Time CV,1,1,True,False,0,16,8,61,53.0,1.2924,50921,90249,0.040559,0.128161,2.8142,109.0
+sudden-acceleration,Space-Time CV,1,2,True,False,0,23,0,91,95.971,1.2672,95461,194008,0.059218,0.329645,8.3112,141.971
+sudden-acceleration,Space-Time CV,2,0,True,False,0,18,0,71,82.598,1.3341,71242,178275,0.056392,0.221868,9.0433,118.598
+sudden-acceleration,Space-Time CV,2,1,True,False,0,19,0,75,84.113,1.2886,74542,193537,0.060662,0.334459,10.0994,122.113
+sudden-acceleration,Space-Time CV,2,2,True,False,0,20,0,80,87.042,1.3129,81185,214608,0.059581,0.261688,5.7304,127.042
+sudden-acceleration,Space-Time CV,3,0,False,True,1,9,0,34,36.899,1.6555,56180,123522,0.086976,0.148471,0.4126,234.899
+sudden-acceleration,Space-Time CV,3,1,True,False,0,17,0,66,79.669,1.2749,114282,287149,0.110828,0.748088,12.1461,113.669
+sudden-acceleration,Space-Time CV,3,2,True,False,0,26,0,101,104.314,1.29,161304,337585,0.089667,0.465028,15.8839,156.314
+sudden-acceleration,Space-Time CV,4,0,True,False,0,19,0,73,82.941,1.4068,95234,211332,0.076168,0.288897,1.657,120.941
+sudden-acceleration,Space-Time CV,4,1,True,False,0,14,0,53,57.142,1.3495,15573,38165,0.015799,0.094764,0.5613,85.142
+sudden-acceleration,Space-Time CV,4,2,True,False,0,19,0,73,83.77,1.3127,59050,158936,0.045744,0.290322,7.3652,121.77
+sudden-acceleration,Space-Time CV,5,0,True,False,0,17,0,66,78.841,1.3252,49719,127086,0.043248,0.191971,7.2993,112.841
+sudden-acceleration,Space-Time CV,5,1,True,False,0,20,0,79,88.113,1.3439,118321,268371,0.098963,0.419743,4.4674,128.113
+sudden-acceleration,Space-Time CV,5,2,True,False,0,17,0,66,79.669,1.3551,66965,164745,0.059116,0.347235,8.9659,113.669
+sudden-acceleration,Space-Time CV,6,0,True,False,0,23,0,91,95.142,1.364,120350,245162,0.074926,0.451296,11.0338,141.142
+sudden-acceleration,Space-Time CV,6,1,True,False,0,18,0,71,82.598,1.2059,83754,190782,0.076719,0.290048,3.1447,118.598
+sudden-acceleration,Space-Time CV,6,2,False,True,1,9,0,32,34.485,1.4222,41917,70481,0.05895,0.219537,0.0,232.485
+sudden-acceleration,Space-Time CV,7,0,True,False,0,18,0,72,84.841,1.3585,110453,236438,0.085701,0.306154,3.0277,120.841
+sudden-acceleration,Space-Time CV,7,1,False,True,1,11,0,35,35.0,1.3175,38329,84390,0.051064,0.107059,0.4808,237.0
+sudden-acceleration,Space-Time CV,7,2,True,False,0,17,0,65,78.255,1.3841,170498,392704,0.176286,0.887116,6.2683,112.255
+sudden-acceleration,Space-Time CV,8,0,True,False,0,14,1,54,56.314,1.354,43589,91297,0.041262,0.15115,2.5834,87.314
+sudden-acceleration,Space-Time CV,8,1,True,False,0,19,0,76,85.527,1.4167,84049,194043,0.066519,0.332181,5.1742,123.527
+sudden-acceleration,Space-Time CV,8,2,True,False,0,15,0,56,58.899,1.3651,35777,61979,0.030859,0.179952,1.2361,88.899
+sudden-acceleration,Space-Time CV,9,0,True,False,0,15,0,54,59.385,1.2167,48337,104176,0.041363,0.141993,1.2078,89.385
+sudden-acceleration,Space-Time CV,9,1,True,False,0,20,0,78,86.698,1.324,59265,157415,0.042458,0.212223,4.8009,126.698
+sudden-acceleration,Space-Time CV,9,2,True,False,0,21,0,81,88.456,1.3852,69075,181662,0.046874,0.302566,7.0717,130.456
+sudden-acceleration,Space-Time CV,10,0,True,False,0,29,0,115,118.314,1.2116,128643,303106,0.062228,0.241191,9.4348,176.314
+sudden-acceleration,Space-Time CV,10,1,True,False,0,19,1,76,84.113,1.3049,100968,216485,0.076123,0.351012,1.1017,125.113
+sudden-acceleration,Space-Time CV,10,2,True,False,0,26,0,104,109.385,1.2807,123160,255918,0.072561,0.396156,12.8831,161.385
+sudden-acceleration,Space-Time CV,11,0,False,True,1,11,1,34,33.0,1.4626,76586,165108,0.089076,0.283928,0.0048,238.0
+sudden-acceleration,Space-Time CV,11,1,True,False,0,19,0,73,83.77,1.2124,154253,331408,0.140796,0.667317,11.6357,121.77
+sudden-acceleration,Space-Time CV,11,2,False,True,1,9,3,35,34.485,1.3489,48457,92315,0.069314,0.137712,0.3158,241.485
+sudden-acceleration,Space-Time CV,12,0,True,False,0,14,0,55,56.657,1.4242,37195,78864,0.034106,0.147211,2.4031,84.657
+sudden-acceleration,Space-Time CV,12,1,True,False,0,20,0,74,82.698,1.316,96232,227583,0.067287,0.240276,1.0048,122.698
+sudden-acceleration,Space-Time CV,12,2,True,False,0,18,0,72,83.184,1.2841,101608,189503,0.08041,0.394073,3.0411,119.184
+sudden-acceleration,Space-Time CV,13,0,True,False,0,19,0,74,82.698,1.352,57582,137320,0.043223,0.187253,3.4885,120.698
+sudden-acceleration,Space-Time CV,13,1,True,False,0,27,0,107,114.456,1.3166,140601,292900,0.073215,0.471858,10.4542,168.456
+sudden-acceleration,Space-Time CV,13,2,False,True,1,8,0,28,30.071,1.439,30621,50945,0.049362,0.135192,0.0072,226.071
+sudden-acceleration,Space-Time CV,14,0,True,False,0,18,0,70,80.355,1.4468,128970,251599,0.107153,0.507531,3.0576,116.355
+sudden-acceleration,Space-Time CV,14,1,True,False,0,19,0,74,83.527,1.2856,69703,178803,0.055814,0.271487,4.237,121.527
+sudden-acceleration,Space-Time CV,14,2,True,False,0,18,0,70,81.184,1.5387,112070,246765,0.092023,0.309049,3.9705,117.184
+sudden-acceleration,Space-Time CV,15,0,True,False,0,19,0,74,88.497,1.3047,109955,256935,0.082461,0.252422,3.926,126.497
+sudden-acceleration,Space-Time CV,15,1,True,False,0,17,0,66,78.841,1.1488,55567,137087,0.049697,0.288516,8.5528,112.841
+sudden-acceleration,Space-Time CV,15,2,True,False,0,26,0,101,107.627,1.2732,157495,318653,0.091903,0.441774,12.9162,159.627
+sudden-acceleration,Space-Time CV,16,0,True,False,0,20,0,79,86.456,1.2822,55585,145717,0.040243,0.248368,6.3432,126.456
+sudden-acceleration,Space-Time CV,16,1,True,False,0,21,0,84,89.385,1.1956,77971,194856,0.054629,0.232127,3.5368,131.385
+sudden-acceleration,Space-Time CV,16,2,True,False,0,20,0,75,87.426,1.3804,90075,216109,0.07298,0.287329,1.4788,127.426
+sudden-acceleration,Space-Time CV,17,0,True,False,0,27,0,105,110.799,1.3643,264277,542483,0.156241,0.830975,8.9141,164.799
+sudden-acceleration,Space-Time CV,17,1,True,False,0,15,0,55,58.314,1.2323,46720,86574,0.040163,0.167117,1.8525,88.314
+sudden-acceleration,Space-Time CV,17,2,False,True,1,12,0,46,48.899,1.3452,113458,239224,0.138671,0.316549,0.3515,252.899
+sudden-acceleration,Space-Time CV,18,0,True,False,0,19,0,75,84.941,1.3161,72756,179703,0.061908,0.285359,8.6916,122.941
+sudden-acceleration,Space-Time CV,18,1,True,False,0,18,0,70,82.012,1.3744,55869,145117,0.046041,0.245569,6.3239,118.012
+sudden-acceleration,Space-Time CV,18,2,True,False,0,15,0,55,58.314,1.4839,59939,139711,0.055481,0.124825,1.7185,88.314
+sudden-acceleration,Space-Time CV,19,0,True,False,0,14,0,53,57.142,1.3103,28703,60426,0.027895,0.110853,1.2482,85.142
+sudden-acceleration,Space-Time CV,19,1,True,False,0,21,0,83,87.142,1.2529,218415,371453,0.153158,0.583716,6.5279,129.142
+sudden-acceleration,Space-Time CV,19,2,True,False,0,18,2,72,82.012,1.4427,65091,159164,0.052399,0.220397,2.6214,124.012
+sudden-acceleration,Space-Time Kalman uncertainty,0,0,True,False,0,20,0,78,90.841,1.3301,307663,564072,0.246118,0.602614,0.569,130.841
+sudden-acceleration,Space-Time Kalman uncertainty,0,1,True,False,0,16,1,54,59.627,1.3641,182317,313697,0.183645,0.638842,1.0332,94.627
+sudden-acceleration,Space-Time Kalman uncertainty,0,2,True,False,0,21,0,84,100.154,1.344,504860,907616,0.387481,0.826142,5.7965,142.154
+sudden-acceleration,Space-Time Kalman uncertainty,1,0,False,True,1,9,0,32,34.071,1.2726,38817,91056,0.063754,0.105054,0.3111,232.071
+sudden-acceleration,Space-Time Kalman uncertainty,1,1,True,False,0,18,1,70,85.569,1.2071,386887,798900,0.320393,0.930428,7.7848,124.569
+sudden-acceleration,Space-Time Kalman uncertainty,1,2,True,False,0,14,0,55,61.627,1.281,50225,117899,0.059602,0.28932,1.2442,89.627
+sudden-acceleration,Space-Time Kalman uncertainty,2,0,True,False,0,17,0,67,74.456,1.2879,293065,532000,0.241904,0.803032,6.4696,108.456
+sudden-acceleration,Space-Time Kalman uncertainty,2,1,True,False,0,16,0,62,68.213,1.4115,322389,605256,0.291982,0.961351,8.3337,100.213
+sudden-acceleration,Space-Time Kalman uncertainty,2,2,True,False,0,15,1,54,57.971,1.2013,196767,373781,0.209895,0.661845,1.4941,90.971
+sudden-acceleration,Space-Time Kalman uncertainty,3,0,False,True,1,9,1,34,36.314,1.3168,117323,212457,0.182607,0.354966,0.4159,237.314
+sudden-acceleration,Space-Time Kalman uncertainty,3,1,True,False,0,14,0,53,56.314,1.156,271328,479713,0.302503,0.85736,0.6193,84.314
+sudden-acceleration,Space-Time Kalman uncertainty,3,2,True,False,0,14,0,53,54.657,1.0883,220044,404193,0.222318,0.728279,0.5106,82.657
+sudden-acceleration,Space-Time Kalman uncertainty,4,0,True,False,0,14,0,53,60.456,1.3474,88527,145927,0.091458,0.463857,2.6868,88.456
+sudden-acceleration,Space-Time Kalman uncertainty,4,1,True,False,0,14,0,53,57.971,1.2252,101533,172293,0.110764,0.53602,1.0392,85.971
+sudden-acceleration,Space-Time Kalman uncertainty,4,2,True,False,0,14,0,53,59.627,1.165,193849,371949,0.207974,0.551188,0.5532,87.627
+sudden-acceleration,Space-Time Kalman uncertainty,5,0,True,False,0,17,0,67,81.083,1.3488,250913,530525,0.244929,0.756779,6.8214,115.083
+sudden-acceleration,Space-Time Kalman uncertainty,5,1,False,True,1,8,0,28,31.728,1.6371,85575,140550,0.145708,0.309647,0.2365,227.728
+sudden-acceleration,Space-Time Kalman uncertainty,5,2,True,False,0,19,0,76,92.154,1.3535,380480,626599,0.325497,0.802084,6.3859,130.154
+sudden-acceleration,Space-Time Kalman uncertainty,6,0,False,True,1,6,2,22,22.899,1.5497,150126,254016,0.376011,0.773613,0.4142,220.899
+sudden-acceleration,Space-Time Kalman uncertainty,6,1,True,False,0,14,0,54,60.213,1.1331,159414,262593,0.173473,0.515215,2.5147,88.213
+sudden-acceleration,Space-Time Kalman uncertainty,6,2,True,False,0,15,0,53,57.971,1.3205,196437,308701,0.187436,0.742794,2.122,87.971
+sudden-acceleration,Space-Time Kalman uncertainty,7,0,True,False,0,14,0,53,55.485,1.4152,97357,197155,0.113197,0.463026,1.3147,83.485
+sudden-acceleration,Space-Time Kalman uncertainty,7,1,False,True,1,9,3,35,38.627,1.2105,106498,191536,0.183469,0.466883,0.0042,245.627
+sudden-acceleration,Space-Time Kalman uncertainty,7,2,True,False,0,14,0,54,61.042,1.3606,232819,436758,0.261122,0.827269,2.5301,89.042
+sudden-acceleration,Space-Time Kalman uncertainty,8,0,False,True,1,8,0,28,28.414,1.4024,67244,136751,0.129333,0.380521,0.0002,224.414
+sudden-acceleration,Space-Time Kalman uncertainty,8,1,True,False,0,17,1,57,59.728,1.3686,155798,334638,0.138748,0.734438,1.441,96.728
+sudden-acceleration,Space-Time Kalman uncertainty,8,2,False,True,1,8,1,29,28.828,1.5611,51587,122562,0.09828,0.231592,0.3247,227.828
+sudden-acceleration,Space-Time Kalman uncertainty,9,0,True,False,0,19,0,74,86.012,1.2235,368532,709702,0.311783,0.816997,3.1021,124.012
+sudden-acceleration,Space-Time Kalman uncertainty,9,1,False,True,1,8,0,31,33.485,1.3569,108728,193118,0.194947,0.315866,0.4142,229.485
+sudden-acceleration,Space-Time Kalman uncertainty,9,2,True,False,0,21,0,82,91.527,1.2857,507065,915223,0.363864,0.954401,17.9047,133.527
+sudden-acceleration,Space-Time Kalman uncertainty,10,0,True,False,0,19,0,75,85.77,1.2,378230,702931,0.299267,0.765391,4.5117,123.77
+sudden-acceleration,Space-Time Kalman uncertainty,10,1,False,True,1,9,0,32,36.556,1.417,98482,208270,0.168368,0.301482,0.4372,234.556
+sudden-acceleration,Space-Time Kalman uncertainty,10,2,True,False,0,14,1,54,57.142,1.2834,234067,462664,0.25505,0.852133,2.6056,88.142
+sudden-acceleration,Space-Time Kalman uncertainty,11,0,True,False,0,18,0,72,86.497,1.4559,267895,533172,0.230446,0.765171,4.2028,122.497
+sudden-acceleration,Space-Time Kalman uncertainty,11,1,True,False,0,19,0,73,82.941,1.3078,423197,773589,0.322071,0.888108,5.965,120.941
+sudden-acceleration,Space-Time Kalman uncertainty,11,2,True,False,0,15,0,53,59.627,1.2637,136628,233995,0.148369,0.644775,1.4611,89.627
+sudden-acceleration,Space-Time Kalman uncertainty,12,0,True,False,0,14,0,53,55.485,1.3077,60704,129640,0.061681,0.179606,0.8924,83.485
+sudden-acceleration,Space-Time Kalman uncertainty,12,1,True,False,0,15,0,59,63.142,1.246,227663,422375,0.222064,0.881761,4.0756,93.142
+sudden-acceleration,Space-Time Kalman uncertainty,12,2,False,True,1,6,0,21,23.485,1.4827,95783,157258,0.236053,0.431866,-1.0,215.485
+sudden-acceleration,Space-Time Kalman uncertainty,13,0,True,False,0,14,0,53,56.314,1.5485,117991,219898,0.137486,0.689393,1.2322,84.314
+sudden-acceleration,Space-Time Kalman uncertainty,13,1,True,False,0,19,0,75,79.142,1.233,389702,694119,0.29434,0.924442,15.2647,117.142
+sudden-acceleration,Space-Time Kalman uncertainty,13,2,True,False,0,14,0,54,60.213,1.3393,149844,278993,0.176234,0.797513,1.185,88.213
+sudden-acceleration,Space-Time Kalman uncertainty,14,0,True,False,0,18,0,69,75.627,1.32,212545,335646,0.178632,0.656323,10.6144,111.627
+sudden-acceleration,Space-Time Kalman uncertainty,14,1,True,False,0,15,0,57,62.799,1.0991,190959,305273,0.195029,0.600064,4.831,92.799
+sudden-acceleration,Space-Time Kalman uncertainty,14,2,False,True,1,7,0,24,26.899,1.5221,72605,167294,0.166804,0.440716,0.0018,220.899
+sudden-acceleration,Space-Time Kalman uncertainty,15,0,True,False,0,14,0,53,57.142,1.253,44062,91660,0.048234,0.22139,2.7697,85.142
+sudden-acceleration,Space-Time Kalman uncertainty,15,1,True,False,0,14,0,54,59.385,1.2925,127576,227890,0.134857,0.577751,2.0841,87.385
+sudden-acceleration,Space-Time Kalman uncertainty,15,2,True,False,0,23,0,91,99.284,1.2644,271565,520658,0.180718,0.669456,18.9125,145.284
+sudden-acceleration,Space-Time Kalman uncertainty,16,0,False,True,1,10,1,34,35.899,1.3362,115327,215844,0.163168,0.460228,0.0977,238.899
+sudden-acceleration,Space-Time Kalman uncertainty,16,1,True,False,0,14,0,54,60.213,1.3268,300985,548795,0.346199,0.87332,1.9804,88.213
+sudden-acceleration,Space-Time Kalman uncertainty,16,2,True,False,0,16,0,61,66.799,1.3409,246555,457673,0.238949,0.683301,4.8779,98.799
+sudden-acceleration,Space-Time Kalman uncertainty,17,0,True,False,0,14,1,54,57.971,1.5118,151075,286190,0.167937,0.671773,1.2361,88.971
+sudden-acceleration,Space-Time Kalman uncertainty,17,1,False,True,1,7,0,22,22.828,1.2284,92996,173535,0.211342,0.65439,0.0001,216.828
+sudden-acceleration,Space-Time Kalman uncertainty,17,2,True,False,0,14,0,55,64.113,1.251,223225,376825,0.256002,0.764754,3.0939,92.113
+sudden-acceleration,Space-Time Kalman uncertainty,18,0,False,True,1,6,0,20,22.071,1.607,71581,138387,0.181821,0.350965,0.4534,214.071
+sudden-acceleration,Space-Time Kalman uncertainty,18,1,True,False,0,16,0,63,78.74,1.2847,159104,335856,0.151722,0.633131,11.9497,110.74
+sudden-acceleration,Space-Time Kalman uncertainty,18,2,True,False,0,14,0,53,59.627,1.475,149323,263173,0.160741,0.527184,1.9428,87.627
+sudden-acceleration,Space-Time Kalman uncertainty,19,0,False,True,1,8,0,30,30.414,1.4216,24299,61268,0.05985,0.288105,0.4528,226.414
+sudden-acceleration,Space-Time Kalman uncertainty,19,1,True,False,0,19,0,75,84.941,1.3972,422526,770281,0.347744,0.892025,12.7848,122.941
+sudden-acceleration,Space-Time Kalman uncertainty,19,2,True,False,0,14,0,55,58.314,1.2728,36123,75197,0.038633,0.21944,2.6056,86.314
+stop-and-go,Space-Time CV,0,0,True,False,0,18,0,70,81.184,1.2283,94376,224624,0.077203,0.357384,6.4779,117.184
+stop-and-go,Space-Time CV,0,1,True,False,0,18,0,70,81.184,1.3822,56638,157951,0.047337,0.288935,12.2939,117.184
+stop-and-go,Space-Time CV,0,2,True,False,0,24,0,93,97.142,1.2824,122453,256385,0.075857,0.416467,5.0334,145.142
+stop-and-go,Space-Time CV,1,0,True,False,0,22,0,85,94.113,1.2459,80109,195897,0.053289,0.239371,4.8514,138.113
+stop-and-go,Space-Time CV,1,1,True,False,0,20,0,79,85.627,1.2802,64385,164855,0.052283,0.297066,9.955,125.627
+stop-and-go,Space-Time CV,1,2,True,False,0,21,0,82,92.355,1.209,122857,284142,0.087999,0.246271,4.8057,134.355
+stop-and-go,Space-Time CV,2,0,True,False,0,20,0,77,90.255,1.3818,84793,214624,0.061862,0.219156,8.221,130.255
+stop-and-go,Space-Time CV,2,1,True,False,0,20,0,78,85.87,1.2386,62227,167228,0.044895,0.267674,9.3714,125.87
+stop-and-go,Space-Time CV,2,2,True,False,0,21,0,83,89.627,1.3286,123571,295358,0.090911,0.433861,8.7826,131.627
+stop-and-go,Space-Time CV,3,0,True,False,0,14,0,53,56.314,1.2858,43279,92490,0.043782,0.173708,1.941,84.314
+stop-and-go,Space-Time CV,3,1,True,False,0,21,0,84,99.326,1.2755,125657,276905,0.088306,0.424908,7.3331,141.326
+stop-and-go,Space-Time CV,3,2,True,False,0,18,0,70,80.355,1.3418,79839,198638,0.071827,0.382389,10.3227,116.355
+stop-and-go,Space-Time CV,4,0,True,False,0,17,0,66,77.184,1.2788,38999,108007,0.036654,0.252158,11.6774,111.184
+stop-and-go,Space-Time CV,4,1,True,False,0,14,0,53,57.142,1.3026,52104,108321,0.056073,0.2244,1.0976,85.142
+stop-and-go,Space-Time CV,4,2,True,False,0,19,0,73,87.083,1.3183,113646,224569,0.089108,0.543774,8.2009,125.083
+stop-and-go,Space-Time CV,5,0,True,False,0,28,0,109,112.314,1.4359,194454,432820,0.102708,0.391301,14.5477,168.314
+stop-and-go,Space-Time CV,5,1,True,False,0,24,0,93,94.657,1.327,186200,401864,0.119991,0.549594,13.7149,142.657
+stop-and-go,Space-Time CV,5,2,True,False,0,20,0,80,90.355,1.3705,176368,378763,0.139558,0.533318,2.5834,130.355
+stop-and-go,Space-Time CV,6,0,True,False,0,18,0,71,81.77,1.2791,84472,195234,0.070781,0.360568,9.7498,117.77
+stop-and-go,Space-Time CV,6,1,True,False,0,18,0,70,81.184,1.2731,65070,156513,0.054593,0.383771,10.3228,117.184
+stop-and-go,Space-Time CV,6,2,True,False,0,17,0,67,81.083,1.3912,36244,102040,0.032257,0.176851,13.1639,115.083
+stop-and-go,Space-Time CV,7,0,True,False,0,18,0,70,79.527,1.1513,60753,155042,0.052278,0.310427,7.7362,115.527
+stop-and-go,Space-Time CV,7,1,True,False,0,20,0,77,86.113,1.1935,62184,163160,0.047695,0.240951,6.0395,126.113
+stop-and-go,Space-Time CV,7,2,True,False,0,14,0,53,57.142,1.4091,37618,80480,0.05257,0.316016,2.7092,85.142
+stop-and-go,Space-Time CV,8,0,True,False,0,18,0,70,79.527,1.2654,58339,155002,0.061981,0.295437,10.8783,115.527
+stop-and-go,Space-Time CV,8,1,True,False,0,21,0,81,91.77,1.2065,110335,262320,0.098035,0.331048,4.8199,133.77
+stop-and-go,Space-Time CV,8,2,True,False,0,19,0,75,84.113,1.4548,120533,252831,0.102166,0.373056,3.5861,122.113
+stop-and-go,Space-Time CV,9,0,True,False,0,18,0,71,81.77,1.3328,53034,141973,0.045924,0.274175,12.1802,117.77
+stop-and-go,Space-Time CV,9,1,True,False,0,20,0,77,86.113,1.2825,157235,328350,0.121786,0.714041,9.518,126.113
+stop-and-go,Space-Time CV,9,2,True,False,0,18,0,70,79.527,1.3188,65524,169030,0.052056,0.274302,10.4539,115.527
+stop-and-go,Space-Time CV,10,0,True,False,0,18,1,72,79.284,1.411,122313,268043,0.120893,0.522224,5.7393,118.284
+stop-and-go,Space-Time CV,10,1,True,False,0,18,0,70,81.184,1.3915,64097,168287,0.061487,0.361558,10.0232,117.184
+stop-and-go,Space-Time CV,10,2,True,False,0,20,0,79,89.77,1.3027,89167,239255,0.069447,0.289404,8.7431,129.77
+stop-and-go,Space-Time CV,11,0,True,False,0,17,0,66,77.184,1.3628,55606,148762,0.043633,0.236671,11.747,111.184
+stop-and-go,Space-Time CV,11,1,True,False,0,21,0,82,91.527,1.4087,135674,273779,0.080394,0.380297,8.3642,133.527
+stop-and-go,Space-Time CV,11,2,True,False,0,18,0,71,84.255,1.3146,62200,158576,0.057778,0.301173,11.055,120.255
+stop-and-go,Space-Time CV,12,0,True,False,0,20,0,80,87.87,1.2983,76653,191762,0.060801,0.348167,6.7108,127.87
+stop-and-go,Space-Time CV,12,1,True,False,0,18,0,71,83.426,1.206,115026,251972,0.096161,0.403582,9.3424,119.426
+stop-and-go,Space-Time CV,12,2,True,False,0,17,0,66,76.355,1.1712,44420,118451,0.042391,0.284379,9.0471,110.355
+stop-and-go,Space-Time CV,13,0,True,False,0,18,0,70,77.87,1.3053,77217,199610,0.065689,0.314719,9.3191,113.87
+stop-and-go,Space-Time CV,13,1,True,False,0,20,0,78,86.698,1.429,67043,174176,0.052466,0.263711,9.0442,126.698
+stop-and-go,Space-Time CV,13,2,True,False,0,20,0,79,87.284,1.3978,69698,189614,0.055228,0.292043,13.2787,127.284
+stop-and-go,Space-Time CV,14,0,True,False,0,18,0,70,79.527,1.3768,50641,134544,0.036803,0.19751,9.3122,115.527
+stop-and-go,Space-Time CV,14,1,True,False,0,18,0,70,81.184,1.3371,64482,167423,0.046746,0.248855,7.2422,117.184
+stop-and-go,Space-Time CV,14,2,True,False,0,18,0,70,78.698,1.2903,49378,128837,0.034314,0.186804,10.2499,114.698
+stop-and-go,Space-Time CV,15,0,True,False,0,20,0,77,84.456,1.3599,55439,146942,0.034415,0.181049,9.5305,124.456
+stop-and-go,Space-Time CV,15,1,True,False,0,18,0,70,82.841,1.1225,83981,203277,0.059866,0.379721,11.2992,118.841
+stop-and-go,Space-Time CV,15,2,True,False,0,21,0,81,88.456,1.3482,91727,228556,0.063705,0.21143,6.3319,130.456
+stop-and-go,Space-Time CV,16,0,True,False,0,19,0,74,82.698,1.4402,143605,330032,0.123596,0.634352,10.1779,120.698
+stop-and-go,Space-Time CV,16,1,True,False,0,20,0,77,86.941,1.2671,56817,149174,0.04062,0.150957,7.5827,126.941
+stop-and-go,Space-Time CV,16,2,True,False,0,18,0,71,80.113,1.2531,65579,171599,0.049702,0.276229,10.7171,116.113
+stop-and-go,Space-Time CV,17,0,True,False,0,15,1,56,58.314,1.2308,74240,146119,0.079897,0.30808,1.2857,91.314
+stop-and-go,Space-Time CV,17,1,True,False,0,20,0,80,88.698,1.3868,125268,271304,0.110307,0.537116,2.4925,128.698
+stop-and-go,Space-Time CV,17,2,True,False,0,19,0,75,83.284,1.4324,113125,298633,0.098785,0.396182,7.8191,121.284
+stop-and-go,Space-Time CV,18,0,True,False,0,19,0,74,85.184,1.4979,81689,205579,0.060672,0.191547,6.6534,123.184
+stop-and-go,Space-Time CV,18,1,True,False,0,18,0,70,77.87,1.1956,50414,126232,0.041001,0.254159,10.346,113.87
+stop-and-go,Space-Time CV,18,2,True,False,0,18,0,71,83.426,1.2734,85466,192251,0.071006,0.411049,7.3206,119.426
+stop-and-go,Space-Time CV,19,0,True,False,0,19,0,75,85.77,1.2884,68347,170578,0.051697,0.208659,8.7043,123.77
+stop-and-go,Space-Time CV,19,1,False,True,1,11,0,34,35.243,1.4175,51734,97405,0.063549,0.170034,0.0849,237.243
+stop-and-go,Space-Time CV,19,2,True,False,0,17,0,65,74.941,1.1836,59670,169998,0.071452,0.45745,13.7425,108.941
+stop-and-go,Space-Time Kalman uncertainty,0,0,True,False,0,15,0,57,61.971,1.3557,108681,236115,0.125947,0.633845,1.0,91.971
+stop-and-go,Space-Time Kalman uncertainty,0,1,True,False,0,17,0,65,72.456,1.3017,331123,622571,0.280564,0.798341,4.9404,106.456
+stop-and-go,Space-Time Kalman uncertainty,0,2,True,False,0,14,0,54,59.385,1.1008,116584,226380,0.129433,0.592186,2.0779,87.385
+stop-and-go,Space-Time Kalman uncertainty,1,0,False,True,1,10,0,33,35.485,1.1813,187046,367062,0.228722,0.571859,0.4593,235.485
+stop-and-go,Space-Time Kalman uncertainty,1,1,True,False,0,18,0,70,76.213,1.1638,319489,567832,0.215921,0.529275,7.2166,112.213
+stop-and-go,Space-Time Kalman uncertainty,1,2,True,False,0,14,0,53,56.314,1.131,205298,369148,0.176806,0.530784,3.4721,84.314
+stop-and-go,Space-Time Kalman uncertainty,2,0,False,True,1,7,0,24,24.0,1.1946,72531,147531,0.119155,0.204015,0.1092,218.0
+stop-and-go,Space-Time Kalman uncertainty,2,1,True,False,0,19,0,76,80.556,1.1314,381524,664480,0.242853,0.548271,9.212,118.556
+stop-and-go,Space-Time Kalman uncertainty,2,2,True,False,0,15,1,56,62.456,1.4092,142809,261443,0.109003,0.327236,1.8284,95.456
+stop-and-go,Space-Time Kalman uncertainty,3,0,True,False,0,14,0,53,57.971,1.2105,63508,121381,0.051908,0.19662,0.941,85.971
+stop-and-go,Space-Time Kalman uncertainty,3,1,True,False,0,14,1,56,59.971,1.2249,176592,327916,0.149255,0.47513,3.8727,90.971
+stop-and-go,Space-Time Kalman uncertainty,3,2,True,False,0,15,0,55,60.799,1.2679,241574,430417,0.191003,0.52329,1.0421,90.799
+stop-and-go,Space-Time Kalman uncertainty,4,0,True,False,0,15,1,54,55.485,1.3524,40167,84107,0.030196,0.201644,0.6165,88.485
+stop-and-go,Space-Time Kalman uncertainty,4,1,True,False,0,21,0,81,93.426,1.2877,466428,889166,0.272134,0.584876,4.0395,135.426
+stop-and-go,Space-Time Kalman uncertainty,4,2,True,False,0,14,0,53,56.314,1.2299,110856,200447,0.094496,0.321453,2.0,84.314
+stop-and-go,Space-Time Kalman uncertainty,5,0,True,False,0,14,0,55,59.142,1.3654,78036,152974,0.064641,0.19163,1.9406,87.142
+stop-and-go,Space-Time Kalman uncertainty,5,1,False,True,1,9,0,32,32.414,1.3771,108983,261518,0.147114,0.361017,0.1398,230.414
+stop-and-go,Space-Time Kalman uncertainty,5,2,True,False,0,18,0,69,78.941,1.3105,401211,778298,0.236969,0.686994,8.3195,114.941
+stop-and-go,Space-Time Kalman uncertainty,6,0,True,False,0,19,0,76,88.841,1.2075,191646,406873,0.123818,0.471656,12.6924,126.841
+stop-and-go,Space-Time Kalman uncertainty,6,1,True,False,0,19,0,75,85.77,1.3438,234055,509905,0.156804,0.611561,12.6579,123.77
+stop-and-go,Space-Time Kalman uncertainty,6,2,True,False,0,15,1,54,57.142,1.3325,163664,290787,0.127538,0.508313,1.0,90.142
+stop-and-go,Space-Time Kalman uncertainty,7,0,True,False,0,18,0,70,80.355,1.1362,212558,436256,0.146827,0.584013,9.2634,116.355
+stop-and-go,Space-Time Kalman uncertainty,7,1,True,False,0,26,0,103,107.971,1.1603,542327,993185,0.29606,1.028955,19.0575,159.971
+stop-and-go,Space-Time Kalman uncertainty,7,2,True,False,0,14,0,55,58.314,1.418,38825,92687,0.036682,0.151295,1.0801,86.314
+stop-and-go,Space-Time Kalman uncertainty,8,0,True,False,0,16,0,56,59.728,1.3309,70295,140589,0.060481,0.245827,1.2361,91.728
+stop-and-go,Space-Time Kalman uncertainty,8,1,True,False,0,15,0,53,57.971,1.268,162491,309327,0.159338,0.519443,1.3426,87.971
+stop-and-go,Space-Time Kalman uncertainty,8,2,True,False,0,14,0,54,56.899,1.2536,118056,230717,0.168725,0.682326,1.5273,84.899
+stop-and-go,Space-Time Kalman uncertainty,9,0,True,False,0,14,0,53,58.799,1.3189,193044,342953,0.251749,1.043554,2.0,86.799
+stop-and-go,Space-Time Kalman uncertainty,9,1,True,False,0,14,0,56,65.527,1.3688,224291,403452,0.286327,0.879745,2.5938,93.527
+stop-and-go,Space-Time Kalman uncertainty,9,2,False,True,1,7,0,24,24.414,1.5629,182973,352311,0.394717,0.530495,0.136,218.414
+stop-and-go,Space-Time Kalman uncertainty,10,0,True,False,0,15,4,57,54.657,1.4409,109527,182521,0.114759,0.580334,2.3181,96.657
+stop-and-go,Space-Time Kalman uncertainty,10,1,True,False,0,16,0,55,59.142,1.3098,146830,275566,0.113604,0.310846,0.8644,91.142
+stop-and-go,Space-Time Kalman uncertainty,10,2,True,False,0,14,0,56,59.728,1.2861,262101,497882,0.239653,0.689772,1.6651,87.728
+stop-and-go,Space-Time Kalman uncertainty,11,0,True,False,0,14,0,53,55.485,1.3957,123273,225419,0.111714,0.473695,1.4824,83.485
+stop-and-go,Space-Time Kalman uncertainty,11,1,True,False,0,14,0,55,59.142,1.3161,197528,339835,0.243901,0.773804,2.1202,87.142
+stop-and-go,Space-Time Kalman uncertainty,11,2,False,True,1,8,0,24,27.314,1.3101,119500,226791,0.223162,0.528696,0.248,223.314
+stop-and-go,Space-Time Kalman uncertainty,12,0,False,True,1,9,0,32,32.0,1.3062,240762,432425,0.24474,0.698883,0.0,230.0
+stop-and-go,Space-Time Kalman uncertainty,12,1,True,False,0,18,0,71,84.255,1.1592,284255,541258,0.208759,0.561012,10.5462,120.255
+stop-and-go,Space-Time Kalman uncertainty,12,2,True,False,0,17,0,66,78.841,1.2088,289405,555661,0.220136,0.611168,8.8741,112.841
+stop-and-go,Space-Time Kalman uncertainty,13,0,True,False,0,14,0,53,60.456,1.4894,63644,117678,0.059539,0.271088,1.128,88.456
+stop-and-go,Space-Time Kalman uncertainty,13,1,True,False,0,14,0,55,59.971,1.2989,218021,409536,0.185527,0.629037,0.6944,87.971
+stop-and-go,Space-Time Kalman uncertainty,13,2,True,False,0,14,0,53,58.799,1.1891,213663,393594,0.186357,0.610471,1.2361,86.799
+stop-and-go,Space-Time Kalman uncertainty,14,0,False,True,1,6,0,21,23.485,1.5223,51400,95797,0.106729,0.25058,0.3762,215.485
+stop-and-go,Space-Time Kalman uncertainty,14,1,True,False,0,15,1,60,63.142,1.4526,291771,526138,0.225344,0.679421,3.8091,96.142
+stop-and-go,Space-Time Kalman uncertainty,14,2,True,False,0,18,0,57,60.314,1.1551,138455,254485,0.103086,0.488582,1.0549,96.314
+stop-and-go,Space-Time Kalman uncertainty,15,0,True,False,0,14,0,53,57.142,1.2384,143170,272214,0.129567,0.473367,1.0,85.142
+stop-and-go,Space-Time Kalman uncertainty,15,1,True,False,0,15,3,57,60.213,1.1358,138899,281702,0.119528,0.571236,4.7917,99.213
+stop-and-go,Space-Time Kalman uncertainty,15,2,True,False,0,14,0,53,57.971,1.3214,172973,316557,0.154218,0.445738,2.8799,85.971
+stop-and-go,Space-Time Kalman uncertainty,16,0,True,False,0,14,0,56,63.87,1.3966,162730,329406,0.157822,0.530313,1.2361,91.87
+stop-and-go,Space-Time Kalman uncertainty,16,1,True,False,0,15,0,57,64.456,1.3108,290643,499585,0.239077,0.665111,2.3343,94.456
+stop-and-go,Space-Time Kalman uncertainty,16,2,False,True,1,9,0,28,30.485,1.3493,163737,308883,0.230005,0.514958,0.4503,228.485
+stop-and-go,Space-Time Kalman uncertainty,17,0,False,True,1,6,0,20,20.828,1.4401,71683,124361,0.153357,0.460308,0.4914,212.828
+stop-and-go,Space-Time Kalman uncertainty,17,1,True,False,0,14,0,53,54.657,1.2693,260720,453287,0.23289,0.820382,0.6055,82.657
+stop-and-go,Space-Time Kalman uncertainty,17,2,True,False,0,14,0,53,60.456,1.2611,262863,458557,0.247266,0.647399,0.8572,88.456
+stop-and-go,Space-Time Kalman uncertainty,18,0,True,False,0,14,0,54,61.87,1.3945,183569,316665,0.169839,0.684559,1.8302,89.87
+stop-and-go,Space-Time Kalman uncertainty,18,1,False,True,1,6,0,20,21.243,1.4147,156945,301420,0.325421,0.543708,0.1366,213.243
+stop-and-go,Space-Time Kalman uncertainty,18,2,True,False,0,18,1,72,82.598,1.3667,311861,558662,0.223629,0.570526,6.5889,121.598
+stop-and-go,Space-Time Kalman uncertainty,19,0,False,True,1,9,1,27,29.314,1.1642,160259,283888,0.20709,0.450655,0.0,230.314
+stop-and-go,Space-Time Kalman uncertainty,19,1,True,False,0,17,0,68,80.012,1.2785,359641,758788,0.266786,0.658988,10.5258,114.012
+stop-and-go,Space-Time Kalman uncertainty,19,2,True,False,0,14,0,53,55.485,1.2506,102132,208516,0.092513,0.373827,3.1168,83.485
