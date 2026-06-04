@@ -1,0 +1,76 @@
+TrajectoryType,Strategy,Seed,Mission,Success,Collision,CollisionCount,Replans,WaitSteps,TimeSteps,PathLength,PredictionMAE,ExpandedStates,GeneratedStates,MeanPlanningTime,MaxPlanningTime,MinDynamicClearance,TotalCost
+turn,Space-Time no prediction/no memory,1000,0,False,True,1,9,0,33,33.0,1.3606,333,2444,0.000591,0.001008,0.0622,231.0
+turn,Space-Time no prediction/no memory,1001,0,False,True,1,7,0,25,25.0,1.1792,287,2092,0.000635,0.000856,0.2462,219.0
+turn,Space-Time no prediction/no memory,1002,0,False,True,1,8,0,28,28.0,1.3227,312,2280,0.000718,0.001238,0.2831,224.0
+turn,Space-Time no prediction/no memory,1003,0,False,True,1,8,0,30,30.0,1.3484,312,2280,0.000665,0.000994,0.3062,226.0
+turn,Space-Time no prediction/no memory,1004,0,False,True,1,5,0,19,19.0,1.4704,225,1644,0.000714,0.001025,0.1931,209.0
+turn,Space-Time CV no dynamic memory,1000,0,True,False,0,17,4,59,55.0,1.2577,635,4392,0.000687,0.002028,1.4633,101.0
+turn,Space-Time CV no dynamic memory,1001,0,False,True,1,7,0,25,25.0,1.1792,287,2092,0.000735,0.00108,0.2462,219.0
+turn,Space-Time CV no dynamic memory,1002,0,False,True,1,8,4,31,27.0,1.3053,570,3722,0.001246,0.00228,-0.0307,235.0
+turn,Space-Time CV no dynamic memory,1003,0,False,True,1,11,0,33,33.0,1.3297,530,3562,0.000783,0.003038,0.241,235.0
+turn,Space-Time CV no dynamic memory,1004,0,True,False,0,16,0,55,56.657,1.2603,2153,11328,0.002239,0.013312,1.5708,88.657
+turn,Space-Time CV + dynamic memory,1000,0,False,True,1,9,0,32,34.071,1.365,55099,105280,0.090807,0.245416,0.282,232.071
+turn,Space-Time CV + dynamic memory,1001,0,True,False,0,17,0,67,80.255,1.3336,57280,154355,0.054368,0.330991,9.6928,114.255
+turn,Space-Time CV + dynamic memory,1002,0,True,False,0,18,0,70,81.184,1.3503,51849,139909,0.046874,0.313314,11.5277,117.184
+turn,Space-Time CV + dynamic memory,1003,0,True,False,0,26,0,101,105.971,1.3023,123036,275178,0.072628,0.2817,10.6343,157.971
+turn,Space-Time CV + dynamic memory,1004,0,True,False,0,18,0,70,80.355,1.2712,49248,130114,0.04415,0.243468,11.4161,116.355
+turn,Space-Time default Kalman + dynamic memory,1000,0,False,True,1,9,0,32,32.828,1.1401,197086,362555,0.361402,1.067493,0.282,230.828
+turn,Space-Time default Kalman + dynamic memory,1001,0,False,True,1,8,0,25,28.314,1.4211,148392,272595,0.311537,0.64753,0.1443,224.314
+turn,Space-Time default Kalman + dynamic memory,1002,0,True,False,0,15,0,53,57.142,1.2305,151967,269144,0.153348,0.607801,1.5756,87.142
+turn,Space-Time default Kalman + dynamic memory,1003,0,False,True,1,8,0,28,29.243,1.0725,173163,296255,0.408935,0.890642,0.304,225.243
+turn,Space-Time default Kalman + dynamic memory,1004,0,True,False,0,14,0,53,55.485,1.2767,38754,84295,0.052859,0.293447,1.7662,83.485
+turn,Space-Time calibrated Kalman + dynamic memory,1000,0,True,False,0,15,0,55,59.142,1.0739,125148,252202,0.155653,0.443509,1.2367,89.142
+turn,Space-Time calibrated Kalman + dynamic memory,1001,0,True,False,0,20,0,79,88.941,1.1251,206085,387604,0.203752,0.658986,8.3534,128.941
+turn,Space-Time calibrated Kalman + dynamic memory,1002,0,True,False,0,19,0,76,83.87,1.0923,296501,513979,0.281851,0.779107,8.3983,121.87
+turn,Space-Time calibrated Kalman + dynamic memory,1003,0,False,True,1,10,1,31,33.314,0.9905,149288,256331,0.264452,0.763693,-0.5209,236.314
+turn,Space-Time calibrated Kalman + dynamic memory,1004,0,True,False,0,18,0,72,86.497,1.1841,184021,321809,0.192479,0.764123,11.1398,122.497
+sudden-acceleration,Space-Time no prediction/no memory,1000,0,False,True,1,8,0,28,28.0,1.3899,312,2280,0.000697,0.001055,0.0,224.0
+sudden-acceleration,Space-Time no prediction/no memory,1001,0,False,True,1,6,0,20,20.0,1.2033,258,1880,0.000704,0.001004,0.3931,212.0
+sudden-acceleration,Space-Time no prediction/no memory,1002,0,False,True,1,8,0,28,28.0,1.4759,312,2280,0.000749,0.00145,0.0,224.0
+sudden-acceleration,Space-Time no prediction/no memory,1003,0,False,True,1,7,0,24,24.0,1.3451,287,2092,0.00077,0.00092,0.0,218.0
+sudden-acceleration,Space-Time no prediction/no memory,1004,0,False,True,1,9,0,32,32.0,1.2371,333,2444,0.000733,0.001181,0.4955,230.0
+sudden-acceleration,Space-Time CV no dynamic memory,1000,0,True,False,0,14,3,56,54.657,1.3778,852,5327,0.00109,0.002453,2.5859,91.657
+sudden-acceleration,Space-Time CV no dynamic memory,1001,0,True,False,0,15,3,56,53.0,1.2092,643,4323,0.000778,0.00335,1.0,92.0
+sudden-acceleration,Space-Time CV no dynamic memory,1002,0,False,True,1,8,0,28,28.0,1.4759,312,2268,0.000753,0.001217,0.0,224.0
+sudden-acceleration,Space-Time CV no dynamic memory,1003,0,False,True,1,8,1,25,24.0,1.318,350,2569,0.000881,0.001275,0.3987,223.0
+sudden-acceleration,Space-Time CV no dynamic memory,1004,0,False,True,1,9,0,32,32.0,1.2371,365,2624,0.000764,0.001083,0.0062,230.0
+sudden-acceleration,Space-Time CV + dynamic memory,1000,0,True,False,0,14,0,53,55.485,1.4108,31280,50557,0.033172,0.184766,1.8537,83.485
+sudden-acceleration,Space-Time CV + dynamic memory,1001,0,True,False,0,21,0,83,83.828,1.2052,98794,187813,0.07822,0.512131,9.0055,125.828
+sudden-acceleration,Space-Time CV + dynamic memory,1002,0,True,False,0,27,0,106,112.213,1.309,170599,314867,0.101645,0.622134,10.0643,166.213
+sudden-acceleration,Space-Time CV + dynamic memory,1003,0,True,False,0,23,0,91,96.799,1.3451,154760,264991,0.107031,0.488482,13.0171,142.799
+sudden-acceleration,Space-Time CV + dynamic memory,1004,0,True,False,0,16,0,61,64.314,1.2851,89147,171587,0.082349,0.254203,5.8113,96.314
+sudden-acceleration,Space-Time default Kalman + dynamic memory,1000,0,True,False,0,21,1,82,91.77,1.3117,295933,569419,0.232964,0.760164,1.1232,136.77
+sudden-acceleration,Space-Time default Kalman + dynamic memory,1001,0,True,False,0,14,0,53,58.799,1.3912,161602,256286,0.181389,0.692264,1.2631,86.799
+sudden-acceleration,Space-Time default Kalman + dynamic memory,1002,0,True,False,0,14,0,53,56.314,1.4502,110094,185573,0.127398,0.47604,1.7653,84.314
+sudden-acceleration,Space-Time default Kalman + dynamic memory,1003,0,True,False,0,14,0,54,56.899,1.1777,157937,280833,0.178917,0.928558,2.6056,84.899
+sudden-acceleration,Space-Time default Kalman + dynamic memory,1004,0,False,True,1,9,0,32,34.071,1.1216,55829,120383,0.092464,0.192547,0.3374,232.071
+sudden-acceleration,Space-Time calibrated Kalman + dynamic memory,1000,0,True,False,0,24,1,87,99.669,1.1517,309571,552899,0.210244,0.655568,1.1003,150.669
+sudden-acceleration,Space-Time calibrated Kalman + dynamic memory,1001,0,True,False,0,16,0,64,69.385,1.1812,305224,488569,0.261083,0.861883,5.2862,101.385
+sudden-acceleration,Space-Time calibrated Kalman + dynamic memory,1002,0,True,False,0,14,0,53,57.142,1.3418,68992,125228,0.075456,0.311752,1.1971,85.142
+sudden-acceleration,Space-Time calibrated Kalman + dynamic memory,1003,0,True,False,0,19,0,76,88.012,1.0154,275197,514447,0.238155,0.803045,14.3365,126.012
+sudden-acceleration,Space-Time calibrated Kalman + dynamic memory,1004,0,True,False,0,14,0,53,57.142,1.1148,88583,170994,0.098996,0.309873,1.0,85.142
+stop-and-go,Space-Time no prediction/no memory,1000,0,False,True,1,9,0,32,32.0,1.3003,333,2444,0.000644,0.001318,0.3395,230.0
+stop-and-go,Space-Time no prediction/no memory,1001,0,False,True,1,9,0,33,33.0,1.2787,333,2444,0.000634,0.000877,0.0965,231.0
+stop-and-go,Space-Time no prediction/no memory,1002,0,False,True,1,6,0,20,20.0,1.5474,258,1880,0.000709,0.000937,0.1636,212.0
+stop-and-go,Space-Time no prediction/no memory,1003,0,False,True,1,8,0,28,28.0,1.232,312,2280,0.00069,0.001149,0.0,224.0
+stop-and-go,Space-Time no prediction/no memory,1004,0,False,True,1,9,0,32,32.0,1.2261,333,2444,0.000649,0.000981,0.0,230.0
+stop-and-go,Space-Time CV no dynamic memory,1000,0,False,True,1,9,0,32,32.414,1.3003,918,5112,0.001626,0.006405,0.0059,230.414
+stop-and-go,Space-Time CV no dynamic memory,1001,0,False,True,1,9,0,33,33.0,1.2787,339,2467,0.000604,0.000869,0.0965,231.0
+stop-and-go,Space-Time CV no dynamic memory,1002,0,True,False,0,14,1,54,54.657,1.4947,1298,7420,0.001621,0.00593,2.2763,85.657
+stop-and-go,Space-Time CV no dynamic memory,1003,0,False,True,1,8,0,28,28.0,1.232,363,2603,0.000739,0.001343,0.0,224.0
+stop-and-go,Space-Time CV no dynamic memory,1004,0,False,True,1,9,0,32,32.414,1.2261,560,3479,0.001117,0.003114,0.4142,230.414
+stop-and-go,Space-Time CV + dynamic memory,1000,0,True,False,0,19,0,76,82.213,1.168,55844,145986,0.045976,0.241126,9.696,120.213
+stop-and-go,Space-Time CV + dynamic memory,1001,0,True,False,0,19,0,75,83.284,1.2983,70514,187413,0.061212,0.267189,10.8581,121.284
+stop-and-go,Space-Time CV + dynamic memory,1002,0,True,False,0,17,0,66,79.669,1.5029,52999,137165,0.049313,0.248203,11.076,113.669
+stop-and-go,Space-Time CV + dynamic memory,1003,0,True,False,0,18,0,70,77.87,1.2145,55200,147530,0.048381,0.307113,10.2232,113.87
+stop-and-go,Space-Time CV + dynamic memory,1004,0,True,False,0,19,0,73,79.627,1.2468,57963,161498,0.050042,0.335698,9.9116,117.627
+stop-and-go,Space-Time default Kalman + dynamic memory,1000,0,False,True,1,9,0,34,38.971,1.1774,227026,417814,0.340038,0.858797,0.3395,236.971
+stop-and-go,Space-Time default Kalman + dynamic memory,1001,0,False,True,1,10,0,35,35.828,1.3372,210037,342363,0.332852,0.683548,0.4142,235.828
+stop-and-go,Space-Time default Kalman + dynamic memory,1002,0,True,False,0,14,0,53,56.314,1.3645,52789,94675,0.055276,0.268458,3.4721,84.314
+stop-and-go,Space-Time default Kalman + dynamic memory,1003,0,True,False,0,14,0,53,56.314,1.2649,127959,241819,0.150065,0.722253,3.0,84.314
+stop-and-go,Space-Time default Kalman + dynamic memory,1004,0,False,True,1,9,0,32,33.657,1.3383,163664,282592,0.288466,0.641616,0.0,231.657
+stop-and-go,Space-Time calibrated Kalman + dynamic memory,1000,0,True,False,0,23,1,92,111.711,1.0841,662065,1235008,0.46015,0.90426,3.2408,160.711
+stop-and-go,Space-Time calibrated Kalman + dynamic memory,1001,0,True,False,0,27,0,107,114.456,1.2208,640092,1048670,0.398829,0.925431,9.0074,168.456
+stop-and-go,Space-Time calibrated Kalman + dynamic memory,1002,0,True,False,0,15,0,57,61.142,1.2596,116841,185571,0.12107,0.468281,4.6477,91.142
+stop-and-go,Space-Time calibrated Kalman + dynamic memory,1003,0,True,False,0,18,0,69,77.284,1.0974,350395,624309,0.387457,0.974288,6.1966,113.284
+stop-and-go,Space-Time calibrated Kalman + dynamic memory,1004,0,True,False,0,14,0,54,61.042,1.1736,232938,407801,0.275804,0.74462,1.0787,89.042

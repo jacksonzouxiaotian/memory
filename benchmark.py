@@ -1734,7 +1734,7 @@ def predicted_cells_from_trajectory(predictions, default_radius=1.6):
 def simulate_space_time_prediction_mission(
         grid, start, goal, robot, obstacle, predictor,
         static_memory_cells=None, dynamic_memory=None, max_steps=180,
-        replan_interval=4):
+        replan_interval=4, use_prediction=True, use_dynamic_memory=True):
     planner = SpaceTimeAStarPlanner(max_time=80)
     planning_benchmark = GridBenchmark(grid, start, goal, robot)
     current = start
@@ -1751,9 +1751,10 @@ def simulate_space_time_prediction_mission(
     route = None
     executed_path = [current]
     static_memory_cells = static_memory_cells or set()
-    dynamic_memory = dynamic_memory or ShortTermMemory(ttl=16)
+    dynamic_memory = dynamic_memory or (ShortTermMemory(ttl=16) if use_dynamic_memory else None)
     while current != goal and time_step < max_steps:
-        dynamic_memory.decay()
+        if dynamic_memory:
+            dynamic_memory.decay()
         true_position = obstacle.position_at(time_step)
         predictor.observe(true_position, time_step)
         predictions = predictor.predict()
@@ -1763,9 +1764,12 @@ def simulate_space_time_prediction_mission(
                 predictions[0], default_radius=1.6)
             prediction_errors.append(math.hypot(
                 predicted_x - next_true[0], predicted_y - next_true[1]))
-        predicted_cells_by_time, predicted_risk_cells = predicted_cells_from_trajectory(
-            predictions)
-        if predicted_risk_cells:
+        if use_prediction:
+            predicted_cells_by_time, predicted_risk_cells = predicted_cells_from_trajectory(
+                predictions)
+        else:
+            predicted_cells_by_time, predicted_risk_cells = defaultdict(set), set()
+        if dynamic_memory and predicted_risk_cells:
             dynamic_memory.remember(predicted_risk_cells)
 
         def dynamic_cells_at_time(query_time):
@@ -1788,9 +1792,9 @@ def simulate_space_time_prediction_mission(
             route = planner.plan(
                 grid, current, goal, robot, dynamic_cells_at_time,
                 static_memory_cells=static_memory_cells,
-                dynamic_memory_cells=dynamic_memory.active_cells(),
+                dynamic_memory_cells=dynamic_memory.active_cells() if dynamic_memory else set(),
                 start_time=time_step, benchmark=planning_benchmark)
-            if route is None and dynamic_memory.active_cells():
+            if route is None and dynamic_memory and dynamic_memory.active_cells():
                 expanded_states += planner.last_stats['ExpandedStates']
                 generated_states += planner.last_stats['GeneratedStates']
                 planning_times.append(planner.last_stats['PlanningTime'])
@@ -2973,6 +2977,181 @@ def run_space_time_dynamic_statistics(seeds=20, missions_per_seed=3):
     return summary_rows
 
 
+def summarize_space_time_rows(rows, group_keys):
+    summary_rows = []
+    groups = sorted({
+        tuple(row[key] for key in group_keys)
+        for row in rows
+    })
+    for group in groups:
+        selected = [
+            row for row in rows
+            if tuple(row[key] for key in group_keys) == group
+        ]
+        successes = sum(row['Success'] for row in selected)
+        ci_low, ci_high = wilson_ci95(successes, len(selected))
+        summary = {
+            key: value for key, value in zip(group_keys, group)
+        }
+        summary.update({
+            'Trials': len(selected),
+            'Successes': successes,
+            'SuccessRate': round(successes / len(selected), 4),
+            'SuccessCI95Low': round(ci_low, 4),
+            'SuccessCI95High': round(ci_high, 4),
+            'CollisionRate': round(statistics.fmean(row['Collision'] for row in selected), 4),
+            'MeanCollisionCount': round(statistics.fmean(row['CollisionCount'] for row in selected), 4),
+            'MeanReplans': round(statistics.fmean(row['Replans'] for row in selected), 4),
+            'MeanWaitSteps': round(statistics.fmean(row['WaitSteps'] for row in selected), 4),
+            'MeanTimeSteps': round(statistics.fmean(row['TimeSteps'] for row in selected), 4),
+            'MeanPathLength': round(statistics.fmean(row['PathLength'] for row in selected), 4),
+            'MeanPredictionMAE': round(statistics.fmean(row['PredictionMAE'] for row in selected), 4),
+            'MeanExpandedStates': round(statistics.fmean(row['ExpandedStates'] for row in selected), 4),
+            'MeanGeneratedStates': round(statistics.fmean(row['GeneratedStates'] for row in selected), 4),
+            'MeanPlanningTime': round(statistics.fmean(row['MeanPlanningTime'] for row in selected), 6),
+            'MaxPlanningTime': round(max(row['MaxPlanningTime'] for row in selected), 6),
+            'MeanMinDynamicClearance': round(statistics.fmean(row['MinDynamicClearance'] for row in selected), 4),
+            'MeanTotalCost': round(statistics.fmean(row['TotalCost'] for row in selected), 4),
+        })
+        summary_rows.append(summary)
+    return summary_rows
+
+
+def run_space_time_kalman_calibration(
+        calibration_seeds=2, evaluation_seeds=5, missions_per_seed=1):
+    lines = make_dynamic_replanning_scene()
+    grid, start, goal = build_scene(lines)
+    robot = RobotFootprint(body_width=2, body_length=4, leg_margin=0, sensor_margin=0, safe_margin=0.25)
+    trajectory_types = ['turn', 'sudden-acceleration', 'stop-and-go']
+    parameter_grid = []
+    for process_noise in [0.01, 0.03]:
+        for base_risk_radius in [1.5, 1.8]:
+            for uncertainty_scale in [0.02, 0.05]:
+                for max_risk_radius in [2.4, 3.0]:
+                    parameter_grid.append({
+                        'ProcessNoise': process_noise,
+                        'BaseRiskRadius': base_risk_radius,
+                        'UncertaintyScale': uncertainty_scale,
+                        'MaxRiskRadius': max_risk_radius,
+                    })
+
+    calibration_rows = []
+    for parameter_index, parameters in enumerate(parameter_grid):
+        for trajectory_type in trajectory_types:
+            for seed in range(calibration_seeds):
+                for mission in range(missions_per_seed):
+                    obstacle = nonlinear_moving_obstacle_scenario(
+                        seed, mission, trajectory_type)
+                    predictor = KalmanTrajectoryPredictor(
+                        horizon=16, position_noise=0.75,
+                        process_noise=parameters['ProcessNoise'],
+                        uncertainty_scale=parameters['UncertaintyScale'],
+                        base_risk_radius=parameters['BaseRiskRadius'],
+                        max_risk_radius=parameters['MaxRiskRadius'],
+                        rng=random.Random(
+                            seed * 521 + mission * 37
+                            + trajectory_types.index(trajectory_type) * 100003))
+                    result = simulate_space_time_prediction_mission(
+                        grid, start, goal, robot, obstacle, predictor,
+                        dynamic_memory=ShortTermMemory(ttl=16))
+                    calibration_rows.append({
+                        'ParameterIndex': parameter_index,
+                        'TrajectoryType': trajectory_type,
+                        'Seed': seed,
+                        'Mission': mission,
+                        **parameters,
+                        **{
+                            key: value for key, value in result.items()
+                            if key != 'ExecutedPath'
+                        },
+                    })
+    write_dict_rows('results_space_time_kalman_calibration_trials.csv', calibration_rows)
+    calibration_summary = summarize_space_time_rows(
+        calibration_rows,
+        ['ParameterIndex', 'ProcessNoise', 'BaseRiskRadius', 'UncertaintyScale', 'MaxRiskRadius'])
+    write_dict_rows('results_space_time_kalman_calibration_summary.csv', calibration_summary)
+    best = min(
+        calibration_summary,
+        key=lambda row: (
+            row['CollisionRate'],
+            -row['SuccessRate'],
+            row['MeanTotalCost'],
+            row['MeanPlanningTime']))
+    write_dict_rows('results_space_time_kalman_calibration_best.csv', [best])
+
+    evaluation_rows = []
+    ablations = [
+        'Space-Time no prediction/no memory',
+        'Space-Time CV no dynamic memory',
+        'Space-Time CV + dynamic memory',
+        'Space-Time default Kalman + dynamic memory',
+        'Space-Time calibrated Kalman + dynamic memory',
+    ]
+    for trajectory_type in trajectory_types:
+        for strategy in ablations:
+            for seed in range(1000, 1000 + evaluation_seeds):
+                for mission in range(missions_per_seed):
+                    obstacle = nonlinear_moving_obstacle_scenario(
+                        seed, mission, trajectory_type)
+                    predictor_rng = random.Random(
+                        seed * 521 + mission * 37
+                        + trajectory_types.index(trajectory_type) * 100003)
+                    use_prediction = True
+                    use_dynamic_memory = True
+                    if strategy == 'Space-Time no prediction/no memory':
+                        predictor = OnlineTrajectoryPredictor(
+                            horizon=16, position_noise=0.75,
+                            velocity_noise=0.12, rng=predictor_rng)
+                        use_prediction = False
+                        use_dynamic_memory = False
+                    elif strategy == 'Space-Time CV no dynamic memory':
+                        predictor = OnlineTrajectoryPredictor(
+                            horizon=16, position_noise=0.75,
+                            velocity_noise=0.12, rng=predictor_rng)
+                        use_dynamic_memory = False
+                    elif strategy == 'Space-Time CV + dynamic memory':
+                        predictor = OnlineTrajectoryPredictor(
+                            horizon=16, position_noise=0.75,
+                            velocity_noise=0.12, rng=predictor_rng)
+                    elif strategy == 'Space-Time default Kalman + dynamic memory':
+                        predictor = KalmanTrajectoryPredictor(
+                            horizon=16, position_noise=0.75,
+                            process_noise=0.03, uncertainty_scale=0.02,
+                            base_risk_radius=1.5, max_risk_radius=2.4,
+                            rng=predictor_rng)
+                    else:
+                        predictor = KalmanTrajectoryPredictor(
+                            horizon=16, position_noise=0.75,
+                            process_noise=best['ProcessNoise'],
+                            uncertainty_scale=best['UncertaintyScale'],
+                            base_risk_radius=best['BaseRiskRadius'],
+                            max_risk_radius=best['MaxRiskRadius'],
+                            rng=predictor_rng)
+                    result = simulate_space_time_prediction_mission(
+                        grid, start, goal, robot, obstacle, predictor,
+                        dynamic_memory=ShortTermMemory(ttl=16) if use_dynamic_memory else None,
+                        use_prediction=use_prediction,
+                        use_dynamic_memory=use_dynamic_memory)
+                    evaluation_rows.append({
+                        'TrajectoryType': trajectory_type,
+                        'Strategy': strategy,
+                        'Seed': seed,
+                        'Mission': mission,
+                        **{
+                            key: value for key, value in result.items()
+                            if key != 'ExecutedPath'
+                        },
+                    })
+    write_dict_rows('results_space_time_ablation_trials.csv', evaluation_rows)
+    ablation_summary = summarize_space_time_rows(
+        evaluation_rows, ['TrajectoryType', 'Strategy'])
+    write_dict_rows('results_space_time_ablation_summary.csv', ablation_summary)
+    overall_summary = summarize_space_time_rows(
+        evaluation_rows, ['Strategy'])
+    write_dict_rows('results_space_time_ablation_overall.csv', overall_summary)
+    return best, ablation_summary, overall_summary
+
+
 def run_space_time_semantic_dynamic_experiment():
     robot = RobotFootprint(body_width=0, body_length=0, leg_margin=0, sensor_margin=0, safe_margin=0)
     source_observed_lines, _, source_failed_region = make_repeated_passage_scenes()
@@ -3379,6 +3558,65 @@ def generate_visualizations(realistic_result):
         fig.savefig(output_dir / 'space_time_runtime_safety.png', dpi=180)
         plt.close(fig)
 
+    ablation_path = Path('results_space_time_ablation_overall.csv')
+    if ablation_path.exists():
+        ablation_rows = list(csv.DictReader(open(ablation_path, newline='')))
+        label_map = {
+            'Space-Time no prediction/no memory': 'No pred/mem',
+            'Space-Time CV no dynamic memory': 'CV no mem',
+            'Space-Time CV + dynamic memory': 'CV + mem',
+            'Space-Time default Kalman + dynamic memory': 'Default Kalman',
+            'Space-Time calibrated Kalman + dynamic memory': 'Calibrated Kalman',
+        }
+        labels = [label_map[row['Strategy']] for row in ablation_rows]
+        success_rates = [float(row['SuccessRate']) for row in ablation_rows]
+        collision_rates = [float(row['CollisionRate']) for row in ablation_rows]
+        costs = [float(row['MeanTotalCost']) for row in ablation_rows]
+        colors = ['#9d9d9d', '#f58518', '#ffbf79', '#4c78a8', '#54a24b']
+        y_positions = list(range(len(labels)))
+        fig, axes = plt.subplots(1, 3, figsize=(13, 5))
+        axes[0].barh(y_positions, success_rates, color=colors)
+        axes[0].set_xlim(0, 1.05)
+        axes[0].set_xlabel('Success rate')
+        axes[0].set_title('Space-Time ablation success')
+        axes[1].barh(y_positions, collision_rates, color=colors)
+        axes[1].set_xlim(0, 1.05)
+        axes[1].set_xlabel('Collision rate')
+        axes[1].set_title('Dynamic collision safety')
+        axes[2].barh(y_positions, costs, color=colors)
+        axes[2].set_xlabel('Mean weighted task cost')
+        axes[2].set_title('Task cost')
+        for ax in axes:
+            ax.set_yticks(y_positions, labels)
+            ax.invert_yaxis()
+        fig.tight_layout()
+        fig.savefig(output_dir / 'space_time_ablation.png', dpi=180)
+        plt.close(fig)
+
+    calibration_path = Path('results_space_time_kalman_calibration_summary.csv')
+    best_path = Path('results_space_time_kalman_calibration_best.csv')
+    if calibration_path.exists() and best_path.exists():
+        calibration_rows = list(csv.DictReader(open(calibration_path, newline='')))
+        best_row = next(csv.DictReader(open(best_path, newline='')))
+        fig, axes = plt.subplots(1, 2, figsize=(11, 4))
+        indices = [int(row['ParameterIndex']) for row in calibration_rows]
+        collision_rates = [float(row['CollisionRate']) for row in calibration_rows]
+        costs = [float(row['MeanTotalCost']) for row in calibration_rows]
+        best_index = int(best_row['ParameterIndex'])
+        axes[0].bar(indices, collision_rates, color='#4c78a8')
+        axes[0].bar([best_index], [float(best_row['CollisionRate'])], color='#54a24b')
+        axes[0].set_xlabel('Parameter index')
+        axes[0].set_ylabel('Collision rate')
+        axes[0].set_title('Kalman Space-Time calibration safety')
+        axes[1].bar(indices, costs, color='#f58518')
+        axes[1].bar([best_index], [float(best_row['MeanTotalCost'])], color='#54a24b')
+        axes[1].set_xlabel('Parameter index')
+        axes[1].set_ylabel('Mean weighted task cost')
+        axes[1].set_title('Kalman Space-Time calibration cost')
+        fig.tight_layout()
+        fig.savefig(output_dir / 'space_time_kalman_calibration.png', dpi=180)
+        plt.close(fig)
+
     semantic_dynamic_path = Path('results_space_time_semantic_dynamic.csv')
     if semantic_dynamic_path.exists():
         semantic_dynamic_rows = list(csv.DictReader(open(semantic_dynamic_path, newline='')))
@@ -3605,6 +3843,20 @@ def run_all():
             'SuccessRate', 'CollisionRate', 'MeanReplans', 'MeanWaitSteps',
             'MeanTimeSteps', 'MeanExpandedStates', 'MeanPlanningTime',
             'MaxPlanningTime', 'MeanMinDynamicClearance', 'MeanTotalCost']))
+
+    print('\nSpace-Time Kalman Calibration and Ablation:')
+    best, _, overall = run_space_time_kalman_calibration()
+    print('Best,ParameterIndex,ProcessNoise,BaseRiskRadius,UncertaintyScale,MaxRiskRadius,SuccessRate,CollisionRate,MeanTotalCost')
+    print(','.join(str(best[key]) for key in [
+        'ParameterIndex', 'ProcessNoise', 'BaseRiskRadius',
+        'UncertaintyScale', 'MaxRiskRadius', 'SuccessRate',
+        'CollisionRate', 'MeanTotalCost']))
+    print('Strategy,Trials,Successes,SuccessRate,CollisionRate,MeanExpandedStates,MeanPlanningTime,MaxPlanningTime,MeanTotalCost')
+    for row in overall:
+        print(','.join(str(row[key]) for key in [
+            'Strategy', 'Trials', 'Successes', 'SuccessRate',
+            'CollisionRate', 'MeanExpandedStates', 'MeanPlanningTime',
+            'MaxPlanningTime', 'MeanTotalCost']))
 
     print('\nSpace-Time Semantic Dynamic Experiment:')
     print('Variant,MatchedAnchor,MatchSimilarity,TransferredCells,TruthExecutable,UsedTargetFailedPassage,Success,Replans,WaitSteps,TimeSteps,PathLength,PredictionMAE,TotalCost')

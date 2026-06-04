@@ -1,0 +1,6 @@
+Strategy,Trials,Successes,SuccessRate,SuccessCI95Low,SuccessCI95High,CollisionRate,MeanCollisionCount,MeanReplans,MeanWaitSteps,MeanTimeSteps,MeanPathLength,MeanPredictionMAE,MeanExpandedStates,MeanGeneratedStates,MeanPlanningTime,MaxPlanningTime,MeanMinDynamicClearance,MeanTotalCost
+Space-Time CV + dynamic memory,15,14,0.9333,0.7018,0.9881,0.0667,0.0667,18.7333,0.0,72.9333,79.8092,1.3072,78240.8,171616.2,0.064411,0.622134,9.0046,129.2759
+Space-Time CV no dynamic memory,15,5,0.3333,0.1518,0.5829,0.6667,0.6667,10.8,1.0667,38.6,37.9199,1.2988,678.3333,4219.2,0.001044,0.013312,0.685,182.7199
+Space-Time calibrated Kalman + dynamic memory,15,14,0.9333,0.7018,0.9881,0.0667,0.0667,17.7333,0.2,68.3333,76.5833,1.1404,267396.0667,472361.4,0.241695,0.974288,5.0466,124.6499
+Space-Time default Kalman + dynamic memory,15,8,0.5333,0.3012,0.7519,0.4667,0.4667,12.1333,0.0667,44.8,48.1299,1.2717,151482.1333,271773.4,0.217861,1.067493,1.2262,156.5966
+Space-Time no prediction/no memory,15,0,0.0,-0.0,0.2039,1.0,1.0,7.7333,0.0,27.4667,27.4667,1.3278,302.6667,2213.8667,0.000687,0.00145,0.1719,222.9333

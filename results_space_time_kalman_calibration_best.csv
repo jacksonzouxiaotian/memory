@@ -1,0 +1,2 @@
+ParameterIndex,ProcessNoise,BaseRiskRadius,UncertaintyScale,MaxRiskRadius,Trials,Successes,SuccessRate,SuccessCI95Low,SuccessCI95High,CollisionRate,MeanCollisionCount,MeanReplans,MeanWaitSteps,MeanTimeSteps,MeanPathLength,MeanPredictionMAE,MeanExpandedStates,MeanGeneratedStates,MeanPlanningTime,MaxPlanningTime,MeanMinDynamicClearance,MeanTotalCost
+5,0.01,1.8,0.02,3.0,6,6,1.0,0.6097,1.0,0.0,0.0,16.3333,0.3333,63.0,68.8798,1.1893,184258.1667,355402.1667,0.181937,0.898816,3.945,102.5465
