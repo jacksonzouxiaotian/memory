@@ -260,15 +260,9 @@ Ablation 总体结果：
 - `space_time_ablation.png`：Space-Time prediction/memory/Kalman 消融表。
 - `space_time_kalman_calibration.png`：Kalman 参数搜索结果。
 
-## 论文中可以如何解释
+## 
 
-当前仿真支持以下主线：
-
-> Memory improves navigation not by replacing the planner, but by reshaping the planner's cost and risk model using prior execution experience. Static failure memory prevents repeated infeasible paths, short-term dynamic memory supports online avoidance under moving obstacles, and semantic-anchor memory enables zero-shot transfer of failures across perturbed maps. Space-Time A* unifies these memory sources with trajectory prediction in a single `(x, y, t)` planning framework.
-
-中文解释：
-
-> 记忆模块不是替代路径规划器，而是利用历史执行经验重塑规划器的代价和风险模型。静态失败记忆避免重复选择不可执行路径，短期动态记忆帮助机器人处理移动障碍，语义锚点记忆使失败经验能够跨扰动地图迁移。Space-Time A* 进一步把动态预测、短期记忆和语义迁移统一到 `(x, y, t)` 时空规划框架中。
+记忆模块不是替代路径规划器，而是利用历史执行经验重塑规划器的代价和风险模型。静态失败记忆避免重复选择不可执行路径，短期动态记忆帮助机器人处理移动障碍，语义锚点记忆使失败经验能够跨扰动地图迁移。Space-Time A* 进一步把动态预测、短期记忆和语义迁移统一到 `(x, y, t)` 时空规划框架中。
 
 ## 当前限制
 
