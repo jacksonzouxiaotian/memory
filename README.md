@@ -277,14 +277,14 @@ Ablation 总体结果：
 - Kalman 的收益依赖风险半径和时空规划预算校准。
 - 尚未接入 ROS 2 costmap、SLAM、真实传感器或真实机器人控制闭环。
 
-## 建议的下一步
+## 下一步计划
 
-优先补充：
+补充：
 
 1. 多动态障碍场景：two crossing、opposite-direction、occluded obstacle。
 2. 语义锚点 hard negative：多个相似通道，验证错误迁移率。
 3. Space-Time A* 运行效率优化：局部窗口、incremental planning、state pruning。
-4. 旋转和尺度扰动迁移：不只测试平移和轻噪声。
+4. 旋转和尺度扰动迁移。
 5. ROS 2 costmap layer：把 static memory、dynamic memory 和 semantic memory 接入真实导航栈。
 
 ## GitHub
