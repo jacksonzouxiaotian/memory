@@ -1,0 +1,6 @@
+Variant,Tasks,Attempts,ExecutableTasks,ExecutableRate,ExecutableCI95Low,ExecutableCI95High,FailedShortPassageAttempts,RepeatFailureRate,SafeRerouteTasks,RejectRate,MeanAttemptsPerTask,MeanExecutableLength
+No memory,150,450,0,0.0,0.0,0.025,450,1.0,0,0.0,3.0,0.0
+Geometry risk only,150,450,0,0.0,0.0,0.025,450,1.0,0,0.0,3.0,0.0
+Failure memory only,150,180,150,1.0,0.975,1.0,30,0.1667,150,0.0,1.2,46.6077
+Geometry + failure memory,150,180,150,1.0,0.975,1.0,30,0.1667,150,0.0,1.2,47.4361
+Geometry + memory + reject,150,180,150,1.0,0.975,1.0,30,0.1667,150,0.0,1.2,47.4361

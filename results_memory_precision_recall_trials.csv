@@ -1,0 +1,7 @@
+Case,GroundTruthFailure,PredictedFailure,TruePositive,FalsePositive,FalseNegative,ProjectedCells,OverlapCells,Matches,BestSimilarity
+same-passage-failed,True,True,True,False,False,45,45,1,1.0
+translated-failed,True,True,True,False,False,45,45,1,1.0
+same-passage-reopened,False,True,False,True,False,45,45,1,1.0
+wider-opening,False,False,False,False,False,0,0,0,0.0
+different-direction,False,False,False,False,False,0,0,0,0.0
+open-map,False,False,False,False,False,0,0,0,0.0

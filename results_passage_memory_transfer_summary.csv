@@ -1,0 +1,4 @@
+Variant,Trials,ExecutableTasks,ExecutableRate,ExecutableCI95Low,ExecutableCI95High,FailedPassageSelections,MeanTransferredCells,MeanMatchSimilarity,MeanExecutableLength
+No memory,100,0,0.0,0.0,0.037,100,0.0,0.9859,0.0
+Absolute-cell memory,100,0,0.0,0.0,0.037,100,45.0,0.9859,0.0
+Passage-anchor memory,100,100,1.0,0.963,1.0,0,45.0,0.9859,52.5464
