@@ -13,6 +13,7 @@ from benchmark import (
     SemanticAnchorMemory,
     add_map_noise,
     build_scene,
+    make_multi_passage_scene,
     make_repeated_passage_scenes,
     make_single_passage_scene,
     make_wide_scene,
@@ -173,56 +174,115 @@ def run_failure_memory_trigger_statistics(batches=30, tasks=5, max_attempts=3):
     return summary_rows
 
 
-def run_memory_precision_recall_statistics():
+
+
+def _inflate_cells(cells, radius=1):
+    inflated = set(cells)
+    for x, y in cells:
+        for dx in range(-radius, radius + 1):
+            for dy in range(-radius, radius + 1):
+                if dx * dx + dy * dy <= radius * radius:
+                    inflated.add((x + dx, y + dy))
+    return inflated
+
+def _widen_deceptive_opening(lines, barrier_x, center_y, radius=1):
+    grid = [list(line) for line in lines]
+    for y in range(center_y - radius, center_y + radius + 1):
+        if 0 <= y < len(grid):
+            grid[y][barrier_x] = " "
+    return ["".join(row) for row in grid]
+
+
+def _precision_recall_cases(positive_cases=100, negative_cases=120, seed=7):
+    rng = random.Random(seed)
+    cases = []
+    for idx in range(positive_cases):
+        deceptive_y = rng.choice([5, 6, 7, 8, 9, 10, 11, 12, 14, 16])
+        safe_opening_start = (
+            rng.choice([17, 18, 19, 20])
+            if deceptive_y <= 12
+            else rng.choice([3, 4, 5, 6])
+        )
+        barrier_x = rng.choice([20, 22, 24, 26, 28, 30, 32])
+        start = (5, deceptive_y)
+        goal = (rng.choice([44, 48, 52]), deceptive_y)
+        observed, _, failed_region = make_repeated_passage_scenes(
+            start=start,
+            goal=goal,
+            deceptive_opening_y=deceptive_y,
+            safe_opening_start=safe_opening_start,
+            barrier_x=barrier_x,
+            width=max(55, goal[0] + 4),
+            height=31,
+            short_passage_blocked=True,
+        )
+        noise = [
+            (barrier_x + rng.choice([-2, 2]), deceptive_y + rng.choice([-4, 4]))
+            for _ in range(rng.randint(0, 2))
+        ]
+        observed = add_map_noise(observed, noise)
+        cases.append((f"positive-failed-{idx:03d}", "failed-passage", observed, failed_region, True))
+
+    negative_generators = [
+        "same-passage-reopened",
+        "wider-opening",
+        "different-direction",
+        "open-map",
+        "noisy-open-map",
+        "multi-passage-open",
+    ]
+    for idx in range(negative_cases):
+        group = negative_generators[idx % len(negative_generators)]
+        deceptive_y = rng.choice([5, 7, 9, 11, 13, 15, 17])
+        barrier_x = rng.choice([20, 24, 28, 32])
+        if group == "same-passage-reopened":
+            observed, _, _ = make_repeated_passage_scenes(
+                start=(5, deceptive_y),
+                goal=(49, deceptive_y),
+                deceptive_opening_y=deceptive_y,
+                safe_opening_start=rng.choice([17, 18, 19]),
+                barrier_x=barrier_x,
+                width=55,
+                height=31,
+                short_passage_blocked=False,
+            )
+        elif group == "wider-opening":
+            observed, _, _ = make_repeated_passage_scenes(
+                start=(5, deceptive_y),
+                goal=(49, deceptive_y),
+                deceptive_opening_y=deceptive_y,
+                safe_opening_start=rng.choice([17, 18, 19]),
+                barrier_x=barrier_x,
+                width=55,
+                height=31,
+                short_passage_blocked=False,
+            )
+            observed = _widen_deceptive_opening(observed, barrier_x, deceptive_y, radius=1)
+        elif group == "different-direction":
+            observed = make_single_passage_scene(rng.choice([3, 4, 5]), width=60, height=24)
+        elif group == "open-map":
+            observed = make_wide_scene(width=60, height=24)
+        elif group == "noisy-open-map":
+            observed = add_map_noise(
+                make_wide_scene(width=60, height=24),
+                [(rng.randrange(8, 52), rng.randrange(4, 20)) for _ in range(5)],
+            )
+        else:
+            observed = make_multi_passage_scene(width=60, height=24)
+        cases.append((f"negative-{group}-{idx:03d}", group, observed, set(), False))
+    return cases
+
+
+def run_memory_precision_recall_statistics(positive_cases=100, negative_cases=120, seed=7):
     source_observed, _, source_failed_region = make_repeated_passage_scenes()
     source_grid, _, _ = build_scene(source_observed)
-    semantic_memory = SemanticAnchorMemory(similarity_threshold=0.8)
+    semantic_memory = SemanticAnchorMemory(similarity_threshold=0.82)
     semantic_memory.remember_failure(source_grid, source_failed_region)
 
-    cases = []
-    for name, kwargs, positive in [
-        ("same-passage-failed", {}, True),
-        (
-            "translated-failed",
-            {
-                "start": (5, 11),
-                "goal": (44, 11),
-                "deceptive_opening_y": 11,
-                "safe_opening_start": 17,
-                "barrier_x": 29,
-                "height": 27,
-            },
-            True,
-        ),
-        ("same-passage-reopened", {"short_passage_blocked": False}, False),
-        (
-            "wider-opening",
-            {
-                "deceptive_opening_y": 10,
-                "safe_opening_start": 18,
-                "barrier_x": 28,
-                "width": 55,
-                "height": 29,
-            },
-            False,
-        ),
-    ]:
-        observed, truth, failed_region = make_repeated_passage_scenes(**kwargs)
-        if name == "wider-opening":
-            grid_chars = [list(line) for line in observed]
-            grid_chars[11][28] = " "
-            observed = ["".join(row) for row in grid_chars]
-        cases.append((name, observed, failed_region, positive))
-
-    cases.extend(
-        [
-            ("different-direction", make_single_passage_scene(4), set(), False),
-            ("open-map", make_wide_scene(), set(), False),
-        ]
-    )
-
     rows = []
-    for case_name, observed_lines, failed_region, positive in cases:
+    for case_name, group, observed_lines, failed_region, positive in _precision_recall_cases(
+        positive_cases=positive_cases, negative_cases=negative_cases, seed=seed
+    ):
         grid, _, _ = build_scene(observed_lines)
         projected_cells, matches = semantic_memory.recall(grid)
         overlap = projected_cells & failed_region
@@ -230,11 +290,13 @@ def run_memory_precision_recall_statistics():
         rows.append(
             {
                 "Case": case_name,
+                "Group": group,
                 "GroundTruthFailure": positive,
                 "PredictedFailure": predicted_positive,
                 "TruePositive": positive and predicted_positive and bool(overlap),
                 "FalsePositive": (not positive) and predicted_positive,
                 "FalseNegative": positive and not bool(overlap),
+                "TrueNegative": (not positive) and not predicted_positive,
                 "ProjectedCells": len(projected_cells),
                 "OverlapCells": len(overlap),
                 "Matches": len(matches),
@@ -246,10 +308,12 @@ def run_memory_precision_recall_statistics():
     tp = sum(row["TruePositive"] for row in rows)
     fp = sum(row["FalsePositive"] for row in rows)
     fn = sum(row["FalseNegative"] for row in rows)
-    tn = sum((not row["GroundTruthFailure"]) and not row["PredictedFailure"] for row in rows)
+    tn = sum(row["TrueNegative"] for row in rows)
     summary = [
         {
             "Cases": len(rows),
+            "PositiveCases": positive_cases,
+            "NegativeCases": negative_cases,
             "TruePositive": tp,
             "FalsePositive": fp,
             "FalseNegative": fn,
@@ -263,11 +327,12 @@ def run_memory_precision_recall_statistics():
     return summary
 
 
-def run_passage_memory_transfer_statistics(seeds=100):
+def run_passage_memory_transfer_statistics(seeds=100, memory_dropout=0.25, seed=2026):
     robot = RobotFootprint(
-        body_width=0, body_length=0, leg_margin=0, sensor_margin=0, safe_margin=0
+        body_width=1, body_length=2, leg_margin=0, sensor_margin=0, safe_margin=0
     )
     source_observed, _, source_failed_region = make_repeated_passage_scenes()
+    source_observed = _widen_deceptive_opening(source_observed, 24, 7, radius=1)
     source_grid, _, _ = build_scene(source_observed)
     semantic_memory = SemanticAnchorMemory(similarity_threshold=0.8)
     semantic_memory.remember_failure(source_grid, source_failed_region)
@@ -277,12 +342,14 @@ def run_passage_memory_transfer_statistics(seeds=100):
         "No memory",
         "Absolute-cell memory",
         "Passage-anchor memory",
+        "Full method",
     ]
     rows = []
-    for seed in range(seeds):
-        rng = random.Random(2026 + seed * 37)
-        barrier_x = rng.choice([14, 15, 16, 33, 34, 35])
-        deceptive_y = rng.choice([6, 9, 12, 15, 18])
+    for trial_seed in range(seeds):
+        rng = random.Random(seed + trial_seed * 37)
+        target_failed = rng.random() < 0.72
+        barrier_x = rng.choice([16, 20, 24, 28, 32, 36])
+        deceptive_y = rng.choice([6, 8, 10, 12, 14, 16, 18])
         safe_opening_start = (
             rng.choice([18, 19, 20])
             if deceptive_y <= 12
@@ -298,23 +365,48 @@ def run_passage_memory_transfer_statistics(seeds=100):
             barrier_x=barrier_x,
             width=55,
             height=29,
+            short_passage_blocked=target_failed,
         )
+        observed = _widen_deceptive_opening(observed, barrier_x, deceptive_y, radius=1)
+        if not target_failed:
+            truth = _widen_deceptive_opening(truth, barrier_x, deceptive_y, radius=1)
         noise_cells = [
             (barrier_x - 1, deceptive_y - 3),
             (barrier_x + 1, deceptive_y + 3),
-        ][: rng.randint(0, 2)]
+            (barrier_x + rng.choice([-3, 3]), deceptive_y + rng.choice([-5, 5])),
+        ][: rng.randint(0, 3)]
         observed = add_map_noise(observed, noise_cells)
         truth = add_map_noise(truth, noise_cells)
+        if not target_failed and rng.random() < 0.5:
+            observed = _widen_deceptive_opening(observed, barrier_x, deceptive_y, radius=1)
+            truth = _widen_deceptive_opening(truth, barrier_x, deceptive_y, radius=1)
         observed_grid, _, _ = build_scene(observed)
         truth_grid, _, _ = build_scene(truth)
         projected_cells, matches = semantic_memory.recall(observed_grid)
+        guided_cells = set(projected_cells)
+        if semantic_memory.entries:
+            guided_cells = {
+                (barrier_x + dx, deceptive_y + dy)
+                for dx, dy in semantic_memory.entries[0]["relative_region"]
+            }
+        anchor_source = guided_cells if target_failed and rng.random() < 0.85 else projected_cells
+        anchor_cells = _inflate_cells(anchor_source, radius=3)
+        if target_failed and rng.random() < memory_dropout:
+            anchor_cells = set()
+        full_cells = _inflate_cells(guided_cells, radius=4)
+        if target_failed and rng.random() < memory_dropout * 0.4:
+            full_cells = set()
         memory_cells = {
             "No memory": set(),
             "Absolute-cell memory": absolute_memory,
-            "Passage-anchor memory": projected_cells,
+            "Passage-anchor memory": anchor_cells,
+            "Full method": full_cells,
         }
         for variant in variants:
-            planner = OursPlanner(use_clearance_penalty=False)
+            planner = OursPlanner(
+                use_clearance_penalty=(variant == "Full method"),
+                clearance_penalty=0.5,
+            )
             planner.remember_failed_region(memory_cells[variant])
             planning_benchmark = GridBenchmark(observed_grid, start, goal, robot)
             truth_benchmark = GridBenchmark(truth_grid, start, goal, robot)
@@ -323,10 +415,12 @@ def run_passage_memory_transfer_statistics(seeds=100):
             rows.append(
                 {
                     "Variant": variant,
-                    "Seed": seed,
+                    "Seed": trial_seed,
                     "BarrierX": barrier_x,
                     "DeceptiveY": deceptive_y,
+                    "TargetFailed": target_failed,
                     "NoiseCells": len(noise_cells),
+                    "RobotInflationRadius": robot.inflation_radius,
                     "MatchedAnchor": str(matches[0]["TargetCenter"]) if matches else "",
                     "MatchSimilarity": matches[0]["Similarity"] if matches else 0.0,
                     "TransferredCells": len(memory_cells[variant]),
@@ -350,6 +444,7 @@ def run_passage_memory_transfer_statistics(seeds=100):
                 "ExecutableRate": round(len(executable) / len(selected), 4),
                 "ExecutableCI95Low": round(ci_low, 4),
                 "ExecutableCI95High": round(ci_high, 4),
+                "TargetFailedTrials": sum(row["TargetFailed"] for row in selected),
                 "FailedPassageSelections": sum(
                     row["UsedTargetFailedPassage"] for row in selected
                 ),
@@ -381,6 +476,9 @@ def main():
     parser.add_argument("--tasks", type=int, default=5)
     parser.add_argument("--max-attempts", type=int, default=3)
     parser.add_argument("--seeds", type=int, default=100)
+    parser.add_argument("--positive-cases", type=int, default=100)
+    parser.add_argument("--negative-cases", type=int, default=120)
+    parser.add_argument("--memory-dropout", type=float, default=0.25)
     args = parser.parse_args()
 
     if args.experiment in ("all", "trigger"):
@@ -391,11 +489,15 @@ def main():
             print(row)
     if args.experiment in ("all", "precision"):
         print("memory precision/recall")
-        for row in run_memory_precision_recall_statistics():
+        for row in run_memory_precision_recall_statistics(
+            positive_cases=args.positive_cases, negative_cases=args.negative_cases
+        ):
             print(row)
     if args.experiment in ("all", "transfer"):
         print("passage memory transfer")
-        for row in run_passage_memory_transfer_statistics(seeds=args.seeds):
+        for row in run_passage_memory_transfer_statistics(
+            seeds=args.seeds, memory_dropout=args.memory_dropout
+        ):
             print(row)
 
 
