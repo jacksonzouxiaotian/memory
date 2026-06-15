@@ -1,0 +1,5 @@
+Policy,Episodes,SuccessRate,CollisionRate,RepeatFailureRate,RejectAccuracy,FalseRejectRate,RecoverySuccessRate,MeanAttemptsPerTask,MeanReward
+RulePolicy,200,1.0,0.485,0.1,0.78,0.0,0.58,2.335,-0.0207
+RiskOnlyPolicy,200,1.0,0.725,0.34,0.78,0.0,0.18,2.15,-5.1531
+FM-RS-RL rule,200,0.81,0.26,0.085,0.705,0.0,0.18,3.045,0.1043
+FM-RS-RL,200,0.925,0.355,0.095,0.785,0.075,0.02,1.45,-1.5893

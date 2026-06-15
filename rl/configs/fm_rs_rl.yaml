@@ -1,0 +1,7 @@
+episodes: 2000
+max_steps: 8
+learning_rate: 0.03
+memory_beta: 0.8
+risk_alpha: 0.4
+seed: 0
+output_dir: results_rl

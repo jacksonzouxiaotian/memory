@@ -1,14 +1,19 @@
-# Failure-Aware Narrow-Passage Navigation Benchmark
+# Failure-Aware Narrow-Passage Navigation
 
-This repository contains the paper-facing benchmark for **failure-aware narrow-passage navigation**. The central question is:
+This repository contains the paper-facing benchmark and supplementary
+experiments for **failure-aware narrow-passage navigation**. The central question
+is:
 
-> Can a quadruped robot use passage-level geometry and prior traversal failures to avoid repeatedly entering geometrically infeasible narrow passages?
+> Can a robot use passage-level geometry and prior traversal failures to avoid
+> repeatedly entering geometrically infeasible narrow passages?
 
-The repository is intentionally scoped around narrow passages, body-aware planning, and failure memory. Older dynamic-obstacle, Kalman, semantic-migration, and Space-Time A* experiments are kept as optional extensions, but they are not the main paper story.
+The main contribution is not a new low-level controller. It is a
+failure-aware decision layer that can sit above classical, optimization-based,
+or learning-based local planners.
 
-## Main Method Story
+## Method Overview
 
-The paper method should be read as a modular navigation stack:
+The paper method should be read as a modular stack:
 
 ```text
 Passage Geometry Encoder
@@ -17,73 +22,43 @@ Risk / Feasibility Estimator
         ↓
 Passage-Centric Failure Memory
         ↓
-Mode Decision: Commit / Recover / Reject
+Mode Decision: Commit / Explore / Recover / Reject
         ↓
-Body-Aware Local Planning or Control
+Body-Aware Local Planner or Controller
+        ↓
+Execution + Failure Update
 ```
 
-`benchmark.py` still contains the historical planners and utilities. The reproducible paper-facing entry point is now `paper_experiments.py`.
+`OursPlanner` in `benchmark.py` is a lightweight memory-biased A* proxy used for
+controlled experiments. The full paper method is broader: it combines passage
+geometry, risk estimation, failure memory, mode decisions, and body-aware local
+execution.
 
-## What This Repository Supports
+## What Is Implemented
 
-Main experiments:
-
-1. **Body-aware narrow-passage planning**
-   Checks whether a robot footprint can actually traverse a narrow passage, rather than treating the robot as a point.
-
-2. **Failure-memory ablation**
-   Tests whether remembering failed passage regions reduces repeated infeasible attempts.
-
-3. **Passage-memory transfer**
-   Tests whether passage-anchored memory transfers better than absolute-cell memory under map shifts, noise, and hard negatives.
-
-4. **Optional dynamic-memory extension**
-   Dynamic obstacles, Kalman prediction, uncertainty radius calibration, and Space-Time A* are retained as appendix material.
-
-5. **Planned local trajectory-planner baselines**
-   The next paper revision should compare against deployment-level local planners:
-   DWB, TEB, MPPI, and Regulated Pure Pursuit (RPP), plus recent trajectory
-   planners focused on narrow passages, dynamics constraints, and uncertain
-   dynamic obstacles. See `BASELINE_EXPERIMENT_PLAN.md`.
-
-## Repository Files
-
-```text
-benchmark.py
-  Historical planner, map, memory, dynamic-obstacle, and visualization code.
-
-paper_experiments.py
-  Reproducible paper experiments with argparse.
-
-results_*paper*.csv / results_failure_* / results_memory_* / results_passage_*
-  Current paper experiment outputs.
-
-figures/
-  Existing visualizations from earlier benchmark runs.
-
-BENCHMARK_REPORT.md
-  Older benchmark report, useful as background but not the current paper narrative.
-
-BASELINE_EXPERIMENT_PLAN.md
-  Paper-facing plan for adding DWB, TEB, MPPI, RPP, ATR, DDP,
-  MPC-uncertainty, RTEB, and supplementary RL simulation baselines.
-```
+| Component | Purpose | Main files |
+|---|---|---|
+| Controlled narrow-passage benchmark | Mechanism validation for failure memory and passage transfer | `paper_experiments.py`, `benchmark.py` |
+| Recent local/trajectory planner proxies | Paper-facing baselines for RPP, ATR, DDP, RTEB, MPC uncertainty | `benchmark.py`, `paper_experiments.py` |
+| Public dataset adapter | Run baselines on `map.npy` / `map.pgm` plus task CSV files | `dataset_adapter.py` |
+| MovingAI public-map validation | External map validation plus hidden-blockage stress tests | `results_movingai_room_baseline_*.csv` |
+| Supplementary RL | FM-RS-RL high-level mode-policy experiment | `rl/`, `RL_EXPERIMENT_DESIGN.md` |
 
 ## Quick Start
 
-Create the environment:
+Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Run all paper experiments:
+Run all paper-facing deterministic experiments:
 
 ```bash
 python paper_experiments.py --experiment all
 ```
 
-Run each paper experiment separately:
+Run individual experiment groups:
 
 ```bash
 python paper_experiments.py --experiment trigger
@@ -104,77 +79,20 @@ python paper_experiments.py \
   --negative-cases 8
 ```
 
-## Paper Experiment Mapping
+## Paper Experiment Map
 
-| Paper item | Script | Output |
+| Paper item | Command | Outputs |
 |---|---|---|
-| Failure-memory trigger | `paper_experiments.py --experiment trigger` | `results_failure_memory_trigger_summary.csv`, `results_failure_memory_trigger_trials.csv` |
-| Memory precision / recall | `paper_experiments.py --experiment precision` | `results_memory_precision_recall_summary.csv`, `results_memory_precision_recall_trials.csv` |
-| Passage-memory transfer | `paper_experiments.py --experiment transfer` | `results_passage_memory_transfer_summary.csv`, `results_passage_memory_transfer_trials.csv` |
-| Latest trajectory baseline proxies | `paper_experiments.py --experiment baselines` | `results_latest_baseline_summary.csv`, `results_latest_baseline_trials.csv` |
-| Optional old benchmark suite | `benchmark.py` | legacy `results_*.csv`, `figures/*.png` |
-| Planned local-planner baseline table | `BASELINE_EXPERIMENT_PLAN.md` | DWB, TEB, MPPI, RPP, ATR, DDP, MPC-uncertainty, RTEB comparison design |
+| Failure-memory trigger | `python paper_experiments.py --experiment trigger` | `results_failure_memory_trigger_summary.csv`, `results_failure_memory_trigger_trials.csv` |
+| Memory precision/recall | `python paper_experiments.py --experiment precision` | `results_memory_precision_recall_summary.csv`, `results_memory_precision_recall_trials.csv` |
+| Passage-memory transfer | `python paper_experiments.py --experiment transfer` | `results_passage_memory_transfer_summary.csv`, `results_passage_memory_transfer_trials.csv` |
+| Latest baseline proxies | `python paper_experiments.py --experiment baselines` | `results_latest_baseline_summary.csv`, `results_latest_baseline_trials.csv` |
+| Public dataset run | `python paper_experiments.py --experiment baselines --dataset path/to/dataset` | `results_latest_baseline_summary.csv`, `results_latest_baseline_trials.csv` |
+| Supplementary RL | `python rl/train_fm_rs_rl.py`, `python rl/eval_fm_rs_rl.py` | `results_rl*/fm_rs_rl_*.csv` |
 
-## Current Paper-Facing Metrics
+## Public Dataset Format
 
-The important robotics metrics are:
-
-- `ExecutableRate`
-- `FailedShortPassageAttempts`
-- `RepeatFailureRate`
-- `FailedPassageSelections`
-- `RejectRate`
-- `MeanAttemptsPerTask`
-- `RobotInflationRadius`
-- `MeanExecutableLength`
-- `Precision`, `Recall`, `FalsePositiveRate`
-
-These metrics are more relevant to a quadruped narrow-passage system than generic path length or planning success alone.
-
-## Baseline Expansion
-
-The current code-level benchmark should remain the controlled ablation suite for
-failure memory and passage transfer. For a more convincing paper comparison, add
-a second trajectory-baseline table with:
-
-- **DWB**: standard Nav2 dynamic-window rollout baseline.
-- **TEB**: timed elastic-band optimization baseline.
-- **MPPI**: modern Nav2 sampling-based model-predictive controller.
-- **RPP**: Nav2 Regulated Pure Pursuit path-tracking baseline.
-- **Recent strong baselines**: Adaptive Trajectory Refinement for narrow
-  passages, Decremental Dynamics Planning for global-to-local dynamics
-  constraints, MPC with dynamic-obstacle prediction uncertainty, and Resilient
-  TEB for recovery/refinement.
-
-The intended claim is that the proposed failure-aware passage memory is
-complementary to strong local planners. DWB/TEB/MPPI/RPP can be evaluated both
-alone and as the execution layer underneath the full method.
-
-The executable benchmark now includes lightweight paper proxies for recent
-trajectory baselines:
-
-```bash
-python paper_experiments.py \
-  --experiment baselines \
-  --baseline-static-seeds 30 \
-  --baseline-dynamic-seeds 8 \
-  --baseline-missions 2
-```
-
-These proxies are not official ROS/Nav2 plugin implementations. They expose
-comparable behavior inside this repository's 2D benchmark: RPP path tracking,
-ATR-style segment refinement, DDP-style dynamics relaxation, RTEB-style recovery
-and smoothing, and MPC-style uncertainty-aware dynamic obstacle avoidance.
-
-The same baseline entry point can run a minimal public-dataset adapter:
-
-```bash
-python paper_experiments.py \
-  --experiment baselines \
-  --dataset path/to/dataset
-```
-
-Expected dataset layout:
+The public dataset adapter expects:
 
 ```text
 path/to/dataset/
@@ -184,70 +102,181 @@ path/to/dataset/
   dynamic_obstacles.csv  # optional: id,t,x,y,radius
 ```
 
-The dataset run writes the same `results_latest_baseline_summary.csv` and
-`results_latest_baseline_trials.csv` files. This gives the paper a clean split:
-synthetic benchmark for mechanism ablation, public dataset adapter for external
-generalization checks.
+Run:
+
+```bash
+python paper_experiments.py \
+  --experiment baselines \
+  --dataset path/to/dataset
+```
 
 For public grid maps, the adapter also creates a `dataset-hidden-blockage`
 stress suite when possible. It keeps the public map and task endpoints, then
 injects a small hidden truth-only blockage on the initially preferred route.
-This simulates entrance misclassification or a locally infeasible passage:
-memoryless local planners repeatedly select the blocked passage, while the full
-method can remember the failed region and recover on the second attempt.
+This simulates entrance misclassification or a locally infeasible passage.
 
-The stress suite includes mechanism controls such as `RPP proxy`,
-`RPP proxy + random retry`, and `RPP proxy + failure memory`. These compare the
-same underlying planner with the same attempt budget, separating the algorithmic
-effect of failure memory from generic replanning or random perturbation.
-
-## Naming and Scope
-
-`OursPlanner` in `benchmark.py` should be interpreted as a **memory-biased A*** baseline: A* with clearance and memory penalties. The full paper method is broader and should be described as:
+The stress suite includes mechanism controls such as:
 
 ```text
-Failure-Aware Narrow-Passage Navigator
+RPP proxy
+RPP proxy + random retry
+RPP proxy + failure memory
 ```
 
-The full method combines passage geometry, risk estimation, failure memory, mode decision, and body-aware local execution. Do not present the memory-penalized A* alone as the entire contribution.
+These compare the same underlying planner with the same attempt budget,
+separating the algorithmic effect of failure memory from generic replanning or
+random perturbation.
 
-## Notes on Results
+## Current Public-Map Result
 
-The updated `paper_experiments.py` avoids relying on very small or overly perfect sanity checks:
+The repository includes a MovingAI Room benchmark validation run using
+`32room_000.map` and medium-length public scenario tasks. Results are saved in:
 
-- Precision/recall now supports 100+ positive cases and 100+ hard negatives.
-- Passage transfer includes body footprint, map noise, open-passage hard negatives, and configurable memory dropout.
-- Transfer results are expected to show a realistic improvement, not a brittle `0% vs 100%` demo.
+```text
+results_movingai_room_baseline_summary.csv
+results_movingai_room_baseline_trials.csv
+```
 
-Example full run:
+The key hidden-blockage stress result is:
+
+| Method | ExecutableRate | CollisionRate | FailedPassageSelections |
+|---|---:|---:|---:|
+| RPP proxy | 0.0 | 1.0 | 10 |
+| RPP proxy + random retry | 0.0 | 1.0 | 10 |
+| RPP proxy + failure memory | 1.0 | 0.5 | 5 |
+| DDP proxy | 0.0 | 1.0 | 10 |
+| DDP proxy + failure memory | 1.0 | 0.5 | 5 |
+| ATR proxy | 0.2 | 0.8889 | 8 |
+| ATR proxy + failure memory | 1.0 | 0.4444 | 4 |
+| RTEB proxy | 0.2 | 0.8889 | 8 |
+| RTEB proxy + failure memory | 1.0 | 0.4444 | 4 |
+| Ours full | 1.0 | 0.5 | 5 |
+
+This result supports the mechanism claim: the gain comes from using failure
+memory, not merely from retrying or random perturbation.
+
+## Baseline Scope
+
+The executable benchmark includes lightweight paper proxies for:
+
+- RPP: path-tracking behavior.
+- ATR: narrow-passage segment refinement.
+- DDP: gradual dynamics-constraint relaxation.
+- RTEB: recovery-oriented trajectory smoothing.
+- MPC uncertainty: uncertainty-aware dynamic obstacle prediction.
+
+These are not official ROS/Nav2 plugin implementations. They are controlled
+benchmark proxies designed to compare planner behaviors inside the same
+lightweight Python testbed.
+
+For baseline rationale and paper table design, see:
+
+```text
+BASELINE_EXPERIMENT_PLAN.md
+```
+
+## Supplementary RL
+
+The RL component is framed as:
+
+```text
+FM-RS-RL:
+Failure-Memory Guided Risk-Sensitive Reinforcement Learning
+```
+
+It is a high-level policy over:
+
+```text
+Commit / Explore / Recover / Reject
+```
+
+It does not replace the local planner. It tests whether failure-memory features
+improve high-level decisions under dynamic obstacles, pedestrian interference,
+rough terrain, post-collision recovery, entrance misclassification, and repeated
+failed attempts.
+
+Run a lightweight training and evaluation smoke test:
 
 ```bash
-python paper_experiments.py \
-  --experiment all \
-  --batches 30 \
-  --tasks 5 \
-  --seeds 100 \
-  --positive-cases 100 \
-  --negative-cases 120 \
-  --memory-dropout 0.25
+python rl/train_fm_rs_rl.py --episodes 1000 --output-dir results_rl_smoke
+python rl/eval_fm_rs_rl.py \
+  --policy-path results_rl_smoke/fm_rs_rl_policy.json \
+  --episodes 200 \
+  --output results_rl_smoke/fm_rs_rl_eval_summary.csv
 ```
 
-## Optional Appendix Material
+Current smoke result:
 
-The following are useful, but should be treated as appendix or future-work material unless the paper explicitly studies dynamic planning:
+| Policy | SuccessRate | CollisionRate | RepeatFailureRate | MeanAttemptsPerTask |
+|---|---:|---:|---:|---:|
+| RulePolicy | 1.0 | 0.485 | 0.100 | 2.335 |
+| RiskOnlyPolicy | 1.0 | 0.725 | 0.340 | 2.150 |
+| FM-RS-RL rule | 0.810 | 0.260 | 0.085 | 3.045 |
+| FM-RS-RL | 0.925 | 0.355 | 0.095 | 1.450 |
 
-- `ShortTermMemory`
-- `OnlineTrajectoryPredictor`
-- `KalmanTrajectoryPredictor`
-- `SpaceTimeAStarPlanner`
-- dynamic obstacle replanning
-- nonlinear trajectory prediction
-- uncertainty radius calibration
-- RL recovery/generalization in simulation
+The intended paper claim is conservative: FM-RS-RL is supplementary evidence
+that failure-memory features reduce repeated failed commitments under complex
+disturbances.
 
-They are retained because they may support future extensions, but the main paper narrative should remain narrow-passage failure-aware navigation.
+For the full RL design, see:
 
-The RL simulation should stay supplementary. Its role is to test generalization
-under complex disturbances: dynamic obstacles, pedestrian interference, uneven
-terrain, post-collision recovery, entrance misclassification, and policy
-adaptation after multiple failed attempts.
+```text
+RL_EXPERIMENT_DESIGN.md
+```
+
+## Metrics
+
+Important paper-facing metrics include:
+
+- `ExecutableRate`
+- `FailedShortPassageAttempts`
+- `RepeatFailureRate`
+- `FailedPassageSelections`
+- `RejectRate`
+- `MeanAttemptsPerTask`
+- `MeanExecutableLength`
+- `Precision`, `Recall`, `FalsePositiveRate`
+- `CollisionRate`
+- `RecoverySuccessRate`
+
+These are more relevant to failure-aware quadruped passage navigation than
+generic path length alone.
+
+## Repository Layout
+
+```text
+benchmark.py
+  Historical planners, map utilities, trajectory proxy baselines, dynamic tools.
+
+paper_experiments.py
+  Main deterministic paper-facing experiment entry point.
+
+dataset_adapter.py
+  Minimal public dataset loader for map.npy / map.pgm and task CSV files.
+
+rl/
+  Lightweight FM-RS-RL supplementary experiment code.
+
+BASELINE_EXPERIMENT_PLAN.md
+  Baseline rationale and experiment-table planning.
+
+RL_EXPERIMENT_DESIGN.md
+  Supplementary RL experiment design for the paper.
+
+results_*.csv
+  Generated paper-facing summaries and trial-level outputs.
+```
+
+## Verification
+
+Useful checks:
+
+```bash
+python -m py_compile \
+  benchmark.py paper_experiments.py dataset_adapter.py \
+  rl/narrow_passage_env.py rl/memory_regularized_policy.py \
+  rl/train_fm_rs_rl.py rl/eval_fm_rs_rl.py
+```
+
+`pytest` is listed in `requirements.txt`, but it may need to be installed in the
+active environment before running the test suite.
