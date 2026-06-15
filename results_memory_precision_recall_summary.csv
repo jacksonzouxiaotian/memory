@@ -1,2 +1,2 @@
 Cases,PositiveCases,NegativeCases,TruePositive,FalsePositive,FalseNegative,TrueNegative,Precision,Recall,FalsePositiveRate
-220,100,120,100,19,0,101,0.8403,1.0,0.1583
+150,50,100,50,15,0,85,0.7692,1.0,0.15

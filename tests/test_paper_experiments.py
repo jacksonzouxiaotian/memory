@@ -19,6 +19,16 @@ def test_precision_recall_smoke(tmp_path, monkeypatch):
     assert len(rows) == 10
 
 
+def test_precision_recall_multiseed_smoke(tmp_path, monkeypatch):
+    monkeypatch.chdir(tmp_path)
+    summary = pe.run_memory_precision_recall_multiseed_statistics(
+        positive_cases=3, negative_cases=4, seeds=2, seed_offset=11
+    )
+    assert summary[0]["Seeds"] == 2
+    assert Path("results_memory_precision_recall_multiseed_summary.csv").exists()
+    assert Path("results_memory_precision_recall_seed_summary.csv").exists()
+
+
 def test_transfer_smoke(tmp_path, monkeypatch):
     monkeypatch.chdir(tmp_path)
     summary = pe.run_passage_memory_transfer_statistics(

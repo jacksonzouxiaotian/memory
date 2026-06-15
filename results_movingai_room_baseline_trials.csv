@@ -1,122 +1,435 @@
 Suite,Variant,Seed,Mission,Attempt,TrajectoryType,Planned,Executable,Collision,UsedFailedPassage,Replans,WaitSteps,TimeSteps,PathLength,MinClearance,PredictionMAE,MeanRiskRadius,ExpandedStates,MeanPlanningTime,TotalCost
-dataset-static,RPP proxy,0,0,1,,True,True,False,False,0,0,0,120.581,0,0.0,0.0,0,0.074,120.581
-dataset-static,ATR proxy,0,0,1,,True,True,False,False,0,0,0,118.823,0,0.0,0.0,0,0.0621,118.823
-dataset-static,DDP proxy,0,0,1,,True,True,False,False,0,0,0,120.581,0,0.0,0.0,0,0.2492,120.581
-dataset-static,RTEB proxy,0,0,1,,True,True,False,False,0,0,0,118.823,0,0.0,0.0,0,2.2976,118.823
-dataset-static,Ours full,0,0,1,,True,True,False,False,0,0,0,120.581,0,0.0,0.0,0,2.0367,120.581
-dataset-static,RPP proxy,1,1,1,,True,True,False,False,0,0,0,121.042,0,0.0,0.0,0,0.0732,121.042
-dataset-static,ATR proxy,1,1,1,,True,True,False,False,0,0,0,120.456,0,0.0,0.0,0,0.0743,120.456
-dataset-static,DDP proxy,1,1,1,,True,True,False,False,0,0,0,121.042,0,0.0,0.0,0,0.2611,121.042
-dataset-static,RTEB proxy,1,1,1,,True,True,False,False,0,0,0,120.456,0,0.0,0.0,0,2.1399,120.456
-dataset-static,Ours full,1,1,1,,True,True,False,False,0,0,0,121.042,0,0.0,0.0,0,1.8608,121.042
-dataset-static,RPP proxy,2,2,1,,True,True,False,False,0,0,0,122.527,0,0.0,0.0,0,0.0305,122.527
-dataset-static,ATR proxy,2,2,1,,True,True,False,False,0,0,0,122.527,0,0.0,0.0,0,0.0435,122.527
-dataset-static,DDP proxy,2,2,1,,True,True,False,False,0,0,0,122.527,0,0.0,0.0,0,0.2686,122.527
-dataset-static,RTEB proxy,2,2,1,,True,True,False,False,0,0,0,122.527,0,0.0,0.0,0,1.1344,122.527
-dataset-static,Ours full,2,2,1,,True,True,False,False,0,0,0,122.527,0,0.0,0.0,0,0.9047,122.527
-dataset-static,RPP proxy,3,3,1,,True,True,False,False,0,0,0,120.811,0,0.0,0.0,0,0.0349,120.811
-dataset-static,ATR proxy,3,3,1,,True,True,False,False,0,0,0,121.397,0,0.0,0.0,0,0.0404,121.397
-dataset-static,DDP proxy,3,3,1,,True,True,False,False,0,0,0,121.983,0,0.0,0.0,0,0.2064,121.983
-dataset-static,RTEB proxy,3,3,1,,True,True,False,False,0,0,0,121.397,0,0.0,0.0,0,1.1649,121.397
-dataset-static,Ours full,3,3,1,,True,True,False,False,0,0,0,121.983,0,0.0,0.0,0,0.8626,121.983
+dataset-static,RPP proxy,0,0,1,,True,True,False,False,0,0,0,120.581,0,0.0,0.0,0,0.0779,120.581
+dataset-static,RPP proxy + random retry,0,0,1,,True,True,False,False,0,0,0,120.581,0,0.0,0.0,0,0.0557,120.581
+dataset-static,RPP proxy + failure memory,0,0,1,,True,True,False,False,0,0,0,120.581,0,0.0,0.0,0,0.0552,120.581
+dataset-static,ATR proxy,0,0,1,,True,True,False,False,0,0,0,118.823,0,0.0,0.0,0,0.0586,118.823
+dataset-static,ATR proxy + failure memory,0,0,1,,True,True,False,False,0,0,0,118.823,0,0.0,0.0,0,0.0579,118.823
+dataset-static,DDP proxy,0,0,1,,True,True,False,False,0,0,0,120.581,0,0.0,0.0,0,0.2426,120.581
+dataset-static,DDP proxy + failure memory,0,0,1,,True,True,False,False,0,0,0,120.581,0,0.0,0.0,0,0.2399,120.581
+dataset-static,RTEB proxy,0,0,1,,True,True,False,False,0,0,0,118.823,0,0.0,0.0,0,2.262,118.823
+dataset-static,RTEB proxy + failure memory,0,0,1,,True,True,False,False,0,0,0,118.823,0,0.0,0.0,0,2.2721,118.823
+dataset-static,Ours full,0,0,1,,True,True,False,False,0,0,0,120.581,0,0.0,0.0,0,2.0471,120.581
+dataset-static,RPP proxy,1,1,1,,True,True,False,False,0,0,0,121.042,0,0.0,0.0,0,0.072,121.042
+dataset-static,RPP proxy + random retry,1,1,1,,True,True,False,False,0,0,0,121.042,0,0.0,0.0,0,0.0732,121.042
+dataset-static,RPP proxy + failure memory,1,1,1,,True,True,False,False,0,0,0,121.042,0,0.0,0.0,0,0.0727,121.042
+dataset-static,ATR proxy,1,1,1,,True,True,False,False,0,0,0,120.456,0,0.0,0.0,0,0.0733,120.456
+dataset-static,ATR proxy + failure memory,1,1,1,,True,True,False,False,0,0,0,120.456,0,0.0,0.0,0,0.0733,120.456
+dataset-static,DDP proxy,1,1,1,,True,True,False,False,0,0,0,121.042,0,0.0,0.0,0,0.2576,121.042
+dataset-static,DDP proxy + failure memory,1,1,1,,True,True,False,False,0,0,0,121.042,0,0.0,0.0,0,0.2583,121.042
+dataset-static,RTEB proxy,1,1,1,,True,True,False,False,0,0,0,120.456,0,0.0,0.0,0,2.1156,120.456
+dataset-static,RTEB proxy + failure memory,1,1,1,,True,True,False,False,0,0,0,120.456,0,0.0,0.0,0,2.1214,120.456
+dataset-static,Ours full,1,1,1,,True,True,False,False,0,0,0,121.042,0,0.0,0.0,0,1.8423,121.042
+dataset-static,RPP proxy,2,2,1,,True,True,False,False,0,0,0,122.527,0,0.0,0.0,0,0.0301,122.527
+dataset-static,RPP proxy + random retry,2,2,1,,True,True,False,False,0,0,0,122.527,0,0.0,0.0,0,0.0301,122.527
+dataset-static,RPP proxy + failure memory,2,2,1,,True,True,False,False,0,0,0,122.527,0,0.0,0.0,0,0.0302,122.527
+dataset-static,ATR proxy,2,2,1,,True,True,False,False,0,0,0,122.527,0,0.0,0.0,0,0.043,122.527
+dataset-static,ATR proxy + failure memory,2,2,1,,True,True,False,False,0,0,0,122.527,0,0.0,0.0,0,0.0432,122.527
+dataset-static,DDP proxy,2,2,1,,True,True,False,False,0,0,0,122.527,0,0.0,0.0,0,0.2717,122.527
+dataset-static,DDP proxy + failure memory,2,2,1,,True,True,False,False,0,0,0,122.527,0,0.0,0.0,0,0.2714,122.527
+dataset-static,RTEB proxy,2,2,1,,True,True,False,False,0,0,0,122.527,0,0.0,0.0,0,1.1254,122.527
+dataset-static,RTEB proxy + failure memory,2,2,1,,True,True,False,False,0,0,0,122.527,0,0.0,0.0,0,1.1148,122.527
+dataset-static,Ours full,2,2,1,,True,True,False,False,0,0,0,122.527,0,0.0,0.0,0,0.9023,122.527
+dataset-static,RPP proxy,3,3,1,,True,True,False,False,0,0,0,120.811,0,0.0,0.0,0,0.0355,120.811
+dataset-static,RPP proxy + random retry,3,3,1,,True,True,False,False,0,0,0,120.811,0,0.0,0.0,0,0.0351,120.811
+dataset-static,RPP proxy + failure memory,3,3,1,,True,True,False,False,0,0,0,120.811,0,0.0,0.0,0,0.0351,120.811
+dataset-static,ATR proxy,3,3,1,,True,True,False,False,0,0,0,121.397,0,0.0,0.0,0,0.0408,121.397
+dataset-static,ATR proxy + failure memory,3,3,1,,True,True,False,False,0,0,0,121.397,0,0.0,0.0,0,0.0409,121.397
+dataset-static,DDP proxy,3,3,1,,True,True,False,False,0,0,0,121.983,0,0.0,0.0,0,0.2061,121.983
+dataset-static,DDP proxy + failure memory,3,3,1,,True,True,False,False,0,0,0,121.983,0,0.0,0.0,0,0.209,121.983
+dataset-static,RTEB proxy,3,3,1,,True,True,False,False,0,0,0,121.397,0,0.0,0.0,0,1.1391,121.397
+dataset-static,RTEB proxy + failure memory,3,3,1,,True,True,False,False,0,0,0,121.397,0,0.0,0.0,0,1.1459,121.397
+dataset-static,Ours full,3,3,1,,True,True,False,False,0,0,0,121.983,0,0.0,0.0,0,0.8591,121.983
 dataset-static,RPP proxy,4,4,1,,True,True,False,False,0,0,0,120.64,0,0.0,0.0,0,0.0389,120.64
-dataset-static,ATR proxy,4,4,1,,True,True,False,False,0,0,0,121.225,0,0.0,0.0,0,0.0472,121.225
-dataset-static,DDP proxy,4,4,1,,True,True,False,False,0,0,0,120.344,0,0.0,0.0,0,0.1581,120.344
-dataset-static,RTEB proxy,4,4,1,,True,True,False,False,0,0,0,121.225,0,0.0,0.0,0,1.0332,121.225
-dataset-static,Ours full,4,4,1,,True,True,False,False,0,0,0,121.811,0,0.0,0.0,0,0.7639,121.811
-dataset-hidden-blockage,RPP proxy,0,0,1,"(376, 225)",True,False,True,True,0,0,0,120.581,0,0.0,0.0,0,0.0578,220.581
-dataset-hidden-blockage,RPP proxy,0,0,2,"(376, 225)",True,False,True,True,1,0,0,120.581,0,0.0,0.0,0,0.0547,225.581
-dataset-hidden-blockage,RPP proxy + random retry,0,0,1,"(376, 225)",True,False,True,True,0,0,0,120.581,0,0.0,0.0,0,0.054,220.581
-dataset-hidden-blockage,RPP proxy + random retry,0,0,2,"(376, 225)",True,False,True,True,1,0,0,120.581,0,0.0,0.0,0,0.0553,225.581
-dataset-hidden-blockage,RPP proxy + failure memory,0,0,1,"(376, 225)",True,False,True,True,0,0,0,120.581,0,0.0,0.0,0,0.0546,220.581
-dataset-hidden-blockage,RPP proxy + failure memory,0,0,2,"(376, 225)",True,True,False,False,1,0,0,188.581,0,0.0,0.0,0,0.175,193.581
-dataset-hidden-blockage,ATR proxy,0,0,1,"(376, 225)",True,False,True,True,0,0,0,118.823,0,0.0,0.0,0,0.0597,218.823
-dataset-hidden-blockage,ATR proxy,0,0,2,"(376, 225)",True,False,True,True,1,0,0,118.823,0,0.0,0.0,0,0.0602,223.823
-dataset-hidden-blockage,ATR proxy + failure memory,0,0,1,"(376, 225)",True,False,True,True,0,0,0,118.823,0,0.0,0.0,0,0.059,218.823
-dataset-hidden-blockage,ATR proxy + failure memory,0,0,2,"(376, 225)",True,True,False,False,1,0,0,187.995,0,0.0,0.0,0,0.1865,192.995
-dataset-hidden-blockage,DDP proxy,0,0,1,"(376, 225)",True,False,True,True,0,0,0,120.581,0,0.0,0.0,0,0.2427,220.581
-dataset-hidden-blockage,DDP proxy,0,0,2,"(376, 225)",True,False,True,True,1,0,0,120.581,0,0.0,0.0,0,0.2444,225.581
-dataset-hidden-blockage,DDP proxy + failure memory,0,0,1,"(376, 225)",True,False,True,True,0,0,0,120.581,0,0.0,0.0,0,0.2436,220.581
-dataset-hidden-blockage,DDP proxy + failure memory,0,0,2,"(376, 225)",True,True,False,False,1,0,0,188.581,0,0.0,0.0,0,0.3608,193.581
-dataset-hidden-blockage,RTEB proxy,0,0,1,"(376, 225)",True,False,True,True,0,0,0,118.823,0,0.0,0.0,0,2.3103,218.823
-dataset-hidden-blockage,RTEB proxy,0,0,2,"(376, 225)",True,False,True,True,1,0,0,118.823,0,0.0,0.0,0,2.2891,223.823
-dataset-hidden-blockage,RTEB proxy + failure memory,0,0,1,"(376, 225)",True,False,True,True,0,0,0,118.823,0,0.0,0.0,0,2.301,218.823
-dataset-hidden-blockage,RTEB proxy + failure memory,0,0,2,"(376, 225)",True,True,False,False,1,0,0,187.995,0,0.0,0.0,0,5.2216,192.995
-dataset-hidden-blockage,Ours full,0,0,1,"(376, 225)",True,False,True,True,0,0,0,120.581,0,0.0,0.0,0,2.0447,220.581
-dataset-hidden-blockage,Ours full,0,0,2,"(376, 225)",True,True,False,False,1,0,0,188.581,0,0.0,0.0,0,4.8442,193.581
-dataset-hidden-blockage,RPP proxy,1,1,1,"(234, 159)",True,False,True,True,0,0,0,121.042,0,0.0,0.0,0,0.074,221.042
-dataset-hidden-blockage,RPP proxy,1,1,2,"(234, 159)",True,False,True,True,1,0,0,121.042,0,0.0,0.0,0,0.0737,226.042
-dataset-hidden-blockage,RPP proxy + random retry,1,1,1,"(234, 159)",True,False,True,True,0,0,0,121.042,0,0.0,0.0,0,0.0727,221.042
-dataset-hidden-blockage,RPP proxy + random retry,1,1,2,"(234, 159)",True,False,True,True,1,0,0,121.042,0,0.0,0.0,0,0.0728,226.042
-dataset-hidden-blockage,RPP proxy + failure memory,1,1,1,"(234, 159)",True,False,True,True,0,0,0,121.042,0,0.0,0.0,0,0.0718,221.042
-dataset-hidden-blockage,RPP proxy + failure memory,1,1,2,"(234, 159)",True,True,False,False,1,0,0,121.042,0,0.0,0.0,0,0.0708,126.042
-dataset-hidden-blockage,ATR proxy,1,1,1,"(234, 159)",True,False,True,True,0,0,0,120.456,0,0.0,0.0,0,0.0745,220.456
-dataset-hidden-blockage,ATR proxy,1,1,2,"(234, 159)",True,False,True,True,1,0,0,120.456,0,0.0,0.0,0,0.0741,225.456
-dataset-hidden-blockage,ATR proxy + failure memory,1,1,1,"(234, 159)",True,False,True,True,0,0,0,120.456,0,0.0,0.0,0,0.0741,220.456
-dataset-hidden-blockage,ATR proxy + failure memory,1,1,2,"(234, 159)",True,True,False,False,1,0,0,119.87,0,0.0,0.0,0,0.0731,124.87
-dataset-hidden-blockage,DDP proxy,1,1,1,"(234, 159)",True,False,True,True,0,0,0,121.042,0,0.0,0.0,0,0.258,221.042
-dataset-hidden-blockage,DDP proxy,1,1,2,"(234, 159)",True,False,True,True,1,0,0,121.042,0,0.0,0.0,0,0.2582,226.042
-dataset-hidden-blockage,DDP proxy + failure memory,1,1,1,"(234, 159)",True,False,True,True,0,0,0,121.042,0,0.0,0.0,0,0.258,221.042
-dataset-hidden-blockage,DDP proxy + failure memory,1,1,2,"(234, 159)",True,True,False,False,1,0,0,121.042,0,0.0,0.0,0,0.2573,126.042
-dataset-hidden-blockage,RTEB proxy,1,1,1,"(234, 159)",True,False,True,True,0,0,0,120.456,0,0.0,0.0,0,2.1267,220.456
-dataset-hidden-blockage,RTEB proxy,1,1,2,"(234, 159)",True,False,True,True,1,0,0,120.456,0,0.0,0.0,0,2.1011,225.456
-dataset-hidden-blockage,RTEB proxy + failure memory,1,1,1,"(234, 159)",True,False,True,True,0,0,0,120.456,0,0.0,0.0,0,2.1177,220.456
-dataset-hidden-blockage,RTEB proxy + failure memory,1,1,2,"(234, 159)",True,True,False,False,1,0,0,119.87,0,0.0,0.0,0,2.0286,124.87
-dataset-hidden-blockage,Ours full,1,1,1,"(234, 159)",True,False,True,True,0,0,0,121.042,0,0.0,0.0,0,1.8375,221.042
-dataset-hidden-blockage,Ours full,1,1,2,"(234, 159)",True,True,False,False,1,0,0,121.042,0,0.0,0.0,0,1.8506,126.042
-dataset-hidden-blockage,RPP proxy,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,0.0301,222.527
-dataset-hidden-blockage,RPP proxy,2,2,2,"(233, 383)",True,False,True,True,1,0,0,122.527,0,0.0,0.0,0,0.03,227.527
-dataset-hidden-blockage,RPP proxy + random retry,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,0.0301,222.527
-dataset-hidden-blockage,RPP proxy + random retry,2,2,2,"(233, 383)",True,False,True,True,1,0,0,122.527,0,0.0,0.0,0,0.0313,227.527
-dataset-hidden-blockage,RPP proxy + failure memory,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,0.0307,222.527
-dataset-hidden-blockage,RPP proxy + failure memory,2,2,2,"(233, 383)",True,True,False,False,1,0,0,150.61,0,0.0,0.0,0,0.0575,155.61
-dataset-hidden-blockage,ATR proxy,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,0.0429,222.527
-dataset-hidden-blockage,ATR proxy,2,2,2,"(233, 383)",True,False,True,True,1,0,0,122.527,0,0.0,0.0,0,0.0429,227.527
-dataset-hidden-blockage,ATR proxy + failure memory,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,0.0433,222.527
-dataset-hidden-blockage,ATR proxy + failure memory,2,2,2,"(233, 383)",True,True,False,False,1,0,0,148.853,0,0.0,0.0,0,0.0677,153.853
-dataset-hidden-blockage,DDP proxy,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,0.27,222.527
-dataset-hidden-blockage,DDP proxy,2,2,2,"(233, 383)",True,False,True,True,1,0,0,122.527,0,0.0,0.0,0,0.269,227.527
-dataset-hidden-blockage,DDP proxy + failure memory,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,0.2694,222.527
-dataset-hidden-blockage,DDP proxy + failure memory,2,2,2,"(233, 383)",True,True,False,False,1,0,0,150.61,0,0.0,0.0,0,0.273,155.61
-dataset-hidden-blockage,RTEB proxy,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,1.1273,222.527
-dataset-hidden-blockage,RTEB proxy,2,2,2,"(233, 383)",True,False,True,True,1,0,0,122.527,0,0.0,0.0,0,1.1261,227.527
-dataset-hidden-blockage,RTEB proxy + failure memory,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,1.1266,222.527
-dataset-hidden-blockage,RTEB proxy + failure memory,2,2,2,"(233, 383)",True,True,False,False,1,0,0,148.853,0,0.0,0.0,0,1.8962,153.853
-dataset-hidden-blockage,Ours full,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,0.9055,222.527
-dataset-hidden-blockage,Ours full,2,2,2,"(233, 383)",True,True,False,False,1,0,0,150.61,0,0.0,0.0,0,1.6366,155.61
-dataset-hidden-blockage,RPP proxy,3,3,1,"(277, 161)",True,False,True,True,0,0,0,120.811,0,0.0,0.0,0,0.0361,220.811
-dataset-hidden-blockage,RPP proxy,3,3,2,"(277, 161)",True,False,True,True,1,0,0,120.811,0,0.0,0.0,0,0.0351,225.811
-dataset-hidden-blockage,RPP proxy + random retry,3,3,1,"(277, 161)",True,False,True,True,0,0,0,120.811,0,0.0,0.0,0,0.035,220.811
-dataset-hidden-blockage,RPP proxy + random retry,3,3,2,"(277, 161)",True,False,True,True,1,0,0,120.811,0,0.0,0.0,0,0.0359,225.811
-dataset-hidden-blockage,RPP proxy + failure memory,3,3,1,"(277, 161)",True,False,True,True,0,0,0,120.811,0,0.0,0.0,0,0.0352,220.811
-dataset-hidden-blockage,RPP proxy + failure memory,3,3,2,"(277, 161)",True,True,False,False,1,0,0,120.811,0,0.0,0.0,0,0.0345,125.811
-dataset-hidden-blockage,ATR proxy,3,3,1,"(277, 161)",True,True,False,False,0,0,0,121.397,0,0.0,0.0,0,0.0409,121.397
-dataset-hidden-blockage,ATR proxy + failure memory,3,3,1,"(277, 161)",True,True,False,False,0,0,0,121.397,0,0.0,0.0,0,0.0407,121.397
-dataset-hidden-blockage,DDP proxy,3,3,1,"(277, 161)",True,False,True,True,0,0,0,121.983,0,0.0,0.0,0,0.2071,221.983
-dataset-hidden-blockage,DDP proxy,3,3,2,"(277, 161)",True,False,True,True,1,0,0,121.983,0,0.0,0.0,0,0.2058,226.983
-dataset-hidden-blockage,DDP proxy + failure memory,3,3,1,"(277, 161)",True,False,True,True,0,0,0,121.983,0,0.0,0.0,0,0.2064,221.983
-dataset-hidden-blockage,DDP proxy + failure memory,3,3,2,"(277, 161)",True,True,False,False,1,0,0,121.983,0,0.0,0.0,0,0.2066,126.983
-dataset-hidden-blockage,RTEB proxy,3,3,1,"(277, 161)",True,True,False,False,0,0,0,121.397,0,0.0,0.0,0,1.1446,121.397
-dataset-hidden-blockage,RTEB proxy + failure memory,3,3,1,"(277, 161)",True,True,False,False,0,0,0,121.397,0,0.0,0.0,0,1.1391,121.397
-dataset-hidden-blockage,Ours full,3,3,1,"(277, 161)",True,False,True,True,0,0,0,121.983,0,0.0,0.0,0,0.8644,221.983
-dataset-hidden-blockage,Ours full,3,3,2,"(277, 161)",True,True,False,False,1,0,0,121.983,0,0.0,0.0,0,0.8644,126.983
-dataset-hidden-blockage,RPP proxy,4,4,1,"(26, 63)",True,False,True,True,0,0,0,120.64,0,0.0,0.0,0,0.0404,220.64
-dataset-hidden-blockage,RPP proxy,4,4,2,"(26, 63)",True,False,True,True,1,0,0,120.64,0,0.0,0.0,0,0.0394,225.64
-dataset-hidden-blockage,RPP proxy + random retry,4,4,1,"(26, 63)",True,False,True,True,0,0,0,120.64,0,0.0,0.0,0,0.039,220.64
-dataset-hidden-blockage,RPP proxy + random retry,4,4,2,"(26, 63)",True,False,True,True,1,0,0,120.64,0,0.0,0.0,0,0.0395,225.64
-dataset-hidden-blockage,RPP proxy + failure memory,4,4,1,"(26, 63)",True,False,True,True,0,0,0,120.64,0,0.0,0.0,0,0.0384,220.64
-dataset-hidden-blockage,RPP proxy + failure memory,4,4,2,"(26, 63)",True,True,False,False,1,0,0,124.74,0,0.0,0.0,0,0.0366,129.74
-dataset-hidden-blockage,ATR proxy,4,4,1,"(26, 63)",True,False,True,True,0,0,0,121.225,0,0.0,0.0,0,0.0462,221.225
-dataset-hidden-blockage,ATR proxy,4,4,2,"(26, 63)",True,False,True,True,1,0,0,121.225,0,0.0,0.0,0,0.0462,226.225
-dataset-hidden-blockage,ATR proxy + failure memory,4,4,1,"(26, 63)",True,False,True,True,0,0,0,121.225,0,0.0,0.0,0,0.0465,221.225
-dataset-hidden-blockage,ATR proxy + failure memory,4,4,2,"(26, 63)",True,True,False,False,1,0,0,124.74,0,0.0,0.0,0,0.0465,129.74
-dataset-hidden-blockage,DDP proxy,4,4,1,"(26, 63)",True,False,True,True,0,0,0,120.344,0,0.0,0.0,0,0.1586,220.344
-dataset-hidden-blockage,DDP proxy,4,4,2,"(26, 63)",True,False,True,True,1,0,0,120.344,0,0.0,0.0,0,0.1577,225.344
-dataset-hidden-blockage,DDP proxy + failure memory,4,4,1,"(26, 63)",True,False,True,True,0,0,0,120.344,0,0.0,0.0,0,0.159,220.344
-dataset-hidden-blockage,DDP proxy + failure memory,4,4,2,"(26, 63)",True,True,False,False,1,0,0,125.326,0,0.0,0.0,0,0.2225,130.326
-dataset-hidden-blockage,RTEB proxy,4,4,1,"(26, 63)",True,False,True,True,0,0,0,121.225,0,0.0,0.0,0,1.0426,221.225
-dataset-hidden-blockage,RTEB proxy,4,4,2,"(26, 63)",True,False,True,True,1,0,0,121.225,0,0.0,0.0,0,1.033,226.225
-dataset-hidden-blockage,RTEB proxy + failure memory,4,4,1,"(26, 63)",True,False,True,True,0,0,0,121.225,0,0.0,0.0,0,1.0416,221.225
-dataset-hidden-blockage,RTEB proxy + failure memory,4,4,2,"(26, 63)",True,True,False,False,1,0,0,124.74,0,0.0,0.0,0,1.1228,129.74
-dataset-hidden-blockage,Ours full,4,4,1,"(26, 63)",True,False,True,True,0,0,0,121.811,0,0.0,0.0,0,0.7715,221.811
-dataset-hidden-blockage,Ours full,4,4,2,"(26, 63)",True,True,False,False,1,0,0,125.326,0,0.0,0.0,0,0.9263,130.326
+dataset-static,RPP proxy + random retry,4,4,1,,True,True,False,False,0,0,0,120.64,0,0.0,0.0,0,0.0389,120.64
+dataset-static,RPP proxy + failure memory,4,4,1,,True,True,False,False,0,0,0,120.64,0,0.0,0.0,0,0.0388,120.64
+dataset-static,ATR proxy,4,4,1,,True,True,False,False,0,0,0,121.225,0,0.0,0.0,0,0.0473,121.225
+dataset-static,ATR proxy + failure memory,4,4,1,,True,True,False,False,0,0,0,121.225,0,0.0,0.0,0,0.0468,121.225
+dataset-static,DDP proxy,4,4,1,,True,True,False,False,0,0,0,120.344,0,0.0,0.0,0,0.1647,120.344
+dataset-static,DDP proxy + failure memory,4,4,1,,True,True,False,False,0,0,0,120.344,0,0.0,0.0,0,0.1607,120.344
+dataset-static,RTEB proxy,4,4,1,,True,True,False,False,0,0,0,121.225,0,0.0,0.0,0,1.022,121.225
+dataset-static,RTEB proxy + failure memory,4,4,1,,True,True,False,False,0,0,0,121.225,0,0.0,0.0,0,1.0177,121.225
+dataset-static,Ours full,4,4,1,,True,True,False,False,0,0,0,121.811,0,0.0,0.0,0,0.7608,121.811
+dataset-hidden-blockage-easy,RPP proxy,0,0,1,"(376, 225)",True,False,True,True,0,0,0,120.581,0,0.0,0.0,0,0.0569,220.581
+dataset-hidden-blockage-easy,RPP proxy,0,0,2,"(376, 225)",True,False,True,True,1,0,0,120.581,0,0.0,0.0,0,0.0577,225.581
+dataset-hidden-blockage-easy,RPP proxy + random retry,0,0,1,"(376, 225)",True,False,True,True,0,0,0,120.581,0,0.0,0.0,0,0.0553,220.581
+dataset-hidden-blockage-easy,RPP proxy + random retry,0,0,2,"(376, 225)",True,False,True,True,1,0,0,120.581,0,0.0,0.0,0,0.056,225.581
+dataset-hidden-blockage-easy,RPP proxy + failure memory,0,0,1,"(376, 225)",True,False,True,True,0,0,0,120.581,0,0.0,0.0,0,0.0553,220.581
+dataset-hidden-blockage-easy,RPP proxy + failure memory,0,0,2,"(376, 225)",True,True,False,False,1,0,0,188.581,0,0.0,0.0,0,0.1726,193.581
+dataset-hidden-blockage-easy,ATR proxy,0,0,1,"(376, 225)",True,False,True,True,0,0,0,118.823,0,0.0,0.0,0,0.0582,218.823
+dataset-hidden-blockage-easy,ATR proxy,0,0,2,"(376, 225)",True,False,True,True,1,0,0,118.823,0,0.0,0.0,0,0.0581,223.823
+dataset-hidden-blockage-easy,ATR proxy + failure memory,0,0,1,"(376, 225)",True,False,True,True,0,0,0,118.823,0,0.0,0.0,0,0.0578,218.823
+dataset-hidden-blockage-easy,ATR proxy + failure memory,0,0,2,"(376, 225)",True,True,False,False,1,0,0,187.995,0,0.0,0.0,0,0.1901,192.995
+dataset-hidden-blockage-easy,DDP proxy,0,0,1,"(376, 225)",True,False,True,True,0,0,0,120.581,0,0.0,0.0,0,0.2433,220.581
+dataset-hidden-blockage-easy,DDP proxy,0,0,2,"(376, 225)",True,False,True,True,1,0,0,120.581,0,0.0,0.0,0,0.2446,225.581
+dataset-hidden-blockage-easy,DDP proxy + failure memory,0,0,1,"(376, 225)",True,False,True,True,0,0,0,120.581,0,0.0,0.0,0,0.2434,220.581
+dataset-hidden-blockage-easy,DDP proxy + failure memory,0,0,2,"(376, 225)",True,True,False,False,1,0,0,188.581,0,0.0,0.0,0,0.3684,193.581
+dataset-hidden-blockage-easy,RTEB proxy,0,0,1,"(376, 225)",True,False,True,True,0,0,0,118.823,0,0.0,0.0,0,2.2904,218.823
+dataset-hidden-blockage-easy,RTEB proxy,0,0,2,"(376, 225)",True,False,True,True,1,0,0,118.823,0,0.0,0.0,0,2.2954,223.823
+dataset-hidden-blockage-easy,RTEB proxy + failure memory,0,0,1,"(376, 225)",True,False,True,True,0,0,0,118.823,0,0.0,0.0,0,2.3054,218.823
+dataset-hidden-blockage-easy,RTEB proxy + failure memory,0,0,2,"(376, 225)",True,True,False,False,1,0,0,187.995,0,0.0,0.0,0,5.2288,192.995
+dataset-hidden-blockage-easy,Ours full,0,0,1,"(376, 225)",True,False,True,True,0,0,0,120.581,0,0.0,0.0,0,2.0577,220.581
+dataset-hidden-blockage-easy,Ours full,0,0,2,"(376, 225)",True,True,False,False,1,0,0,188.581,0,0.0,0.0,0,4.8911,193.581
+dataset-hidden-blockage-medium,RPP proxy,0,0,1,"(376, 225)",True,False,True,True,0,0,0,120.581,0,0.0,0.0,0,0.0551,220.581
+dataset-hidden-blockage-medium,RPP proxy,0,0,2,"(376, 225)",True,False,True,True,1,0,0,120.581,0,0.0,0.0,0,0.0553,225.581
+dataset-hidden-blockage-medium,RPP proxy + random retry,0,0,1,"(376, 225)",True,False,True,True,0,0,0,120.581,0,0.0,0.0,0,0.0551,220.581
+dataset-hidden-blockage-medium,RPP proxy + random retry,0,0,2,"(376, 225)",True,False,True,True,1,0,0,120.581,0,0.0,0.0,0,0.0556,225.581
+dataset-hidden-blockage-medium,RPP proxy + failure memory,0,0,1,"(376, 225)",True,False,True,True,0,0,0,120.581,0,0.0,0.0,0,0.055,220.581
+dataset-hidden-blockage-medium,RPP proxy + failure memory,0,0,2,"(376, 225)",True,True,False,False,1,0,0,188.581,0,0.0,0.0,0,0.1759,193.581
+dataset-hidden-blockage-medium,ATR proxy,0,0,1,"(376, 225)",True,False,True,True,0,0,0,118.823,0,0.0,0.0,0,0.0589,218.823
+dataset-hidden-blockage-medium,ATR proxy,0,0,2,"(376, 225)",True,False,True,True,1,0,0,118.823,0,0.0,0.0,0,0.059,223.823
+dataset-hidden-blockage-medium,ATR proxy + failure memory,0,0,1,"(376, 225)",True,False,True,True,0,0,0,118.823,0,0.0,0.0,0,0.0594,218.823
+dataset-hidden-blockage-medium,ATR proxy + failure memory,0,0,2,"(376, 225)",True,True,False,False,1,0,0,187.995,0,0.0,0.0,0,0.1851,192.995
+dataset-hidden-blockage-medium,DDP proxy,0,0,1,"(376, 225)",True,False,True,True,0,0,0,120.581,0,0.0,0.0,0,0.2421,220.581
+dataset-hidden-blockage-medium,DDP proxy,0,0,2,"(376, 225)",True,False,True,True,1,0,0,120.581,0,0.0,0.0,0,0.244,225.581
+dataset-hidden-blockage-medium,DDP proxy + failure memory,0,0,1,"(376, 225)",True,False,True,True,0,0,0,120.581,0,0.0,0.0,0,0.2429,220.581
+dataset-hidden-blockage-medium,DDP proxy + failure memory,0,0,2,"(376, 225)",True,True,False,False,1,0,0,188.581,0,0.0,0.0,0,0.3644,193.581
+dataset-hidden-blockage-medium,RTEB proxy,0,0,1,"(376, 225)",True,False,True,True,0,0,0,118.823,0,0.0,0.0,0,2.2973,218.823
+dataset-hidden-blockage-medium,RTEB proxy,0,0,2,"(376, 225)",True,False,True,True,1,0,0,118.823,0,0.0,0.0,0,2.2703,223.823
+dataset-hidden-blockage-medium,RTEB proxy + failure memory,0,0,1,"(376, 225)",True,False,True,True,0,0,0,118.823,0,0.0,0.0,0,2.2781,218.823
+dataset-hidden-blockage-medium,RTEB proxy + failure memory,0,0,2,"(376, 225)",True,True,False,False,1,0,0,187.995,0,0.0,0.0,0,5.1876,192.995
+dataset-hidden-blockage-medium,Ours full,0,0,1,"(376, 225)",True,False,True,True,0,0,0,120.581,0,0.0,0.0,0,2.0621,220.581
+dataset-hidden-blockage-medium,Ours full,0,0,2,"(376, 225)",True,True,False,False,1,0,0,188.581,0,0.0,0.0,0,4.8838,193.581
+dataset-hidden-blockage-hard,RPP proxy,0,0,1,"(376, 225)",True,False,True,True,0,0,0,120.581,0,0.0,0.0,0,0.0542,220.581
+dataset-hidden-blockage-hard,RPP proxy,0,0,2,"(376, 225)",True,False,True,True,1,0,0,120.581,0,0.0,0.0,0,0.0543,225.581
+dataset-hidden-blockage-hard,RPP proxy + random retry,0,0,1,"(376, 225)",True,False,True,True,0,0,0,120.581,0,0.0,0.0,0,0.0542,220.581
+dataset-hidden-blockage-hard,RPP proxy + random retry,0,0,2,"(376, 225)",True,False,True,True,1,0,0,120.581,0,0.0,0.0,0,0.0558,225.581
+dataset-hidden-blockage-hard,RPP proxy + failure memory,0,0,1,"(376, 225)",True,False,True,True,0,0,0,120.581,0,0.0,0.0,0,0.055,220.581
+dataset-hidden-blockage-hard,RPP proxy + failure memory,0,0,2,"(376, 225)",True,True,False,False,1,0,0,188.581,0,0.0,0.0,0,0.1755,193.581
+dataset-hidden-blockage-hard,ATR proxy,0,0,1,"(376, 225)",True,False,True,True,0,0,0,118.823,0,0.0,0.0,0,0.0587,218.823
+dataset-hidden-blockage-hard,ATR proxy,0,0,2,"(376, 225)",True,False,True,True,1,0,0,118.823,0,0.0,0.0,0,0.0594,223.823
+dataset-hidden-blockage-hard,ATR proxy + failure memory,0,0,1,"(376, 225)",True,False,True,True,0,0,0,118.823,0,0.0,0.0,0,0.0591,218.823
+dataset-hidden-blockage-hard,ATR proxy + failure memory,0,0,2,"(376, 225)",True,True,False,False,1,0,0,187.995,0,0.0,0.0,0,0.1837,192.995
+dataset-hidden-blockage-hard,DDP proxy,0,0,1,"(376, 225)",True,False,True,True,0,0,0,120.581,0,0.0,0.0,0,0.2447,220.581
+dataset-hidden-blockage-hard,DDP proxy,0,0,2,"(376, 225)",True,False,True,True,1,0,0,120.581,0,0.0,0.0,0,0.24,225.581
+dataset-hidden-blockage-hard,DDP proxy + failure memory,0,0,1,"(376, 225)",True,False,True,True,0,0,0,120.581,0,0.0,0.0,0,0.2397,220.581
+dataset-hidden-blockage-hard,DDP proxy + failure memory,0,0,2,"(376, 225)",True,True,False,False,1,0,0,188.581,0,0.0,0.0,0,0.368,193.581
+dataset-hidden-blockage-hard,RTEB proxy,0,0,1,"(376, 225)",True,False,True,True,0,0,0,118.823,0,0.0,0.0,0,2.2921,218.823
+dataset-hidden-blockage-hard,RTEB proxy,0,0,2,"(376, 225)",True,False,True,True,1,0,0,118.823,0,0.0,0.0,0,2.2714,223.823
+dataset-hidden-blockage-hard,RTEB proxy + failure memory,0,0,1,"(376, 225)",True,False,True,True,0,0,0,118.823,0,0.0,0.0,0,2.2816,218.823
+dataset-hidden-blockage-hard,RTEB proxy + failure memory,0,0,2,"(376, 225)",True,True,False,False,1,0,0,187.995,0,0.0,0.0,0,4.994,192.995
+dataset-hidden-blockage-hard,Ours full,0,0,1,"(376, 225)",True,False,True,True,0,0,0,120.581,0,0.0,0.0,0,2.0336,220.581
+dataset-hidden-blockage-hard,Ours full,0,0,2,"(376, 225)",True,True,False,False,1,0,0,188.581,0,0.0,0.0,0,4.7873,193.581
+dataset-hidden-blockage-very-hard,RPP proxy,0,0,1,"(376, 225)",True,False,True,True,0,0,0,120.581,0,0.0,0.0,0,0.0541,220.581
+dataset-hidden-blockage-very-hard,RPP proxy,0,0,2,"(376, 225)",True,False,True,True,1,0,0,120.581,0,0.0,0.0,0,0.0537,225.581
+dataset-hidden-blockage-very-hard,RPP proxy + random retry,0,0,1,"(376, 225)",True,False,True,True,0,0,0,120.581,0,0.0,0.0,0,0.0539,220.581
+dataset-hidden-blockage-very-hard,RPP proxy + random retry,0,0,2,"(376, 225)",True,False,True,True,1,0,0,120.581,0,0.0,0.0,0,0.0542,225.581
+dataset-hidden-blockage-very-hard,RPP proxy + failure memory,0,0,1,"(376, 225)",True,False,True,True,0,0,0,120.581,0,0.0,0.0,0,0.0539,220.581
+dataset-hidden-blockage-very-hard,RPP proxy + failure memory,0,0,2,"(376, 225)",True,False,True,True,1,0,0,121.167,0,0.0,0.0,0,0.056,226.167
+dataset-hidden-blockage-very-hard,ATR proxy,0,0,1,"(376, 225)",True,False,True,True,0,0,0,118.823,0,0.0,0.0,0,0.0584,218.823
+dataset-hidden-blockage-very-hard,ATR proxy,0,0,2,"(376, 225)",True,False,True,True,1,0,0,118.823,0,0.0,0.0,0,0.0588,223.823
+dataset-hidden-blockage-very-hard,ATR proxy + failure memory,0,0,1,"(376, 225)",True,False,True,True,0,0,0,118.823,0,0.0,0.0,0,0.0589,218.823
+dataset-hidden-blockage-very-hard,ATR proxy + failure memory,0,0,2,"(376, 225)",True,False,True,True,1,0,0,119.995,0,0.0,0.0,0,0.0601,224.995
+dataset-hidden-blockage-very-hard,DDP proxy,0,0,1,"(376, 225)",True,False,True,True,0,0,0,120.581,0,0.0,0.0,0,0.2382,220.581
+dataset-hidden-blockage-very-hard,DDP proxy,0,0,2,"(376, 225)",True,False,True,True,1,0,0,120.581,0,0.0,0.0,0,0.2443,225.581
+dataset-hidden-blockage-very-hard,DDP proxy + failure memory,0,0,1,"(376, 225)",True,False,True,True,0,0,0,120.581,0,0.0,0.0,0,0.2398,220.581
+dataset-hidden-blockage-very-hard,DDP proxy + failure memory,0,0,2,"(376, 225)",True,False,True,True,1,0,0,121.167,0,0.0,0.0,0,0.2431,226.167
+dataset-hidden-blockage-very-hard,RTEB proxy,0,0,1,"(376, 225)",True,False,True,True,0,0,0,118.823,0,0.0,0.0,0,2.2864,218.823
+dataset-hidden-blockage-very-hard,RTEB proxy,0,0,2,"(376, 225)",True,False,True,True,1,0,0,118.823,0,0.0,0.0,0,2.2899,223.823
+dataset-hidden-blockage-very-hard,RTEB proxy + failure memory,0,0,1,"(376, 225)",True,False,True,True,0,0,0,118.823,0,0.0,0.0,0,2.2865,218.823
+dataset-hidden-blockage-very-hard,RTEB proxy + failure memory,0,0,2,"(376, 225)",True,False,True,True,1,0,0,119.995,0,0.0,0.0,0,2.0948,224.995
+dataset-hidden-blockage-very-hard,Ours full,0,0,1,"(376, 225)",True,False,True,True,0,0,0,120.581,0,0.0,0.0,0,2.0433,220.581
+dataset-hidden-blockage-very-hard,Ours full,0,0,2,"(376, 225)",True,False,True,True,1,0,0,120.581,0,0.0,0.0,0,2.0409,225.581
+dataset-hidden-blockage-easy,RPP proxy,1,1,1,"(234, 159)",True,False,True,True,0,0,0,121.042,0,0.0,0.0,0,0.0747,221.042
+dataset-hidden-blockage-easy,RPP proxy,1,1,2,"(234, 159)",True,False,True,True,1,0,0,121.042,0,0.0,0.0,0,0.073,226.042
+dataset-hidden-blockage-easy,RPP proxy + random retry,1,1,1,"(234, 159)",True,False,True,True,0,0,0,121.042,0,0.0,0.0,0,0.0819,221.042
+dataset-hidden-blockage-easy,RPP proxy + random retry,1,1,2,"(234, 159)",True,False,True,True,1,0,0,121.042,0,0.0,0.0,0,0.0746,226.042
+dataset-hidden-blockage-easy,RPP proxy + failure memory,1,1,1,"(234, 159)",True,False,True,True,0,0,0,121.042,0,0.0,0.0,0,0.0733,221.042
+dataset-hidden-blockage-easy,RPP proxy + failure memory,1,1,2,"(234, 159)",True,True,False,False,1,0,0,121.042,0,0.0,0.0,0,0.0727,126.042
+dataset-hidden-blockage-easy,ATR proxy,1,1,1,"(234, 159)",True,False,True,True,0,0,0,120.456,0,0.0,0.0,0,0.0743,220.456
+dataset-hidden-blockage-easy,ATR proxy,1,1,2,"(234, 159)",True,False,True,True,1,0,0,120.456,0,0.0,0.0,0,0.0743,225.456
+dataset-hidden-blockage-easy,ATR proxy + failure memory,1,1,1,"(234, 159)",True,False,True,True,0,0,0,120.456,0,0.0,0.0,0,0.0742,220.456
+dataset-hidden-blockage-easy,ATR proxy + failure memory,1,1,2,"(234, 159)",True,True,False,False,1,0,0,119.87,0,0.0,0.0,0,0.0732,124.87
+dataset-hidden-blockage-easy,DDP proxy,1,1,1,"(234, 159)",True,False,True,True,0,0,0,121.042,0,0.0,0.0,0,0.2609,221.042
+dataset-hidden-blockage-easy,DDP proxy,1,1,2,"(234, 159)",True,False,True,True,1,0,0,121.042,0,0.0,0.0,0,0.2608,226.042
+dataset-hidden-blockage-easy,DDP proxy + failure memory,1,1,1,"(234, 159)",True,False,True,True,0,0,0,121.042,0,0.0,0.0,0,0.2612,221.042
+dataset-hidden-blockage-easy,DDP proxy + failure memory,1,1,2,"(234, 159)",True,True,False,False,1,0,0,121.042,0,0.0,0.0,0,0.2618,126.042
+dataset-hidden-blockage-easy,RTEB proxy,1,1,1,"(234, 159)",True,False,True,True,0,0,0,120.456,0,0.0,0.0,0,2.1147,220.456
+dataset-hidden-blockage-easy,RTEB proxy,1,1,2,"(234, 159)",True,False,True,True,1,0,0,120.456,0,0.0,0.0,0,2.1128,225.456
+dataset-hidden-blockage-easy,RTEB proxy + failure memory,1,1,1,"(234, 159)",True,False,True,True,0,0,0,120.456,0,0.0,0.0,0,2.1134,220.456
+dataset-hidden-blockage-easy,RTEB proxy + failure memory,1,1,2,"(234, 159)",True,True,False,False,1,0,0,119.87,0,0.0,0.0,0,2.0228,124.87
+dataset-hidden-blockage-easy,Ours full,1,1,1,"(234, 159)",True,False,True,True,0,0,0,121.042,0,0.0,0.0,0,1.8269,221.042
+dataset-hidden-blockage-easy,Ours full,1,1,2,"(234, 159)",True,True,False,False,1,0,0,121.042,0,0.0,0.0,0,1.844,126.042
+dataset-hidden-blockage-medium,RPP proxy,1,1,1,"(234, 159)",True,False,True,True,0,0,0,121.042,0,0.0,0.0,0,0.0732,221.042
+dataset-hidden-blockage-medium,RPP proxy,1,1,2,"(234, 159)",True,False,True,True,1,0,0,121.042,0,0.0,0.0,0,0.0728,226.042
+dataset-hidden-blockage-medium,RPP proxy + random retry,1,1,1,"(234, 159)",True,False,True,True,0,0,0,121.042,0,0.0,0.0,0,0.0733,221.042
+dataset-hidden-blockage-medium,RPP proxy + random retry,1,1,2,"(234, 159)",True,False,True,True,1,0,0,121.042,0,0.0,0.0,0,0.0734,226.042
+dataset-hidden-blockage-medium,RPP proxy + failure memory,1,1,1,"(234, 159)",True,False,True,True,0,0,0,121.042,0,0.0,0.0,0,0.0722,221.042
+dataset-hidden-blockage-medium,RPP proxy + failure memory,1,1,2,"(234, 159)",True,True,False,True,1,0,0,121.042,0,0.0,0.0,0,0.0724,126.042
+dataset-hidden-blockage-medium,ATR proxy,1,1,1,"(234, 159)",True,False,True,True,0,0,0,120.456,0,0.0,0.0,0,0.0745,220.456
+dataset-hidden-blockage-medium,ATR proxy,1,1,2,"(234, 159)",True,False,True,True,1,0,0,120.456,0,0.0,0.0,0,0.0747,225.456
+dataset-hidden-blockage-medium,ATR proxy + failure memory,1,1,1,"(234, 159)",True,False,True,True,0,0,0,120.456,0,0.0,0.0,0,0.0759,220.456
+dataset-hidden-blockage-medium,ATR proxy + failure memory,1,1,2,"(234, 159)",True,True,False,True,1,0,0,119.87,0,0.0,0.0,0,0.0736,124.87
+dataset-hidden-blockage-medium,DDP proxy,1,1,1,"(234, 159)",True,False,True,True,0,0,0,121.042,0,0.0,0.0,0,0.2573,221.042
+dataset-hidden-blockage-medium,DDP proxy,1,1,2,"(234, 159)",True,False,True,True,1,0,0,121.042,0,0.0,0.0,0,0.2583,226.042
+dataset-hidden-blockage-medium,DDP proxy + failure memory,1,1,1,"(234, 159)",True,False,True,True,0,0,0,121.042,0,0.0,0.0,0,0.2595,221.042
+dataset-hidden-blockage-medium,DDP proxy + failure memory,1,1,2,"(234, 159)",True,True,False,True,1,0,0,121.042,0,0.0,0.0,0,0.26,126.042
+dataset-hidden-blockage-medium,RTEB proxy,1,1,1,"(234, 159)",True,False,True,True,0,0,0,120.456,0,0.0,0.0,0,2.1085,220.456
+dataset-hidden-blockage-medium,RTEB proxy,1,1,2,"(234, 159)",True,False,True,True,1,0,0,120.456,0,0.0,0.0,0,2.1054,225.456
+dataset-hidden-blockage-medium,RTEB proxy + failure memory,1,1,1,"(234, 159)",True,False,True,True,0,0,0,120.456,0,0.0,0.0,0,2.1195,220.456
+dataset-hidden-blockage-medium,RTEB proxy + failure memory,1,1,2,"(234, 159)",True,True,False,False,1,0,0,119.87,0,0.0,0.0,0,2.0446,124.87
+dataset-hidden-blockage-medium,Ours full,1,1,1,"(234, 159)",True,False,True,True,0,0,0,121.042,0,0.0,0.0,0,1.8374,221.042
+dataset-hidden-blockage-medium,Ours full,1,1,2,"(234, 159)",True,True,False,True,1,0,0,121.042,0,0.0,0.0,0,1.83,126.042
+dataset-hidden-blockage-hard,RPP proxy,1,1,1,"(234, 159)",True,False,True,True,0,0,0,121.042,0,0.0,0.0,0,0.0732,221.042
+dataset-hidden-blockage-hard,RPP proxy,1,1,2,"(234, 159)",True,False,True,True,1,0,0,121.042,0,0.0,0.0,0,0.0727,226.042
+dataset-hidden-blockage-hard,RPP proxy + random retry,1,1,1,"(234, 159)",True,False,True,True,0,0,0,121.042,0,0.0,0.0,0,0.0729,221.042
+dataset-hidden-blockage-hard,RPP proxy + random retry,1,1,2,"(234, 159)",True,False,True,True,1,0,0,121.042,0,0.0,0.0,0,0.0736,226.042
+dataset-hidden-blockage-hard,RPP proxy + failure memory,1,1,1,"(234, 159)",True,False,True,True,0,0,0,121.042,0,0.0,0.0,0,0.0723,221.042
+dataset-hidden-blockage-hard,RPP proxy + failure memory,1,1,2,"(234, 159)",True,True,False,True,1,0,0,121.042,0,0.0,0.0,0,0.0736,126.042
+dataset-hidden-blockage-hard,ATR proxy,1,1,1,"(234, 159)",True,False,True,True,0,0,0,120.456,0,0.0,0.0,0,0.0733,220.456
+dataset-hidden-blockage-hard,ATR proxy,1,1,2,"(234, 159)",True,False,True,True,1,0,0,120.456,0,0.0,0.0,0,0.0747,225.456
+dataset-hidden-blockage-hard,ATR proxy + failure memory,1,1,1,"(234, 159)",True,False,True,True,0,0,0,120.456,0,0.0,0.0,0,0.0743,220.456
+dataset-hidden-blockage-hard,ATR proxy + failure memory,1,1,2,"(234, 159)",True,True,False,True,1,0,0,119.87,0,0.0,0.0,0,0.0735,124.87
+dataset-hidden-blockage-hard,DDP proxy,1,1,1,"(234, 159)",True,False,True,True,0,0,0,121.042,0,0.0,0.0,0,0.2594,221.042
+dataset-hidden-blockage-hard,DDP proxy,1,1,2,"(234, 159)",True,False,True,True,1,0,0,121.042,0,0.0,0.0,0,0.2566,226.042
+dataset-hidden-blockage-hard,DDP proxy + failure memory,1,1,1,"(234, 159)",True,False,True,True,0,0,0,121.042,0,0.0,0.0,0,0.2613,221.042
+dataset-hidden-blockage-hard,DDP proxy + failure memory,1,1,2,"(234, 159)",True,True,False,True,1,0,0,121.042,0,0.0,0.0,0,0.2607,126.042
+dataset-hidden-blockage-hard,RTEB proxy,1,1,1,"(234, 159)",True,False,True,True,0,0,0,120.456,0,0.0,0.0,0,2.0939,220.456
+dataset-hidden-blockage-hard,RTEB proxy,1,1,2,"(234, 159)",True,False,True,True,1,0,0,120.456,0,0.0,0.0,0,2.1215,225.456
+dataset-hidden-blockage-hard,RTEB proxy + failure memory,1,1,1,"(234, 159)",True,False,True,True,0,0,0,120.456,0,0.0,0.0,0,2.1117,220.456
+dataset-hidden-blockage-hard,RTEB proxy + failure memory,1,1,2,"(234, 159)",True,True,False,False,1,0,0,121.042,0,0.0,0.0,0,2.0282,126.042
+dataset-hidden-blockage-hard,Ours full,1,1,1,"(234, 159)",True,False,True,True,0,0,0,121.042,0,0.0,0.0,0,1.8405,221.042
+dataset-hidden-blockage-hard,Ours full,1,1,2,"(234, 159)",True,True,False,True,1,0,0,121.042,0,0.0,0.0,0,1.8391,126.042
+dataset-hidden-blockage-very-hard,RPP proxy,1,1,1,"(234, 159)",True,False,True,True,0,0,0,121.042,0,0.0,0.0,0,0.0734,221.042
+dataset-hidden-blockage-very-hard,RPP proxy,1,1,2,"(234, 159)",True,False,True,True,1,0,0,121.042,0,0.0,0.0,0,0.0735,226.042
+dataset-hidden-blockage-very-hard,RPP proxy + random retry,1,1,1,"(234, 159)",True,False,True,True,0,0,0,121.042,0,0.0,0.0,0,0.0732,221.042
+dataset-hidden-blockage-very-hard,RPP proxy + random retry,1,1,2,"(234, 159)",True,False,True,True,1,0,0,121.042,0,0.0,0.0,0,0.0738,226.042
+dataset-hidden-blockage-very-hard,RPP proxy + failure memory,1,1,1,"(234, 159)",True,False,True,True,0,0,0,121.042,0,0.0,0.0,0,0.0724,221.042
+dataset-hidden-blockage-very-hard,RPP proxy + failure memory,1,1,2,"(234, 159)",True,False,True,True,1,0,0,121.042,0,0.0,0.0,0,0.0732,226.042
+dataset-hidden-blockage-very-hard,ATR proxy,1,1,1,"(234, 159)",True,False,True,True,0,0,0,120.456,0,0.0,0.0,0,0.0762,220.456
+dataset-hidden-blockage-very-hard,ATR proxy,1,1,2,"(234, 159)",True,False,True,True,1,0,0,120.456,0,0.0,0.0,0,0.0745,225.456
+dataset-hidden-blockage-very-hard,ATR proxy + failure memory,1,1,1,"(234, 159)",True,False,True,True,0,0,0,120.456,0,0.0,0.0,0,0.0751,220.456
+dataset-hidden-blockage-very-hard,ATR proxy + failure memory,1,1,2,"(234, 159)",True,False,True,True,1,0,0,120.456,0,0.0,0.0,0,0.0746,225.456
+dataset-hidden-blockage-very-hard,DDP proxy,1,1,1,"(234, 159)",True,False,True,True,0,0,0,121.042,0,0.0,0.0,0,0.26,221.042
+dataset-hidden-blockage-very-hard,DDP proxy,1,1,2,"(234, 159)",True,False,True,True,1,0,0,121.042,0,0.0,0.0,0,0.2606,226.042
+dataset-hidden-blockage-very-hard,DDP proxy + failure memory,1,1,1,"(234, 159)",True,False,True,True,0,0,0,121.042,0,0.0,0.0,0,0.2583,221.042
+dataset-hidden-blockage-very-hard,DDP proxy + failure memory,1,1,2,"(234, 159)",True,False,True,True,1,0,0,121.042,0,0.0,0.0,0,0.2586,226.042
+dataset-hidden-blockage-very-hard,RTEB proxy,1,1,1,"(234, 159)",True,False,True,True,0,0,0,120.456,0,0.0,0.0,0,2.1171,220.456
+dataset-hidden-blockage-very-hard,RTEB proxy,1,1,2,"(234, 159)",True,False,True,True,1,0,0,120.456,0,0.0,0.0,0,2.1167,225.456
+dataset-hidden-blockage-very-hard,RTEB proxy + failure memory,1,1,1,"(234, 159)",True,False,True,True,0,0,0,120.456,0,0.0,0.0,0,2.1069,220.456
+dataset-hidden-blockage-very-hard,RTEB proxy + failure memory,1,1,2,"(234, 159)",True,True,False,True,1,0,0,121.042,0,0.0,0.0,0,2.049,126.042
+dataset-hidden-blockage-very-hard,Ours full,1,1,1,"(234, 159)",True,False,True,True,0,0,0,121.042,0,0.0,0.0,0,1.8388,221.042
+dataset-hidden-blockage-very-hard,Ours full,1,1,2,"(234, 159)",True,True,False,True,1,0,0,121.042,0,0.0,0.0,0,1.8416,126.042
+dataset-hidden-blockage-easy,RPP proxy,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,0.0302,222.527
+dataset-hidden-blockage-easy,RPP proxy,2,2,2,"(233, 383)",True,False,True,True,1,0,0,122.527,0,0.0,0.0,0,0.0301,227.527
+dataset-hidden-blockage-easy,RPP proxy + random retry,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,0.0303,222.527
+dataset-hidden-blockage-easy,RPP proxy + random retry,2,2,2,"(233, 383)",True,False,True,True,1,0,0,122.527,0,0.0,0.0,0,0.031,227.527
+dataset-hidden-blockage-easy,RPP proxy + failure memory,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,0.03,222.527
+dataset-hidden-blockage-easy,RPP proxy + failure memory,2,2,2,"(233, 383)",True,True,False,False,1,0,0,150.61,0,0.0,0.0,0,0.0583,155.61
+dataset-hidden-blockage-easy,ATR proxy,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,0.0429,222.527
+dataset-hidden-blockage-easy,ATR proxy,2,2,2,"(233, 383)",True,False,True,True,1,0,0,122.527,0,0.0,0.0,0,0.0431,227.527
+dataset-hidden-blockage-easy,ATR proxy + failure memory,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,0.043,222.527
+dataset-hidden-blockage-easy,ATR proxy + failure memory,2,2,2,"(233, 383)",True,True,False,False,1,0,0,148.853,0,0.0,0.0,0,0.0672,153.853
+dataset-hidden-blockage-easy,DDP proxy,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,0.2702,222.527
+dataset-hidden-blockage-easy,DDP proxy,2,2,2,"(233, 383)",True,False,True,True,1,0,0,122.527,0,0.0,0.0,0,0.2697,227.527
+dataset-hidden-blockage-easy,DDP proxy + failure memory,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,0.2687,222.527
+dataset-hidden-blockage-easy,DDP proxy + failure memory,2,2,2,"(233, 383)",True,True,False,False,1,0,0,150.61,0,0.0,0.0,0,0.2736,155.61
+dataset-hidden-blockage-easy,RTEB proxy,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,1.1185,222.527
+dataset-hidden-blockage-easy,RTEB proxy,2,2,2,"(233, 383)",True,False,True,True,1,0,0,122.527,0,0.0,0.0,0,1.1201,227.527
+dataset-hidden-blockage-easy,RTEB proxy + failure memory,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,1.1286,222.527
+dataset-hidden-blockage-easy,RTEB proxy + failure memory,2,2,2,"(233, 383)",True,True,False,False,1,0,0,148.853,0,0.0,0.0,0,1.9107,153.853
+dataset-hidden-blockage-easy,Ours full,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,0.9083,222.527
+dataset-hidden-blockage-easy,Ours full,2,2,2,"(233, 383)",True,True,False,False,1,0,0,150.61,0,0.0,0.0,0,1.6359,155.61
+dataset-hidden-blockage-medium,RPP proxy,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,0.0304,222.527
+dataset-hidden-blockage-medium,RPP proxy,2,2,2,"(233, 383)",True,False,True,True,1,0,0,122.527,0,0.0,0.0,0,0.0307,227.527
+dataset-hidden-blockage-medium,RPP proxy + random retry,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,0.0306,222.527
+dataset-hidden-blockage-medium,RPP proxy + random retry,2,2,2,"(233, 383)",True,False,True,True,1,0,0,122.527,0,0.0,0.0,0,0.0306,227.527
+dataset-hidden-blockage-medium,RPP proxy + failure memory,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,0.0293,222.527
+dataset-hidden-blockage-medium,RPP proxy + failure memory,2,2,2,"(233, 383)",True,True,False,False,1,0,0,150.61,0,0.0,0.0,0,0.0571,155.61
+dataset-hidden-blockage-medium,ATR proxy,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,0.0439,222.527
+dataset-hidden-blockage-medium,ATR proxy,2,2,2,"(233, 383)",True,False,True,True,1,0,0,122.527,0,0.0,0.0,0,0.0438,227.527
+dataset-hidden-blockage-medium,ATR proxy + failure memory,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,0.043,222.527
+dataset-hidden-blockage-medium,ATR proxy + failure memory,2,2,2,"(233, 383)",True,True,False,False,1,0,0,148.853,0,0.0,0.0,0,0.0674,153.853
+dataset-hidden-blockage-medium,DDP proxy,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,0.2716,222.527
+dataset-hidden-blockage-medium,DDP proxy,2,2,2,"(233, 383)",True,False,True,True,1,0,0,122.527,0,0.0,0.0,0,0.2685,227.527
+dataset-hidden-blockage-medium,DDP proxy + failure memory,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,0.2701,222.527
+dataset-hidden-blockage-medium,DDP proxy + failure memory,2,2,2,"(233, 383)",True,True,False,False,1,0,0,150.61,0,0.0,0.0,0,0.2737,155.61
+dataset-hidden-blockage-medium,RTEB proxy,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,1.1208,222.527
+dataset-hidden-blockage-medium,RTEB proxy,2,2,2,"(233, 383)",True,False,True,True,1,0,0,122.527,0,0.0,0.0,0,1.1209,227.527
+dataset-hidden-blockage-medium,RTEB proxy + failure memory,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,1.128,222.527
+dataset-hidden-blockage-medium,RTEB proxy + failure memory,2,2,2,"(233, 383)",True,True,False,False,1,0,0,148.853,0,0.0,0.0,0,1.8246,153.853
+dataset-hidden-blockage-medium,Ours full,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,0.8977,222.527
+dataset-hidden-blockage-medium,Ours full,2,2,2,"(233, 383)",True,True,False,False,1,0,0,150.61,0,0.0,0.0,0,1.6509,155.61
+dataset-hidden-blockage-hard,RPP proxy,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,0.0301,222.527
+dataset-hidden-blockage-hard,RPP proxy,2,2,2,"(233, 383)",True,False,True,True,1,0,0,122.527,0,0.0,0.0,0,0.0306,227.527
+dataset-hidden-blockage-hard,RPP proxy + random retry,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,0.0305,222.527
+dataset-hidden-blockage-hard,RPP proxy + random retry,2,2,2,"(233, 383)",True,False,True,True,1,0,0,122.527,0,0.0,0.0,0,0.0315,227.527
+dataset-hidden-blockage-hard,RPP proxy + failure memory,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,0.0305,222.527
+dataset-hidden-blockage-hard,RPP proxy + failure memory,2,2,2,"(233, 383)",True,True,False,False,1,0,0,150.61,0,0.0,0.0,0,0.0581,155.61
+dataset-hidden-blockage-hard,ATR proxy,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,0.0434,222.527
+dataset-hidden-blockage-hard,ATR proxy,2,2,2,"(233, 383)",True,False,True,True,1,0,0,122.527,0,0.0,0.0,0,0.0433,227.527
+dataset-hidden-blockage-hard,ATR proxy + failure memory,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,0.0426,222.527
+dataset-hidden-blockage-hard,ATR proxy + failure memory,2,2,2,"(233, 383)",True,True,False,False,1,0,0,148.853,0,0.0,0.0,0,0.0689,153.853
+dataset-hidden-blockage-hard,DDP proxy,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,0.2736,222.527
+dataset-hidden-blockage-hard,DDP proxy,2,2,2,"(233, 383)",True,False,True,True,1,0,0,122.527,0,0.0,0.0,0,0.2735,227.527
+dataset-hidden-blockage-hard,DDP proxy + failure memory,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,0.2772,222.527
+dataset-hidden-blockage-hard,DDP proxy + failure memory,2,2,2,"(233, 383)",True,True,False,False,1,0,0,150.61,0,0.0,0.0,0,0.2767,155.61
+dataset-hidden-blockage-hard,RTEB proxy,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,1.1251,222.527
+dataset-hidden-blockage-hard,RTEB proxy,2,2,2,"(233, 383)",True,False,True,True,1,0,0,122.527,0,0.0,0.0,0,1.1281,227.527
+dataset-hidden-blockage-hard,RTEB proxy + failure memory,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,1.1265,222.527
+dataset-hidden-blockage-hard,RTEB proxy + failure memory,2,2,2,"(233, 383)",True,True,False,False,1,0,0,148.853,0,0.0,0.0,0,1.8331,153.853
+dataset-hidden-blockage-hard,Ours full,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,0.9084,222.527
+dataset-hidden-blockage-hard,Ours full,2,2,2,"(233, 383)",True,True,False,False,1,0,0,150.61,0,0.0,0.0,0,1.6286,155.61
+dataset-hidden-blockage-very-hard,RPP proxy,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,0.0299,222.527
+dataset-hidden-blockage-very-hard,RPP proxy,2,2,2,"(233, 383)",True,False,True,True,1,0,0,122.527,0,0.0,0.0,0,0.0298,227.527
+dataset-hidden-blockage-very-hard,RPP proxy + random retry,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,0.0298,222.527
+dataset-hidden-blockage-very-hard,RPP proxy + random retry,2,2,2,"(233, 383)",True,False,True,True,1,0,0,122.527,0,0.0,0.0,0,0.0306,227.527
+dataset-hidden-blockage-very-hard,RPP proxy + failure memory,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,0.0297,222.527
+dataset-hidden-blockage-very-hard,RPP proxy + failure memory,2,2,2,"(233, 383)",True,True,False,False,1,0,0,150.61,0,0.0,0.0,0,0.0582,155.61
+dataset-hidden-blockage-very-hard,ATR proxy,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,0.0437,222.527
+dataset-hidden-blockage-very-hard,ATR proxy,2,2,2,"(233, 383)",True,False,True,True,1,0,0,122.527,0,0.0,0.0,0,0.0433,227.527
+dataset-hidden-blockage-very-hard,ATR proxy + failure memory,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,0.0435,222.527
+dataset-hidden-blockage-very-hard,ATR proxy + failure memory,2,2,2,"(233, 383)",True,True,False,False,1,0,0,148.853,0,0.0,0.0,0,0.0681,153.853
+dataset-hidden-blockage-very-hard,DDP proxy,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,0.2735,222.527
+dataset-hidden-blockage-very-hard,DDP proxy,2,2,2,"(233, 383)",True,False,True,True,1,0,0,122.527,0,0.0,0.0,0,0.2735,227.527
+dataset-hidden-blockage-very-hard,DDP proxy + failure memory,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,0.2691,222.527
+dataset-hidden-blockage-very-hard,DDP proxy + failure memory,2,2,2,"(233, 383)",True,True,False,False,1,0,0,150.61,0,0.0,0.0,0,0.2782,155.61
+dataset-hidden-blockage-very-hard,RTEB proxy,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,1.1315,222.527
+dataset-hidden-blockage-very-hard,RTEB proxy,2,2,2,"(233, 383)",True,False,True,True,1,0,0,122.527,0,0.0,0.0,0,1.1244,227.527
+dataset-hidden-blockage-very-hard,RTEB proxy + failure memory,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,1.1145,222.527
+dataset-hidden-blockage-very-hard,RTEB proxy + failure memory,2,2,2,"(233, 383)",True,False,True,True,1,0,0,123.113,0,0.0,0.0,0,1.0171,228.113
+dataset-hidden-blockage-very-hard,Ours full,2,2,1,"(233, 383)",True,False,True,True,0,0,0,122.527,0,0.0,0.0,0,0.9017,222.527
+dataset-hidden-blockage-very-hard,Ours full,2,2,2,"(233, 383)",True,False,True,True,1,0,0,122.527,0,0.0,0.0,0,0.8994,227.527
+dataset-hidden-blockage-easy,RPP proxy,3,3,1,"(277, 161)",True,False,True,True,0,0,0,120.811,0,0.0,0.0,0,0.0361,220.811
+dataset-hidden-blockage-easy,RPP proxy,3,3,2,"(277, 161)",True,False,True,True,1,0,0,120.811,0,0.0,0.0,0,0.035,225.811
+dataset-hidden-blockage-easy,RPP proxy + random retry,3,3,1,"(277, 161)",True,False,True,True,0,0,0,120.811,0,0.0,0.0,0,0.0353,220.811
+dataset-hidden-blockage-easy,RPP proxy + random retry,3,3,2,"(277, 161)",True,False,True,True,1,0,0,120.811,0,0.0,0.0,0,0.0357,225.811
+dataset-hidden-blockage-easy,RPP proxy + failure memory,3,3,1,"(277, 161)",True,False,True,True,0,0,0,120.811,0,0.0,0.0,0,0.0351,220.811
+dataset-hidden-blockage-easy,RPP proxy + failure memory,3,3,2,"(277, 161)",True,True,False,False,1,0,0,120.811,0,0.0,0.0,0,0.0344,125.811
+dataset-hidden-blockage-easy,ATR proxy,3,3,1,"(277, 161)",True,True,False,False,0,0,0,121.397,0,0.0,0.0,0,0.0401,121.397
+dataset-hidden-blockage-easy,ATR proxy + failure memory,3,3,1,"(277, 161)",True,True,False,False,0,0,0,121.397,0,0.0,0.0,0,0.04,121.397
+dataset-hidden-blockage-easy,DDP proxy,3,3,1,"(277, 161)",True,False,True,True,0,0,0,121.983,0,0.0,0.0,0,0.2035,221.983
+dataset-hidden-blockage-easy,DDP proxy,3,3,2,"(277, 161)",True,False,True,True,1,0,0,121.983,0,0.0,0.0,0,0.2071,226.983
+dataset-hidden-blockage-easy,DDP proxy + failure memory,3,3,1,"(277, 161)",True,False,True,True,0,0,0,121.983,0,0.0,0.0,0,0.2097,221.983
+dataset-hidden-blockage-easy,DDP proxy + failure memory,3,3,2,"(277, 161)",True,True,False,False,1,0,0,121.983,0,0.0,0.0,0,0.2062,126.983
+dataset-hidden-blockage-easy,RTEB proxy,3,3,1,"(277, 161)",True,True,False,False,0,0,0,121.397,0,0.0,0.0,0,1.1377,121.397
+dataset-hidden-blockage-easy,RTEB proxy + failure memory,3,3,1,"(277, 161)",True,True,False,False,0,0,0,121.397,0,0.0,0.0,0,1.1299,121.397
+dataset-hidden-blockage-easy,Ours full,3,3,1,"(277, 161)",True,False,True,True,0,0,0,121.983,0,0.0,0.0,0,0.8596,221.983
+dataset-hidden-blockage-easy,Ours full,3,3,2,"(277, 161)",True,True,False,False,1,0,0,121.983,0,0.0,0.0,0,0.8592,126.983
+dataset-hidden-blockage-medium,RPP proxy,3,3,1,"(277, 161)",True,False,True,True,0,0,0,120.811,0,0.0,0.0,0,0.0351,220.811
+dataset-hidden-blockage-medium,RPP proxy,3,3,2,"(277, 161)",True,False,True,True,1,0,0,120.811,0,0.0,0.0,0,0.0353,225.811
+dataset-hidden-blockage-medium,RPP proxy + random retry,3,3,1,"(277, 161)",True,False,True,True,0,0,0,120.811,0,0.0,0.0,0,0.0351,220.811
+dataset-hidden-blockage-medium,RPP proxy + random retry,3,3,2,"(277, 161)",True,False,True,True,1,0,0,120.811,0,0.0,0.0,0,0.036,225.811
+dataset-hidden-blockage-medium,RPP proxy + failure memory,3,3,1,"(277, 161)",True,False,True,True,0,0,0,120.811,0,0.0,0.0,0,0.0352,220.811
+dataset-hidden-blockage-medium,RPP proxy + failure memory,3,3,2,"(277, 161)",True,True,False,True,1,0,0,120.811,0,0.0,0.0,0,0.0357,125.811
+dataset-hidden-blockage-medium,ATR proxy,3,3,1,"(277, 161)",True,True,False,False,0,0,0,121.397,0,0.0,0.0,0,0.0415,121.397
+dataset-hidden-blockage-medium,ATR proxy + failure memory,3,3,1,"(277, 161)",True,True,False,False,0,0,0,121.397,0,0.0,0.0,0,0.041,121.397
+dataset-hidden-blockage-medium,DDP proxy,3,3,1,"(277, 161)",True,False,True,True,0,0,0,121.983,0,0.0,0.0,0,0.2059,221.983
+dataset-hidden-blockage-medium,DDP proxy,3,3,2,"(277, 161)",True,False,True,True,1,0,0,121.983,0,0.0,0.0,0,0.2064,226.983
+dataset-hidden-blockage-medium,DDP proxy + failure memory,3,3,1,"(277, 161)",True,False,True,True,0,0,0,121.983,0,0.0,0.0,0,0.2065,221.983
+dataset-hidden-blockage-medium,DDP proxy + failure memory,3,3,2,"(277, 161)",True,True,False,True,1,0,0,121.983,0,0.0,0.0,0,0.2072,126.983
+dataset-hidden-blockage-medium,RTEB proxy,3,3,1,"(277, 161)",True,True,False,False,0,0,0,121.397,0,0.0,0.0,0,1.135,121.397
+dataset-hidden-blockage-medium,RTEB proxy + failure memory,3,3,1,"(277, 161)",True,True,False,False,0,0,0,121.397,0,0.0,0.0,0,1.1331,121.397
+dataset-hidden-blockage-medium,Ours full,3,3,1,"(277, 161)",True,False,True,True,0,0,0,121.983,0,0.0,0.0,0,0.861,221.983
+dataset-hidden-blockage-medium,Ours full,3,3,2,"(277, 161)",True,True,False,True,1,0,0,121.983,0,0.0,0.0,0,0.8641,126.983
+dataset-hidden-blockage-hard,RPP proxy,3,3,1,"(277, 161)",True,False,True,True,0,0,0,120.811,0,0.0,0.0,0,0.0353,220.811
+dataset-hidden-blockage-hard,RPP proxy,3,3,2,"(277, 161)",True,False,True,True,1,0,0,120.811,0,0.0,0.0,0,0.0355,225.811
+dataset-hidden-blockage-hard,RPP proxy + random retry,3,3,1,"(277, 161)",True,False,True,True,0,0,0,120.811,0,0.0,0.0,0,0.0349,220.811
+dataset-hidden-blockage-hard,RPP proxy + random retry,3,3,2,"(277, 161)",True,False,True,True,1,0,0,120.811,0,0.0,0.0,0,0.0361,225.811
+dataset-hidden-blockage-hard,RPP proxy + failure memory,3,3,1,"(277, 161)",True,False,True,True,0,0,0,120.811,0,0.0,0.0,0,0.0353,220.811
+dataset-hidden-blockage-hard,RPP proxy + failure memory,3,3,2,"(277, 161)",True,True,False,True,1,0,0,120.811,0,0.0,0.0,0,0.0358,125.811
+dataset-hidden-blockage-hard,ATR proxy,3,3,1,"(277, 161)",True,True,False,False,0,0,0,121.397,0,0.0,0.0,0,0.0415,121.397
+dataset-hidden-blockage-hard,ATR proxy + failure memory,3,3,1,"(277, 161)",True,True,False,False,0,0,0,121.397,0,0.0,0.0,0,0.0416,121.397
+dataset-hidden-blockage-hard,DDP proxy,3,3,1,"(277, 161)",True,False,True,True,0,0,0,121.983,0,0.0,0.0,0,0.2088,221.983
+dataset-hidden-blockage-hard,DDP proxy,3,3,2,"(277, 161)",True,False,True,True,1,0,0,121.983,0,0.0,0.0,0,0.2066,226.983
+dataset-hidden-blockage-hard,DDP proxy + failure memory,3,3,1,"(277, 161)",True,False,True,True,0,0,0,121.983,0,0.0,0.0,0,0.2085,221.983
+dataset-hidden-blockage-hard,DDP proxy + failure memory,3,3,2,"(277, 161)",True,True,False,True,1,0,0,121.983,0,0.0,0.0,0,0.2094,126.983
+dataset-hidden-blockage-hard,RTEB proxy,3,3,1,"(277, 161)",True,True,False,False,0,0,0,121.397,0,0.0,0.0,0,1.1405,121.397
+dataset-hidden-blockage-hard,RTEB proxy + failure memory,3,3,1,"(277, 161)",True,True,False,False,0,0,0,121.397,0,0.0,0.0,0,1.1395,121.397
+dataset-hidden-blockage-hard,Ours full,3,3,1,"(277, 161)",True,False,True,True,0,0,0,121.983,0,0.0,0.0,0,0.8621,221.983
+dataset-hidden-blockage-hard,Ours full,3,3,2,"(277, 161)",True,True,False,True,1,0,0,121.983,0,0.0,0.0,0,0.8665,126.983
+dataset-hidden-blockage-very-hard,RPP proxy,3,3,1,"(277, 161)",True,False,True,True,0,0,0,120.811,0,0.0,0.0,0,0.0352,220.811
+dataset-hidden-blockage-very-hard,RPP proxy,3,3,2,"(277, 161)",True,False,True,True,1,0,0,120.811,0,0.0,0.0,0,0.0352,225.811
+dataset-hidden-blockage-very-hard,RPP proxy + random retry,3,3,1,"(277, 161)",True,False,True,True,0,0,0,120.811,0,0.0,0.0,0,0.035,220.811
+dataset-hidden-blockage-very-hard,RPP proxy + random retry,3,3,2,"(277, 161)",True,False,True,True,1,0,0,120.811,0,0.0,0.0,0,0.036,225.811
+dataset-hidden-blockage-very-hard,RPP proxy + failure memory,3,3,1,"(277, 161)",True,False,True,True,0,0,0,120.811,0,0.0,0.0,0,0.0352,220.811
+dataset-hidden-blockage-very-hard,RPP proxy + failure memory,3,3,2,"(277, 161)",True,True,False,True,1,0,0,120.811,0,0.0,0.0,0,0.036,125.811
+dataset-hidden-blockage-very-hard,ATR proxy,3,3,1,"(277, 161)",True,True,False,False,0,0,0,121.397,0,0.0,0.0,0,0.041,121.397
+dataset-hidden-blockage-very-hard,ATR proxy + failure memory,3,3,1,"(277, 161)",True,True,False,False,0,0,0,121.397,0,0.0,0.0,0,0.0408,121.397
+dataset-hidden-blockage-very-hard,DDP proxy,3,3,1,"(277, 161)",True,False,True,True,0,0,0,121.983,0,0.0,0.0,0,0.2043,221.983
+dataset-hidden-blockage-very-hard,DDP proxy,3,3,2,"(277, 161)",True,False,True,True,1,0,0,121.983,0,0.0,0.0,0,0.2064,226.983
+dataset-hidden-blockage-very-hard,DDP proxy + failure memory,3,3,1,"(277, 161)",True,False,True,True,0,0,0,121.983,0,0.0,0.0,0,0.2076,221.983
+dataset-hidden-blockage-very-hard,DDP proxy + failure memory,3,3,2,"(277, 161)",True,True,False,True,1,0,0,121.983,0,0.0,0.0,0,0.206,126.983
+dataset-hidden-blockage-very-hard,RTEB proxy,3,3,1,"(277, 161)",True,True,False,False,0,0,0,121.397,0,0.0,0.0,0,1.1358,121.397
+dataset-hidden-blockage-very-hard,RTEB proxy + failure memory,3,3,1,"(277, 161)",True,True,False,False,0,0,0,121.397,0,0.0,0.0,0,1.146,121.397
+dataset-hidden-blockage-very-hard,Ours full,3,3,1,"(277, 161)",True,False,True,True,0,0,0,121.983,0,0.0,0.0,0,0.8646,221.983
+dataset-hidden-blockage-very-hard,Ours full,3,3,2,"(277, 161)",True,True,False,True,1,0,0,121.983,0,0.0,0.0,0,0.8623,126.983
+dataset-hidden-blockage-easy,RPP proxy,4,4,1,"(26, 63)",True,False,True,True,0,0,0,120.64,0,0.0,0.0,0,0.0402,220.64
+dataset-hidden-blockage-easy,RPP proxy,4,4,2,"(26, 63)",True,False,True,True,1,0,0,120.64,0,0.0,0.0,0,0.0391,225.64
+dataset-hidden-blockage-easy,RPP proxy + random retry,4,4,1,"(26, 63)",True,False,True,True,0,0,0,120.64,0,0.0,0.0,0,0.0389,220.64
+dataset-hidden-blockage-easy,RPP proxy + random retry,4,4,2,"(26, 63)",True,False,True,True,1,0,0,120.64,0,0.0,0.0,0,0.0395,225.64
+dataset-hidden-blockage-easy,RPP proxy + failure memory,4,4,1,"(26, 63)",True,False,True,True,0,0,0,120.64,0,0.0,0.0,0,0.0385,220.64
+dataset-hidden-blockage-easy,RPP proxy + failure memory,4,4,2,"(26, 63)",True,True,False,False,1,0,0,124.74,0,0.0,0.0,0,0.0373,129.74
+dataset-hidden-blockage-easy,ATR proxy,4,4,1,"(26, 63)",True,False,True,True,0,0,0,121.225,0,0.0,0.0,0,0.0472,221.225
+dataset-hidden-blockage-easy,ATR proxy,4,4,2,"(26, 63)",True,False,True,True,1,0,0,121.225,0,0.0,0.0,0,0.0473,226.225
+dataset-hidden-blockage-easy,ATR proxy + failure memory,4,4,1,"(26, 63)",True,False,True,True,0,0,0,121.225,0,0.0,0.0,0,0.0479,221.225
+dataset-hidden-blockage-easy,ATR proxy + failure memory,4,4,2,"(26, 63)",True,True,False,False,1,0,0,124.74,0,0.0,0.0,0,0.0531,129.74
+dataset-hidden-blockage-easy,DDP proxy,4,4,1,"(26, 63)",True,False,True,True,0,0,0,120.344,0,0.0,0.0,0,0.1615,220.344
+dataset-hidden-blockage-easy,DDP proxy,4,4,2,"(26, 63)",True,False,True,True,1,0,0,120.344,0,0.0,0.0,0,0.1621,225.344
+dataset-hidden-blockage-easy,DDP proxy + failure memory,4,4,1,"(26, 63)",True,False,True,True,0,0,0,120.344,0,0.0,0.0,0,0.1616,220.344
+dataset-hidden-blockage-easy,DDP proxy + failure memory,4,4,2,"(26, 63)",True,True,False,False,1,0,0,125.326,0,0.0,0.0,0,0.2248,130.326
+dataset-hidden-blockage-easy,RTEB proxy,4,4,1,"(26, 63)",True,False,True,True,0,0,0,121.225,0,0.0,0.0,0,1.0328,221.225
+dataset-hidden-blockage-easy,RTEB proxy,4,4,2,"(26, 63)",True,False,True,True,1,0,0,121.225,0,0.0,0.0,0,1.0426,226.225
+dataset-hidden-blockage-easy,RTEB proxy + failure memory,4,4,1,"(26, 63)",True,False,True,True,0,0,0,121.225,0,0.0,0.0,0,1.0309,221.225
+dataset-hidden-blockage-easy,RTEB proxy + failure memory,4,4,2,"(26, 63)",True,True,False,False,1,0,0,124.74,0,0.0,0.0,0,1.1074,129.74
+dataset-hidden-blockage-easy,Ours full,4,4,1,"(26, 63)",True,False,True,True,0,0,0,121.811,0,0.0,0.0,0,0.7615,221.811
+dataset-hidden-blockage-easy,Ours full,4,4,2,"(26, 63)",True,True,False,False,1,0,0,125.326,0,0.0,0.0,0,0.9106,130.326
+dataset-hidden-blockage-medium,RPP proxy,4,4,1,"(26, 63)",True,False,True,True,0,0,0,120.64,0,0.0,0.0,0,0.0387,220.64
+dataset-hidden-blockage-medium,RPP proxy,4,4,2,"(26, 63)",True,False,True,True,1,0,0,120.64,0,0.0,0.0,0,0.0398,225.64
+dataset-hidden-blockage-medium,RPP proxy + random retry,4,4,1,"(26, 63)",True,False,True,True,0,0,0,120.64,0,0.0,0.0,0,0.0394,220.64
+dataset-hidden-blockage-medium,RPP proxy + random retry,4,4,2,"(26, 63)",True,False,True,True,1,0,0,120.64,0,0.0,0.0,0,0.0395,225.64
+dataset-hidden-blockage-medium,RPP proxy + failure memory,4,4,1,"(26, 63)",True,False,True,True,0,0,0,120.64,0,0.0,0.0,0,0.0391,220.64
+dataset-hidden-blockage-medium,RPP proxy + failure memory,4,4,2,"(26, 63)",True,True,False,False,1,0,0,124.74,0,0.0,0.0,0,0.0378,129.74
+dataset-hidden-blockage-medium,ATR proxy,4,4,1,"(26, 63)",True,False,True,True,0,0,0,121.225,0,0.0,0.0,0,0.0474,221.225
+dataset-hidden-blockage-medium,ATR proxy,4,4,2,"(26, 63)",True,False,True,True,1,0,0,121.225,0,0.0,0.0,0,0.047,226.225
+dataset-hidden-blockage-medium,ATR proxy + failure memory,4,4,1,"(26, 63)",True,False,True,True,0,0,0,121.225,0,0.0,0.0,0,0.0463,221.225
+dataset-hidden-blockage-medium,ATR proxy + failure memory,4,4,2,"(26, 63)",True,True,False,False,1,0,0,124.74,0,0.0,0.0,0,0.0475,129.74
+dataset-hidden-blockage-medium,DDP proxy,4,4,1,"(26, 63)",True,False,True,True,0,0,0,120.344,0,0.0,0.0,0,0.1595,220.344
+dataset-hidden-blockage-medium,DDP proxy,4,4,2,"(26, 63)",True,False,True,True,1,0,0,120.344,0,0.0,0.0,0,0.1606,225.344
+dataset-hidden-blockage-medium,DDP proxy + failure memory,4,4,1,"(26, 63)",True,False,True,True,0,0,0,120.344,0,0.0,0.0,0,0.161,220.344
+dataset-hidden-blockage-medium,DDP proxy + failure memory,4,4,2,"(26, 63)",True,True,False,False,1,0,0,125.326,0,0.0,0.0,0,0.2238,130.326
+dataset-hidden-blockage-medium,RTEB proxy,4,4,1,"(26, 63)",True,False,True,True,0,0,0,121.225,0,0.0,0.0,0,1.0444,221.225
+dataset-hidden-blockage-medium,RTEB proxy,4,4,2,"(26, 63)",True,False,True,True,1,0,0,121.225,0,0.0,0.0,0,1.0349,226.225
+dataset-hidden-blockage-medium,RTEB proxy + failure memory,4,4,1,"(26, 63)",True,False,True,True,0,0,0,121.225,0,0.0,0.0,0,1.0224,221.225
+dataset-hidden-blockage-medium,RTEB proxy + failure memory,4,4,2,"(26, 63)",True,True,False,False,1,0,0,124.74,0,0.0,0.0,0,1.09,129.74
+dataset-hidden-blockage-medium,Ours full,4,4,1,"(26, 63)",True,False,True,True,0,0,0,121.811,0,0.0,0.0,0,0.7618,221.811
+dataset-hidden-blockage-medium,Ours full,4,4,2,"(26, 63)",True,True,False,False,1,0,0,125.326,0,0.0,0.0,0,0.918,130.326
+dataset-hidden-blockage-hard,RPP proxy,4,4,1,"(26, 63)",True,False,True,True,0,0,0,120.64,0,0.0,0.0,0,0.0384,220.64
+dataset-hidden-blockage-hard,RPP proxy,4,4,2,"(26, 63)",True,False,True,True,1,0,0,120.64,0,0.0,0.0,0,0.0385,225.64
+dataset-hidden-blockage-hard,RPP proxy + random retry,4,4,1,"(26, 63)",True,False,True,True,0,0,0,120.64,0,0.0,0.0,0,0.0385,220.64
+dataset-hidden-blockage-hard,RPP proxy + random retry,4,4,2,"(26, 63)",True,False,True,True,1,0,0,120.64,0,0.0,0.0,0,0.04,225.64
+dataset-hidden-blockage-hard,RPP proxy + failure memory,4,4,1,"(26, 63)",True,False,True,True,0,0,0,120.64,0,0.0,0.0,0,0.0391,220.64
+dataset-hidden-blockage-hard,RPP proxy + failure memory,4,4,2,"(26, 63)",True,False,True,True,1,0,0,120.64,0,0.0,0.0,0,0.0388,225.64
+dataset-hidden-blockage-hard,ATR proxy,4,4,1,"(26, 63)",True,False,True,True,0,0,0,121.225,0,0.0,0.0,0,0.0479,221.225
+dataset-hidden-blockage-hard,ATR proxy,4,4,2,"(26, 63)",True,False,True,True,1,0,0,121.225,0,0.0,0.0,0,0.0474,226.225
+dataset-hidden-blockage-hard,ATR proxy + failure memory,4,4,1,"(26, 63)",True,False,True,True,0,0,0,121.225,0,0.0,0.0,0,0.0473,221.225
+dataset-hidden-blockage-hard,ATR proxy + failure memory,4,4,2,"(26, 63)",True,False,True,True,1,0,0,121.225,0,0.0,0.0,0,0.0458,226.225
+dataset-hidden-blockage-hard,DDP proxy,4,4,1,"(26, 63)",True,False,True,True,0,0,0,120.344,0,0.0,0.0,0,0.1614,220.344
+dataset-hidden-blockage-hard,DDP proxy,4,4,2,"(26, 63)",True,False,True,True,1,0,0,120.344,0,0.0,0.0,0,0.161,225.344
+dataset-hidden-blockage-hard,DDP proxy + failure memory,4,4,1,"(26, 63)",True,False,True,True,0,0,0,120.344,0,0.0,0.0,0,0.1616,220.344
+dataset-hidden-blockage-hard,DDP proxy + failure memory,4,4,2,"(26, 63)",True,False,True,True,1,0,0,119.872,0,0.0,0.0,0,0.1617,224.872
+dataset-hidden-blockage-hard,RTEB proxy,4,4,1,"(26, 63)",True,False,True,True,0,0,0,121.225,0,0.0,0.0,0,1.0303,221.225
+dataset-hidden-blockage-hard,RTEB proxy,4,4,2,"(26, 63)",True,False,True,True,1,0,0,121.225,0,0.0,0.0,0,1.0289,226.225
+dataset-hidden-blockage-hard,RTEB proxy + failure memory,4,4,1,"(26, 63)",True,False,True,True,0,0,0,121.225,0,0.0,0.0,0,1.0332,221.225
+dataset-hidden-blockage-hard,RTEB proxy + failure memory,4,4,2,"(26, 63)",True,True,False,False,1,0,0,125.326,0,0.0,0.0,0,1.1499,130.326
+dataset-hidden-blockage-hard,Ours full,4,4,1,"(26, 63)",True,False,True,True,0,0,0,121.811,0,0.0,0.0,0,0.7602,221.811
+dataset-hidden-blockage-hard,Ours full,4,4,2,"(26, 63)",True,False,True,True,1,0,0,122.397,0,0.0,0.0,0,0.8296,227.397
+dataset-hidden-blockage-very-hard,RPP proxy,4,4,1,"(26, 63)",True,False,True,True,0,0,0,120.64,0,0.0,0.0,0,0.0394,220.64
+dataset-hidden-blockage-very-hard,RPP proxy,4,4,2,"(26, 63)",True,False,True,True,1,0,0,120.64,0,0.0,0.0,0,0.0391,225.64
+dataset-hidden-blockage-very-hard,RPP proxy + random retry,4,4,1,"(26, 63)",True,False,True,True,0,0,0,120.64,0,0.0,0.0,0,0.039,220.64
+dataset-hidden-blockage-very-hard,RPP proxy + random retry,4,4,2,"(26, 63)",True,False,True,True,1,0,0,120.64,0,0.0,0.0,0,0.04,225.64
+dataset-hidden-blockage-very-hard,RPP proxy + failure memory,4,4,1,"(26, 63)",True,False,True,True,0,0,0,120.64,0,0.0,0.0,0,0.0388,220.64
+dataset-hidden-blockage-very-hard,RPP proxy + failure memory,4,4,2,"(26, 63)",True,False,True,True,1,0,0,120.64,0,0.0,0.0,0,0.038,225.64
+dataset-hidden-blockage-very-hard,ATR proxy,4,4,1,"(26, 63)",True,False,True,True,0,0,0,121.225,0,0.0,0.0,0,0.0481,221.225
+dataset-hidden-blockage-very-hard,ATR proxy,4,4,2,"(26, 63)",True,False,True,True,1,0,0,121.225,0,0.0,0.0,0,0.0484,226.225
+dataset-hidden-blockage-very-hard,ATR proxy + failure memory,4,4,1,"(26, 63)",True,False,True,True,0,0,0,121.225,0,0.0,0.0,0,0.0477,221.225
+dataset-hidden-blockage-very-hard,ATR proxy + failure memory,4,4,2,"(26, 63)",True,False,True,True,1,0,0,121.225,0,0.0,0.0,0,0.0446,226.225
+dataset-hidden-blockage-very-hard,DDP proxy,4,4,1,"(26, 63)",True,False,True,True,0,0,0,120.344,0,0.0,0.0,0,0.1609,220.344
+dataset-hidden-blockage-very-hard,DDP proxy,4,4,2,"(26, 63)",True,False,True,True,1,0,0,120.344,0,0.0,0.0,0,0.1608,225.344
+dataset-hidden-blockage-very-hard,DDP proxy + failure memory,4,4,1,"(26, 63)",True,False,True,True,0,0,0,120.344,0,0.0,0.0,0,0.1599,220.344
+dataset-hidden-blockage-very-hard,DDP proxy + failure memory,4,4,2,"(26, 63)",True,False,True,True,1,0,0,119.872,0,0.0,0.0,0,0.156,224.872
+dataset-hidden-blockage-very-hard,RTEB proxy,4,4,1,"(26, 63)",True,False,True,True,0,0,0,121.225,0,0.0,0.0,0,1.0259,221.225
+dataset-hidden-blockage-very-hard,RTEB proxy,4,4,2,"(26, 63)",True,False,True,True,1,0,0,121.225,0,0.0,0.0,0,1.026,226.225
+dataset-hidden-blockage-very-hard,RTEB proxy + failure memory,4,4,1,"(26, 63)",True,False,True,True,0,0,0,121.225,0,0.0,0.0,0,1.0336,221.225
+dataset-hidden-blockage-very-hard,RTEB proxy + failure memory,4,4,2,"(26, 63)",True,True,False,False,1,0,0,125.326,0,0.0,0.0,0,1.1943,130.326
+dataset-hidden-blockage-very-hard,Ours full,4,4,1,"(26, 63)",True,False,True,True,0,0,0,121.811,0,0.0,0.0,0,0.7652,221.811
+dataset-hidden-blockage-very-hard,Ours full,4,4,2,"(26, 63)",True,False,True,True,1,0,0,121.811,0,0.0,0.0,0,0.7575,226.811

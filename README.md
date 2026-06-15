@@ -137,23 +137,30 @@ results_movingai_room_baseline_summary.csv
 results_movingai_room_baseline_trials.csv
 ```
 
-The key hidden-blockage stress result is:
+The hidden-blockage stress suite is evaluated at four memory qualities:
+`easy`, `medium`, `hard`, and `very-hard`. The harder settings use
+partial/noisy failure-memory transfer, so the recommended paper table should use
+the mixed-difficulty aggregate rather than a single extreme setting.
 
-| Method | ExecutableRate | CollisionRate | FailedPassageSelections |
-|---|---:|---:|---:|
-| RPP proxy | 0.0 | 1.0 | 10 |
-| RPP proxy + random retry | 0.0 | 1.0 | 10 |
-| RPP proxy + failure memory | 1.0 | 0.5 | 5 |
-| DDP proxy | 0.0 | 1.0 | 10 |
-| DDP proxy + failure memory | 1.0 | 0.5 | 5 |
-| ATR proxy | 0.2 | 0.8889 | 8 |
-| ATR proxy + failure memory | 1.0 | 0.4444 | 4 |
-| RTEB proxy | 0.2 | 0.8889 | 8 |
-| RTEB proxy + failure memory | 1.0 | 0.4444 | 4 |
-| Ours full | 1.0 | 0.5 | 5 |
+Mixed public-map result:
+
+| Method | ExecutableRate | CollisionRate | FailedPassageSelections | MeanTotalCost |
+|---|---:|---:|---:|---:|
+| RPP proxy | 0.20 | 0.8889 | 40 | 212.2313 |
+| RPP proxy + random retry | 0.20 | 0.8889 | 40 | 212.2313 |
+| RPP proxy + failure memory | 0.84 | 0.5333 | 29 | 183.9006 |
+| DDP proxy | 0.20 | 0.8889 | 40 | 212.4065 |
+| DDP proxy + failure memory | 0.84 | 0.5333 | 29 | 184.0940 |
+| ATR proxy | 0.36 | 0.7805 | 32 | 200.8357 |
+| ATR proxy + failure memory | 0.84 | 0.4878 | 22 | 179.3543 |
+| RTEB proxy | 0.36 | 0.7805 | 32 | 200.8357 |
+| RTEB proxy + failure memory | 0.92 | 0.4390 | 19 | 174.0914 |
+| Ours full | 0.84 | 0.5333 | 30 | 183.7191 |
 
 This result supports the mechanism claim: the gain comes from using failure
-memory, not merely from retrying or random perturbation.
+memory, not merely from retrying or random perturbation. The raw per-difficulty
+results remain available in `results_movingai_room_baseline_summary.csv`, while
+the mixed table is saved as `results_movingai_room_mixed_summary.csv`.
 
 ## Baseline Scope
 
@@ -168,6 +175,11 @@ The executable benchmark includes lightweight paper proxies for:
 These are not official ROS/Nav2 plugin implementations. They are controlled
 benchmark proxies designed to compare planner behaviors inside the same
 lightweight Python testbed.
+
+For a final paper submission, these proxy baselines should be complemented by
+ROS/Nav2 or simulator-level implementations of DWB, TEB, MPPI, RPP, and the
+proposed method with and without failure memory. The current repository is best
+interpreted as a controlled ablation suite and public-map stress benchmark.
 
 For baseline rationale and paper table design, see:
 
@@ -241,6 +253,15 @@ Important paper-facing metrics include:
 
 These are more relevant to failure-aware quadruped passage navigation than
 generic path length alone.
+
+Current memory precision/recall is evaluated over 5 random seeds with 50
+positive and 100 negative cases per seed:
+
+| Metric | Mean | Std | 95% CI |
+|---|---:|---:|---:|
+| Precision | 0.7624 | 0.0155 | [0.7488, 0.7760] |
+| Recall | 1.0000 | 0.0000 | [1.0000, 1.0000] |
+| FalsePositiveRate | 0.1560 | 0.0134 | [0.1442, 0.1678] |
 
 ## Repository Layout
 

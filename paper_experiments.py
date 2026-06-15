@@ -81,6 +81,26 @@ def _random_retry_cells(grid, count, seed, keep_free=(), forbidden=()):
     return set(candidates[:count])
 
 
+def _sample_memory_cells(grid, true_cells, coverage, noise_ratio, seed, keep_free=()):
+    rng = random.Random(seed)
+    true_cells = list(true_cells)
+    rng.shuffle(true_cells)
+    kept_count = max(1, int(round(len(true_cells) * coverage)))
+    remembered = set(true_cells[:kept_count])
+    noise_count = int(round(len(true_cells) * noise_ratio))
+    if noise_count:
+        remembered.update(
+            _random_retry_cells(
+                grid,
+                count=noise_count,
+                seed=seed + 104729,
+                keep_free=keep_free,
+                forbidden=set(true_cells),
+            )
+        )
+    return remembered
+
+
 def _make_hidden_blockage_case(grid, task, robot):
     """Create a public-map stress case with a hidden local passage blockage.
 
@@ -417,6 +437,39 @@ def run_memory_precision_recall_statistics(positive_cases=100, negative_cases=12
     return summary
 
 
+def run_memory_precision_recall_multiseed_statistics(
+    positive_cases=50, negative_cases=100, seeds=5, seed_offset=7
+):
+    seed_rows = []
+    for seed_index in range(seeds):
+        summary = run_memory_precision_recall_statistics(
+            positive_cases=positive_cases,
+            negative_cases=negative_cases,
+            seed=seed_offset + seed_index * 101,
+        )[0]
+        seed_rows.append({"Seed": seed_index, **summary})
+    write_dict_rows("results_memory_precision_recall_seed_summary.csv", seed_rows)
+
+    metric_names = ["Precision", "Recall", "FalsePositiveRate"]
+    aggregate = {
+        "Seeds": seeds,
+        "CasesPerSeed": positive_cases + negative_cases,
+        "PositiveCasesPerSeed": positive_cases,
+        "NegativeCasesPerSeed": negative_cases,
+    }
+    for metric in metric_names:
+        values = [row[metric] for row in seed_rows]
+        mean = statistics.fmean(values)
+        std = statistics.stdev(values) if len(values) > 1 else 0.0
+        ci_margin = 1.96 * std / (len(values) ** 0.5) if len(values) > 1 else 0.0
+        aggregate[f"Mean{metric}"] = round(mean, 4)
+        aggregate[f"Std{metric}"] = round(std, 4)
+        aggregate[f"CI95Low{metric}"] = round(max(0.0, mean - ci_margin), 4)
+        aggregate[f"CI95High{metric}"] = round(min(1.0, mean + ci_margin), 4)
+    write_dict_rows("results_memory_precision_recall_multiseed_summary.csv", [aggregate])
+    return [aggregate]
+
+
 def run_passage_memory_transfer_statistics(seeds=100, memory_dropout=0.25, seed=2026):
     robot = RobotFootprint(
         body_width=1, body_length=2, leg_margin=0, sensor_margin=0, safe_margin=0
@@ -686,9 +739,14 @@ def run_dataset_baseline_statistics(dataset_path):
     )
     static_variants = [
         ("RPP proxy", RegulatedPurePursuitPlanner),
+        ("RPP proxy + random retry", RegulatedPurePursuitPlanner),
+        ("RPP proxy + failure memory", RegulatedPurePursuitPlanner),
         ("ATR proxy", AdaptiveTrajectoryRefinementPlanner),
+        ("ATR proxy + failure memory", AdaptiveTrajectoryRefinementPlanner),
         ("DDP proxy", DecrementalDynamicsPlanner),
+        ("DDP proxy + failure memory", DecrementalDynamicsPlanner),
         ("RTEB proxy", ResilientTEBPlanner),
+        ("RTEB proxy + failure memory", ResilientTEBPlanner),
         ("Ours full", lambda: OursPlanner(clearance_penalty=0.5)),
     ]
     for task_index, task in enumerate(dataset.tasks):
@@ -732,6 +790,12 @@ def run_dataset_baseline_statistics(dataset_path):
         ("RTEB proxy + failure memory", ResilientTEBPlanner, "memory"),
         ("Ours full", lambda: OursPlanner(clearance_penalty=0.5), "internal-memory"),
     ]
+    stress_difficulties = [
+        ("easy", 1.0, 0.0),
+        ("medium", 0.65, 0.25),
+        ("hard", 0.35, 0.5),
+        ("very-hard", 0.2, 0.8),
+    ]
     for task_index, task in enumerate(dataset.tasks):
         stress_case = _make_hidden_blockage_case(dataset.grid, task, robot)
         if not stress_case:
@@ -740,73 +804,83 @@ def run_dataset_baseline_statistics(dataset_path):
         truth_benchmark = GridBenchmark(
             stress_case["truth_grid"], task.start, task.goal, robot
         )
-        for variant_name, planner_factory, recovery_mode in stress_variants:
-            planner = planner_factory()
-            remembered_cells = set()
-            for attempt in range(1, 3):
-                planning_grid = dataset.grid
-                if attempt > 1 and recovery_mode == "memory" and remembered_cells:
-                    planning_grid = _grid_with_blocked_cells(
-                        dataset.grid,
-                        remembered_cells,
-                        keep_free=(task.start, task.goal),
+        for difficulty, memory_coverage, memory_noise in stress_difficulties:
+            for variant_name, planner_factory, recovery_mode in stress_variants:
+                planner = planner_factory()
+                remembered_cells = set()
+                for attempt in range(1, 3):
+                    planning_grid = dataset.grid
+                    if attempt > 1 and recovery_mode == "memory" and remembered_cells:
+                        planning_grid = _grid_with_blocked_cells(
+                            dataset.grid,
+                            remembered_cells,
+                            keep_free=(task.start, task.goal),
+                        )
+                    elif attempt > 1 and recovery_mode == "random":
+                        random_cells = _random_retry_cells(
+                            dataset.grid,
+                            count=len(stress_case["failed_region"]),
+                            seed=task_index * 7919 + attempt,
+                            keep_free=(task.start, task.goal),
+                            forbidden=stress_case["failed_region"],
+                        )
+                        planning_grid = _grid_with_blocked_cells(
+                            dataset.grid,
+                            random_cells,
+                            keep_free=(task.start, task.goal),
+                        )
+                    planning_benchmark = GridBenchmark(
+                        planning_grid, task.start, task.goal, robot
                     )
-                elif attempt > 1 and recovery_mode == "random":
-                    random_cells = _random_retry_cells(
-                        dataset.grid,
-                        count=len(stress_case["failed_region"]),
-                        seed=task_index * 7919 + attempt,
-                        keep_free=(task.start, task.goal),
-                        forbidden=stress_case["failed_region"],
+                    summary = planning_benchmark.run_planner(planner)
+                    executable = truth_benchmark.validate_path(summary["path"])
+                    used_failed = _path_uses_region(
+                        summary["path"], stress_case["failed_region"]
                     )
-                    planning_grid = _grid_with_blocked_cells(
-                        dataset.grid,
-                        random_cells,
-                        keep_free=(task.start, task.goal),
+                    rows.append(
+                        _baseline_row(
+                            f"dataset-hidden-blockage-{difficulty}",
+                            variant_name,
+                            task_index,
+                            task.task_id,
+                            attempt,
+                            str(stress_case["center"]),
+                            bool(summary["path"]),
+                            executable,
+                            not executable,
+                            used_failed,
+                            attempt - 1,
+                            0,
+                            0,
+                            summary["path_length"],
+                            summary["min_clearance"],
+                            0.0,
+                            0.0,
+                            0,
+                            summary["planning_time"],
+                            round(
+                                summary["path_length"]
+                                + (0 if executable else 100)
+                                + (attempt - 1) * 5,
+                                3,
+                            ),
+                        )
                     )
-                planning_benchmark = GridBenchmark(
-                    planning_grid, task.start, task.goal, robot
-                )
-                summary = planning_benchmark.run_planner(planner)
-                executable = truth_benchmark.validate_path(summary["path"])
-                used_failed = _path_uses_region(
-                    summary["path"], stress_case["failed_region"]
-                )
-                rows.append(
-                    _baseline_row(
-                        "dataset-hidden-blockage",
-                        variant_name,
-                        task_index,
-                        task.task_id,
-                        attempt,
-                        str(stress_case["center"]),
-                        bool(summary["path"]),
-                        executable,
-                        not executable,
-                        used_failed,
-                        attempt - 1,
-                        0,
-                        0,
-                        summary["path_length"],
-                        summary["min_clearance"],
-                        0.0,
-                        0.0,
-                        0,
-                        summary["planning_time"],
-                        round(
-                            summary["path_length"]
-                            + (0 if executable else 100)
-                            + (attempt - 1) * 5,
-                            3,
-                        ),
-                    )
-                )
-                if executable:
-                    break
-                if recovery_mode == "memory" and used_failed:
-                    remembered_cells.update(stress_case["failed_region"])
-                if recovery_mode == "internal-memory" and used_failed:
-                    planner.remember_failed_region(stress_case["failed_region"])
+                    if executable:
+                        break
+                    if recovery_mode in {"memory", "internal-memory"} and used_failed:
+                        noisy_memory = _sample_memory_cells(
+                            dataset.grid,
+                            stress_case["failed_region"],
+                            coverage=memory_coverage,
+                            noise_ratio=memory_noise,
+                            seed=task_index * 1049 + attempt * 17 + len(variant_name),
+                            keep_free=(task.start, task.goal),
+                        )
+                        if recovery_mode == "memory":
+                            remembered_cells.update(noisy_memory)
+                        else:
+                            planner.remember_failed_region(noisy_memory)
 
     if dataset.dynamic_obstacles:
         dynamic_robot = RobotFootprint(
@@ -1050,6 +1124,7 @@ def main():
     parser.add_argument("--seeds", type=int, default=100)
     parser.add_argument("--positive-cases", type=int, default=100)
     parser.add_argument("--negative-cases", type=int, default=120)
+    parser.add_argument("--precision-seeds", type=int, default=1)
     parser.add_argument("--memory-dropout", type=float, default=0.25)
     parser.add_argument("--baseline-static-seeds", type=int, default=30)
     parser.add_argument("--baseline-dynamic-seeds", type=int, default=8)
@@ -1065,9 +1140,18 @@ def main():
             print(row)
     if args.experiment in ("all", "precision"):
         print("memory precision/recall")
-        for row in run_memory_precision_recall_statistics(
-            positive_cases=args.positive_cases, negative_cases=args.negative_cases
-        ):
+        if args.precision_seeds > 1:
+            precision_rows = run_memory_precision_recall_multiseed_statistics(
+                positive_cases=args.positive_cases,
+                negative_cases=args.negative_cases,
+                seeds=args.precision_seeds,
+            )
+        else:
+            precision_rows = run_memory_precision_recall_statistics(
+                positive_cases=args.positive_cases,
+                negative_cases=args.negative_cases,
+            )
+        for row in precision_rows:
             print(row)
     if args.experiment in ("all", "transfer"):
         print("passage memory transfer")

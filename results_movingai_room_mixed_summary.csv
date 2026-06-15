@@ -1,0 +1,11 @@
+Suite,Variant,Trials,Rows,ExecutableTasks,ExecutableRate,CollisionRate,FailedPassageSelections,MeanAttemptsOrReplans,MeanPathLength,MeanTotalCost
+movingai-room-mixed-difficulty,ATR proxy,25,41,9,0.36,0.7805,32,1.3902,120.8357,200.8357
+movingai-room-mixed-difficulty,ATR proxy + failure memory,25,41,21,0.84,0.4878,22,1.3902,128.6226,179.3543
+movingai-room-mixed-difficulty,DDP proxy,25,45,5,0.2,0.8889,40,1.4444,121.2954,212.4065
+movingai-room-mixed-difficulty,DDP proxy + failure memory,25,45,21,0.84,0.5333,29,1.4444,128.5385,184.094
+movingai-room-mixed-difficulty,Ours full,25,45,21,0.84,0.5333,30,1.4444,128.1636,183.7191
+movingai-room-mixed-difficulty,RPP proxy,25,45,5,0.2,0.8889,40,1.4444,121.1202,212.2313
+movingai-room-mixed-difficulty,RPP proxy + failure memory,25,45,21,0.84,0.5333,29,1.4444,128.345,183.9006
+movingai-room-mixed-difficulty,RPP proxy + random retry,25,45,5,0.2,0.8889,40,1.4444,121.1202,212.2313
+movingai-room-mixed-difficulty,RTEB proxy,25,41,9,0.36,0.7805,32,1.3902,120.8357,200.8357
+movingai-room-mixed-difficulty,RTEB proxy + failure memory,25,41,23,0.92,0.439,19,1.3902,128.2377,174.0914
