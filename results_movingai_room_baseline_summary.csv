@@ -1,0 +1,16 @@
+Suite,Variant,Trials,Rows,ExecutableTasks,ExecutableRate,ExecutableCI95Low,ExecutableCI95High,CollisionRate,FailedPassageSelections,MeanAttemptsOrReplans,MeanWaitSteps,MeanPathLength,MeanClearance,MeanPredictionMAE,MeanExpandedStates,MeanPlanningTime,MeanTotalCost
+dataset-hidden-blockage,ATR proxy,5,9,1,0.2,0.0362,0.6245,0.8889,8,1.4444,0.0,120.8288,0.0,0.0,0.0,0.054178,211.9399
+dataset-hidden-blockage,ATR proxy + failure memory,5,9,5,1.0,0.5655,1.0,0.4444,4,1.4444,0.0,131.7651,0.0,0.0,0.0,0.070822,178.4318
+dataset-hidden-blockage,DDP proxy,5,10,0,0.0,0.0,0.4345,1.0,10,1.5,0.0,121.2954,0.0,0.0,0.0,0.22715,223.7954
+dataset-hidden-blockage,DDP proxy + failure memory,5,10,5,1.0,0.5655,1.0,0.5,5,1.5,0.0,131.4019,0.0,0.0,0.0,0.24566,183.9019
+dataset-hidden-blockage,Ours full,5,10,5,1.0,0.5655,1.0,0.5,5,1.5,0.0,131.5486,0.0,0.0,0.0,1.65457,184.0486
+dataset-hidden-blockage,RPP proxy,5,10,0,0.0,0.0,0.4345,1.0,10,1.5,0.0,121.1202,0.0,0.0,0.0,0.04713,223.6202
+dataset-hidden-blockage,RPP proxy + failure memory,5,10,5,1.0,0.5655,1.0,0.5,5,1.5,0.0,131.1385,0.0,0.0,0.0,0.06051,183.6385
+dataset-hidden-blockage,RPP proxy + random retry,5,10,0,0.0,0.0,0.4345,1.0,10,1.5,0.0,121.1202,0.0,0.0,0.0,0.04656,223.6202
+dataset-hidden-blockage,RTEB proxy,5,9,1,0.2,0.0362,0.6245,0.8889,8,1.4444,0.0,120.8288,0.0,0.0,0.0,1.588978,211.9399
+dataset-hidden-blockage,RTEB proxy + failure memory,5,9,5,1.0,0.5655,1.0,0.4444,4,1.4444,0.0,131.7651,0.0,0.0,0.0,1.999467,178.4318
+dataset-static,ATR proxy,5,5,5,1.0,0.5655,1.0,0.0,0,1.0,0.0,120.8856,0.0,0.0,0.0,0.0535,120.8856
+dataset-static,DDP proxy,5,5,5,1.0,0.5655,1.0,0.0,0,1.0,0.0,121.2954,0.0,0.0,0.0,0.22868,121.2954
+dataset-static,Ours full,5,5,5,1.0,0.5655,1.0,0.0,0,1.0,0.0,121.5888,0.0,0.0,0.0,1.28574,121.5888
+dataset-static,RPP proxy,5,5,5,1.0,0.5655,1.0,0.0,0,1.0,0.0,121.1202,0.0,0.0,0.0,0.0503,121.1202
+dataset-static,RTEB proxy,5,5,5,1.0,0.5655,1.0,0.0,0,1.0,0.0,120.8856,0.0,0.0,0.0,1.554,120.8856

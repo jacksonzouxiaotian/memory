@@ -5,18 +5,30 @@ import csv
 import random
 import statistics
 
+from dataset_adapter import load_dataset, select_representative_obstacle
+
 from benchmark import (
     AStarPlanner,
+    AdaptiveTrajectoryRefinementPlanner,
+    DecrementalDynamicsPlanner,
     GridBenchmark,
+    KalmanTrajectoryPredictor,
+    OnlineTrajectoryPredictor,
     OursPlanner,
+    RegulatedPurePursuitPlanner,
+    ResilientTEBPlanner,
     RobotFootprint,
     SemanticAnchorMemory,
+    ShortTermMemory,
     add_map_noise,
     build_scene,
+    make_dynamic_replanning_scene,
     make_multi_passage_scene,
+    nonlinear_moving_obstacle_scenario,
     make_repeated_passage_scenes,
     make_single_passage_scene,
     make_wide_scene,
+    simulate_space_time_prediction_mission,
     wilson_ci95,
 )
 
@@ -30,6 +42,93 @@ def write_dict_rows(csv_path, rows):
 
 def _path_uses_region(path, region):
     return bool(path) and any(point in region for point in path)
+
+
+def _copy_grid(grid):
+    return [row[:] for row in grid]
+
+
+def _grid_with_blocked_cells(grid, blocked_cells, keep_free=()):
+    patched = _copy_grid(grid)
+    keep_free = set(keep_free)
+    for x, y in blocked_cells:
+        if (x, y) in keep_free:
+            continue
+        if 0 <= y < len(patched) and 0 <= x < len(patched[0]):
+            patched[y][x] = 1
+    return patched
+
+
+def _inflate_cells(cells, radius=1):
+    inflated = set(cells)
+    for x, y in cells:
+        for dx in range(-radius, radius + 1):
+            for dy in range(-radius, radius + 1):
+                if dx * dx + dy * dy <= radius * radius:
+                    inflated.add((x + dx, y + dy))
+    return inflated
+
+
+def _random_retry_cells(grid, count, seed, keep_free=(), forbidden=()):
+    rng = random.Random(seed)
+    candidates = [
+        (x, y)
+        for y, row in enumerate(grid)
+        for x, value in enumerate(row)
+        if value == 0 and (x, y) not in set(keep_free) and (x, y) not in set(forbidden)
+    ]
+    rng.shuffle(candidates)
+    return set(candidates[:count])
+
+
+def _make_hidden_blockage_case(grid, task, robot):
+    """Create a public-map stress case with a hidden local passage blockage.
+
+    The observed grid stays unchanged. The truth grid blocks a small region on
+    the initially preferred path. A valid detour must exist after the region is
+    remembered, otherwise the candidate is rejected.
+    """
+    observed_benchmark = GridBenchmark(grid, task.start, task.goal, robot)
+    reference_path = AStarPlanner().plan(observed_benchmark)
+    if not reference_path or len(reference_path) < 8:
+        return None
+
+    candidate_indices = list(range(len(reference_path) // 3, 2 * len(reference_path) // 3))
+    candidate_indices.sort(
+        key=lambda index: (
+            observed_benchmark.local_clearance(*reference_path[index]),
+            abs(index - len(reference_path) // 2),
+        )
+    )
+    for index in candidate_indices:
+        center = reference_path[index]
+        if center in {task.start, task.goal}:
+            continue
+        for radius in (1, 2):
+            blocked = _inflate_cells({center}, radius=radius)
+            truth_grid = _copy_grid(grid)
+            for x, y in blocked:
+                if (x, y) in {task.start, task.goal}:
+                    continue
+                if 0 <= y < len(truth_grid) and 0 <= x < len(truth_grid[0]):
+                    truth_grid[y][x] = 1
+            truth_benchmark = GridBenchmark(truth_grid, task.start, task.goal, robot)
+            if truth_benchmark.validate_path(reference_path):
+                continue
+
+            recovery_planner = OursPlanner(clearance_penalty=0.5)
+            failed_region = _inflate_cells(blocked, radius=3)
+            recovery_planner.remember_failed_region(failed_region)
+            recovery_path = recovery_planner.plan(observed_benchmark)
+            if truth_benchmark.validate_path(recovery_path):
+                return {
+                    "truth_grid": truth_grid,
+                    "failed_region": failed_region,
+                    "blocked_cells": blocked,
+                    "center": center,
+                    "reference_path": reference_path,
+                }
+    return None
 
 
 class RejectingMemoryPlanner:
@@ -175,15 +274,6 @@ def run_failure_memory_trigger_statistics(batches=30, tasks=5, max_attempts=3):
 
 
 
-
-def _inflate_cells(cells, radius=1):
-    inflated = set(cells)
-    for x, y in cells:
-        for dx in range(-radius, radius + 1):
-            for dy in range(-radius, radius + 1):
-                if dx * dx + dy * dy <= radius * radius:
-                    inflated.add((x + dx, y + dy))
-    return inflated
 
 def _widen_deceptive_opening(lines, barrier_x, center_y, radius=1):
     grid = [list(line) for line in lines]
@@ -465,11 +555,493 @@ def run_passage_memory_transfer_statistics(seeds=100, memory_dropout=0.25, seed=
     return summary_rows
 
 
+def _summarize_latest_baseline_rows(rows):
+    summary_rows = []
+    groups = sorted({(row["Suite"], row["Variant"]) for row in rows})
+    for suite, variant in groups:
+        selected = [
+            row for row in rows if row["Suite"] == suite and row["Variant"] == variant
+        ]
+        task_keys = sorted(
+            {
+                (row["Seed"], row["Mission"], row["TrajectoryType"])
+                for row in selected
+            }
+        )
+        task_successes = sum(
+            any(
+                row["Executable"]
+                for row in selected
+                if (row["Seed"], row["Mission"], row["TrajectoryType"]) == task_key
+            )
+            for task_key in task_keys
+        )
+        ci_low, ci_high = wilson_ci95(task_successes, len(task_keys))
+        summary_rows.append(
+            {
+                "Suite": suite,
+                "Variant": variant,
+                "Trials": len(task_keys),
+                "Rows": len(selected),
+                "ExecutableTasks": task_successes,
+                "ExecutableRate": round(task_successes / len(task_keys), 4),
+                "ExecutableCI95Low": round(ci_low, 4),
+                "ExecutableCI95High": round(ci_high, 4),
+                "CollisionRate": round(
+                    statistics.fmean(row["Collision"] for row in selected), 4
+                ),
+                "FailedPassageSelections": sum(
+                    row["UsedFailedPassage"] for row in selected
+                ),
+                "MeanAttemptsOrReplans": round(
+                    statistics.fmean(
+                        max(row["Attempt"], row["Replans"]) for row in selected
+                    ),
+                    4,
+                ),
+                "MeanWaitSteps": round(
+                    statistics.fmean(row["WaitSteps"] for row in selected), 4
+                ),
+                "MeanPathLength": round(
+                    statistics.fmean(row["PathLength"] for row in selected), 4
+                ),
+                "MeanClearance": round(
+                    statistics.fmean(row["MinClearance"] for row in selected), 4
+                ),
+                "MeanPredictionMAE": round(
+                    statistics.fmean(row["PredictionMAE"] for row in selected), 4
+                ),
+                "MeanExpandedStates": round(
+                    statistics.fmean(row["ExpandedStates"] for row in selected), 4
+                ),
+                "MeanPlanningTime": round(
+                    statistics.fmean(row["MeanPlanningTime"] for row in selected), 6
+                ),
+                "MeanTotalCost": round(
+                    statistics.fmean(row["TotalCost"] for row in selected), 4
+                ),
+            }
+        )
+    return summary_rows
+
+
+def _write_latest_baseline_outputs(rows):
+    write_dict_rows("results_latest_baseline_trials.csv", rows)
+    summary_rows = _summarize_latest_baseline_rows(rows)
+    write_dict_rows("results_latest_baseline_summary.csv", summary_rows)
+    return summary_rows
+
+
+def _baseline_row(
+    suite,
+    variant,
+    seed,
+    mission,
+    attempt,
+    trajectory_type,
+    planned,
+    executable,
+    collision,
+    used_failed_passage,
+    replans,
+    wait_steps,
+    time_steps,
+    path_length_value,
+    min_clearance,
+    prediction_mae,
+    mean_risk_radius,
+    expanded_states,
+    mean_planning_time,
+    total_cost,
+):
+    return {
+        "Suite": suite,
+        "Variant": variant,
+        "Seed": seed,
+        "Mission": mission,
+        "Attempt": attempt,
+        "TrajectoryType": trajectory_type,
+        "Planned": planned,
+        "Executable": executable,
+        "Collision": collision,
+        "UsedFailedPassage": used_failed_passage,
+        "Replans": replans,
+        "WaitSteps": wait_steps,
+        "TimeSteps": time_steps,
+        "PathLength": path_length_value,
+        "MinClearance": min_clearance,
+        "PredictionMAE": prediction_mae,
+        "MeanRiskRadius": mean_risk_radius,
+        "ExpandedStates": expanded_states,
+        "MeanPlanningTime": mean_planning_time,
+        "TotalCost": total_cost,
+    }
+
+
+def run_dataset_baseline_statistics(dataset_path):
+    dataset = load_dataset(dataset_path)
+    rows = []
+    robot = RobotFootprint(
+        body_width=0, body_length=0, leg_margin=0, sensor_margin=0, safe_margin=0
+    )
+    static_variants = [
+        ("RPP proxy", RegulatedPurePursuitPlanner),
+        ("ATR proxy", AdaptiveTrajectoryRefinementPlanner),
+        ("DDP proxy", DecrementalDynamicsPlanner),
+        ("RTEB proxy", ResilientTEBPlanner),
+        ("Ours full", lambda: OursPlanner(clearance_penalty=0.5)),
+    ]
+    for task_index, task in enumerate(dataset.tasks):
+        for variant_name, planner_factory in static_variants:
+            benchmark = GridBenchmark(dataset.grid, task.start, task.goal, robot)
+            summary = benchmark.run_planner(planner_factory())
+            rows.append(
+                _baseline_row(
+                    "dataset-static",
+                    variant_name,
+                    task_index,
+                    task.task_id,
+                    1,
+                    "",
+                    bool(summary["path"]),
+                    summary["success"],
+                    not summary["success"],
+                    False,
+                    0,
+                    0,
+                    0,
+                    summary["path_length"],
+                    summary["min_clearance"],
+                    0.0,
+                    0.0,
+                    0,
+                    summary["planning_time"],
+                    round(summary["path_length"] + (0 if summary["success"] else 100), 3),
+                )
+            )
+
+    stress_variants = [
+        ("RPP proxy", RegulatedPurePursuitPlanner, "none"),
+        ("RPP proxy + random retry", RegulatedPurePursuitPlanner, "random"),
+        ("RPP proxy + failure memory", RegulatedPurePursuitPlanner, "memory"),
+        ("ATR proxy", AdaptiveTrajectoryRefinementPlanner, "none"),
+        ("ATR proxy + failure memory", AdaptiveTrajectoryRefinementPlanner, "memory"),
+        ("DDP proxy", DecrementalDynamicsPlanner, "none"),
+        ("DDP proxy + failure memory", DecrementalDynamicsPlanner, "memory"),
+        ("RTEB proxy", ResilientTEBPlanner, "none"),
+        ("RTEB proxy + failure memory", ResilientTEBPlanner, "memory"),
+        ("Ours full", lambda: OursPlanner(clearance_penalty=0.5), "internal-memory"),
+    ]
+    for task_index, task in enumerate(dataset.tasks):
+        stress_case = _make_hidden_blockage_case(dataset.grid, task, robot)
+        if not stress_case:
+            continue
+        observed_benchmark = GridBenchmark(dataset.grid, task.start, task.goal, robot)
+        truth_benchmark = GridBenchmark(
+            stress_case["truth_grid"], task.start, task.goal, robot
+        )
+        for variant_name, planner_factory, recovery_mode in stress_variants:
+            planner = planner_factory()
+            remembered_cells = set()
+            for attempt in range(1, 3):
+                planning_grid = dataset.grid
+                if attempt > 1 and recovery_mode == "memory" and remembered_cells:
+                    planning_grid = _grid_with_blocked_cells(
+                        dataset.grid,
+                        remembered_cells,
+                        keep_free=(task.start, task.goal),
+                    )
+                elif attempt > 1 and recovery_mode == "random":
+                    random_cells = _random_retry_cells(
+                        dataset.grid,
+                        count=len(stress_case["failed_region"]),
+                        seed=task_index * 7919 + attempt,
+                        keep_free=(task.start, task.goal),
+                        forbidden=stress_case["failed_region"],
+                    )
+                    planning_grid = _grid_with_blocked_cells(
+                        dataset.grid,
+                        random_cells,
+                        keep_free=(task.start, task.goal),
+                    )
+                planning_benchmark = GridBenchmark(
+                    planning_grid, task.start, task.goal, robot
+                )
+                summary = planning_benchmark.run_planner(planner)
+                executable = truth_benchmark.validate_path(summary["path"])
+                used_failed = _path_uses_region(
+                    summary["path"], stress_case["failed_region"]
+                )
+                rows.append(
+                    _baseline_row(
+                        "dataset-hidden-blockage",
+                        variant_name,
+                        task_index,
+                        task.task_id,
+                        attempt,
+                        str(stress_case["center"]),
+                        bool(summary["path"]),
+                        executable,
+                        not executable,
+                        used_failed,
+                        attempt - 1,
+                        0,
+                        0,
+                        summary["path_length"],
+                        summary["min_clearance"],
+                        0.0,
+                        0.0,
+                        0,
+                        summary["planning_time"],
+                        round(
+                            summary["path_length"]
+                            + (0 if executable else 100)
+                            + (attempt - 1) * 5,
+                            3,
+                        ),
+                    )
+                )
+                if executable:
+                    break
+                if recovery_mode == "memory" and used_failed:
+                    remembered_cells.update(stress_case["failed_region"])
+                if recovery_mode == "internal-memory" and used_failed:
+                    planner.remember_failed_region(stress_case["failed_region"])
+
+    if dataset.dynamic_obstacles:
+        dynamic_robot = RobotFootprint(
+            body_width=0,
+            body_length=0,
+            leg_margin=0,
+            sensor_margin=0,
+            safe_margin=0,
+        )
+        dynamic_variants = [
+            ("Space-Time CV proxy", "cv"),
+            ("MPC uncertainty proxy", "kalman-uncertainty"),
+        ]
+        for task_index, task in enumerate(dataset.tasks):
+            obstacle = select_representative_obstacle(task, dataset.dynamic_obstacles)
+            if obstacle is None:
+                continue
+            for variant_name, predictor_type in dynamic_variants:
+                predictor_rng = random.Random(task_index * 1009 + len(variant_name))
+                if predictor_type == "kalman-uncertainty":
+                    predictor = KalmanTrajectoryPredictor(
+                        horizon=16,
+                        position_noise=0.75,
+                        process_noise=0.03,
+                        uncertainty_scale=0.02,
+                        base_risk_radius=1.5,
+                        max_risk_radius=2.4,
+                        rng=predictor_rng,
+                    )
+                else:
+                    predictor = OnlineTrajectoryPredictor(
+                        horizon=16,
+                        position_noise=0.75,
+                        velocity_noise=0.12,
+                        rng=predictor_rng,
+                    )
+                result = simulate_space_time_prediction_mission(
+                    dataset.grid,
+                    task.start,
+                    task.goal,
+                    dynamic_robot,
+                    obstacle,
+                    predictor,
+                    dynamic_memory=ShortTermMemory(ttl=16),
+                    use_prediction=True,
+                    use_dynamic_memory=True,
+                )
+                rows.append(
+                    _baseline_row(
+                        "dataset-dynamic",
+                        variant_name,
+                        task_index,
+                        task.task_id,
+                        1,
+                        obstacle.obstacle_id,
+                        True,
+                        result["Success"],
+                        result["Collision"],
+                        False,
+                        result["Replans"],
+                        result["WaitSteps"],
+                        result["TimeSteps"],
+                        result["PathLength"],
+                        result["MinDynamicClearance"],
+                        result["PredictionMAE"],
+                        0.0,
+                        result["ExpandedStates"],
+                        result["MeanPlanningTime"],
+                        result["TotalCost"],
+                    )
+                )
+    return _write_latest_baseline_outputs(rows)
+
+
+def run_latest_baseline_statistics(
+    static_seeds=30, dynamic_seeds=8, missions_per_seed=2, max_attempts=2,
+    dataset_path=None,
+):
+    """Run paper-facing proxy baselines for recent local/trajectory planners.
+
+    These are benchmark-level proxies, not the official ROS/Nav2 plugins. They
+    make the current 2D benchmark compare against the behavior each paper or
+    plugin family is meant to contribute: RPP path tracking, ATR refinement, DDP
+    dynamics-aware relaxation, RTEB recovery/refinement, and MPC-style
+    uncertainty-aware dynamic obstacle avoidance.
+    """
+    if dataset_path:
+        return run_dataset_baseline_statistics(dataset_path)
+
+    rows = []
+    robot = RobotFootprint(
+        body_width=0, body_length=0, leg_margin=0, sensor_margin=0, safe_margin=0
+    )
+    static_variants = [
+        ("RPP proxy", RegulatedPurePursuitPlanner, False),
+        ("ATR proxy", AdaptiveTrajectoryRefinementPlanner, False),
+        ("DDP proxy", DecrementalDynamicsPlanner, False),
+        ("RTEB proxy", ResilientTEBPlanner, False),
+        ("Ours full", lambda: OursPlanner(clearance_penalty=0.5), True),
+    ]
+    task_sets = make_trigger_task_sets(static_seeds, 1, seed=41)
+    for variant_name, planner_factory, uses_memory in static_variants:
+        for seed_index, tasks_in_batch in task_sets:
+            planner = planner_factory()
+            for task, start, goal, safe_opening_start in tasks_in_batch:
+                observed_lines, truth_lines, failed_region = make_repeated_passage_scenes(
+                    start=start,
+                    goal=goal,
+                    safe_opening_start=safe_opening_start,
+                    width=55,
+                    height=29,
+                )
+                observed_grid, _, _ = build_scene(observed_lines)
+                truth_grid, _, _ = build_scene(truth_lines)
+                for attempt in range(1, max_attempts + 1):
+                    planning_benchmark = GridBenchmark(observed_grid, start, goal, robot)
+                    truth_benchmark = GridBenchmark(truth_grid, start, goal, robot)
+                    summary = planning_benchmark.run_planner(planner)
+                    executable = truth_benchmark.validate_path(summary["path"])
+                    used_failed = _path_uses_region(summary["path"], failed_region)
+                    rows.append(
+                        _baseline_row(
+                            "static-narrow-passage",
+                            variant_name,
+                            seed_index,
+                            task,
+                            attempt,
+                            "",
+                            bool(summary["path"]),
+                            executable,
+                            not executable,
+                            used_failed,
+                            attempt - 1,
+                            0,
+                            0,
+                            summary["path_length"],
+                            summary["min_clearance"],
+                            0.0,
+                            0.0,
+                            0,
+                            summary["planning_time"],
+                            round(
+                                summary["path_length"]
+                                + (0 if executable else 100)
+                                + (attempt - 1) * 5,
+                                3,
+                            ),
+                        )
+                    )
+                    if executable:
+                        break
+                    if uses_memory and used_failed:
+                        planner.remember_failed_region(failed_region)
+
+    dynamic_grid, dynamic_start, dynamic_goal = build_scene(make_dynamic_replanning_scene())
+    dynamic_robot = RobotFootprint(
+        body_width=2, body_length=4, leg_margin=0, sensor_margin=0, safe_margin=0.25
+    )
+    dynamic_variants = [
+        ("Space-Time CV proxy", "cv"),
+        ("MPC uncertainty proxy", "kalman-uncertainty"),
+    ]
+    trajectory_types = ["turn", "sudden-acceleration", "stop-and-go"]
+    for trajectory_type in trajectory_types:
+        for variant_name, predictor_type in dynamic_variants:
+            for seed in range(dynamic_seeds):
+                for mission in range(missions_per_seed):
+                    obstacle = nonlinear_moving_obstacle_scenario(
+                        seed, mission, trajectory_type
+                    )
+                    predictor_rng = random.Random(
+                        seed * 521
+                        + mission * 37
+                        + trajectory_types.index(trajectory_type) * 100003
+                    )
+                    if predictor_type == "kalman-uncertainty":
+                        predictor = KalmanTrajectoryPredictor(
+                            horizon=16,
+                            position_noise=0.75,
+                            process_noise=0.03,
+                            uncertainty_scale=0.02,
+                            base_risk_radius=1.5,
+                            max_risk_radius=2.4,
+                            rng=predictor_rng,
+                        )
+                    else:
+                        predictor = OnlineTrajectoryPredictor(
+                            horizon=16,
+                            position_noise=0.75,
+                            velocity_noise=0.12,
+                            rng=predictor_rng,
+                        )
+                    result = simulate_space_time_prediction_mission(
+                        dynamic_grid,
+                        dynamic_start,
+                        dynamic_goal,
+                        dynamic_robot,
+                        obstacle,
+                        predictor,
+                        dynamic_memory=ShortTermMemory(ttl=16),
+                        use_prediction=True,
+                        use_dynamic_memory=True,
+                    )
+                    rows.append(
+                        _baseline_row(
+                            "dynamic-uncertainty",
+                            variant_name,
+                            seed,
+                            mission,
+                            1,
+                            trajectory_type,
+                            True,
+                            result["Success"],
+                            result["Collision"],
+                            False,
+                            result["Replans"],
+                            result["WaitSteps"],
+                            result["TimeSteps"],
+                            result["PathLength"],
+                            result["MinDynamicClearance"],
+                            result["PredictionMAE"],
+                            0.0,
+                            result["ExpandedStates"],
+                            result["MeanPlanningTime"],
+                            result["TotalCost"],
+                        )
+                    )
+    return _write_latest_baseline_outputs(rows)
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--experiment",
-        choices=["all", "trigger", "precision", "transfer"],
+        choices=["all", "trigger", "precision", "transfer", "baselines"],
         default="all",
     )
     parser.add_argument("--batches", type=int, default=30)
@@ -479,6 +1051,10 @@ def main():
     parser.add_argument("--positive-cases", type=int, default=100)
     parser.add_argument("--negative-cases", type=int, default=120)
     parser.add_argument("--memory-dropout", type=float, default=0.25)
+    parser.add_argument("--baseline-static-seeds", type=int, default=30)
+    parser.add_argument("--baseline-dynamic-seeds", type=int, default=8)
+    parser.add_argument("--baseline-missions", type=int, default=2)
+    parser.add_argument("--dataset", default=None)
     args = parser.parse_args()
 
     if args.experiment in ("all", "trigger"):
@@ -497,6 +1073,15 @@ def main():
         print("passage memory transfer")
         for row in run_passage_memory_transfer_statistics(
             seeds=args.seeds, memory_dropout=args.memory_dropout
+        ):
+            print(row)
+    if args.experiment in ("all", "baselines"):
+        print("latest trajectory baseline proxies")
+        for row in run_latest_baseline_statistics(
+            static_seeds=args.baseline_static_seeds,
+            dynamic_seeds=args.baseline_dynamic_seeds,
+            missions_per_seed=args.baseline_missions,
+            dataset_path=args.dataset,
         ):
             print(row)
 

@@ -423,6 +423,206 @@ class HybridAStarPlanner(PlannerBase):
         return list(reversed(path))
 
 
+def _dedupe_path(path):
+    if not path:
+        return None
+    deduped = [path[0]]
+    for point in path[1:]:
+        if point != deduped[-1]:
+            deduped.append(point)
+    return deduped
+
+
+def _path_is_valid(benchmark, path):
+    return bool(path) and benchmark.validate_path(path)
+
+
+def _nearest_clear_pose(benchmark, point, search_radius=2):
+    x, y = point
+    candidates = []
+    for radius in range(search_radius + 1):
+        for dy in range(-radius, radius + 1):
+            for dx in range(-radius, radius + 1):
+                candidate = (x + dx, y + dy)
+                if not benchmark.is_free(*candidate):
+                    continue
+                candidates.append((
+                    benchmark.local_clearance(*candidate),
+                    -math.hypot(dx, dy),
+                    candidate,
+                ))
+        if candidates:
+            return max(candidates)[2]
+    return point
+
+
+def _line_cells(start, goal):
+    x0, y0 = start
+    x1, y1 = goal
+    steps = max(1, int(max(abs(x1 - x0), abs(y1 - y0))))
+    cells = []
+    for step in range(steps + 1):
+        ratio = step / steps
+        cells.append((
+            int(round(x0 + (x1 - x0) * ratio)),
+            int(round(y0 + (y1 - y0) * ratio)),
+        ))
+    return _dedupe_path(cells)
+
+
+def _shortcut_path(benchmark, path):
+    if not path:
+        return None
+    result = [path[0]]
+    index = 0
+    while index < len(path) - 1:
+        next_index = len(path) - 1
+        while next_index > index + 1:
+            if not benchmark.collision_line(path[index], path[next_index]):
+                break
+            next_index -= 1
+        result.extend(_line_cells(path[index], path[next_index])[1:])
+        index = next_index
+    return _dedupe_path(result)
+
+
+def _path_turn_cost(path):
+    if not path or len(path) < 3:
+        return 0.0
+    cost = 0.0
+    for left, middle, right in zip(path, path[1:], path[2:]):
+        heading_a = math.atan2(middle[1] - left[1], middle[0] - left[0])
+        heading_b = math.atan2(right[1] - middle[1], right[0] - middle[0])
+        delta = abs((heading_b - heading_a + math.pi) % (2 * math.pi) - math.pi)
+        cost += delta
+    return cost
+
+
+class RegulatedPurePursuitPlanner(PlannerBase):
+    """Grid-level proxy for the Nav2 Regulated Pure Pursuit controller."""
+
+    def __init__(self, lookahead=4, min_clearance=1):
+        super().__init__('RPP proxy')
+        self.lookahead = lookahead
+        self.min_clearance = min_clearance
+
+    def plan(self, benchmark):
+        reference = AStarPlanner().plan(benchmark)
+        if not reference:
+            return None
+        tracked = [reference[0]]
+        index = 0
+        while index < len(reference) - 1:
+            lookahead_index = min(len(reference) - 1, index + self.lookahead)
+            while lookahead_index > index + 1:
+                candidate = reference[lookahead_index]
+                if (
+                        not benchmark.collision_line(tracked[-1], candidate)
+                        and benchmark.local_clearance(*candidate) >= self.min_clearance):
+                    break
+                lookahead_index -= 1
+            segment = _line_cells(tracked[-1], reference[lookahead_index])
+            tracked.extend(segment[1:])
+            index = lookahead_index
+        tracked = _dedupe_path(tracked)
+        return tracked if _path_is_valid(benchmark, tracked) else reference
+
+
+class AdaptiveTrajectoryRefinementPlanner(PlannerBase):
+    """Proxy for ATR-style narrow-passage segment refinement and pose correction."""
+
+    def __init__(self, correction_radius=2, max_refinement_depth=4):
+        super().__init__('ATR proxy')
+        self.correction_radius = correction_radius
+        self.max_refinement_depth = max_refinement_depth
+
+    def plan(self, benchmark):
+        base_path = AStarPlanner().plan(benchmark)
+        if not base_path:
+            return None
+        refined = [_nearest_clear_pose(
+            benchmark, point, search_radius=self.correction_radius)
+            for point in _shortcut_path(benchmark, base_path)]
+        refined = self.refine_segments(benchmark, _dedupe_path(refined))
+        if _path_is_valid(benchmark, refined):
+            return refined
+        return base_path
+
+    def refine_segments(self, benchmark, path):
+        if not path:
+            return None
+        refined = [path[0]]
+        for start, goal in zip(path, path[1:]):
+            refined.extend(self.refine_segment(benchmark, start, goal, 0)[1:])
+        return _dedupe_path(refined)
+
+    def refine_segment(self, benchmark, start, goal, depth):
+        if not benchmark.collision_line(start, goal):
+            return _line_cells(start, goal)
+        if depth >= self.max_refinement_depth:
+            return [start, goal]
+        middle = (
+            int(round((start[0] + goal[0]) / 2)),
+            int(round((start[1] + goal[1]) / 2)),
+        )
+        middle = _nearest_clear_pose(
+            benchmark, middle, search_radius=self.correction_radius)
+        left = self.refine_segment(benchmark, start, middle, depth + 1)
+        right = self.refine_segment(benchmark, middle, goal, depth + 1)
+        return left + right[1:]
+
+
+class DecrementalDynamicsPlanner(PlannerBase):
+    """Proxy for DDP-style gradual relaxation of dynamics constraints."""
+
+    def __init__(self):
+        super().__init__('DDP proxy')
+
+    def plan(self, benchmark):
+        candidates = [
+            HybridAStarPlanner(angle_steps=16, step_size=2, max_iter=5000).plan(benchmark),
+            HybridAStarPlanner(angle_steps=8, step_size=2, max_iter=4000).plan(benchmark),
+            AStarPlanner().plan(benchmark),
+        ]
+        valid = [path for path in candidates if _path_is_valid(benchmark, path)]
+        if not valid:
+            return None
+        return min(valid, key=lambda path: path_length(path) + 1.5 * _path_turn_cost(path))
+
+
+class ResilientTEBPlanner(PlannerBase):
+    """Proxy for RTEB-style multi-candidate recovery and trajectory smoothing."""
+
+    def __init__(self):
+        super().__init__('RTEB proxy')
+
+    def plan(self, benchmark):
+        candidates = [
+            AStarPlanner().plan(benchmark),
+            HybridAStarPlanner(angle_steps=16, step_size=2, max_iter=5000).plan(benchmark),
+            OursPlanner(clearance_penalty=0.8).plan(benchmark),
+        ]
+        repaired = []
+        atr = AdaptiveTrajectoryRefinementPlanner(correction_radius=2)
+        for candidate in candidates:
+            if not candidate:
+                continue
+            smoothed = _shortcut_path(benchmark, candidate)
+            refined = atr.refine_segments(benchmark, smoothed)
+            for path in (refined, smoothed, candidate):
+                if _path_is_valid(benchmark, path):
+                    repaired.append(path)
+                    break
+        if not repaired:
+            return None
+        return min(
+            repaired,
+            key=lambda path: (
+                -benchmark.path_clearance(path),
+                path_length(path) + _path_turn_cost(path),
+            ))
+
+
 class OursPlanner(PlannerBase):
     def __init__(self, use_clearance_penalty=True, clearance_penalty=5.0, memory_penalty=100.0):
         super().__init__('Ours')
@@ -773,7 +973,7 @@ def wilson_ci95(successes, trials):
     denominator = 1 + z * z / trials
     center = (rate + z * z / (2 * trials)) / denominator
     margin = z * math.sqrt((rate * (1 - rate) + z * z / (4 * trials)) / trials) / denominator
-    return center - margin, center + margin
+    return max(0.0, center - margin), min(1.0, center + margin)
 
 
 def write_dict_rows(csv_path, rows):

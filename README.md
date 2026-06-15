@@ -40,6 +40,12 @@ Main experiments:
 4. **Optional dynamic-memory extension**
    Dynamic obstacles, Kalman prediction, uncertainty radius calibration, and Space-Time A* are retained as appendix material.
 
+5. **Planned local trajectory-planner baselines**
+   The next paper revision should compare against deployment-level local planners:
+   DWB, TEB, MPPI, and Regulated Pure Pursuit (RPP), plus recent trajectory
+   planners focused on narrow passages, dynamics constraints, and uncertain
+   dynamic obstacles. See `BASELINE_EXPERIMENT_PLAN.md`.
+
 ## Repository Files
 
 ```text
@@ -57,6 +63,10 @@ figures/
 
 BENCHMARK_REPORT.md
   Older benchmark report, useful as background but not the current paper narrative.
+
+BASELINE_EXPERIMENT_PLAN.md
+  Paper-facing plan for adding DWB, TEB, MPPI, RPP, ATR, DDP,
+  MPC-uncertainty, RTEB, and supplementary RL simulation baselines.
 ```
 
 ## Quick Start
@@ -79,6 +89,7 @@ Run each paper experiment separately:
 python paper_experiments.py --experiment trigger
 python paper_experiments.py --experiment precision
 python paper_experiments.py --experiment transfer
+python paper_experiments.py --experiment baselines
 ```
 
 Fast smoke test:
@@ -100,7 +111,9 @@ python paper_experiments.py \
 | Failure-memory trigger | `paper_experiments.py --experiment trigger` | `results_failure_memory_trigger_summary.csv`, `results_failure_memory_trigger_trials.csv` |
 | Memory precision / recall | `paper_experiments.py --experiment precision` | `results_memory_precision_recall_summary.csv`, `results_memory_precision_recall_trials.csv` |
 | Passage-memory transfer | `paper_experiments.py --experiment transfer` | `results_passage_memory_transfer_summary.csv`, `results_passage_memory_transfer_trials.csv` |
+| Latest trajectory baseline proxies | `paper_experiments.py --experiment baselines` | `results_latest_baseline_summary.csv`, `results_latest_baseline_trials.csv` |
 | Optional old benchmark suite | `benchmark.py` | legacy `results_*.csv`, `figures/*.png` |
+| Planned local-planner baseline table | `BASELINE_EXPERIMENT_PLAN.md` | DWB, TEB, MPPI, RPP, ATR, DDP, MPC-uncertainty, RTEB comparison design |
 
 ## Current Paper-Facing Metrics
 
@@ -117,6 +130,76 @@ The important robotics metrics are:
 - `Precision`, `Recall`, `FalsePositiveRate`
 
 These metrics are more relevant to a quadruped narrow-passage system than generic path length or planning success alone.
+
+## Baseline Expansion
+
+The current code-level benchmark should remain the controlled ablation suite for
+failure memory and passage transfer. For a more convincing paper comparison, add
+a second trajectory-baseline table with:
+
+- **DWB**: standard Nav2 dynamic-window rollout baseline.
+- **TEB**: timed elastic-band optimization baseline.
+- **MPPI**: modern Nav2 sampling-based model-predictive controller.
+- **RPP**: Nav2 Regulated Pure Pursuit path-tracking baseline.
+- **Recent strong baselines**: Adaptive Trajectory Refinement for narrow
+  passages, Decremental Dynamics Planning for global-to-local dynamics
+  constraints, MPC with dynamic-obstacle prediction uncertainty, and Resilient
+  TEB for recovery/refinement.
+
+The intended claim is that the proposed failure-aware passage memory is
+complementary to strong local planners. DWB/TEB/MPPI/RPP can be evaluated both
+alone and as the execution layer underneath the full method.
+
+The executable benchmark now includes lightweight paper proxies for recent
+trajectory baselines:
+
+```bash
+python paper_experiments.py \
+  --experiment baselines \
+  --baseline-static-seeds 30 \
+  --baseline-dynamic-seeds 8 \
+  --baseline-missions 2
+```
+
+These proxies are not official ROS/Nav2 plugin implementations. They expose
+comparable behavior inside this repository's 2D benchmark: RPP path tracking,
+ATR-style segment refinement, DDP-style dynamics relaxation, RTEB-style recovery
+and smoothing, and MPC-style uncertainty-aware dynamic obstacle avoidance.
+
+The same baseline entry point can run a minimal public-dataset adapter:
+
+```bash
+python paper_experiments.py \
+  --experiment baselines \
+  --dataset path/to/dataset
+```
+
+Expected dataset layout:
+
+```text
+path/to/dataset/
+  map.npy                # 2D occupancy grid: 0=free, nonzero=occupied
+  # or map.pgm           # PGM map: bright pixels free, dark/unknown occupied
+  tasks.csv              # start_x,start_y,goal_x,goal_y
+  dynamic_obstacles.csv  # optional: id,t,x,y,radius
+```
+
+The dataset run writes the same `results_latest_baseline_summary.csv` and
+`results_latest_baseline_trials.csv` files. This gives the paper a clean split:
+synthetic benchmark for mechanism ablation, public dataset adapter for external
+generalization checks.
+
+For public grid maps, the adapter also creates a `dataset-hidden-blockage`
+stress suite when possible. It keeps the public map and task endpoints, then
+injects a small hidden truth-only blockage on the initially preferred route.
+This simulates entrance misclassification or a locally infeasible passage:
+memoryless local planners repeatedly select the blocked passage, while the full
+method can remember the failed region and recover on the second attempt.
+
+The stress suite includes mechanism controls such as `RPP proxy`,
+`RPP proxy + random retry`, and `RPP proxy + failure memory`. These compare the
+same underlying planner with the same attempt budget, separating the algorithmic
+effect of failure memory from generic replanning or random perturbation.
 
 ## Naming and Scope
 
@@ -160,5 +243,11 @@ The following are useful, but should be treated as appendix or future-work mater
 - dynamic obstacle replanning
 - nonlinear trajectory prediction
 - uncertainty radius calibration
+- RL recovery/generalization in simulation
 
 They are retained because they may support future extensions, but the main paper narrative should remain narrow-passage failure-aware navigation.
+
+The RL simulation should stay supplementary. Its role is to test generalization
+under complex disturbances: dynamic obstacles, pedestrian interference, uneven
+terrain, post-collision recovery, entrance misclassification, and policy
+adaptation after multiple failed attempts.
